@@ -6,6 +6,11 @@
     font-size:16px;
     
 }
+
+body{
+    overflow-x:hidden; 
+}
+
 #logoimg{
     width: 60px;
     height: 60px;
@@ -13,12 +18,15 @@
 
 .sidebar {
     position: fixed;
+    top: 0;
+    left: 0;
     height: 100%;
-    width: 240px;
+    min-width: 240px;
     background: #ffffff;
     transition: all 0.5s ease;
     border:  1px solid black; /*meka hadannaaaa */
     box-shadow:  1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+    z-index: 10;
 }
 
 .sidebar.active {
@@ -89,44 +97,46 @@
 
 .sidebar .nav-links .log_out {
     position: absolute;
-    bottom: 0;
+    bottom: 65px;
     width: 100%;
 }
 
 .home-section {
+    
     position: relative;
     background: #ffffff;
     min-height: 100vh;
-    width: calc(100% - 240px);
+    width: 100%;
     left: 240px;
     transition: all 0.5s ease;
    
 }
 
 .sidebar.active~.home-section {
-    width: calc(100% - 60px);
+    width: 100% ;
     left: 60px;
 }
 
 .home-section nav {
-    display: flex;
+
     justify-content: space-between;
     height: 80px;
     background: rgb(255, 255, 255);
     display: flex;
     align-items: center;
     position: fixed;
-    width: calc(100% - 240px);
-    left: 240px;
+    
     z-index: 100;
     padding: 0 20px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
     transition: all 0.5s ease;
 }
-
+.sidebar{
+    margin-top: 65px;
+}
 .sidebar.active~.home-section nav {
-    left: 60px;
-    width: calc(100% - 60px);
+    /* left: 60px; */
+    width: 100%;
 }
 
 .home-section nav .sidebar-button {
