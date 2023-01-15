@@ -1,85 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/comp.css">
-  <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/navbar_.css">
-  <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/index.css">
-  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-  <title><?php echo SITENAME; ?></title>
-</head>
-<body> 
-<section class="home-section">
-        <nav>
-            <div class="sidebar-button">
-                <i class='bx bx-menu sidebarBtn'></i>
-                
-            </div>
-           <div class="top">
-            <ul>
-                <li>Home</li>
-                <li>About</li>
-                <li>Our Services </li>
-                <li><a href="<?php echo URLROOT;?>/pages/register">Register</a></li>
-                <li><a href="<?php echo URLROOT;?>/pages/login">Login</a></li>
-                
-            </ul>
-           </div>
-            <div class="profile-details">
-                
-                <span class="admin_name"></span>
-                <i class='bx bx-bell'></i>
-                <span class="admin_name"></span>
-                <i class='bx bx-cart'></i>
-                <!-- <span class="admin_name"></span>
-                <i class='bx bx-user'></i> -->
-            </div>
-        </nav> 
-</section>
-<section class="main">
+<?php include APPROOT . '/views/inc/ntnavtop.php'; ?>
+<?php include APPROOT . '/views/inc/navbarlanding.php'; ?>
+
+<main style="margin-inline: 0;">
   <div class="slideshow-container">
 
     <div class="mySlides fade">
       <div class="numbertext">1 / 5</div>
-      <img src="<?php echo URLROOT; ?>/img/land1.png" style="width:100%; height: 400px;">
+      <img class="sliderImg" src="<?php echo URLROOT; ?>/img/land1.png" style="width:100%">
       <!-- <div class="text">Caption Text</div> -->
     </div>
 
     <div class="mySlides fade">
       <div class="numbertext">2 / 5</div>
-      <img src="<?php echo URLROOT; ?>/img/land2.png" style="width:100%; height: 400px;">
+      <img class="sliderImg" src="<?php echo URLROOT; ?>/img/land2.png" style="width:100%">
       <!-- <div class="text">Caption Two</div> -->
     </div>
 
     <div class="mySlides fade">
       <div class="numbertext">3 / 5</div>
-      <img src="<?php echo URLROOT; ?>/img/land3.png" style="width:100%; height: 400px;">
+      <img class="sliderImg" src="<?php echo URLROOT; ?>/img/land3.png" style="width:100%">
       <!-- <div class="text">Caption Three</div> -->
     </div>
 
     <div class="mySlides fade">
       <div class="numbertext">4 / 5</div>
-      <img src="<?php echo URLROOT; ?>/img/land4.png" style="width:100%; height: 400px;">
+      <img class="sliderImg" src="<?php echo URLROOT; ?>/img/land4.png" style="width:100%">
       <!-- <div class="text">Caption Three</div> -->
     </div>
 
     <div class="mySlides fade">
       <div class="numbertext">5 / 5</div>
-      <img src="<?php echo URLROOT; ?>/img/joinus.png" style="width:100%; height: 400px;">
+      <img class="sliderImg" src="<?php echo URLROOT; ?>/img/joinus.png" style="width:100%">
       <!-- <div class="text">Caption Three</div> -->
     </div>
-
-  </div>
-  <br>
-
-  <div class="dots">
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
+    <div class="dots">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
   </div>
 
   <div class="servicegrid">
@@ -108,7 +68,7 @@
     </div>
   </div>
   </div>
-</section>
+</main>
 
 
 <?php require APPROOT . '/views/inc/footer.php'; ?>
