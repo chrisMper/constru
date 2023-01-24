@@ -14,14 +14,14 @@
 <div class="sidebar active">
         
         <ul class="nav-links">
-            <li>
+            <!-- <li>
                 <a href="#" class="active">
                     <i class='bx bx-home'></i>
                     <span class="links_name">Home</span>
                 </a>
             </li>
             <li>
-            <a href="<?php echo URLROOT; ?>/users/dashboard">
+                <a href="#">
                     <i class='bx bx-grid'></i>
                     <span class="links_name">Dashboard</span>
                 </a>
@@ -57,30 +57,25 @@
                 </a>
             </li>
             <li>
-            <a href="<?php echo URLROOT; ?>/users/stats">
+                <a href="#">
                     <i class='bx bx-bar-chart'></i>
                     <span class="links_name">My Statistics</span>
                 </a>
-            </li>
+            </li> -->
             <li>
-                <a href="#">
+                <a href="<?php echo URLROOT; ?>/users/register">
                     <i class='bx bx-book'></i>
-                    <span class="links_name">Company portfolio</span>
+                    <span class="links_name">Registration</span>
                 </a>
             </li>
             <li>
-                <a href="#">
-                    <i class='bx bx-user'></i>
-                    <span class="links_name">Profile</span>
+                <a href="<?php echo URLROOT; ?>/users/login">
+                    <i class='bx bx-log-in'></i>
+                    <span class="links_name">LogIn</span>
                 </a>
             </li>
             
-            <li class="log_out">
-                <a href="<?php echo URLROOT; ?>/users/logout">
-                    <i class='bx bx-log-out'></i>
-                    <span class="links_name">Log out</span>
-                </a>
-            </li>
+           
         </ul>
     </div>
     <section class="home-section">
