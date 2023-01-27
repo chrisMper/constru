@@ -54,6 +54,8 @@ include APPROOT. '/views/inc/navbar.php';
             </div>
         </div>
         </a>
+
+        <a href="<?php echo URLROOT; ?>/users/Stats">
         <div class="grid-item">
             <div class="card">
                 <img class="dashimg" src="<?php echo URLROOT; ?>/img/stats.png" alt="msgimg">
@@ -62,6 +64,9 @@ include APPROOT. '/views/inc/navbar.php';
                 </div>
             </div>
         </div>
+        </a>
+
+
         <div class="grid-item">
         <div class="card">
                 <img class="dashimg" src="<?php echo URLROOT; ?>/img/Profile.png" alt="msgimg">

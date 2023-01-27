@@ -54,10 +54,6 @@ body
 	animation: animate 6s linear infinite;
 	animation-delay: -3s;
 } 
-
-.split{
-	margin-top: 50px;
-}
 @keyframes animate
 {
 	0%

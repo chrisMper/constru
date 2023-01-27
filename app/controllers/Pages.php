@@ -8,7 +8,7 @@
     public function index(){
       // If logged in, redirect to posts
       if(isset($_SESSION['user_email'])){
-        redirect('listings');
+        redirect('users/dashboard');
       }
 
       //Set Data
@@ -29,21 +29,5 @@
 
       // Load about view
       $this->view('pages/about', $data);
-    }
-
-    public function register(){
-      $this->view("users/comp/reg");
-    }
-
-    public function login(){
-      $this->view("users/login");
-    }
-
-    public function listings(){
-      $this->view("users/comp/listings");
-    }
-
-    public function listingAdd(){
-      $this->view("users/comp/add");
     }
   }
