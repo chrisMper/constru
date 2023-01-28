@@ -240,15 +240,7 @@
 
     }
 
-    public function stats(){
-      $data=[
-        
-      ];
-      $this->view('users/Stats',$data);
-
-
-
-    }
+   
 
 
     

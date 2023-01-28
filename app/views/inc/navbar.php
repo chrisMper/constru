@@ -58,7 +58,7 @@
                 </a>
             </li>
             <li>
-            <a href="<?php echo URLROOT; ?>/users/stats">
+            <a href="<?php echo URLROOT; ?>/listings/stats">
                     <i class='bx bx-bar-chart'></i>
                     <span class="links_name">My Statistics</span>
                 </a>

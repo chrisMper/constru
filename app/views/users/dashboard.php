@@ -55,7 +55,7 @@ include APPROOT. '/views/inc/navbar.php';
         </div>
         </a>
 
-        <a href="<?php echo URLROOT; ?>/users/Stats">
+        <a href="<?php echo URLROOT; ?>/listings/Stats">
         <div class="grid-item">
             <div class="card">
                 <img class="dashimg" src="<?php echo URLROOT; ?>/img/stats.png" alt="msgimg">

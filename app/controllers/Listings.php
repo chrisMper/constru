@@ -27,6 +27,19 @@ class Listings extends Controller{
         $this->view('listings/listings', $data);
       }
 
+      public function stats(){
+        $listings=$this->listingModel->getListings();
+
+        $data = [
+            'listings'=>$listings
+        ];
+        
+        $this->view('users/analyse',$data);
+  
+  
+  
+      }
+
 
 
 
