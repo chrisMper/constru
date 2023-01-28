@@ -11,7 +11,7 @@
 
     
 
-    public function statis(){
+    public function statis($Listingid){
 
         if(!empty($_SERVER['HTTP_CLIENT_IP'])) {
             $ip = $_SERVER['HTTP_CLIENT_IP'];
@@ -31,16 +31,22 @@
            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
            $result = curl_exec($ch);
            curl_close($ch);
-           $country = json_decode($result)->geoplugin_countryName;   
+           $country = json_decode($result)->geoplugin_countryName;
+           
+           
 
         $data=[
         'Page_url' => (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https://" : "http://").$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'],
         'timenow' => date("Y-m-d H:i:s"),
         'ip'=>trim($ip),
-        'country'=>trim($country)
+        'country'=>trim($country),
+        'Listingid'=>trim($Listingid)
         ];
 
         $this->analyseModel->statis($data);
+        
+
+        
     }
 
 

@@ -44,7 +44,10 @@
     <button type="button" class="deletebtn">Delete</button>
     
 
-
+    <a href="<?php echo URLROOT; ?>/listings/displayAdd/<?php echo $listing->PostId; ?>">
+    <button type="button" class="addbtn">Veiw</button>
+    </a>
+    
    
 
     </div>

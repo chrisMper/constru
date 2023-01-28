@@ -1,4 +1,5 @@
 <?php
+require 'Analysis.php';
 
 use function PHPSTORM_META\elementType;
 
@@ -108,6 +109,21 @@ class Listings extends Controller{
 
         
   
+      }
+
+      public function displayAdd($id){
+        $listing = $this->listingModel->getListingById($id);
+
+
+        $data=[
+          'listing'=>$listing
+        ];
+
+
+        $this->view('listings/display',$data);
+        
+       
+
       }
 
       

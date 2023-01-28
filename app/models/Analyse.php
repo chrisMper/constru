@@ -25,6 +25,14 @@
             return false;
           }
         }
+
+        public function getPostId(){
+          $this->db->query('SELECT PostId FROM listing where  ');
+
+          $results= $this->db->resultSet();
+
+          return $results;
+      }
     
     }
 

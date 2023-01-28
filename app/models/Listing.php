@@ -45,6 +45,16 @@
           }
 
 
+          public function getListingById($id){
+            $this->db->query('SELECT * FROM listing where  PostId = :id');
+            $this->db->bind(':id',$id);
+
+             $row= $this->db->single();
+
+            return $row;
+        }
+
+
          
 
 

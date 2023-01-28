@@ -43,9 +43,7 @@
 
 
 <!-- listing Table End -->
-<form id="addform" action="<?php echo URLROOT; ?>/analysis/statis" method="POST" enctype="multipart/form-data">
-<input type="submit">
-</form>
+
 
 </main>
     </body>
