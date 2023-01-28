@@ -32,11 +32,10 @@
            $result = curl_exec($ch);
            curl_close($ch);
            $country = json_decode($result)->geoplugin_countryName;
-           
+           $$Listingid=$Listingid;
            
 
         $data=[
-        'Page_url' => (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https://" : "http://").$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'],
         'timenow' => date("Y-m-d H:i:s"),
         'ip'=>trim($ip),
         'country'=>trim($country),
@@ -49,6 +48,33 @@
         
     }
 
+
+    public function displayAdd($id){
+        $listing = $this->analyseModel->getListingById($id);
+
+
+        $data=[
+          'listing'=>$listing
+        ];
+
+        $postId=intval($id);
+
+
+        $this->view('listings/display',$data);
+
+        $this->statis($postId);
+
+      }
+
+
+      public function visitCount($postId){
+
+        $visitCount=$this->analyseModel->getVisitcount($postId);
+
+        die($visitCount);
+
+
+      }
 
 
  }
