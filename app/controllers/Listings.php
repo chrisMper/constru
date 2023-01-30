@@ -1,10 +1,11 @@
 <?php
 
-
-
 use function PHPSTORM_META\elementType;
+// include APPROOT. "/controllers/Analysis.php";
 
 class Listings extends Controller{
+
+  private $listingModel;
     public function __construct(){
         if(!isset($_SESSION['user_email'])){
           redirect('users/login');
@@ -14,12 +15,9 @@ class Listings extends Controller{
 
       }
 
-
-    
-    
         // Load All Posts
     public function index(){
-        //Get Post
+        //Get listing
         $listings=$this->listingModel->getListings();
 
         $data = [
@@ -29,11 +27,14 @@ class Listings extends Controller{
         $this->view('listings/listings', $data);
       }
 
-      public function stats(){
-        $listings=$this->listingModel->getListings();
+      
 
+      public function stats(){
+
+        $listings=$this->listingModel->getListings();
         $data = [
-            'listings'=>$listings
+            'listings'=>$listings,
+            
         ];
         
         $this->view('users/analyse',$data);

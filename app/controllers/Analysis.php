@@ -1,5 +1,7 @@
 <?php 
  class Analysis extends Controller {
+
+  private $analyseModel;
     public function __construct()
     {
         $this->analyseModel = $this->model('Analyse');
@@ -57,6 +59,7 @@
           'listing'=>$listing
         ];
 
+
         $postId=intval($id);
 
 
@@ -71,9 +74,7 @@
 
         $visitCount=$this->analyseModel->getVisitcount($postId);
 
-        die($visitCount);
-
-
+        return $visitCount;
       }
 
 

@@ -1,6 +1,7 @@
 <?php
     class Analyse{
         private $db;
+      
 
         public function __construct(){
           $this->db = new Database;
@@ -11,6 +12,12 @@
           // Prepare Query
           $this->db->query('INSERT INTO analytics (PostId,entry_time,ip_address,country) 
           VALUES (:PostId,:Entry_time,22,"sa")');
+
+
+
+
+          
+         
     
           // Bind Values
           $this->db->bind(':PostId', $data['Listingid']);
@@ -19,14 +26,15 @@
           // $this->db->bind(':Country', $data['Country']);
     
           //Execute
-          if($this->db->execute()){
-            return true;
-          } else {
-            return false;
-          }
-        }
+          $this->db->execute();
+          $Listingid=$data['Listingid'];
 
-        
+          $this-> getVisitcount($Listingid);
+
+          
+       
+
+        }
 
 
       public function getListingById($id){
@@ -39,15 +47,17 @@
     }
 
     public function getVisitcount($postId){
-        $this->db->query('SELECT COUNT(column_name)
-        FROM analytics
-        WHERE  PostId= :postId; ');
-        $this->db->bind(':postId',$postId);
+      
+        $this->db->query('UPDATE listing
+            Set  visiterCount = visiterCount + 1
+            Where PostId = :postId');
+            $this->db->bind(':postId',$postId);
+        
 
-         $row= $this->db->single();
+         
+         $this->db->execute();
 
-        return $row;
-    }
+        }
     
 
 
