@@ -70,7 +70,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="<?php echo URLROOT; ?>/users/profile">
                     <i class='bx bx-user'></i>
                     <span class="links_name">Profile</span>
                 </a>

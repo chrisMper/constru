@@ -43,30 +43,30 @@
   </div>
 
   <div class="servicegrid">
-  <div class="grid-item">
-    <div class="card">
-      <img class="dashimg" src="<?php echo URLROOT; ?>/img/1234.jpg" alt="msg img" style="width:100%">
-      <div class="container">
-        <h4><b>Engineers</b></h4>
+    <div class="grid-item">
+      <div class="card">
+        <img class="dashimg" src="<?php echo URLROOT; ?>/img/1234.jpg" alt="msg img" style="width:100%">
+        <div class="container">
+          <h4><b>Engineers</b></h4>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="grid-item">
-    <div class="card">
-      <img class="dashimg" src="<?php echo URLROOT; ?>/img/1234.jpg" alt="msg img" style="width:100%">
-      <div class="container">
-        <h4><b>Construction Companies</b></h4>
+    <div class="grid-item">
+      <div class="card">
+        <img class="dashimg" src="<?php echo URLROOT; ?>/img/1234.jpg" alt="msg img" style="width:100%">
+        <div class="container">
+          <h4><b>Construction Companies</b></h4>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="grid-item">
-    <div class="card">
-      <img class="dashimg" src="<?php echo URLROOT; ?>/img/1234.jpg" alt="msg img" style="width:100%">
-      <div class="container">
-        <h4><b>Goods Suppliers</b></h4>
+    <div class="grid-item">
+      <div class="card">
+        <img class="dashimg" src="<?php echo URLROOT; ?>/img/1234.jpg" alt="msg img" style="width:100%">
+        <div class="container">
+          <h4><b>Goods Suppliers</b></h4>
+        </div>
       </div>
     </div>
-  </div>
   </div>
 </main>
 

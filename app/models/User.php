@@ -70,6 +70,21 @@
         return false;
       }
     }
+
+    // Update User
+    public function updateUserByEmail($email){
+      $this->db->query("SELECT * FROM `engineer` WHERE Email = :email");
+      $this->db->bind(':email', $email);
+
+      $row = $this->db->single();
+
+      //Check Rows
+      if($this->db->rowCount() > 0){
+        return true;
+      } else {
+        return false;
+      }
+    }
   }
    
   

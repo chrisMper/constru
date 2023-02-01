@@ -35,6 +35,7 @@ include APPROOT. '/views/inc/navbar.php';
                 </div>
             </div>
         </div>
+        
         <div class="grid-item">
             <div class="card">
                 <img class="dashimg" src="<?php echo URLROOT; ?>/img/mybookings.png" alt="my bookings img">
@@ -43,6 +44,7 @@ include APPROOT. '/views/inc/navbar.php';
                 </div>
             </div>
         </div>
+
         <a href="<?php echo URLROOT; ?>/listings/listings">
         <div class="grid-item">
             
@@ -75,6 +77,8 @@ include APPROOT. '/views/inc/navbar.php';
                 </div>
             </div>
         </div>
+
+        <a href="<?php echo URLROOT; ?>/users/profile">
         <div class="grid-item">
         <div class="card">
                 <img class="dashimg" src="<?php echo URLROOT; ?>/img/portfolio.png" alt="msgimg">
@@ -83,6 +87,7 @@ include APPROOT. '/views/inc/navbar.php';
                 </div>
             </div>
         </div>
+        </a>
     </div>
 
 

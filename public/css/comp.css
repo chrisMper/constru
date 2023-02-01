@@ -229,3 +229,86 @@ input{
       transition: 0.3s;
       width: 70%;
     }
+
+
+/*profile page */
+header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.profile-info{
+  align-items:flex-start;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.profileName{
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.skills, .services, .reviews {
+  margin-bottom: 50px;
+}
+
+li {
+  margin-bottom: 10px;
+
+}
+
+.profileMain{
+  position: absolute; 
+  left: 240px;
+  top:80px;
+  width:86%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profileDisplay {
+  position: absolute;
+  top: 82px;
+  left: 248px;
+}
+
+.profileDisplay div{
+  padding: 30px;
+}
+.image {
+  display: flex;
+  align-items: center;
+}
+.imageEdit{
+  display: flex;
+  flex-direction: column;
+}
+.profileDetails{
+  display: flex;
+  flex-direction: row;
+}
+.details{
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+/* update form */
+
+.popup{
+  left:50%;
+  top: 40%;
+  transform: translate(-50%, -40%);
+}
+
+.popup > form {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  gap:1rem;
+}

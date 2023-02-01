@@ -12,7 +12,7 @@
 		<div class="form">
 		<!-- <span><?php print_r($data) ?></span> -->
 			<h1>Register</h1>
-			<form action="<?php echo URLROOT; ?>/users/register" method="POST">
+			<form action="<?php echo URLROOT; ?>" method="POST">
 
 			<div class="inputBox">
 					<input type="text" name="FName" required >
