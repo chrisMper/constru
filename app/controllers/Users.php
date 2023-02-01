@@ -134,7 +134,7 @@
     public function login(){
       // Check if logged in
       if($this->isLoggedIn()){
-        redirect('users/dashboard');
+        redirect('users/eng/dashboard');
       }
 
       // Check if POST
@@ -210,7 +210,7 @@
       
       $_SESSION['user_email'] = $email; 
       $_SESSION['user_name'] = $name;
-      redirect('users/dashboard');
+      redirect('users/eng/dashboard');
     }
 
     // Logout & Destroy Session
@@ -234,9 +234,7 @@
       $data=[
         
       ];
-      $this->view('users/dashboard',$data);
-
-
-
+      $this->view('users/eng/dashboard',$data);
     }
+
   }

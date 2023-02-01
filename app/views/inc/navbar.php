@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/comp.css">
   <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/navbar.css">
+  <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/xmsg.css">
   <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
   <title><?php echo SITENAME; ?></title>
 </head>
