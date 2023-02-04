@@ -30,4 +30,37 @@
       // Load about view
       $this->view('pages/about', $data);
     }
+
+    public function msg(){
+      $this->view('msg/msg');
+      // path is given
+    }
+
+    public function projects(){
+      $this->view('myprojects/projects');
+    }
+
+    public function cart(){
+      $this->view('mycart/cart');
+    }
+
+    public function orders(){
+      $this->view('myorders/orders');
+    }
+
+    public function bookings(){
+      $this->view('mybookings/bookings');
+    }
+
+    public function stats(){
+      $this->view('stats/stats');
+    }
+
+    public function cv(){
+      $this->view('users/eng/cv');
+    }
+
+    public function profile(){
+      $this->view('profile/profile');
+    }
   }
