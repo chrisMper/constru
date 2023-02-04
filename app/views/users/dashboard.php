@@ -1,6 +1,5 @@
-<?php 
-include APPROOT. '/views/inc/navbar.php';
-?>
+<?php include APPROOT . '/views/inc/navbar.php';?>
+
 <main>
     <div class="grid-container">
         <div class="grid-item">
@@ -35,7 +34,7 @@ include APPROOT. '/views/inc/navbar.php';
                 </div>
             </div>
         </div>
-        
+
         <div class="grid-item">
             <div class="card">
                 <img class="dashimg" src="<?php echo URLROOT; ?>/img/mybookings.png" alt="my bookings img">
@@ -46,31 +45,31 @@ include APPROOT. '/views/inc/navbar.php';
         </div>
 
         <a href="<?php echo URLROOT; ?>/listings/listings">
-        <div class="grid-item">
-            
-            <div class="card">
-                <img class="dashimg" src="<?php echo URLROOT; ?>/img/listings.png" alt="listings img">
-                <div class="container">
-                    <h4><b>Listings</b></h4>
+            <div class="grid-item">
+
+                <div class="card">
+                    <img class="dashimg" src="<?php echo URLROOT; ?>/img/listings.png" alt="listings img">
+                    <div class="container">
+                        <h4><b>Listings</b></h4>
+                    </div>
                 </div>
             </div>
-        </div>
         </a>
 
         <a href="<?php echo URLROOT; ?>/listings/Stats">
-        <div class="grid-item">
-            <div class="card">
-                <img class="dashimg" src="<?php echo URLROOT; ?>/img/stats.png" alt="msgimg">
-                <div class="container">
-                    <h4><b>Statistics</b></h4>
+            <div class="grid-item">
+                <div class="card">
+                    <img class="dashimg" src="<?php echo URLROOT; ?>/img/stats.png" alt="msgimg">
+                    <div class="container">
+                        <h4><b>Statistics</b></h4>
+                    </div>
                 </div>
             </div>
-        </div>
         </a>
 
 
         <div class="grid-item">
-        <div class="card">
+            <div class="card">
                 <img class="dashimg" src="<?php echo URLROOT; ?>/img/Profile.png" alt="msgimg">
                 <div class="container">
                     <h4><b>CV</b></h4>
@@ -79,19 +78,19 @@ include APPROOT. '/views/inc/navbar.php';
         </div>
 
         <a href="<?php echo URLROOT; ?>/users/profile">
-        <div class="grid-item">
-        <div class="card">
-                <img class="dashimg" src="<?php echo URLROOT; ?>/img/portfolio.png" alt="msgimg">
-                <div class="container">
-                    <h4><b>Profile</b></h4>
+            <div class="grid-item">
+                <div class="card">
+                    <img class="dashimg" src="<?php echo URLROOT; ?>/img/portfolio.png" alt="msgimg">
+                    <div class="container">
+                        <h4><b>Profile</b></h4>
+                    </div>
                 </div>
             </div>
-        </div>
         </a>
     </div>
-
-
 </main>
-    </body>
-    <?php include APPROOT . '/views/inc/footer.php'; ?>
-    </html>
+</body>
+
+<?php include APPROOT . '/views/inc/footer.php'; ?>
+
+</html>

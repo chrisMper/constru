@@ -28,6 +28,7 @@
     <div class = 'mid-col'>
         <p class='topic'><?php echo $listing->Title; ?> <p>
         <p class='decription'><?php echo $listing->Description; ?><p>
+       
         
         
 
@@ -37,12 +38,14 @@
 
 
     <div class = 'right-col'>
+    <a href="<?php echo URLROOT; ?>/listings/showUpdateListing/<?php echo $listing->PostId; ?>">
     <button type="button" class="updatebtn">Update</button><br>
+    </a>
 
 
-
+    <a href="<?php echo URLROOT; ?>/listings/deleteListing/<?php echo $listing->PostId; ?>">
     <button type="button" class="deletebtn">Delete</button>
-    
+    </a>
 
     <a href="<?php echo URLROOT; ?>/analysis/displayAdd/<?php echo $listing->PostId; ?>">
     <button type="button" class="addbtn">Veiw</button>

@@ -125,7 +125,7 @@
 
 
             <div class="updatFormButtonAlign">
-                <input type="submit" name="submit" value="Update" class="updatebtn">
+                <input type="submit" name="submit" value="Update" class="updatebttn">
                 <div class="closeBttonAlign">
                     <button id="closeForm" class="closeBttn">Close</button>
                 </div>
