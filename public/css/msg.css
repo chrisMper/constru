@@ -14,6 +14,7 @@ body{
  background: #f7f7f7;   
 }
 .wrapper{
+    margin-top: 10px;
     background: #fff;
     width: 450px;
     border-radius: 16px;
@@ -23,6 +24,7 @@ body{
 
 .users{
     padding: 25px 30px;
+    height: 500px; /*this line was added*/
 }
 .users header,
 .users-list a{
@@ -50,7 +52,7 @@ body{
     margin-left: 15px;
 }
 :is(.users, .users-list) .details span{
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
 }
 .users .search{
@@ -61,7 +63,7 @@ body{
     justify-content: space-between;
 }
 .users .search .text{
-    font-size: 18px;
+    font-size: 16px;
 }
 .users .search input{
     position: absolute;
@@ -74,20 +76,21 @@ body{
     outline: none;
 }
 .users .search button{
+    margin-top: auto;
     width: 47px;
-    height: 30px;
+    height: 42px;
     border: none;
     color:#fff;
-    background: #333;
+    background: #2C574F;
     cursor: pointer;
     font-size: 17px;
     border-radius: 0 5px 5px 0;
 }
 .users-list{
-    max-height: 350px;
+    max-height: 300px; /*this line was 350px*/
     overflow-y: auto;
 }
-.users-list::-webkit-scrollbar{
+:is(.users-list, .chat-box)::-webkit-scrollbar{
     width: 0px;
 }
 .users-list a{
@@ -106,7 +109,7 @@ body{
 }
 .users-list a .status-dot{
     font-size: 12px;
-    color: #468669;
+    color: #2C574F;
 }
 .users-list a .content p{
     color: #67676a;
@@ -117,13 +120,13 @@ body{
 } 
 
 /* css for chat */
-/* .chat-area header{
+.chat-area header{
     display: flex;
     align-items: center;
-    padding: 18px 30px;
+    padding: 16px 30px;
 }
 .chat-area header .back-icon{
-    font-size: 18px;
+    font-size: 16px;
     color: #333;
 }
 .chat-area header img{
@@ -137,34 +140,79 @@ body{
 
 }
 .chat-box{
-    height: 500px;
+    height: 350px; /*this line was 500px*/
+    overflow-y: auto;
     background: #f7f7f7;
     padding: 10px 30px 20px 30px;
     box-shadow: inset 0 32px 32px -32px rgb(0 0 0 / 5%),
     inset 0 -32px 32px -32px rgb(0 0 0 / 5%);
 }
+.chat-box .chat {
+    margin: 15px;
+}
 .chat-box .chat p{
+    word-wrap: break-word;
     padding: 8px 16px;
+    box-shadow: 0 0 32px rgb(0  0 0 / 8%),
+    0 16px 16px -16px rgb(0 0 0 / 10%);
+
 }
 .chat-box .outgoing{
     display: flex;
 }
 .outgoing .details{
     margin-left: auto;
-    max-width: calc(100% -130px);
+    max-width: calc(100% - 130px);
 }
  .outgoing .details p{
-    background:#333;
+    background:#2C574F;
     color: #fff;
-    border-radius: 18px 18px 0 18px;
+    border-radius: 16px 16px 0 16px;
 } 
 .chat-box .incoming{
     display: flex;
-    align-items: center;
+    align-items: flex-end;
 }
 .chat-box .incoming img{
     height: 35px;
     width: 35px;
-} */
+}
+.incoming .details{
+    margin-left: 10px;
+    margin-right: auto;
+    max-width: calc(100% - 130px);
+}
+.incoming .details p{
+    background: #fff;  
+    color: #333;  
+    border-radius: 16px 16px 16px 0;
+}
+.chat-area .typing-area{
+    padding: 16px 30px;
+    display: flex;
+    justify-content: space-between;
+}
+.typing-area input{
+    height: 45px;
+    width: calc(100% - 58px);
+    font-size: 17px;
+    border: 1px solid #ccc;
+    padding: o 13px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+.typing-area button{
+    margin-top: auto;
+    height: 45px;
+    width: 55px;
+    border: none;
+    outline: none;
+    background:#2C574F;
+    color: #fff;
+    font-size: 19px;
+    cursor:pointer;
+    border-radius: 0 5px 5px 0;
+
+}
 
 
