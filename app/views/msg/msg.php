@@ -1,50 +1,108 @@
 <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/msg.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
 <body>
 <!------------------------------ navbar ------------------------------------>
 <div class='navbar' >
 <?php include APPROOT . '/views/inc/navbar.php'; ?>
 </div>
 
-<!------------------------------------ msg ---------------------------------------------->
+<!-- -----------------------------list-container------------------------------- -->
 <main>
-<!DOCTYPE html>
-<html lang="en">
-<!-- <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://kit.fontawesome.com/bf10032598.js" crossorigin="anonymous"></script>
-</head> -->
-<body>
-  <div class="wrapper">
-    <section class="chat-area">
-      <header>
-        <a href="<?php echo URLROOT; ?>/msg/msg" class="back-icon"><i class="fas fa-arrow-left"></i></a>
-        <!-- <img src="php/images/<?php echo $user['img']; ?>" alt=""> -->
+
+
+
+<div class="wrapper">
+   <section class = "users">
+   <a href="<?php echo URLROOT; ?>/pages/chat">aaaaaaaa</a>
+    <header>
+      <div class="content">
+        <img src="#" alt="human">
         <div class="details">
-          <span><?php echo $user['FName']." ".$user['LName']; ?></span>
-          <p><?php echo $user['status']; ?></p>
+          <span>Chris Perera</span>
+          <p>Active Now</p>
         </div>
-      </header>
-      <div class="chat-box">
-
       </div>
-      <form action="#" class="typing-area" autocomplete="off">
-        <input type="text" name="outgoing_id" value="<?php echo $_SESSION['user_email']; ?>" hidden>
-        <input type="text" name="incoming_id" value="<?php echo $user_id; ?>" hidden>
-        <input type="text" name="message" class="input-field" placeholder="Type a message here...">
-        <button><i class="fa-solid fa-paper-plane"></i></button>
-      </form>
-    </section>
-  </div>
-  <script src="javascript/chat.js"></script>
+
+    </header>
+    <div class="search">
+      <span class="text">Select an user to start chat</span>
+      <input type="text" placeholder="enter name to search">
+      <button><i class="fas fa-search"></i></button>  
+    </div>
+    <div class="users-list">
+      <a href="#">
+        <div class="content">
+          <img src="#" alt="human2">
+          <div class="details">
+            <span>Human</span>
+            <p>this is test message</p>
+          </div>
+        </div>
+        <div class="status-dot"><i class="fas fa-circle"></i></div>
+      </a>
+
+      <a href="#">
+        <div class="content">
+          <img src="#" alt="human2">
+          <div class="details">
+            <span>Human</span>
+            <p>this is test message</p>
+          </div>
+        </div>
+        <div class="status-dot"><i class="fas fa-circle"></i></div>
+      </a>
+      <a href="#">
+        <div class="content">
+          <img src="#" alt="human2">
+          <div class="details">
+            <span>Human</span>
+            <p>this is test message</p>
+          </div>
+        </div>
+        <div class="status-dot"><i class="fas fa-circle"></i></div>
+      </a>
+      <a href="#">
+        <div class="content">
+          <img src="#" alt="human2">
+          <div class="details">
+            <span>Human</span>
+            <p>this is test message</p>
+          </div>
+        </div>
+        <div class="status-dot"><i class="fas fa-circle"></i></div>
+      </a>
+      <a href="#">
+        <div class="content">
+          <img src="#" alt="human2">
+          <div class="details">
+            <span>Human</span>
+            <p>this is test message</p>
+          </div>
+        </div>
+        <div class="status-dot"><i class="fas fa-circle"></i></div>
+      </a>
+      <a href="#">
+        <div class="content">
+          <img src="#" alt="human2">
+          <div class="details">
+            <span>Human</span>
+            <p>this is test message</p>
+          </div>
+        </div>
+        <div class="status-dot"><i class="fas fa-circle"></i></div>
+      </a>
+      <a href="#">
+        <div class="content">
+          <img src="#" alt="human2">
+          <div class="details">
+            <span>Human</span>
+            <p>this is test message</p>
+          </div>
+        </div>
+        <div class="status-dot"><i class="fas fa-circle"></i></div>
+      </a>
+
+    </div>
+   </section>
+ </div>
 </body>
-</html>
-
- 
-
-
-
-		

@@ -35,6 +35,10 @@
       $this->view('msg/msg');
       // path is given
     }
+    public function chat(){
+      $this->view('msg/chat');
+
+    }
 
     public function projects(){
       $this->view('myprojects/projects');
