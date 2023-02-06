@@ -67,4 +67,12 @@
     public function profile(){
       $this->view('profile/profile');
     }
+
+    public function cusdash(){
+      $this->view('users/customer/cusdash');
+    }
+
+    public function search(){
+      $this->view('users/customer/search');
+    }
   }
