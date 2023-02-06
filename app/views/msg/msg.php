@@ -1,3 +1,5 @@
+<!-- sessions set karanna orne -->
+
 <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/msg.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
 <body>
@@ -105,4 +107,5 @@
     </div>
    </section>
  </div>
+ <script src="<?php echo URLROOT; ?>/js/msg.js"></script>
 </body>

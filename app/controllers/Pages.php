@@ -61,7 +61,7 @@
     }
 
     public function cv(){
-      $this->view('users/eng/cv');
+      $this->view('users/eng/cvdisplay');
     }
 
     public function profile(){
