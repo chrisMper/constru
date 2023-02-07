@@ -5,7 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/comp.css">
+  <!-- font style -->
+  <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/comp.css"> 
+  <!-- other css except font style -->
   <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/navbar.css">
   <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
   <title><?php echo SITENAME; ?></title>

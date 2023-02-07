@@ -73,6 +73,6 @@
     }
 
     public function search(){
-      $this->view('users/customer/search');
+      $this->view('home/search');
     }
   }
