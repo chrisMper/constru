@@ -4,8 +4,8 @@
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <meta http-equiv="X-UA-Compatible" content="ie=edge">
- <link rel="stylesheet" href="../../../public/css/new_comp.css">
- <link rel="stylesheet" href="../../../public/css/new_navbar.css">
+ <link rel="stylesheet" href="comp.css">
+ <link rel="stylesheet" href="navbar.css">
  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
  <title>My Cart</title>
 </head>
@@ -49,7 +49,7 @@
     </tr>
     <tr height="30px"></tr>
     <tr class="detail-border" >
-        <td class="item-border" width="100px" height="40px"><img src="../../../public/img/paint.jpg" height="80px" width="90px"></td>
+        <td class="item-border" width="100px" height="40px"><img src="paint.jpg" height="80px" width="90px"></td>
         <td width="150px" height="40px">Paint bucket 1l</td>
         <td width="150px" height="40px">$20</td>
         <td width="150px" height="40px">- 2 +</td>
@@ -59,11 +59,36 @@
             <button>Remove</button>
         </td>
     </tr>
+    <tr height="20px"></tr>
     <tr class="detail-border" >
-        <td class="item-border" width="100px" height="40px"><img src="../../../public/img/cement.jpg" height="80px" width="90px"></td>
+        <td class="item-border" width="100px" height="40px"><img src="cement.jpg" height="80px" width="90px"></td>
         <td width="150px" height="40px">Cement bag 25kg</td>
         <td width="150px" height="40px">$100</td>
         <td width="150px" height="40px">- 4 +</td>
+        <td width="150px" height="40px">2%</td>
+        <td width="150px" height="40px">$98</td>
+        <td class="item-border1" width="100px" height="40px"> 
+            <button>Remove</button>
+        </td>
+    </tr>
+    <tr height="20px"></tr>
+    <tr class="detail-border" >
+        <td class="item-border" width="100px" height="40px"><img src="paint.jpg" height="80px" width="90px"></td>
+        <td width="150px" height="40px">Cleaning bottles</td>
+        <td width="150px" height="40px">$150</td>
+        <td width="150px" height="40px">- 4 +</td>
+        <td width="150px" height="40px">2%</td>
+        <td width="150px" height="40px">$144</td>
+        <td class="item-border1" width="100px" height="40px"> 
+            <button>Remove</button>
+        </td>
+    </tr>
+    <tr height="20px"></tr>
+    <tr class="detail-border" >
+        <td class="item-border" width="100px" height="40px"><img src="cement.jpg" height="80px" width="90px"></td>
+        <td width="150px" height="40px">Sand bag 50kg</td>
+        <td width="150px" height="40px">$100</td>
+        <td width="150px" height="40px">- 8 +</td>
         <td width="150px" height="40px">2%</td>
         <td width="150px" height="40px">$98</td>
         <td class="item-border1" width="100px" height="40px"> 
@@ -116,7 +141,7 @@
             </a>
         </li>
            <li>
-               <a href="#" >
+               <a href="myOrders.html" >
                    <i class='bx bx-detail'></i>
                    <span class="links_name">My Orders</span>
                </a>
