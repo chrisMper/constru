@@ -11,7 +11,12 @@ class Users extends Controller
     redirect('welcome');
   }
 
-  public function register()
+
+
+
+
+
+  public function engnieerRegister()
   {
     // Check if logged in
     if ($this->isLoggedIn()) {
@@ -88,7 +93,7 @@ class Users extends Controller
         $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
 
         //Execute
-        if ($this->userModel->register($data)) {
+        if ($this->userModel->engineerRegister($data)) {
           // Redirect to login
           redirect('users/login');
         } else {
@@ -96,7 +101,7 @@ class Users extends Controller
         }
       } else {
         // Load View
-        $this->view('users/register', $data);
+        $this->view('users/engineerRegister', $data);
       }
     } else {
       // IF NOT A POST REQUEST

@@ -9,11 +9,11 @@ class User
   }
 
   // Add User / Register
-  public function register($data)
+  public function engineerRegister($data)
   {
     // Prepare Query
-    $this->db->query('INSERT INTO engineer (FName, LName,Country,District,AdLine1,AdLine2,City,PostalCode,Email,Pass,Tel) 
-      VALUES (:FName, :LName, :Country,:District,:adline1,:adline2,:city,:Postcode,:email,:password,:Tele)');
+    $this->db->query('INSERT INTO users (fName, lName,email,`role`,`status`,`password`,adLine1,adLine2,city,postalCode,district,country,telephoneNo) 
+      VALUES (:FName,:LName,:email,"engineer","0",:password,:adline1,:adline2,:city,:Postcode,:District,:Country,:Tele)');
 
     // Bind Values
     $this->db->bind(':FName', $data['FName']);
@@ -30,11 +30,26 @@ class User
 
     //Execute
     if ($this->db->execute()) {
+      $this->addEngineerTable($data['email']);
       return true;
     } else {
       return false;
     }
   }
+
+  public function addEngineerTable($email){
+    $this->db->query('INSERT INTO engineer (email) 
+      VALUES (:email)');
+
+    
+    $this->db->bind(':email', $email);
+    
+
+   $this->db->execute();
+
+  } 
+
+
 
   // Find USer BY Email
   public function findUserByEmail($email)

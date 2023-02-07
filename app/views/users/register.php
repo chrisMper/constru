@@ -12,7 +12,7 @@
 			<div class="form">
 				<!-- <span><?php print_r($data) ?></span> -->
 				<h1>Register</h1>
-				<form action="<?php echo URLROOT; ?>/users/register" method="POST">
+				<form action="<?php echo URLROOT; ?>/users/engnieerRegister" method="POST">
 
 					<div class="inputBox">
 						<input type="text" name="FName" required>
@@ -102,11 +102,11 @@
 						<i></i>
 					</div>
 
-
-
-
-
-
+					<div class="inputBox">
+						<input type="file" name="acedamicTrasceript" required="required">
+						<span>Telephone Number</span>
+						<i></i>
+					</div>
 
 					<input type="submit" name="submit" value="Register">
 				</form>
