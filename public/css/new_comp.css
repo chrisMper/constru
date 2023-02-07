@@ -358,7 +358,7 @@ li {
   border: #00010c;
 }
 
-table {
+table  {
   border: 1px solid black;
 }
 
@@ -627,4 +627,15 @@ table {
 
 .reason-btn{
   border-color: #9d03cc;
+}
+
+.cancel-tbl{
+  border: #ffffff;
+  border: 5px;
+  
+}
+
+.back{
+  align-items: left;
+
 }
