@@ -81,11 +81,6 @@
         </ul>
     </div>
     <section class="home-section">
-        <nav
-        style="
-    width: 100%;
-    left: 0;
-">
             <div class="sidebar-button">
             <div class="logo-details">
             <img id="logoimg" src="<?php echo URLROOT; ?>/img/logo.png">

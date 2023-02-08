@@ -7,7 +7,8 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <meta http-equiv="X-UA-Compatible" content="ie=edge">
      <!-- <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/comp.css"> -->
-     <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/searchSideBar.css">
+     <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/search.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
      <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
      <title><?php echo SITENAME; ?></title>
  </head>
@@ -16,32 +17,49 @@
      <div class="sidebar active">
          <form class="filter">
              <p>Sort by,</p>
+             <div class="filterItem">
              <input type="checkbox" id="filter_awardLevel" name="filter" value="awardlevel">
              <label for="filter_awardLevel">Award Level</label>
+             </div>
              <br>
+             <div class="filterItem">
              <input type="checkbox" id="filter_overallRating" name="filter" value="overallRating">
              <label for="filter_overallRating">Overall Rating</label>
-             <br>
+             </div>
+             <div class="filterItem">
              <input type="checkbox" id="filter_serviceCompletion" name="filter" value="serviceCompletion">
              <label for="filter_serviceCompletion">Service Completion</label>
+             </div>
              <br>
+             <div class="filterItem">
              <input type="checkbox" id="filter_friendliness" name="filter" value="friendliness">
              <label for="filter_friendliness">Friendliness</label>
+             </div>
              <br>
+             <div class="filterItem">
              <input type="checkbox" id="filter_responseTime" name="filter" value="responseTime">
              <label for="filter_responseTime">Response Time</label>
+             </div>
              <br>
+             <div class="filterItem">
              <input type="checkbox" id="filter_punctuality" name="filter" value="punctuality">
              <label for="filter_punctuality">Punctuality</label>
+             </div>
              <br>
+             <div class="filterItem">
              <input type="checkbox" id="filter_projectsCompleted" name="filter" value="projectsCompleted">
              <label for="filter_projectsCompleted">No. of Projects Completed</label>
+             </div>
              <br>
+             <div class="filterItem">
              <input type="checkbox" id="filter_activeDays" name="filter" value="activeDays">
              <label for="filter_activeDays">No of Active Days</label>
+             </div>
              <br>
+             <div class="filterItem">
              <input type="checkbox" id="filter_cancellations" name="filter" value="cancellations">
              <label for="filter_cancellations">No. of cancellations</label>
+             </div>
              <br>
 
 
@@ -118,4 +136,4 @@
                  <i class='bx bx-user'></i>
              </div>
          </nav>
-     </section>
+     
