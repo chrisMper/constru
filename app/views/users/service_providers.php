@@ -5,14 +5,14 @@
 <html>
     <head>
         <title>Admins</title>
-        <link rel="stylesheet" type="text/css" href="service_providers.css" >
+        <link rel="stylesheet" type="text/css" href="../../../public/css/service_providers.css" >
     </head>
 
 	<body> 
        
         <div class ="navbar">
           <div class="navlogo">
-            <img src="product_img/logo.png" >
+            <img src="../../../public/img/product_img/logo.png" >
           </div>
 
           <div class="navright">
@@ -82,7 +82,7 @@
                     
                               <tr>
                                 
-                                <td><center><b>Yasintha Samaranayake </b><br><img src="product_img/product_placeholder.png" height=100px></center></td>
+                                <td><center><b>Yasintha Samaranayake </b><br><img src="../../../public/img/product_img/product_placeholder.png" height=100px></center></td>
                                 
                                 <td>yasinthags99@gmail.com</td>
                                 
@@ -98,7 +98,7 @@
 
                                 <tr>
                                 
-                                <td><center><b>Madusha Silva</b><br><img src="product_img/product_placeholder.png" height=100px></center></td>
+                                <td><center><b>Madusha Silva</b><br><img src="../../../public/img/product_img/product_placeholder.png" height=100px></center></td>
                                 
                                 <td>madushadesilva@gmail.com	</td>
                                 
@@ -114,7 +114,7 @@
 
                                 <tr>
                                 
-                                <td><center><b>Chris Perera </b><br><img src="product_img/product_placeholder.png" height=100px></center></td>
+                                <td><center><b>Chris Perera </b><br><img src="../../../public/img/product_img/product_placeholder.png" height=100px></center></td>
                                 
                                 <td>yggs46@gmail.com</td>
                                 
@@ -130,7 +130,7 @@
 
                                 <tr>
                                 
-                                <td><center><b>Yohan Buddhika </b><br><img src="product_img/product_placeholder.png" height=100px></center></td>
+                                <td><center><b>Yohan Buddhika </b><br><img src="../../../public/img/product_img/product_placeholder.png" height=100px></center></td>
                                 
                                 <td>yohanbuddika33@gmail.com</td>
                                 
@@ -166,7 +166,7 @@
                     
                               <tr>
                                 
-                                <td><center><b>Yasintha Samaranayake </b><br><img src="product_img/product_placeholder.png" height=100px></center></td>
+                                <td><center><b>Yasintha Samaranayake </b><br><img src="../../../public/img/product_img/product_placeholder.png" height=100px></center></td>
                                 
                                 <td>yasinthags99@gmail.com</td>
                                 
@@ -182,7 +182,7 @@
 
                                 <tr>
                                 
-                                <td><center><b>Madusha Silva</b><br><img src="product_img/product_placeholder.png" height=100px></center></td>
+                                <td><center><b>Madusha Silva</b><br><img src="../../../public/img/product_img/product_placeholder.png" height=100px></center></td>
                                 
                                 <td>madushadesilva@gmail.com	</td>
                                 
@@ -198,7 +198,7 @@
 
                                 <tr>
                                 
-                                <td><center><b>Chris Perera </b><br><img src="product_img/product_placeholder.png" height=100px></center></td>
+                                <td><center><b>Chris Perera </b><br><img src="../../../public/img/product_img/product_placeholder.png" height=100px></center></td>
                                 
                                 <td>yggs46@gmail.com</td>
                                 
@@ -214,7 +214,7 @@
 
                                 <tr>
                                 
-                                <td><center><b>Yohan Buddhika </b><br><img src="product_img/product_placeholder.png" height=100px></center></td>
+                                <td><center><b>Yohan Buddhika </b><br><img src="../../../public/img/product_img/product_placeholder.png" height=100px></center></td>
                                 
                                 <td>yohanbuddika33@gmail.com</td>
                                 
@@ -252,7 +252,7 @@
                     
                               <tr>
                                 
-                                <td><center><b>Yasintha Samaranayake </b><br><img src="product_img/product_placeholder.png" height=100px></center></td>
+                                <td><center><b>Yasintha Samaranayake </b><br><img src="../../../public/img/product_img/product_placeholder.png" height=100px></center></td>
                                 
                                 <td>yasinthags99@gmail.com</td>
                                 
@@ -268,7 +268,7 @@
 
                                 <tr>
                                 
-                                <td><center><b>Madusha Silva</b><br><img src="product_img/product_placeholder.png" height=100px></center></td>
+                                <td><center><b>Madusha Silva</b><br><img src="../../../public/img/product_img/product_placeholder.png" height=100px></center></td>
                                 
                                 <td>madushadesilva@gmail.com	</td>
                                 
@@ -284,7 +284,7 @@
 
                                 <tr>
                                 
-                                <td><center><b>Chris Perera </b><br><img src="product_img/product_placeholder.png" height=100px></center></td>
+                                <td><center><b>Chris Perera </b><br><img src="../../../public/img/product_img/product_placeholder.png" height=100px></center></td>
                                 
                                 <td>yggs46@gmail.com</td>
                                 
@@ -300,7 +300,7 @@
 
                                 <tr>
                                 
-                                <td><center><b>Yohan Buddhika </b><br><img src="product_img/product_placeholder.png" height=100px></center></td>
+                                <td><center><b>Yohan Buddhika </b><br><img src="../../../public/img/product_img/product_placeholder.png" height=100px></center></td>
                                 
                                 <td>yohanbuddika33@gmail.com</td>
                                 
@@ -338,7 +338,7 @@
                     
                               <tr>
                                 
-                                <td><center><b>Yasintha Samaranayake </b><br><img src="product_img/product_placeholder.png" height=100px></center></td>
+                                <td><center><b>Yasintha Samaranayake </b><br><img src="../../../public/img/product_img/product_placeholder.png" height=100px></center></td>
                                 
                                 <td>yasinthags99@gmail.com</td>
                                 
@@ -354,7 +354,7 @@
 
                                 <tr>
                                 
-                                <td><center><b>Madusha Silva</b><br><img src="product_img/product_placeholder.png" height=100px></center></td>
+                                <td><center><b>Madusha Silva</b><br><img src="../../../public/img/product_img/product_placeholder.png" height=100px></center></td>
                                 
                                 <td>madushadesilva@gmail.com	</td>
                                 
@@ -370,7 +370,7 @@
 
                                 <tr>
                                 
-                                <td><center><b>Chris Perera </b><br><img src="product_img/product_placeholder.png" height=100px></center></td>
+                                <td><center><b>Chris Perera </b><br><img src="../../../public/img/product_img/product_placeholder.png" height=100px></center></td>
                                 
                                 <td>yggs46@gmail.com</td>
                                 
@@ -386,7 +386,7 @@
 
                                 <tr>
                                 
-                                <td><center><b>Yohan Buddhika </b><br><img src="product_img/product_placeholder.png" height=100px></center></td>
+                                <td><center><b>Yohan Buddhika </b><br><img src="../../../public/img/product_img/product_placeholder.png" height=100px></center></td>
                                 
                                 <td>yohanbuddika33@gmail.com</td>
                                 
