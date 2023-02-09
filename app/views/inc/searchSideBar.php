@@ -5,10 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <!-- font style -->
-  <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/comp.css"> 
-  <!-- other css except font style -->
+  <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/comp.css">
   <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/navbar.css">
+  <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/xmsg.css">
   <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
   <title><?php echo SITENAME; ?></title>
 </head>
@@ -16,7 +15,7 @@
 <div class="sidebar active">
         
         <ul class="nav-links">
-            <!-- <li>
+            <li>
                 <a href="#" class="active">
                     <i class='bx bx-home'></i>
                     <span class="links_name">Home</span>
@@ -63,24 +62,34 @@
                     <i class='bx bx-bar-chart'></i>
                     <span class="links_name">My Statistics</span>
                 </a>
-            </li> -->
+            </li>
             <li>
-                <a href="<?php echo URLROOT; ?>/users/register">
+                <a href="#">
                     <i class='bx bx-book'></i>
-                    <span class="links_name">Registration</span>
+                    <span class="links_name">Company portfolio</span>
                 </a>
             </li>
             <li>
-                <a href="<?php echo URLROOT; ?>/users/login">
-                    <i class='bx bx-log-in'></i>
-                    <span class="links_name">LogIn</span>
+                <a href="#">
+                    <i class='bx bx-user'></i>
+                    <span class="links_name">Profile</span>
                 </a>
             </li>
             
-           
+            <li class="log_out">
+                <a href="<?php echo URLROOT; ?>/users/logout">
+                    <i class='bx bx-log-out'></i>
+                    <span class="links_name">Log out</span>
+                </a>
+            </li>
         </ul>
     </div>
     <section class="home-section">
+        <nav
+        style="
+    width: 100%;
+    left: 0;
+">
             <div class="sidebar-button">
             <div class="logo-details">
             <img id="logoimg" src="<?php echo URLROOT; ?>/img/logo.png">

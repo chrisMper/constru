@@ -31,4 +31,52 @@
       $this->view('pages/about', $data);
     }
 
+    public function msg(){
+      $this->view('msg/msg');
+      // path is given
+    }
+    public function chat(){
+      $this->view('msg/chat');
+
+    }
+
+    public function projects(){
+      $this->view('myprojects/projects');
+    }
+
+    public function cart(){
+      $this->view('mycart/cart');
+    }
+
+    public function orders(){
+      $this->view('myorders/orders');
+    }
+
+    public function bookings(){
+      $this->view('mybookings/bookings');
+    }
+
+    public function stats(){
+      $this->view('stats/stats');
+    }
+
+    public function cv(){
+      $this->view('users/eng/cvdisplay');
+    }
+
+    public function profile(){
+      $this->view('profile/profile');
+    }
+
+    public function cusdash(){
+      $this->view('users/customer/cusdash');
+    }
+
+    public function search(){
+      $this->view('home/search');
+    }
+
+    public function searchgig(){
+      $this->view('home/searchgig');
+    }
   }

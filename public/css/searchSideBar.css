@@ -33,7 +33,7 @@ body{
     min-width: 240px;
     background: #ffffff;
     transition: all 0.5s ease;
-   
+    border:  1px solid rgb(255, 255, 255); /*meka hadannaaaa */
     box-shadow:  1px 1px 1px 1px rgba(0, 0, 0, 0.1);
     z-index: 10;
 }
@@ -113,8 +113,7 @@ body{
 .home-section {
     
     position: relative;
-    background:#fff;
-    ;
+    background: #ffffff;
     min-height: 100vh;
     width: 100%;
     left: 240px;
@@ -131,11 +130,11 @@ body{
 
     justify-content: space-between;
     height: 80px;
-    width: 100%;
     background: rgb(255, 255, 255);
     display: flex;
     align-items: center;
     position: fixed;
+    
     z-index: 100;
     padding: 0 20px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
@@ -392,4 +391,14 @@ nav .profile-details i {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     padding: 12px 16px;
     z-index: 1;
+}
+
+/* filter css */
+.filter{
+    margin-top: 30px;
+    padding:25px 25px 25px 25px;
+}
+.filter label{
+    font-size: 12px;
+    justify-content: center;
 }
