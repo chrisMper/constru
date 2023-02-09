@@ -56,13 +56,13 @@
           <li><a href="tender.html"><img src="../../../public/img/product_img/statistics.jpg" >My statistics</a></li>
           <li><a href="tender.html"><img src="../../../public/img/product_img/tender .png" >Tender listings</a></li>
           <li><a href="tender.html"><img src="../../../public/img/product_img/profileicon.png" >Profile</a></li>
-          <li><a href="tender.html"><img src="../../../public/img/product_img/calender.png" >Calender</a></li> 
+          <li class="active"><a href="myProjects_new.php"><img src="../../../public/img/product_img/calender.png" >My projects</a></li> 
         </ul>
       </div>
  
 
 <div class="main">
-
+ <div class="registerbox">
   <div class="topnav">
    <a class="active" href="myProjects_new.php">New</a>
    <a href="myProjects_ongoing.php">Ongoing</a>
@@ -85,7 +85,7 @@
                 <h3>Structured Analysis and Design</h3>
               </div>
               <div>
-                <button>Contact</button>
+                <!--<button>Contact</button>-->
                 <button onclick="document.getElementById('accept').style.display='block'; return false;" >Accept</button>
                 <button onclick="document.getElementById('reject').style.display='block'; return false;">Reject</button>
               </div>
@@ -164,10 +164,9 @@
           }
          }
       </script>
-
+     </div>
     </div>
    </div> 
   </div>
- 
 </body>
 </html>
