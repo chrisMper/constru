@@ -283,3 +283,7 @@ h5 {
 ::-webkit-scrollbar-thumb:hover {
   background: none;
 }
+button.download {
+  width:90px;
+  height:25px;
+}
