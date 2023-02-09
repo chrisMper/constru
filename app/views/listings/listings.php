@@ -20,6 +20,11 @@
 <div class = "list-container">
     <div class="left-mid">
     <div class = "left-col">
+    
+/*
+    <img src="<?php echo URLROOT; ?>/img/msg.png">
+*/
+
     <img src="<?php echo URLROOT; ?>/img/uploads/uploads<?php echo $listing->Photos; ?> ">
     </div> 
     <div class = 'mid-col'>
@@ -28,8 +33,27 @@
     </div>
 </div>
     <div class = 'right-col'>
+    <a href="<?php echo URLROOT; ?>/listings/showUpdateListing/<?php echo $listing->PostId; ?>">
+    <button type="button" class="updatebtn">Update</button><br>
+
+    </a>
+
+
+    <a href="<?php echo URLROOT; ?>/listings/deleteListing/<?php echo $listing->PostId; ?>">
+    <button type="button" class="deletebtn">Delete</button>
+    </a>
+
+    <a href="<?php echo URLROOT; ?>/analysis/displayAdd/<?php echo $listing->PostId; ?>">
+    <button type="button" class="addbtn">Veiw</button>
+    </a>
+    
+/*
     <button type="button" class="updatebtn">Update</button><br>
     <button type="button" class="deletebtn">Delete</button>
+    */
+   
+
+
     </div>
 </div>
 <?php endif; ?> 
