@@ -17,12 +17,11 @@ class Listing
     return $results;
   }
 
-
-
   public function addlisting($data, $file)
   {
     // Prepare Query
     $this->db->query('INSERT INTO listing (Title,Description,UserEmail,Photos) 
+
             VALUES (:title,:description,:Uemail,:PtName)');
 
     // Bind Values

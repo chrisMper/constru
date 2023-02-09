@@ -23,15 +23,14 @@
     
     <div class = "left-col">
     
+/*
     <img src="<?php echo URLROOT; ?>/img/msg.png">
+*/
+    <img src="<?php echo URLROOT; ?>/img/uploads/uploads<?php echo $listing->Photos; ?> ">
     </div> 
     <div class = 'mid-col'>
         <p class='topic'><?php echo $listing->Title; ?> <p>
         <p class='decription'><?php echo $listing->Description; ?><p>
-       
-        
-        
-
     </div>
     
 </div>
@@ -51,6 +50,10 @@
     <button type="button" class="addbtn">Veiw</button>
     </a>
     
+/*
+    <button type="button" class="updatebtn">Update</button><br>
+    <button type="button" class="deletebtn">Delete</button>
+    */
    
 
     </div>

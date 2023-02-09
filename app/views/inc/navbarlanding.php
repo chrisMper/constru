@@ -63,7 +63,10 @@
                 </a>
             </li> -->
             <li>
+/*
                 <a href="<?php echo URLROOT; ?>/users/engnieerRegister">
+*/
+                <a href="<?php echo URLROOT; ?>/users/register">
                     <i class='bx bx-book'></i>
                     <span class="links_name">Registration</span>
                 </a>
