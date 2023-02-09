@@ -10,17 +10,7 @@
 
 <body>
 
-  <div class="navbar">
-    <div class="navlogo">
-      <img src="logo.png">
-    </div>
-    <div class="navright">
-
-      <a href="profile.html" target="supplierDashboard"> <img src="profileicon.png"></a>
-      <a href="cart.html" target="supplierDashboard"> <img src="cart.png"></a>
-
-    </div>
-    <div class="navbar">
+   <div class="navbar">
       <div class="navlogo">
         <img src="../../../public/img/product_img/logo.png" >
       </div>
@@ -66,19 +56,19 @@
           <li><a href="tender.html"><img src="../../../public/img/product_img/statistics.jpg" >My statistics</a></li>
           <li><a href="tender.html"><img src="../../../public/img/product_img/tender .png" >Tender listings</a></li>
           <li><a href="tender.html"><img src="../../../public/img/product_img/profileicon.png" >Profile</a></li>
-          <li><a href="tender.html"><img src="../../../public/img/product_img/calender.png" >Calender</a></li> 
+          <li class="active"><a href="tender.html"><img src="../../../public/img/product_img/calender.png" >My Projects</a></li> 
         </ul>
       </div>
  
 
     <div class="main">
-
+     <div class="registerbox">
       <div class="topnav">
         <a href="myProjects_new.php">New</a>
         <a class="active" href="myProjects_ongoing.php">Ongoing</a>
         <a href="myProjects_completed.php">Completed</a>
         <a href="myProjects_cancelled.php">Cancelled</a>
-    </div>
+      </div>
     
    
     
@@ -108,6 +98,8 @@
                 </div>
               </div>
               <script>
+
+
                const progress = document.querySelector("#progress");
                const circles = document.querySelectorAll(".circle");
                const popup = document.querySelector("#popup");
@@ -261,6 +253,7 @@
 
      </div>
     </div> 
+  </div>
   </div>
  
 </body>
