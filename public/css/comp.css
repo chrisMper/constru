@@ -212,8 +212,6 @@ input {
   transform: scale(1.1);
 }
 
-
-
 /*-------------------------------Stat page----------------------------------------*/
 .stat-container {
   margin-top: 20px;
@@ -511,4 +509,21 @@ margin: 5px 0;
   position: absolute;
   left: 10%;
   top: 0;
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+a:visited {
+  color: #000;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:link {
+  color: #000;
+  background-color: transparent;
+  text-decoration: none;
+
 }

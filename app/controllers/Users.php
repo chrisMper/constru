@@ -281,10 +281,8 @@ class Users extends Controller
 /*
         // Make sure errors are empty
         if(empty($data['email_err']) && empty($data['password_err'])){
-
           // Check and set logged in user
           $loggedInUser = $this->userModel->login($data['email'], $data['password']);
-
           if($loggedInUser){
             // User Authenticated!
             $this->createUserSession($data['email'],$data['password']);
@@ -329,7 +327,6 @@ class Users extends Controller
 */
     }
   }
-
 
   // Create Session With User Info
   public function createUserSession($email, $name)
@@ -502,10 +499,7 @@ class Users extends Controller
       $data=[
         
       ];
-      $this->view('users/dashboard',$data);
-
-
-
+      $this->view('users/eng/dashboard',$data);
     }
   }
 
