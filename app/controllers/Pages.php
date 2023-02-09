@@ -75,4 +75,8 @@
     public function search(){
       $this->view('home/search');
     }
+
+    public function searchgig(){
+      $this->view('home/searchgig');
+    }
   }

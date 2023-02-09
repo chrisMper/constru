@@ -15,7 +15,6 @@
 
 <div class="wrapper">
    <section class = "users">
-   <a href="<?php echo URLROOT; ?>/pages/chat">aaaaaaaa</a>
     <header>
       <div class="content">
         <img src="#" alt="human">
@@ -32,7 +31,7 @@
       <button><i class="fas fa-search"></i></button>  
     </div>
     <div class="users-list">
-      <a href="#">
+    <a href="<?php echo URLROOT; ?>/pages/chat">
         <div class="content">
           <img src="#" alt="human2">
           <div class="details">
