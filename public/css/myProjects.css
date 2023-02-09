@@ -90,7 +90,7 @@
     display: block;
     position: absolute;
     margin-left: -20px;
-    margin-top: 10px;
+    margin-top: 0px;
   }
   .navcenter ul li:hover .servicemenu ul {
     display: block;
@@ -102,22 +102,27 @@
     display: flex;
     overflow: hidden;
     height: calc(100vh - 64px);
+    width: 250px;
     margin-top: 64px;
   }
   
   .sidebar {
     display: flex;
     align-items: left;
-    width: 250px;
+    width: 100%;
+    background-color:lightslategrey;
   }
   
-  .table-container .main,
-  .table-container .addform,
-  .table-container .card {
-    width: calc(100vw - 250px) !important;
-    height: calc(100vh - 64px);
+  .main{
+    width: calc(100% - 250px) !important;
+    height: calc(100% - 64px);
     overflow-y: auto;
+    position: absolute;
+    left: 270px;
+    top: 64px;
+    overflow-y: hidden;
   }
+
   
   .sidebar img {
     width: 25px;
@@ -146,7 +151,22 @@
     background: #adadeb;
     border-radius: 4px;
   }
-  
+  .sidebar li.active {
+    background-color:cadetblue;
+    border-radius: 4px;
+  }
+  .registerbox{
+    left: 50px;
+    top: 0px;
+    width:90%;
+    height: 100%;
+    position:absolute;
+    padding-left: 50px;
+    z-index: 1;
+    overflow-y: auto;
+    padding-bottom: 100px;
+}
+
   .card {
     display: flex;
     position: relative;
@@ -401,52 +421,12 @@ button a{
     margin: 10px;
 }
 
-
-
-/*.popUp_review{
-    border: 5px solid rgba(240, 94, 34, 0.8);
-    background-color: rgba(255, 255, 255, 1);
-    top: 20%;
-    left:20%;
-    width: auto;
-    height: auto;
-    overflow: auto;
-    position: relative;
-    border-radius: 20px;
-    display: none;
-    z-index: 10;
-    padding-left: 20px;
-}*/
-
 :root {
   --line-border-color: rgba(43, 161, 55, 1);
   --disabled-line-border: #d1d2d4;
   --button-active-color: #830a48;
   --text-color: black;
 }
-
-/* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 62.5%;
-  overflow: hidden;
-}
-
-body {
-  align-items: center;
-  background-color: #eaeaea;
-  display: flex;
-  font-family: "darker grotesque", sans-serif;
-  font-size: 1.8rem;
-  font-weight: 400;
-  justify-content: center;
-  min-height: 100vh;
-  overflow: hidden;
-}*/
 
 
 .content {
@@ -459,7 +439,7 @@ body {
     margin: 2rem;
     max-width: 100vw;
     position: relative;
-    width: 26rem;
+    width: 23rem;
 }
 
 .progress-container::before {
