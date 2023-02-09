@@ -56,13 +56,13 @@
           <li><a href="tender.html"><img src="../../../public/img/product_img/statistics.jpg" >My statistics</a></li>
           <li><a href="tender.html"><img src="../../../public/img/product_img/tender .png" >Tender listings</a></li>
           <li><a href="tender.html"><img src="../../../public/img/product_img/profileicon.png" >Profile</a></li>
-          <li><a href="tender.html"><img src="../../../public/img/product_img/calender.png" >Calender</a></li> 
+          <li class="active"><a href="myProjects_new,php"><img src="../../../public/img/product_img/calender.png" >My Projects</a></li> 
         </ul>
       </div>
  
 
     <div class="main">
-
+    <div class="registerbox">
       <div class="topnav">
         <a href="myProjects_new.php">New</a>
         <a href="myProjects_ongoing.php">Ongoing</a>
@@ -135,14 +135,14 @@
                   <td><h5>Client review</h5></td>
                   <td>nark gnqkgne rnbedreo kfjgorgj mlvnvv vkee ns sdvw dvwseve</td>
                 </tr>
-                <tr>
+               <!-- <tr>
                   <td><h5>Rate service provider</h5></td>
                 </tr>
                 <tr>
                   <td><div><h5>Punctuality</h5></div></td>
                   <td><div><h5>Service completion</h5></div></td>
                   <td><div><h5>Friendliness</h5></div></td>
-                </tr>
+                </tr>-->
 
               </table>
            </form>
@@ -162,7 +162,7 @@
          }
         </script>
 
-        
+    </div>
     </div> 
   </div>
  
