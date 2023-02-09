@@ -56,7 +56,7 @@
           <li><a href="tender.html"><img src="../../../public/img/product_img/statistics.jpg" >My statistics</a></li>
           <li><a href="tender.html"><img src="../../../public/img/product_img/tender .png" >Tender listings</a></li>
           <li><a href="tender.html"><img src="../../../public/img/product_img/profileicon.png" >Profile</a></li>
-          <li class="active"><a href="tender.html"><img src="../../../public/img/product_img/calender.png" >My Projects</a></li> 
+          <li class="active"><a href="myProjects_new.php"><img src="../../../public/img/product_img/calender.png" >My Projects</a></li> 
         </ul>
       </div>
  
