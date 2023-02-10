@@ -11,4 +11,3 @@
   define('URLROOT', 'http://localhost/Constru');
   // Site Name
   define('SITENAME', 'Constru +');
-  
