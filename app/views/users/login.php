@@ -15,7 +15,7 @@
 			<div class="inputBox">
 				
 					<input type="text" name="email" required="required">
-					<span>User Name</span> 
+					<span>Email</span> 
 					<i></i>
 					
 			</div>

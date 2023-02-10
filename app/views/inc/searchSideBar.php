@@ -6,11 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/comp.css">
-  <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/Statstyle.css">
   <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/navbar.css">
   <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/xmsg.css">
   <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
   <title><?php echo SITENAME; ?></title>
 </head>
 <body> 
@@ -24,7 +22,7 @@
                 </a>
             </li>
             <li>
-            <a href="<?php echo URLROOT; ?>/users/dashboard">
+                <a href="#">
                     <i class='bx bx-grid'></i>
                     <span class="links_name">Dashboard</span>
                 </a>
@@ -60,7 +58,7 @@
                 </a>
             </li>
             <li>
-            <a href="<?php echo URLROOT; ?>/listings/stats">
+                <a href="#">
                     <i class='bx bx-bar-chart'></i>
                     <span class="links_name">My Statistics</span>
                 </a>
@@ -72,7 +70,7 @@
                 </a>
             </li>
             <li>
-                <a href="<?php echo URLROOT; ?>/users/profile">
+                <a href="#">
                     <i class='bx bx-user'></i>
                     <span class="links_name">Profile</span>
                 </a>

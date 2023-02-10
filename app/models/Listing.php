@@ -62,9 +62,6 @@ class Listing
     // Prepare Query
     $this->db->query('UPDATE listing  SET Title=:title ,Description= :description ,Photos = :PtName  WHERE PostId=:id');
 
-
-
-
     // Bind Values
 
     $this->db->bind(':title', $data['Title']);
@@ -80,6 +77,7 @@ class Listing
       return true;
     } else {
       return false;
+
     }
   }
 
