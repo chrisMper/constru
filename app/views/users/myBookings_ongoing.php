@@ -52,7 +52,7 @@
           <li><a href="construction.html"><img src="../../../public/img/product_img/listings.png" >Listings</a></li>
           <li><a href="hardware.html"><img src="../../../public/img/product_img/cart.png" >My cart</a></li>
           <li><a href="tender.html"><img src="../../../public/img/product_img/myorder.jpg" >My orders</a></li>
-          <li><a href="myBookings_ongoing.php"><img src="../../../public/img/product_img/booking-icon.jpg" >My bookings</a></li>
+          <li class="active"><a href="myBookings_ongoing.php"><img src="../../../public/img/product_img/booking-icon.jpg" >My bookings</a></li>
           <li><a href="tender.html"><img src="../../../public/img/product_img/statistics.jpg" >My statistics</a></li>
           <li><a href="tender.html"><img src="../../../public/img/product_img/tender .png" >Tender listings</a></li>
           <li><a href="tender.html"><img src="../../../public/img/product_img/profileicon.png" >Profile</a></li>
@@ -62,9 +62,9 @@
  
 
 <div class="main">
-
+ <div class="registerbox">
   <div class="topnav">
-   <a href="myBookings_new.php">New</a>
+  <!-- <a href="myBookings_new.php">New</a>-->
    <a class="active" href="myBookings_ongoing.php">Ongoing</a>
    <a href="myBookings_completed.php">Completed</a>
    <a href="myBookings_cancelled.php">Cancelled</a>
