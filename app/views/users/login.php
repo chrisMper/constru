@@ -1,62 +1,50 @@
-<?php
-	session_start();
-	include("connection.php");
-	
-	if (isset($_POST['submit'])){
-    
-		$username = $_POST['username'];
-		$password = $_POST['password'];
-	
-		if(empty($username) || empty($password)){
-			echo 'Please fill the required fields';
-		}
-		else{
-			$query = "SELECT * from supplier where username='$username'";
-			$result = mysqli_query($con,$query);
-	
-			if($row = mysqli_fetch_assoc($result)){
-	
-				$pass = $row['password'];
-	
-				if($password === $pass){
-					
-					header("location:supplierDashboard.php");
-				}
-				else{
-					echo "<script>window.alert('Incorrect Password');</script>";
-				}
-			}
-			else{
-				echo "<script>window.alert('Incorrect username');</script>";
-			}
-		  
-		}
-	}
-?>
-<html>
+<?php include APPROOT . '/views/inc/loginheader.php'; ?>
+<div class="split left">
+  <div class="loginimg">
+		<img src="<?php echo URLROOT; ?>/img/login.gif"><!--source: https://pin.it/1ywerW9-->  
+      </div>
+</div>
 
-<head>
-	<title>login</title>
-        <link rel="stylesheet" type="text/css" href="../../../public/css/login.css">
-</head>
-
-<body>
-<form method="post">
-	<div class="logo"><img src="../../../public/img/product_img/logo.png" align="left"></div>
+<div class="split right">
+  <div class="loginbox">
 	<div class="box">
-		<div><input class="placeholder" type="text" name="username" placeholder="Username"></div>
-		<div><input class="placeholder1" type="password" name="password" placeholder="Password"></div>
-		<div><input type="submit" class="button1" value="login" name="submit"></div>
+		<div class="form">
+		<!-- <span><?php print_r($data) ?></span> -->
+			<h1>Login</h1>
+			<form action="<?php echo URLROOT; ?>/users/login" method="POST">
+			<div class="inputBox">
+				
+					<input type="text" name="email" required="required">
+					<span>Email</span> 
+					<i></i>
+					
+			</div>
+			<div class="error">
+                    <span><?php echo $data['email_err']; ?></span>
+                </div>
+			
+			<div class="inputBox">
+				
+					<input type="password" name="password" required="required">
+					<span>Password</span> 
+					<i></i>
+			
+				
+			</div>
 
-		<div class="div3">
-			<font class="rem"><a href="supplierRegister.php" >Not yet signed?</a></font>
+			<div class="error">
+                    <span><?php echo $data['password_err']; ?></span>
+                </div>
 
-			<font class="forgot"><a href="" >Forgot Password</a></font>
-        </div>
 
-	</div>
-</form>
-
-</body>
-
-</html>
+			<div class= "links">
+				<a href="#">Forgot Password</a>
+				<a href="<?php echo URLROOT; ?>/users/register">Signup</a>
+			</div>
+				<input type="submit" name="submit" value="Login">
+			</form>
+			</div>	
+		</div>
+  </div>
+</div>
+<?php require APPROOT . '/views/inc/footer.php'; ?>

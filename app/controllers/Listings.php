@@ -5,8 +5,7 @@ use function PHPSTORM_META\elementType;
 class Listings extends Controller{
     public function __construct(){
         if(!isset($_SESSION['user_email'])){
-          // redirect('users/login');
-          $this->view("users/login");
+          redirect('users/login');
         }
 
         $this->listingModel=$this->model('Listing');
@@ -41,7 +40,7 @@ class Listings extends Controller{
           $data = [
             'Title' => trim($_POST['title']),
             'Discription' => trim($_POST['description']),
-            'comp_email'=>$_SESSION['user_email'],
+            'UserEmail'=>$_SESSION['user_email'],
             'Title_err' => '',
             'Discription_err' => ''
           ];

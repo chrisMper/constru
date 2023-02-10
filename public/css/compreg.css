@@ -19,12 +19,13 @@ body
 }
 .box
 {
+
 	position: relative;
 	width: 500px;
 	height: 610px;
 	background: #151CB9;
 	border-radius: 8px;
-	margin-top: -100px;
+	margin-top: 50px;
 	overflow: hidden;
 	padding:10px;
 
@@ -54,10 +55,6 @@ body
 	animation: animate 6s linear infinite;
 	animation-delay: -3s;
 } 
-
-.split{
-	margin-top: 50px;
-}
 @keyframes animate
 {
 	0%

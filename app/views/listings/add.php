@@ -29,7 +29,7 @@
 		<script src="<?php echo URLROOT; ?>/js/compadd.js"></script>
 
 
-		<script src="<?php echo URLROOT; ?>/js/main.js"></script>
+		
 <main>
 </body>
 

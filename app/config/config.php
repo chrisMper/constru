@@ -1,13 +1,14 @@
 <?php
   // DB Params
-  define('DB_HOST', 'localhost');
-  define('DB_USER', 'root');
-  define('DB_PASS', '');
-  define('DB_NAME', 'construplus');
+  define("DB_HOST", "localhost");
+  define("DB_USER", "root");
+  define("DB_PASS", "");
+  define("DB_NAME", "construplus");
 
   // App Root
   define('APPROOT', dirname(dirname(__FILE__)));
   // URL Root
-  define('URLROOT', 'http://localhost/construplus');
+  define('URLROOT', 'http://localhost/Constru');
   // Site Name
-  define('SITENAME', 'Construplus');
+  define('SITENAME', 'Constru +');
+  
