@@ -39,7 +39,8 @@
     <div class="container">
         <h1>Constru Plus<span><a href="<?php echo URLROOT; ?>/pages/search">Shop With Us</a></span></h1>
         <p>
-            When you donate to the "DonateUs", 100% of your donation goes towards funding projects that change people’s lives.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
+            molestias commodi dolor necessitatibus nisi nesciunt velit.
         </p>
         <button><a href="<?php echo URLROOT; ?>/users/register">Register as a Customer</a></button>
     </div>

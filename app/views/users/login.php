@@ -39,10 +39,7 @@
 
 			<div class= "links">
 				<a href="#">Forgot Password</a>
-				<a href="<?php echo URLROOT; ?>/users/engnieerRegister">Signup</a>
-/*
 				<a href="<?php echo URLROOT; ?>/users/register">Signup</a>
-*/
 			</div>
 				<input type="submit" name="submit" value="Login">
 			</form>

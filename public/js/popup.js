@@ -1,16 +1,35 @@
-function createPopup(id){
-    let popupNode = document.querySelector(id);
-    let overlay= popupNode.querySelector(".overlay");
-    let closebtn = popupNode.querySelector(".close-btn");
-    function openPopup(){
-        popupNode.classList.add("active");
-    }
-    function closePopup(){
-        popupNode.classlist.remove("active");
-    }
-    overlay.addEventListener("click", closePopup);
-    closebtn.addEventListener("click", closePopup);
-    return openPopup;
+const add_form = document.getElementById("add-form"),
+blur = document.getElementById("blur_bg");
+//form = document.getElementById(".add");
+
+const closeBtn = document.querySelector(".close"),
+addBtn = document.querySelector(".add-btn");
+
+
+
+
+addBtn.onclick=()=>{
+    show_form();
 }
-let popup = createPopup("#popup");
-document.querySelector("open-popup").addEventListener("click",popup);
+
+closeBtn.onclick=()=>{
+    hide_form();
+    form.reset();
+    errorText.style.display ="none";
+    
+}
+
+
+function show_form(){
+    add_form.style.opacity ='1';
+    add_form.style.zIndex = '2';
+    blur.style.opacity ='1';
+    blur.style.zIndex = '1';
+}
+
+function hide_form(){
+    add_form.style.opacity ='-1';
+    add_form.style.zIndex = '-1';
+    blur.style.opacity ='-1';
+    blur.style.zIndex = '-1';  
+}

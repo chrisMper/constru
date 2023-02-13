@@ -473,6 +473,10 @@ nav .profile-details i {
     border-radius: 0px;
     border-width: 2px;
     margin: 20px auto;
+    /*box border shadow*/
+    border-radius: 20px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
 
   }
   .left-mid{
@@ -684,6 +688,7 @@ a:link {
     width: 700px;
     padding: 10px;
     border-radius: 50px;
+    margin-bottom: 20px;
 }
 .review_section{
     border-bottom:1px solid #000;
@@ -692,87 +697,82 @@ a:link {
 }
 .person_review_text{
     font-size: x-small;
+    margin-bottom: 20px;
 }
 
-/* css of popup */
-.center{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%)
-}
-.popup{
-    position:fixed;
-    top:100vh;
-    left:0px;
-    width:100%;
-    height:100%;
-    transition:top 0ms ease-in-out 300ms;
+/* css of popup - Add Form */
 
-}
-.popup .overlay{
-    position:absolute;
-    top:0px;
-    left:0px;
-    width:100%;
-    height:100%;
-    background:rgbd(0,0,0,0.5);
-    opacity:0;
-    transition:opacity 100ms ease-in-out 200ms;
-}
-.popup .popup-content{
+.add-form {
+    margin-top: 200px;
+    width: 700px;
+    padding: 2%;
+    z-index: -1;
     position: absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%) scale(1.15);
-    width:95%;
-    max-width:350px;
-    background:#fff;
-    padding:25px;
-    border-radius:20px;
-    opacity:0;
-    box-shadow:0px 2px 2px 5px rgba(0,0,0,0.5);
-    transition:all 300ms ease-in-out;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    border: 1px solid ;
+    opacity: 0;
+    transition:all 0.5s ease-in-out;
 }
-.popup .popup-content h2{
-    margin:10px 0px;
-    font-size:25px;
-    color:#111;
-    text-align:center;
+.add-form span:nth-child(1){
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    justify-content: space-between;
 }
-.popup .popup-content p{
-    margin:15px 0px;
-    color:#222;
-    font-size:16px;
-    text-align:center;
+.add-form label {
+    font-size: 20px;
+    font-weight: 600;
 }
-.popup .popup-contnent .controls{
-    display:flex;
-    justify-content:space-between;
-    margin:20px 0px 0px;
+.add-form i{
+    font-size: 25px;
 }
-.popup .popup-content .controls button{
-    padding: 10px 20px;
-    border:none;
-    outline:none;
-    font-size:15px;
-    border-radius:20px;
-    cursor:pointer;
+.add-form form .info-box{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2%;
 }
-.popup .popup-content .controls .closebtn{
-    background:transparent;
-    color:#3284ed;
+
+.add-form .info-box .box{
+    display: flex;
+    flex-direction: row;
+    padding: 2%;
 }
-.popup .popup-content .controls .submit-btn{
-    background:#3284ed;
-    color:#fff;
+
+    
+.add-form .info-box .box span{
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 10px;
+    
 }
-.popup.active .overlay{
-    opacity:1;
-    transition:all 300ms ease-in-out;
-} 
-.popup.active .popup-content{
-    transform:translate(-50%,-50%) scale(1);
-    opacity:1;
+.add-form .info-box .box input{
+    padding: 0.5rem;
+    width: 70%;
+    border-radius: 5px;
+    border: 1px solid var(--mainColor);
+
+    
 }
- 
+.add-form .add-btn{
+    padding: 2%;
+    margin-top: 2%;
+
+}
+.blur_bg{
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 89.5vh;
+    background-color: rgba(0,0,0, 0.4);
+    z-index: -1;
+    backdrop-filter: blur(2px);
+    opacity: 0;
+    transition:all 0.5s ease-in-out;
+}
+
+/*css of popup add form ends here*/
+
+
