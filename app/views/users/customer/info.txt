@@ -1,6 +1,0 @@
-Customer dashboard has,
-1. Messages
-2. My cart
-3. My orders
-4. Profile
-5. My Bookings
