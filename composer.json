@@ -1,0 +1,17 @@
+{
+    "name": "chris/construplus",
+    "autoload": {
+        "psr-4": {
+            "Chris\\Construplus\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Chris Perera",
+            "email": "chrisperera1999@gmail.com"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.7"
+    }
+}
