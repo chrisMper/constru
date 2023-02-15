@@ -75,6 +75,7 @@
     public function cv(){
       $this->view('users/eng/cv/cvdisplay');
     }
+    
 
     public function profile(){
       $this->view('profile/profile');
@@ -94,6 +95,9 @@
     public function viewcv(){
       $this->view('home/viewcv');
     }
+    public function viewportfolio(){
+      $this->view('home/viewportfolio');
+    }
 
     /*functions of comp starts here*/
     public function compdash(){
@@ -111,7 +115,10 @@
     public function compmyprojects_ongoing(){
       $this->view('users/comp/myprojects/compmyprojects_new');
     }
-
-
     /*functions of comp ends here*/
+    // functions of home start here
+    public function viewportfolio(){
+      $this->view('users/comp/myprojects/compmyprojects_new');
+    }
+    
   }

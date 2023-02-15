@@ -14,7 +14,7 @@
                     </div>
                 </div>
                 <div class='mid-col'>
-                    <p class='topic'>Structured analysis and Design</p>
+                    <p class='topic'>SERVICE OF A CONSTRUCTION COMPANY</p>
                     <p class='decription'>This is the description.</p>
                     <div class="serviceProvider">
                         <img src="<?php echo URLROOT; ?>/img/mycart.png">
@@ -90,7 +90,7 @@
                 <span>Description of the service is added here. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </span>
             </div>
             <div class="button-box">
-                <a href="<?php echo URLROOT; ?>/pages/viewcv"><button type="submit" class="viewDetailsBtn btn-1">View Cv</a>
+                <a href="<?php echo URLROOT; ?>/pages/viewcv"><button type="submit" class="viewDetailsBtn btn-1">vIEW PORTFOLIO</a>
                 <a href="<?php echo URLROOT; ?>/pages/chat"><button type="submit" class="viewDetailsBtn btn-2" >Contact</a>
                 <a href="#"><button type="submit" class="viewDetailsBtn add-btn">Book Service</a>
             </div>

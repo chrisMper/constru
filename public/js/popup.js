@@ -10,6 +10,7 @@ addBtn = document.querySelector(".add-btn");
 
 addBtn.onclick=()=>{
     show_form();
+    
 }
 
 closeBtn.onclick=()=>{
@@ -25,11 +26,13 @@ function show_form(){
     add_form.style.zIndex = '2';
     blur.style.opacity ='1';
     blur.style.zIndex = '1';
+    document.body.style.overflow = "hidden";
 }
 
 function hide_form(){
     add_form.style.opacity ='-1';
     add_form.style.zIndex = '-1';
     blur.style.opacity ='-1';
-    blur.style.zIndex = '-1';  
+    blur.style.zIndex = '-1';
+    document.body.style.overflow = "auto";  
 }

@@ -489,7 +489,7 @@ nav .profile-details i {
   
   /*views and stars*/
   .total_reviews{
-    margin-top: 20px;
+    margin-top: 100px;
   }
   .rating span{
     font-size: 10px;
@@ -571,7 +571,7 @@ a:link {
   }
   .display-images-1 img{
     width: 100%;
-    height: 500px;
+    height: 400px;
   }
   .display-images-1{
     width: 100%;
@@ -602,12 +602,13 @@ a:link {
     width: 70%;
   }
   .image-column{
-    flex-basis: 70% ;
+    flex-basis: 60% ;
+    height: 500px;
   }
   .description-column{
     display: flex;
     flex-direction: column;
-    flex-basis: 30%;
+    flex-basis: 40%;
     width: 100%;
   }
   .text-box{
@@ -703,16 +704,19 @@ a:link {
 /* css of popup - Add Form */
 
 .add-form {
-    margin-top: 200px;
     width: 700px;
     padding: 2%;
     z-index: -1;
-    position: absolute;
+    margin: 175px;
+    position:absolute;
     background-color: #f2f2f2;
     border-radius: 10px;
-    border: 1px solid ;
+    border: 3px solid #F05E22;
     opacity: 0;
     transition:all 0.5s ease-in-out;
+    width: 700px;
+    height: 400px;
+    text-align: center;
 }
 .add-form span:nth-child(1){
     display: flex;
@@ -758,21 +762,30 @@ a:link {
 }
 .add-form .add-btn{
     padding: 2%;
-    margin-top: 2%;
-
+    margin-top: 100px;
+    font-size: 16px;
+    padding: 5px;
+    width: 400px;
+    height: 50px;
+    margin-top: 200px;
+    background-color: rgba(21, 28, 185, 0.81);
+    border: 0px;
+    color: #fff;
+    border-radius: 40px;
 }
 .blur_bg{
-    position: absolute;
+    position:absolute;
+    margin-top:75px;
     left: 0px;
     width: 100%;
-    height: 89.5vh;
+    height: 100%;
     background-color: rgba(0,0,0, 0.4);
     z-index: -1;
     backdrop-filter: blur(2px);
     opacity: 0;
     transition:all 0.5s ease-in-out;
 }
-
 /*css of popup add form ends here*/
 
+/*css for viewportfolio*/
 
