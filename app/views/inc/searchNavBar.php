@@ -9,6 +9,7 @@
      <!-- <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/comp.css"> -->
      <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/search.css">
      <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/cv.css">
+     <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/portfolio.css">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
      <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
      <title><?php echo SITENAME; ?></title>

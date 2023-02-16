@@ -126,6 +126,7 @@
       <div class="column">3</div>
     </div>
     <a href="<?php echo URLROOT; ?>/pages/searchgigcomp"><button type="submit" class="viewDetailsBtn">View Service Details</a>
+   
   </div>
 </div>
 
