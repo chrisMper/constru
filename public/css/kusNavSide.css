@@ -1,9 +1,12 @@
+@charset "ISO-8859-1";
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    overflow-x:hidden;
 }
 
 .sidebar {
@@ -84,11 +87,10 @@
     bottom: 0;
     width: 100%;
 }
-
+/* ------------------------------------------------- */
 .home-section {
     position: relative;
     background: #f5f5f5;
-    min-height: 100vh;
     width: calc(100% - 240px);
     left: 240px;
     transition: all 0.5s ease;
@@ -109,7 +111,7 @@
     position: fixed;
     width: calc(100% - 240px);
     left: 240px;
-    /* z-index: 100; */
+    z-index: 100;
     padding: 0 20px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
     transition: all 0.5s ease;
