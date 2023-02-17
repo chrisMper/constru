@@ -10,8 +10,8 @@
     <!--navigation bar left-->
     <div class="sidebar">
         <div class="logo-details">
-            <i class='bx bxl-c-plus-plus'></i>
-            <span class="logo_name">CodingLab</span>
+            <img class="navlogo" src="<?php echo URLROOT; ?>/img/logo.png">
+            <!-- <span class="logo_name">Constru+</span> -->
         </div>
         <ul class="nav-links">
             <li>
