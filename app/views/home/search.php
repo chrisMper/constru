@@ -1,5 +1,5 @@
 <!------------------------------ navbar ------------------------------------>
-<?php include APPROOT . '/views/inc/kusNavSide.php'; ?>
+<?php include APPROOT . '/views/inc/kusSearchNavSide.php'; ?>
 <!-- -----------------------------list-container------------------------------- -->
 <div class="searchbody">
   <div class="searchContainer">
