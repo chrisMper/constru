@@ -121,5 +121,7 @@
     /*functions of comp ends here*/
     // functions of home start here
     
-    
+    public function compRegister(){
+      $this->view('Pages/compRegister');
+    }
   }

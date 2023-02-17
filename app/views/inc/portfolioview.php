@@ -1,11 +1,4 @@
-<!-- css of searchgig is on search.css -->
-
-<!------------------------------ navbar ------------------------------------>
-<?php include APPROOT . '/views/inc/searchNavBar.php'; ?>
-<!-- -----------------------------list-container------------------------------- -->
-
-<body>
-    <div class="portfolioMain">
+<div class="portfolioMain">
         <div class="topBox">
             <div>
                 <img src="<?php echo URLROOT; ?>/img/mycart.png">
@@ -84,5 +77,3 @@
             </div>
         </div>
     </div>
-    
-</div>

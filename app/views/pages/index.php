@@ -42,7 +42,7 @@
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
             molestias commodi dolor necessitatibus nisi nesciunt velit.
         </p>
-        <button><a href="<?php echo URLROOT; ?>/users/register">Register as a Customer</a></button>
+        <button><a href="<?php echo URLROOT; ?>/Pages/compRegister">Register as a Customer</a></button>
     </div>
 </div>
 <!--homeSection ends here -->
@@ -58,7 +58,7 @@
         </p>
         <div class="cards">
             <div class="donationBox">
-                <div class="title">Become a Service Provider</div>
+                <div class="title">Register as a Engineer</div>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Temporibus, vitae quidem. Laudantium, animi cum saepe hic id in?
@@ -70,19 +70,19 @@
             <!--donation box ends here-->
 
             <div class="beneficiaryBox">
-                <div class="title">Become a Supplier</div>
+                <div class="title">Register As a Construction Company</div>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
                     officiis nemo quod sed mollitia maxime aliquam dolore voluptas.
                     Dolor commodi voluptates aliquid, earum minima accusantium eos
                     aspernatur ullam aperiam tempora.
                 </p>
-                <button><a href="<?php echo URLROOT; ?>/users/register">Register Now</a></button>
+                <button><a href="<?php echo URLROOT; ?>/users/compregister">Register Now</a></button>
             </div>
             <!--donation box ends here-->
 
             <div class="eventHosterBox">
-                <div class="title">Register as a Customer</div>
+                <div class="title">Register as a Supplier</div>
                 <p>
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga
                     neque expedita itaque alias aliquid cum qui voluptatem tenetur?
@@ -97,7 +97,7 @@
 </section>
 <!--about section ends here-->
 
-<!-- <section class="donorsContainer cover" id="donorsSection">
+ <section class="donorsContainer cover" id="donorsSection">
     <div class="container">
         <h1>Together you can <span>Help Them</span></h1>
         <p>
@@ -106,7 +106,7 @@
             nihil consectetur dicta explicabo voluptas soluta eveniet eos eaque,
             vitae cumque?
         </p>
-        <button><a href="http://localhost/Donate_Us/users/register">Start with a little</a></button>
+        <button><a href="http://localhost/constru/users/cusregister">Register as a Customer</a></button>
     </div>
 </section>
 <!--donors section ends here-->
