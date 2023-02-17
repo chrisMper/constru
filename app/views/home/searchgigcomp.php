@@ -1,7 +1,7 @@
 <!-- css of searchgig is on search.css -->
 
 <!------------------------------ navbar ------------------------------------>
-<?php include APPROOT . '/views/inc/searchNavBar.php'; ?>
+<?php include APPROOT . '/views/inc/kusSearchNavSide.php'; ?>
 <!-- -----------------------------list-container------------------------------- -->
 <div class="main-container">
     <div class="searchgig-list-container">

@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+ <html lang="en">
 <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/kusSearchNavSide.css" />
 <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/search.css">
 <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/cv.css">
