@@ -3,6 +3,14 @@
 *::after {
   box-sizing: border-box;
 }
+body{
+  background-image: url("../img/regback.png");
+}
+img{
+  height: 550px;
+  width: 550px;
+  margin: 100px 0 0 50px;
+}
 
 /* Global Stylings */
 label {
@@ -88,11 +96,11 @@ input {
 /* Form */
 .form {
   width: clamp(520px, 30%, 730px);
-  margin-left: 60%;
   border: 1px solid #151CB9; 
   border-radius: 0.35rem;
-  padding: 1.5rem;
-  height: 670px;
+  padding: 50px;
+  height: 800px;
+  margin: 100px 0px 0px 100px;
 }
 
 .form-step {
@@ -129,6 +137,7 @@ input {
 
 .btn {
   padding: 0.75rem;
+  margin: 20px;
   display: block;
   text-decoration: none;
   background-color: #2BA137;
@@ -141,4 +150,8 @@ input {
 }
 .btn:hover {
   box-shadow: 0 0 0 2px #fff, 0 0 0 3px #2BA137;
+}
+
+.split{
+  overflow: auto;
 }

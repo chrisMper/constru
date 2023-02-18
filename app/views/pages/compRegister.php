@@ -1,9 +1,17 @@
 <!------------------------------ navbar ------------------------------------>
-<?php include APPROOT . '/views/inc/compregheader.php'; ?>
+
+<?php include APPROOT . '/views/inc/regLogNav.php'; ?>
 <!-- -----------------------------list-container------------------------------- -->
 
-<body>
-    <div class="left"></div>
+
+
+<div class="split left" style="overflow:hidden">
+    <div class="regimg">
+        <img src="<?php echo URLROOT; ?>/img/reggif2.gif"><!--source: https://pin.it/1ywerW9-->
+    </div>
+</div>
+
+<div class="split right">
     <form action="#" class="form">
         <h1 class="text-center">Registration Form</h1>
         <!-- Progress bar -->
@@ -101,5 +109,8 @@
         </div>
     </form>
 </div>
-</body>
+
+
+
+
 <script src="<?php echo URLROOT; ?>/js/compsignup.js"></script>

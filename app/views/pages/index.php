@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Construplus</title>
-    <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/style_main.css" />
+    <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/index.css" />
 </head>
 
 <body>
@@ -37,12 +37,12 @@
     <!--header ends here-->
 
     <div class="container">
-        <h1>Constru Plus<span><a href="<?php echo URLROOT; ?>/pages/search">Shop With Us</a></span></h1>
+        <h1>Constru Plus<span><a href="<?php echo URLROOT; ?>/pages/search">Shop with Us</a></span></h1>
         <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
             molestias commodi dolor necessitatibus nisi nesciunt velit.
         </p>
-        <button><a href="<?php echo URLROOT; ?>/Pages/compRegister">Register as a Customer</a></button>
+        <button><a href="">Signup</a></button>
     </div>
 </div>
 <!--homeSection ends here -->
@@ -77,7 +77,7 @@
                     Dolor commodi voluptates aliquid, earum minima accusantium eos
                     aspernatur ullam aperiam tempora.
                 </p>
-                <button><a href="<?php echo URLROOT; ?>/users/compregister">Register Now</a></button>
+                <button><a href="<?php echo URLROOT; ?>/Pages/compRegister">Register Now</a></button>
             </div>
             <!--donation box ends here-->
 
@@ -99,14 +99,14 @@
 
  <section class="donorsContainer cover" id="donorsSection">
     <div class="container">
-        <h1>Together you can <span>Help Them</span></h1>
+        <h1>Constru+ <span>Signup</span></h1>
         <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem
             quam voluptatum beatae, est praesentium iure illum, nesciunt ab esse
             nihil consectetur dicta explicabo voluptas soluta eveniet eos eaque,
             vitae cumque?
         </p>
-        <button><a href="http://localhost/constru/users/cusregister">Register as a Customer</a></button>
+        <button><a href="http://localhost/constru/users/cusregister">Shop With Us</a></button>
     </div>
 </section>
 <!--donors section ends here-->

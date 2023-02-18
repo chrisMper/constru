@@ -155,7 +155,7 @@ body
 }
 input[type="submit"]
 {
-	border: none;
+	/* border: none;
 	outline: none;
 	background: #2196f3;
 	padding: 11px 25px;
@@ -163,7 +163,18 @@ input[type="submit"]
 	margin-top: 10px;
 	border-radius: 10px;
 	font-weight: 600;
-	cursor: pointer;
+	cursor: pointer; */
+	padding: 0.75rem;
+    margin: 20px;
+    display: block;
+    text-decoration: none;
+    background-color: #2BA137;
+    color: #f3f3f3;
+    text-align: center;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 150px;
 }
 input[type="submit"]:active
 {
