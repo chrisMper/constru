@@ -15,8 +15,13 @@ body
 	justify-content: center;
 	align-items: center;
 	min-height: 100vh;
-	
-}
+	background-image: url("../img/loginback.webp");
+	background-color: #fff; /* Used if the image is unavailable */
+	height: 500px; /* You must set a specified height */
+	background-position: center; /* Center the image */
+	background-repeat: no-repeat; /* Do not repeat the image */
+	background-size: cover; /* Resize the background image to cover the entire container */
+}	
 .box
 {
 	position: relative;
@@ -218,6 +223,7 @@ input[type="submit"]:active
   transform: translate(-50%, -50%);
   text-align: center;
   padding-left: 15%;
+  border-radius: 20px;
 }
 
 .loginbox {

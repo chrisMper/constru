@@ -1,7 +1,7 @@
-<?php include APPROOT . '/views/inc/loginheader.php'; ?>
+<?php include APPROOT . '/views/inc/logNav.php'; ?>
 <div class="split left">
   <div class="loginimg">
-		<img src="<?php echo URLROOT; ?>/img/login.gif"><!--source: https://pin.it/1ywerW9-->  
+		<img src="<?php echo URLROOT; ?>/img/login2.gif"> 
       </div>
 </div>
 

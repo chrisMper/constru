@@ -1,6 +1,6 @@
 <!------------------------------ navbar ------------------------------------>
 
-<?php include APPROOT . '/views/inc/regLogNav.php'; ?>
+<?php include APPROOT . '/views/inc/regNav.php'; ?>
 <!-- -----------------------------list-container------------------------------- -->
 
 
