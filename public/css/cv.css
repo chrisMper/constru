@@ -7,19 +7,18 @@
 }
 
 body{
-	background: #c4c4c4;
 	font-size: 14px;
 	line-height: 20px;
 }
 
 .resume_wrapper{
+	border: 1px solid balck;
 	display: flex;
 	width: 800px;
 	margin: 50px auto;
-	background: #fff;
+	background: #d3cdcd;
 	padding: 10px;
 }
-
 .resume_wrapper .resume_left{
 	width: 35%;
 	background: #26252d;

@@ -6,6 +6,7 @@
     <title>Construplus</title>
     <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/style_main.css" />
     <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/login.css" />
+    
 </head>
 
 <body>

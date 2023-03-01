@@ -1,268 +1,157 @@
-@charset "ISO-8859-1";
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-*
-{
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: 'Poppins', sans-serif;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body{
+  background-image: url("../img/regback.png");
+}
+img{
+  height: 550px;
+  width: 550px;
+  margin: 100px 0 0 50px;
 }
 
-
-body
-{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	
-	
-}
-.box
-{
-
-	position: relative;
-	width: 500px;
-	height: 610px;
-	background: #151CB9;
-	border-radius: 8px;
-	margin-top: 50px;
-	overflow: hidden;
-	padding:10px;
-
-}
-.box::before
-{
-	content:'';
-	position: absolute;
-	top: -50%;
-	left: -50%;
-	width: 500px;
-	height: 420px;
-	background: linear-gradient(0deg,transparent,#F05E22,#F05E22);
-	transform-origin: bottom right;
-	animation: animate 6s linear infinite;
-}
-.box::after
-{
-	content:'';
-	position: absolute;
-	top: -50%;
-	left: -50%;
-	width: 500px;
-	height: 420px;
-	background: linear-gradient(0deg,transparent,#F05E22,#F05E22);
-	transform-origin: bottom right;
-	animation: animate 6s linear infinite;
-	animation-delay: -3s;
-} 
-@keyframes animate
-{
-	0%
-	{
-		transform: rotate(0deg);
-	}
-	100%
-	{
-		transform: rotate(360deg);
-	}
-}
-.form
-{
-	position: absolute;
-	inset: 2px;
-	border-radius: 8px;
-	background: #ffffff;
-	z-index: 10;
-	padding: 50px 40px;
-	display: flex;
-	flex-direction: column;
-	height: 605px;
-	overflow-y: scroll;
-}
-.form::-webkit-scrollbar{
-	width: 1px;
-}
-.form h1
-{
-	color: #000000;
-	font-weight: 500;
-	text-align: center;
-	letter-spacing: 0.1em;
-}
-.inputBox
-{
-	position: relative;
-	width: 400px;
-	margin-top: 35px;
-}
-.inputBox input
-{
-	position: relative;
-	width: 100%;
-	padding: 20px 10px 10px;
-	background: transparent;
-	border: none;
-	outline: none;
-	color: #23242a;
-	font-size: 1em;
-	letter-spacing: 0.05em;
-	z-index: 10;
-}
-.inputBox span
-{
-	position: absolute;
-	left: 0;
-	padding: 20px 0px 10px;
-	font-size: 1em;
-	color: #4b4b4b;
-	pointer-events: none;
-	letter-spacing: 0.05em;
-	transition: 0.5s;
-	transform: translateX(0px) translateY(-40px);
-}
-/* .inputBox input:valid ~ span,
-.inputBox input:focus ~ span
-{
-	color: #151CB9;
-	transform: translateX(0px) translateY(-34px);
-	font-size: 0.75em;
-} */
-.inputBox i
-{
-	position: absolute;
-	left: 0;
-	bottom: 0;
-	width: 100%;
-	height: 30px;
-	background: #ffffff;
-	border-radius: 4px;
-	transition: 0.5s;
-	pointer-events: none;
-}
-.inputBox input:valid ~i,
-.inputBox input:focus ~i
-{
-	height: 30px;
-}
-.links
-{
-	display: flex;
-	justify-content: space-between;
-}
-.links a
-{
-	margin: 10px 0;
-	font-size: 0.75em;
-	color: #8f8f8f;
-	text-decoration: none;
-}
-.link a:hover,
-.links a:nth-child(2)
-{
-	color: #151CB9;
-}
-input[type="text"]{
-	border: 1px solid #7c7b7b;
-	border-radius: 10px;
-}
-input[type="password"]{
-	border: 1px solid #7c7b7b;
-	border-radius: 10px;
-}
-input[type="submit"]
-{
-	border: none;
-	outline: none;
-	background: #2BA137;
-	padding: 11px 25px;
-	width: 100px;
-	margin-top: 10px;
-	border-radius: 10px;
-	font-weight: 600;
-	cursor: pointer;
-}
-input[type="submit"]:active
-{
-	opacity: 0.8;
+/* Global Stylings */
+label {
+  display: block;
+  margin-bottom: 0.5rem;
 }
 
+input {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+}
 
-/* Split the screen in half */
-.split {
-  height: 100%;
+.width-50 {
   width: 50%;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  overflow: hidden;
-  padding-top: 20px;
-  
 }
 
-/* Control the left side */
-.left {
-  left: 0;
- 
+.ml-auto {
+  margin-left: auto;
 }
 
-/* Control the right side */
-.right {
-  right: 0;
-  
+.text-center {
+  text-align: center;
 }
 
-/* If you want the content centered horizontally and vertically */
-.regimg {
+/* Progressbar */
+.progressbar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  counter-reset: step;
+  margin: 2rem 0 4rem;
+}
+
+.progressbar::before,
+.progress {
+  content: "";
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  padding-left: 10%;
-  size: 10%;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 100%;
+  background-color: #dcdcdc;
+  z-index: -1;
 }
 
-.regbox {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	text-align: center;
-	padding-right: 5%;
-  }
+.progress {
+  background-color: #2BA137;
+  width: 0%;
+  transition: 0.3s;
+}
 
-  #regForm {
-    background-color: #ffffff;
-    margin: 0 auto;
-    padding: 40px;
-    
-    min-width: 400px;
+.progress-step {
+  width: 2.1875rem;
+  height: 2.1875rem;
+  background-color: #dcdcdc;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  }
-  
-  /* Style the input fields */
-  input {
-    padding: 1px;
-    width: 100%;
-    font-size: 17px;
-    font-family: Raleway;
-    border: 1px solid #aaaaaa;
-  }
-  
-  /* Mark input boxes that gets an error on validation: */
-  input.invalid {
-    background-color: #ffdddd;
-  }
+.progress-step::before {
+  counter-increment: step;
+  content: counter(step);
+}
 
-  button
-{
-	border: none;
-	outline: none;
-	background: #151CB9;
-	padding: 11px 25px;
-	width: 100px;
-	margin-top: 10px;
-	border-radius: 10px;
-	font-weight: 600;
-	cursor: pointer;
+.progress-step::after {
+  content: attr(data-title);
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.progress-step-active {
+  background-color: #2BA137;
+  color:#f3f3f3;
+}
+
+/* Form */
+.form {
+  width: clamp(520px, 30%, 730px);
+  border: 1px solid #151CB9; 
+  border-radius: 0.35rem;
+  padding: 50px;
+  height: 800px;
+  margin: 100px 0px 0px 100px;
+}
+
+.form-step {
+  display: none;
+  transform-origin: top;
+  animation: animate 0.5s;
+}
+
+.form-step-active {
+  display: block;
+}
+
+.input-group {
+  margin: 5px;
+}
+
+@keyframes animate {
+  from {
+    transform: scale(1, 0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+}
+
+/* Button */
+.btns-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.btn {
+  padding: 0.75rem;
+  margin: 20px;
+  display: block;
+  text-decoration: none;
+  background-color: #2BA137;
+  color: #f3f3f3;
+  text-align: center;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 150px;
+}
+.btn:hover {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 3px #2BA137;
+}
+
+.split{
+  overflow: auto;
 }

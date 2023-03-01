@@ -1,8 +1,8 @@
 <!-- css of searchgig is on search.css -->
-
 <!------------------------------ navbar ------------------------------------>
-<?php include APPROOT . '/views/inc/searchNavBar.php'; ?>
+<?php include APPROOT . '/views/inc/kusSearchNavSide.php'; ?>
 <!-- -----------------------------list-container------------------------------- -->
+<div class="searchbody">
 <div class="main-container">
     <div class="searchgig-list-container">
         <div class="list-container">
@@ -90,9 +90,9 @@
                 <span>Description of the service is added here. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </span>
             </div>
             <div class="button-box">
-                <a href="<?php echo URLROOT; ?>/pages/viewcv"><button type="submit" class="viewDetailsBtn btn-1">View CV</a>
-                <a href="<?php echo URLROOT; ?>/pages/chat"><button type="submit" class="viewDetailsBtn btn-2">Contact</a>
-                <a href="<?php echo URLROOT; ?>/pages/searchgig"><button type="submit" class="viewDetailsBtn">Book Service</a>
+                <a href="<?php echo URLROOT; ?>/pages/viewcv"><button type="submit" class="viewDetailsBtn btn-1">View Cv</a>
+                <a href="<?php echo URLROOT; ?>/pages/chat"><button type="submit" class="viewDetailsBtn btn-2" >Contact</a>
+                <a href="#"><button type="submit" class="viewDetailsBtn add-btn">Book Service</a>
             </div>
             <div class="note-box">
                 <span>Before booking please contact service provider and share your projevt details. (Eg: Requirements, Timeline, Budget)</span>
@@ -100,24 +100,6 @@
 
         </div>
     </div>
-    <!-- popup -->
-    <div class="center">
-        <button id="open-popup">Open Popup</button>
-    </div>
-    <div class="popup" id="popup">
-        <div class="overlay"></div>
-        <div class="popup-content">
-            <h2>This is popup title</h2>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-            </p>
-            <div class="control">
-                <button class="close-btn">Close</button>
-                <button class="submit-btn">Submit</button>
-            </div>
-        </div>
-    </div>
-
-
     <div class="total_reviews">
         <span>47,376 Reviews</span>
         <i class="fas fa-star"></i>
@@ -235,4 +217,22 @@
         </div>
     </div>
 
-    
+    <!-- popup starts here -->
+    <div class="blur_bg" id="blur_bg"></div>
+    <div class="add-form" id="add-form">
+        <span>
+            <label>Confirm booking </label>
+            <label class="close">x</label>
+        </span>
+        <span class="description">Before booking please contact service provider and share your project details. (Eg- Requirements, timeline, budget etc..</span>
+
+        <form action="" method="POST" class="add" id="add">
+            <span>
+                <input type="submit" value="Confirm Booking" class="add-btn submit-form">
+                <input type="hidden" value="customer" name="role" class="role">
+            </span>
+        </form>
+    </div>
+</div>
+    <!-- popup ends here  -->
+    <script src="<?php echo URLROOT; ?>/js/popup.js"></script>

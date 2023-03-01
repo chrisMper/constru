@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Construplus</title>
-    <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/style_main.css" />
+    <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/index.css" />
 </head>
 
 <body>
@@ -37,11 +37,12 @@
     <!--header ends here-->
 
     <div class="container">
-        <h1>Constru Plus<span><a href="<?php echo URLROOT; ?>/pages/search">Shop With Us</a></span></h1>
+        <h1>Constru Plus<span><a href="<?php echo URLROOT; ?>/pages/search">Shop with Us</a></span></h1>
         <p>
-            When you donate to the "DonateUs", 100% of your donation goes towards funding projects that change people’s lives.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
+            molestias commodi dolor necessitatibus nisi nesciunt velit.
         </p>
-        <button><a href="<?php echo URLROOT; ?>/users/register">Register as a Customer</a></button>
+        <button><a href="">Signup</a></button>
     </div>
 </div>
 <!--homeSection ends here -->
@@ -57,31 +58,31 @@
         </p>
         <div class="cards">
             <div class="donationBox">
-                <div class="title">Become a Service Provider</div>
+                <div class="title">Register as a Engineer</div>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Temporibus, vitae quidem. Laudantium, animi cum saepe hic id in?
                     Quisquam corrupti odit commodi dolor ipsam architecto vitae iusto
                     amet explicabo illo.
                 </p>
-                <button><a href="<?php echo URLROOT; ?>/users/register">Register Now</a></button>
+                <button><a href="<?php echo URLROOT; ?>/Users/engRegister">Register Now</a></button>
             </div>
             <!--donation box ends here-->
 
             <div class="beneficiaryBox">
-                <div class="title">Become a Supplier</div>
+                <div class="title">Register As a Construction Company</div>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
                     officiis nemo quod sed mollitia maxime aliquam dolore voluptas.
                     Dolor commodi voluptates aliquid, earum minima accusantium eos
                     aspernatur ullam aperiam tempora.
                 </p>
-                <button><a href="<?php echo URLROOT; ?>/users/register">Register Now</a></button>
+                <button><a href="<?php echo URLROOT; ?>/Pages/compRegister">Register Now</a></button>
             </div>
             <!--donation box ends here-->
 
             <div class="eventHosterBox">
-                <div class="title">Register as a Customer</div>
+                <div class="title">Register as a Supplier</div>
                 <p>
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga
                     neque expedita itaque alias aliquid cum qui voluptatem tenetur?
@@ -96,16 +97,16 @@
 </section>
 <!--about section ends here-->
 
-<!-- <section class="donorsContainer cover" id="donorsSection">
+ <section class="donorsContainer cover" id="donorsSection">
     <div class="container">
-        <h1>Together you can <span>Help Them</span></h1>
+        <h1>Constru+ <span>Signup</span></h1>
         <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem
             quam voluptatum beatae, est praesentium iure illum, nesciunt ab esse
             nihil consectetur dicta explicabo voluptas soluta eveniet eos eaque,
             vitae cumque?
         </p>
-        <button><a href="http://localhost/Donate_Us/users/register">Start with a little</a></button>
+        <button><a href="http://localhost/constru/users/cusregister">Shop With Us</a></button>
     </div>
 </section>
 <!--donors section ends here-->

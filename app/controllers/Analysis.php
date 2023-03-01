@@ -10,9 +10,6 @@
     public function index (){
         redirect('welcome');
     }
-
-    
-
     public function statis($Listingid){
 
         if(!empty($_SERVER['HTTP_CLIENT_IP'])) {
