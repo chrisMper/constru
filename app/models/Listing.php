@@ -8,7 +8,7 @@
         }
 
         public function getListings(){
-            $this->db->query('SELECT * FROM listing');
+            $this->db->query('SELECT * FROM engineer_listing');
 
             $results= $this->db->resultSet();
 
@@ -18,9 +18,11 @@
 
 
         public function addlisting($data,$file){
+
+          
             // Prepare Query
-            $this->db->query('INSERT INTO listing (Title,Description,UserEmail,Photos) 
-            VALUES (:title,:description,:Uemail,:PtName)');
+          $this->db->query('INSERT INTO engineer_listing (Title,Description,UserEmail,Photos,visiterCount	) 
+            VALUES (:title,:description,:Uemail,:PtName,0)');
       
             // Bind Values
             
@@ -29,8 +31,10 @@
             $this->db->bind(':Uemail', $data['UserEmail']);
             $this->db->bind(':PtName', $file['file_name']);
 
+            
 
-            move_uploaded_file($file['temp_name'], $file['upload_to'] . $file['file_name']);
+
+            // move_uploaded_file($file['temp_name'], $file['upload_to'] . $file['file_name']);
          
 
 

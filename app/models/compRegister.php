@@ -31,3 +31,4 @@ class Registration_model {
         }
     }
 }
+?>

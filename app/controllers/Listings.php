@@ -27,6 +27,18 @@ class Listings extends Controller{
         $this->view('listings/listings', $data);
       }
 
+      public function stats()
+      {
+    
+        $listings = $this->listingModel->getListings();
+        $data = [
+          'listings' => $listings,
+    
+        ];
+    
+        $this->view('users/eng/statistics/analyse', $data);
+      }
+
 
 
 
@@ -41,7 +53,7 @@ class Listings extends Controller{
             'Title' => trim($_POST['title']),
             'Discription' => trim($_POST['description']),
             'UserEmail'=>$_SESSION['user_email'],
-            'Title_err' => '',
+            'Title_err' => '',  
             'Discription_err' => ''
           ];
 
