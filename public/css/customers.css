@@ -1,0 +1,57 @@
+.middle{
+    margin-top: 8%;
+    margin-left:-82.5%;
+    z-index: 1;
+    border: #ffffff;
+    
+  }
+
+  .cus-tbl{
+    margin-top: 2%;
+  }
+
+  table,   td {
+    border: 1px rgb(165, 200, 245);
+  }
+
+  .name{
+    width:300px;
+    height: 40px;
+    background-color: rgb(165, 200, 245);
+    padding-left: 8px;
+    border: 1px rgb(165, 200, 245);
+  }
+  .address{
+    width:250px;
+    height: 40px;
+    background-color: rgb(165, 200, 245);
+    padding-left: 8px;
+  }
+.phone{
+  width:150px;
+    height: 40px;
+    background-color: rgb(165, 200, 245);
+    padding-left: 8px;
+}
+
+  .active-stts{
+    width:150px;
+    height: 40px;
+    background-color: rgb(165, 200, 245);
+    padding-left: 8px;
+    
+  }
+
+  .rows{
+    border: 1px solid rgb(28, 134, 255);
+    height: 30px;
+    padding-left: 8px;
+    
+  }
+  .empty{
+    height: 20px;
+  }
+
+  .space{
+    padding-left: 10px;
+  }
