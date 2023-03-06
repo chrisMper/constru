@@ -124,4 +124,47 @@
     public function compRegister(){
       $this->view('Pages/compRegister');
     }
+    
+        //functions of admin here
+    public function complaint(){
+      $this->view('users/admin/complaints/complaint');
+    }
+
+    public function join_requests(){
+      $this->view('users/admin/joinreq/join_requests');
+    }
+
+    public function stats_view(){
+      $this->view('users/admin/stats/stats_view');
+    }
+    
+    public function customers(){
+      $this->view('users/admin/customers/customers');
+    }
+
+    public function comps(){
+      $this->view('users/admin/serviceproviders/comps');
+    }
+
+    public function sptype(){
+      $this->view('users/admin/serviceproviders/sptype');
+    }
+
+    public function engs(){
+      $this->view('users/admin/serviceproviders/engs');
+    }
+
+    public function sups(){
+      $this->view('users/admin/serviceproviders/sups');
+    }
+
+    public function add_admin(){
+      $this->view('users/admin/admins/add_admin');
+    }
+
+    public function admins(){
+      $this->view('users/admin/admins/admins');
+    }
+
+    
   }
