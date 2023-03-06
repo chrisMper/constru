@@ -1,0 +1,160 @@
+body{
+    font-family: roboto,sans-serif;
+    margin: 0px;
+}
+a{
+    color:rgb(122, 131, 135);
+    text-decoration: none;
+  }
+a:hover{
+    color:rgba(5, 86, 148, 0.788);
+    }
+
+/* nav bar styles */
+.navbar{
+    background-color:#21223c;
+    width: 100%;
+    height: 6%;
+    float:top;
+    overflow: hidden;
+    position: fixed;
+}
+
+.img_srch{
+    position:relative; 
+    background-color:rgb(97, 100, 101);
+    width: 31px;
+    height: 89%; 
+    float:right;
+}
+
+.imgsize_sr{
+    background-color:rgb(186, 187, 187);
+    width: 30px;
+    height: 30px;
+}
+
+.imgsize_bk{
+    width: 40%;
+    height: 100%;
+}
+
+.imgsize_cht{
+    width: 40%;
+    height: 100%;
+}
+
+.div0{
+    width: 7%;
+    height: 100%;
+    float:left;
+}
+
+.div1{
+    width: 50%;
+    float: left;
+    margin-top:3px;
+}
+
+.div2{
+    float: right;
+    margin-right:30px;
+    margin-top: 3px;
+    font-size:24px;
+    color:rgb(122, 131, 135)
+}
+
+.left_bar{
+    background-color:#86c2d4;
+    width: 3%;
+    height: 100%;
+    position: fixed;
+}
+
+.search_bar{
+    position: relative;
+    width: 355px;
+    height: 80%;
+    float:left;
+    margin-left:50%;
+    margin-top:5.5px;
+    margin-right:25%;
+}
+/* nave bar styles end here */
+
+
+
+.div3{
+    width:90%;
+    /* height:95%; */
+    float: left;
+    margin-left: 60px;
+    margin-top:30px;
+}
+
+.div4{
+    float:right;
+    width:20%;
+}
+
+
+table{
+    border: 10px solid white;
+    width: 90%;
+}
+
+th, td {
+    padding:10px;
+    border-bottom: 10px solid rgb(255, 255, 255);
+    text-align: left;
+}
+tr{
+    border:2px solid black;
+}
+
+td{
+    background-color: rgba(212, 147, 240, 0.4);
+   
+}
+
+th{
+    background-color: rgba(61, 25, 83, 0.759);
+    color:white;
+    text-align: center;
+}
+
+button{
+    background-color:#350534;
+    height:70%;
+    border: none;
+    border-radius:10px;
+    padding: 10px 32px;
+    color: #fff;
+}
+button:hover{
+    background-color:#7e7027;
+    color:rgb(16, 24, 55);
+}
+.btn{
+    height:6%;
+    background-color:rgb(30, 95, 170);
+    color:white;
+}
+.btn:hover{
+    background-color: rgb(106, 170, 238);
+    color:rgb(50, 65, 124);
+}
+
+input{
+    width: 100%;
+    height: 30px;
+    box-sizing: border-box;
+    border: 0px solid rgb(216, 209, 209);
+    padding: 10px;
+    background-color:rgb(186, 187, 187)
+}
+.search_bar input{
+    background-color: rgb(185, 185, 185);
+    padding-left: 10px;
+    border: none;
+}
