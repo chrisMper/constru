@@ -13,8 +13,8 @@
 
       //Set Data
       $data = [
-        'title' => 'Welcome To Constru +',
-        'description' => 'Best Place to Construction site works'
+        'title' => 'Welcome To Constru+',
+        'description' => 'Built for You'
       ];
 
       // Load homepage/index view

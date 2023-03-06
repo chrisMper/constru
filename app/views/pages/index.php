@@ -23,9 +23,9 @@
                     <li>
                         <a href="#aboutSection">Join Us</a>
                     </li>
-                    <!-- <li>
-                        <a href="<?php echo URLROOT; ?>/users/register">Register</a>
-                    </li> -->
+                    <li>
+                        <a href="#beneficiarySection">about Us</a>
+                    </li>
                     <li>
                         <a href="<?php echo URLROOT; ?>/users/login">Login</a>
                     </li>
@@ -111,7 +111,7 @@
 </section>
 <!--donors section ends here-->
 
-<!-- <section class="beneficiaryContainer cover1" id="beneficiarySection">
+<section class="beneficiaryContainer cover1" id="beneficiarySection">
     <div class="container">
         <h1>Together you can <span>Help Them</span></h1>
         <p>
