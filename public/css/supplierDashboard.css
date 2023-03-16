@@ -1,160 +1,15 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-body {
-  align-items: center;
-  background: #fff;
-  font-family: sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  min-height: 100vh;
-  overflow-y: hidden;
-}
-
-.container {
-  padding-left: 40px;
-  padding-top: 70px;
-  background: #fff;
-}
-
-.navlogo img {
-  width: 80px;
-  height: 70px;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-top: -4px;
-  float: left;
-  display: inline-flex;
-  border-radius: 15px;
-}
-.navright img {
-  width: 25px;
-  height: 25px;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-top: 10px;
-  display: inline-flex;
-  float: right;
-}
-.navbar {
-  border: solid #b8b894;
-  height: 64px;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 1100;
-  background-image: url(backimg.jpg);
-}
-
-.navcenter {
-  text-align: center;
-  display: inline-flex;
-  float: right;
-  margin-top: -5px;
-}
-.navcenter ul {
-  display: inline-flex;
-  color: rgb(255, 255, 255);
-  list-style: none;
-}
-
-.navcenter ul li {
-  margin-top: 4px;
-  width: 150px;
-  padding: 4px;
-}
-.navcenter ul li:hover {
-  background: #adadeb;
-  border-radius: 4px;
-}
-
-.navcenter ul li a {
-  text-decoration: none;
-  color: rgb(255, 255, 255);
-}
-
-.Servicemenu {
-  background: #2c2e57;
-  display: none;
-  text-align: left;
-  align-items: right;
-  padding-left: 3rem;
-}
-.navcenter ul li:hover .servicemenu {
-  display: block;
+.main{
+  width: calc(100% - 300px) !important;
+  height: calc(100% - 100px);
   position: absolute;
-  margin-left: -20px;
-  margin-top: 10px;
-}
-.navcenter ul li:hover .servicemenu ul {
-  display: block;
-  margin: 5px;
-  margin-left: -25px;
-}
-
-.table-container {
-  display: flex;
-  overflow: hidden;
-  height: calc(100vh - 64px);
-  margin-top: 64px;
-}
-
-.sidebar {
-  display: flex;
-  /* position: fixed; */
-  align-items: left;
-  width: 250px;
-  /* top: 90px; */
-}
-
-.table-container .main,
-.table-container .addform,
-.table-container .card {
-  width: calc(100vw - 250px) !important;
-  height: calc(100vh - 64px);
+  left: 300px;
+  top: 100px;
   overflow-y: auto;
 }
-
-.sidebar img {
-  width: 25px;
-  height: 25px;
-  margin-right: 8px;
-  margin-bottom: -5px;
-}
-.sidebar ul {
-  height: 100%;
-  margin-bottom: 100px;
-  padding: 0;
-  margin: 2px;
-  list-style: none;
-}
-.sidebar ul li {
-  padding: 7px 10px;
-  width: 200px;
-}
-.sidebar ul li a {
-  font-size: 14px;
-  text-decoration: none;
-  color: #000;
-}
-.sidebar ul li:hover {
-  background: #adadeb;
-  border-radius: 4px;
-}
-
 .card {
   display: flex;
   position: relative;
   width: 100%;
-  /* margin-left: 260px; */
-  /* margin-top: 70px; */
-  /* top: 25px; */
 }
 
 .card table td {
@@ -250,10 +105,8 @@ h3 {
   /* position: absolute; */
   width: 150px;
   height: 40px;
-  /* left: 1100px; */
-  /* top: 100px; */
   border-radius: 20px;
-  margin-left: 15%;
+  margin-left: 67%;
   text-align: center;
   border-color: rgb(39, 61, 227);
 }
@@ -271,6 +124,7 @@ h3 {
   /* position: absolute; */
   width: 925px;
   height: 230px;
+  padding-left: 20px;
   /* left: 335px; */
   /* top: 192px; */
 }
@@ -281,38 +135,49 @@ h3 {
 }
 
 .updatebtn {
-  padding: 10px;
-  font-size: 20px;
+  padding: 5px;
   position: absolute;
-  width: 150px;
-  height: 40px;
-  left: 1110px;
-  top: 139px;
+  width: 130px;
+  height: 30px;
+  /*left: 1110px;
+  top: 139px;*/
   border-radius: 20px;
-  margin-top: 10%;
-  margin-left: 15%;
+  margin-top: 1%;
+  margin-left: 7%;
   text-align: center;
-  border-color: rgb(39, 61, 227);
+  border-color: darkgreen;
+}
+.updatebtn a{
+  text-decoration: none;
+  color: #000;
 }
 .updatebtn:hover {
-  background-color: rgb(39, 61, 227);
+  background-color: darkgreen;
+}
+.updatebtn:hover a{
+  color: #fff;
 }
 .deletebtn {
-  padding: 10px;
-  font-size: 20px;
+  padding: 5px;
   position: absolute;
-  width: 150px;
-  height: 40px;
-  left: 1110px;
-  top: 139px;
+  width: 130px;
+  height: 30px;
+/*  left: 1110px;*/
   border-radius: 20px;
-  margin-top: 10%;
-  margin-left: 15%;
+  margin-top: 4%;
+  margin-left: 7%;
   text-align: center;
-  border-color: rgb(39, 61, 227);
+  border-color: #ff0000;
+}
+.deletebtn a{
+  text-decoration: none;
+  color: #000;
 }
 .deletebtn:hover {
-  background-color: rgb(39, 61, 227);
+  background-color:#ff0000;
+}
+.deletebtn:hover a{
+  color: #fff;
 }
 .textarea {
   width: 750px;
@@ -322,15 +187,16 @@ h3 {
   box-sizing: border-box;
   position: absolute;
   width: 800px;
-  height: 600px;
+  height: auto;
   left: 322px;
   top: 110px;
-  background: #746d6d;
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
   border: 1px solid #746d6d;
   border-radius: 30px;
 }
 .addform form table {
   margin: 20px;
+  margin-bottom: 0px;
 }
 .addform form td {
   color: #000;
@@ -345,56 +211,62 @@ h3 {
   height: 40px;
   margin-top: 10px;
 }
-.submit-discard_btn {
-  left: 700px;
-  top: 1000px;
+
+.form-actions {
+  display: flex;
+  align-items: right;
+  gap: 1rem;
+  margin-left: 520px;
+  margin-bottom: 10px;
 }
+
 .submitbtn {
   font-size: 20px;
   border-radius: 20px;
   text-align: center;
   padding: 0.5rem 1rem;
   border-color: darkgreen;
-  margin-left: 1rem;
 }
 .submitbtn:hover {
   background-color: darkgreen;
+}
+.submitbtn:hover a{
+  color: #fff;
 }
 .discardbtn {
   font-size: 20px;
   padding: 0.5rem 1rem;
   border-radius: 20px;
   text-align: center;
-  border-color: #000;
+  border-color: #ff0000;
   background-color: rgba(255,255, 255, 0.4);
 }
 
-.form-actions {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-
-.discardbtn  {
+.discardbtn a{
   text-decoration: none;
+  color: #000;
 }
 .discardbtn:hover {
-  background-color: #adadeb;
+  background-color: #ff0000;
 }
-
+.discardbtn:hover a{
+  color: #fff;
+}
 .listing-card {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(4, 1fr);
-  width: 80%;
-  /* background-color: red; */
+  width: 85%;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to left, #faeded, #e9e6e6);
   margin-bottom: 1rem;
   padding: 1rem;
   border-radius: 0.5rem;
   border: 2px solid rgba(0, 0, 0, 0.3);
 }
-
+.listing-card:hover{
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+}
 .listing-card img {
   width: 100px;
   height: 100px;
@@ -430,17 +302,6 @@ h3 {
   flex-direction: column;
   gap: 1rem;
   font-size: 0.8rem;
-}
-
-.listing-card button {
-  background-color: transparent;
-  padding: 0.5rem 1rem;
-  border: 2px solid green;
-  border-radius: 100px;
-}
-
-.listing-card button:last-child {
-  border-color: red;
 }
 
 .label {
