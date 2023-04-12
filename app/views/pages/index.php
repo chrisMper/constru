@@ -65,7 +65,7 @@
                     Quisquam corrupti odit commodi dolor ipsam architecto vitae iusto
                     amet explicabo illo.
                 </p>
-                <button><a href="<?php echo URLROOT; ?>/users/register">Register Now</a></button>
+                <button><a href="<?php echo URLROOT; ?>/Users/engregister">Register Now</a></button>
             </div>
             <!--donation box ends here-->
 
