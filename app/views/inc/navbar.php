@@ -8,6 +8,7 @@
      <meta http-equiv="X-UA-Compatible" content="ie=edge">
      <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/comp.css">
      <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/navbar.css">
+     <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/Statstyle.css">
      <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/xmsg.css">
      <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/newcomp.css">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
@@ -26,7 +27,7 @@
                  </a>
              </li>
              <li>
-                 <a href="#">
+                 <a href="<?php echo URLROOT; ?>/users/dashboard">
                      <i class='bx bx-grid'></i>
                      <span class="links_name">Dashboard</span>
                  </a>
@@ -62,7 +63,7 @@
                  </a>
              </li>
              <li>
-                 <a href="#">
+                 <a href="<?php echo URLROOT; ?>/listings/stats">
                      <i class='bx bx-bar-chart'></i>
                      <span class="links_name">My Statistics</span>
                  </a>
@@ -74,7 +75,7 @@
                  </a>
              </li>
              <li>
-                 <a href="#">
+                 <a href="<?php echo URLROOT; ?>/users/profile">
                      <i class='bx bx-user'></i>
                      <span class="links_name">Profile</span>
                  </a>

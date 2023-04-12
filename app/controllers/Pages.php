@@ -13,8 +13,8 @@
 
       //Set Data
       $data = [
-        'title' => 'Welcome To Constru+',
-        'description' => 'Built for You'
+        'title' => 'Welcome To Constru +',
+        'description' => 'Best Place to Construction site works'
       ];
 
       // Load homepage/index view
@@ -55,7 +55,7 @@
     }
 
     public function orders(){
-      $this->view('myorders/myOrders');
+      $this->view('users/eng/myorders/myOrders');
     }
     // public function cancelled_roder(){
     //   $this->view('myorders/cancelled_order');

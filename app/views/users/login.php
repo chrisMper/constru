@@ -1,4 +1,4 @@
-<?php include APPROOT . '/views/inc/lognav.php'; ?>
+<?php include APPROOT . '/views/inc/logNav.php'; ?>
 <div class="split left">
   <div class="loginimg">
 		<img src="<?php echo URLROOT; ?>/img/login2.gif"> 
