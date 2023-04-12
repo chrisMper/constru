@@ -9,10 +9,8 @@
 <main>
 	<div class="container">
 
-	
-		<form id="addform" action="<?php echo URLROOT; ?>/listings/updateListing/<?php echo $data['id'] ?>" method="POST" enctype="multipart/form-data">
-			<span id="topic">Add Listing</span>
-
+	<form id="addform" action="<?php echo URLROOT; ?>/listings/updateListing/<?php echo $data['listing']->PostId ?>" method="POST" enctype="multipart/form-data">
+			<span id="topic">Update Listing</span>
 			<!--first step -->
 			<div class="add">
 				<p><input id="title" name="title" placeholder="Enter Service Title here" value="<?php echo $data['listing']->Title ?>"></p>

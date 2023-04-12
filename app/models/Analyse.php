@@ -9,6 +9,8 @@
     
        
         public function statis($data){
+
+          
           // Prepare Query
           $this->db->query('INSERT INTO analytics (PostId,entry_time,ip_address,country) 
           VALUES (:PostId,:Entry_time,22,"sa")');
