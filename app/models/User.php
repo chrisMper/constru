@@ -8,7 +8,7 @@ class User
     $this->db = new Database;
   }
 
-  // Add User / Register
+  // Add User / Register // this is eng register
   public function register($data)
   {
 
@@ -20,7 +20,7 @@ class User
 
     // Bind Values
     $this->db->bind(':FName', $data['FName']);
-    $this->db->bind(':LName', $data['LName']);
+    //$this->db->bind(':LName', $data['LName']);
     $this->db->bind(':Country', $data['Country']);
     $this->db->bind(':District', $data['District']);
     $this->db->bind(':adline1', $data['adline1']);
@@ -44,6 +44,36 @@ class User
         }
   }
 
+  //comp register starts here
+  public function compregister($data)
+  {
+
+    // Prepare Query
+    $this->db->query('INSERT INTO `users` (fName, lName,email,`role`,`status`,`password`,adLine1,adline2,city,postalcode,district,country,telephoneNo) 
+      VALUES (:FName, "0",:email,"company","0",:password,:adline1,:adline2,:city,:Postcode,:District,:Country,:Tele)');
+
+    // Bind Values
+    $this->db->bind(':FName', $data['FName']);
+    $this->db->bind(':email', $data['email']);
+    $this->db->bind(':password', $data['password']);
+    $this->db->bind(':adline1', $data['adline1']);
+    $this->db->bind(':adline2', $data['adline2']);
+    $this->db->bind(':city', $data['city']);
+    $this->db->bind(':Postcode', $data['Postcode']);
+    $this->db->bind(':District', $data['District']);
+    $this->db->bind(':Country', $data['Country']);
+    $this->db->bind(':Tele', $data['Tele']);
+
+    //Execute
+    if ($this->db->execute()) {
+      return true;
+        }else{
+          return false;
+
+        }
+  }
+  //compregister ends here
+
 
   //update service_providers table 
   public function updateServiceProvider($email){
@@ -56,6 +86,17 @@ class User
         return false;
       }
   }
+
+  //update company table
+  public function updateCompany($email){
+    $this->db->query('INSERT INTO `company` (email, ictadNo, compGrade)
+    VALUES(:email, :ictadNo, :compGrade)');
+    $this->db->bind(':email', $email);
+    $this->db->bind(':ictadNo', $ictadNo);
+    $this->db->bind(':compGrade', $compGrade);
+  
+  }
+
 
   //update Engneer table 
   public function updateEngneer($email){
