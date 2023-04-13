@@ -1,15 +1,12 @@
 <?php
 class Users extends Controller
 {
+  private $userModel;
   public function __construct()
   {
     $this->userModel = $this->model('User');
   }
 
-  public function index()
-  {
-    redirect('welcome');
-  }
 
   public function engRegister()
   {
@@ -241,7 +238,7 @@ class Users extends Controller
         //Execute
         if ($this->userModel->compregister($data)) {
           if ($this->userModel->updateServiceProvider($data['email'])) {
-            if ($this->userModel->updateCompany($data['email'])) {
+            if ($this->userModel->updateCompany($data['email'],$data['ictadNo'],$data['compGrade'])) {
               // Redirect to login
               redirect('users/login');
             }
@@ -298,10 +295,11 @@ class Users extends Controller
   public function login()
   {
     // Check if logged in
-    if ($this->isLoggedIn()) {
-      redirect('users/eng/dashboard');
-    }
-
+    // if ($this->isLoggedIn()) {
+     
+    //     redirect('users/comp/compdash');
+    //   }
+    
     // Check if POST
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       // Sanitize POST
@@ -332,15 +330,16 @@ class Users extends Controller
         $data['email_err'] = 'This email is not registered.';
       }
 
+      $role=$this->userModel->findRoleByEmail($data['email']);
       // Make sure errors are empty
       if (empty($data['email_err']) && empty($data['password_err'])) {
 
-        // Check and set logged in user
+         // Check and set logged in user
         $loggedInUser = $this->userModel->login($data['email'], $data['password']);
 
         if ($loggedInUser) {
           // User Authenticated!
-          $this->createUserSession($data['email'], $data['password']);
+          $this->createUserSession($data['email'], $data['password'], $role);
         } else {
           $data['password_err'] = 'Password incorrect.';
           // Load View
@@ -367,19 +366,33 @@ class Users extends Controller
   }
 
   // Create Session With User Info
-  public function createUserSession($email, $name)
-  {
-
+  public function createUserSession($email, $name,$role)
+{
     $_SESSION['user_email'] = $email;
     $_SESSION['user_name'] = $name;
-    redirect('users/eng/dashboard');
-  }
+    $_SESSION['user_role'] = $role;
+    switch($role){
+      case "engineer":
+        redirect('pages/engdash');
+        break;
+      case "company":
+        redirect('pages/compdash');
+        break;
+      default:
+        redirect('users/login');
+        break;
+    }
+}
+public function index(){
+  
+}
 
   // Logout & Destroy Session
   public function logout()
   {
     unset($_SESSION['user_email']);
     unset($_SESSION['user_name']);
+    unset($_SESSION['user_role']);
     session_destroy();
     redirect('users/login');
   }
@@ -394,11 +407,16 @@ class Users extends Controller
     }
   }
 
-  public function dashboard()
-  {
-    
-    $this->view('users/eng/dashboard');
-  }
+  // public function dashboard()
+  // {
+  //     if ($_SESSION['user_role'] == 'engineer') {
+  //       $this->view('users/eng/dashboard');
+  //     } elseif ($_SESSION['user_role'] == 'company') {
+  //       $this->view('users/comp/compdash');
+  //     }
+  //   }
+  //   //$this->view('users/eng/dashboard');
+ 
 
 
 

@@ -38,13 +38,12 @@ class User
     //Execute
     if ($this->db->execute()) {
       return true;
-        }else{
-          return false;
-
-        }
+    } else {
+      return false;
+    }
   }
 
-  //comp register starts here
+  //-----------------comp register starts here-----------------------------
   public function compregister($data)
   {
 
@@ -64,50 +63,55 @@ class User
     $this->db->bind(':Country', $data['Country']);
     $this->db->bind(':Tele', $data['Tele']);
 
-    //Execute
+    // Execute
     if ($this->db->execute()) {
       return true;
-        }else{
-          return false;
-
-        }
+    } else {
+      return false;
+    }
   }
   //compregister ends here
 
 
   //update service_providers table 
-  public function updateServiceProvider($email){
+  public function updateServiceProvider($email)
+  {
     $this->db->query('INSERT INTO `service_providers` (email) 
       VALUES (:email)');
-      $this->db->bind(':email', $email);
-      if ($this->db->execute()) {
-        return true;
-      } else{
-        return false;
-      }
+    $this->db->bind(':email', $email);
+    if ($this->db->execute()) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   //update company table
-  public function updateCompany($email){
+  public function updateCompany($email,$ictadNo, $compGrade)
+  {
     $this->db->query('INSERT INTO `company` (email, ictadNo, compGrade)
     VALUES(:email, :ictadNo, :compGrade)');
     $this->db->bind(':email', $email);
     $this->db->bind(':ictadNo', $ictadNo);
     $this->db->bind(':compGrade', $compGrade);
-  
+    if ($this->db->execute()) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
-
   //update Engneer table 
-  public function updateEngneer($email){
+  public function updateEngneer($email)
+  {
     $this->db->query('INSERT INTO `engineer` (email) 
       VALUES (:email)');
-      $this->db->bind(':email', $email);
-      if ($this->db->execute()) {
-        return true;
-      } else{
-        return false;
-      }
+    $this->db->bind(':email', $email);
+    if ($this->db->execute()) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
 
@@ -118,7 +122,7 @@ class User
     $this->db->query("SELECT * FROM `users` WHERE email = :email ");
     $this->db->bind(':email', $email);
 
-   
+
 
     $row = $this->db->single();
 
@@ -131,6 +135,18 @@ class User
       return false;
     }
   }
+
+   // Find role BY Email
+   public function findRoleByEmail($email)
+   {
+     $this->db->query("SELECT `role` FROM `users` WHERE email = :email ");
+     $this->db->bind(':email', $email);
+ 
+     $row = $this->db->single();
+ 
+    return $row->role ;
+ 
+   }
 
 
   // Login user
@@ -154,16 +170,17 @@ class User
     }
   }
 
-  public function getUserById($email){
+  public function getUserById($email)
+  {
     $this->db->query('SELECT * FROM users where  email = :email');
-    $this->db->bind(':email',$email);
+    $this->db->bind(':email', $email);
 
-     $row= $this->db->single();
+    $row = $this->db->single();
 
     return $row;
-}
+  }
 
-// Update User
+  // Update User
   public function update($data)
   {
     // Prepare Query
@@ -192,5 +209,4 @@ class User
       return false;
     }
   }
-
 }

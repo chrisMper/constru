@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Create a navigation bar */
+  .navbar {
+    overflow: hidden;
+    background-color:#081D45 ;
+    position: fixed; /* Fixed navbar to stay at the top */
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+  }
+  
+  /* Right align the last link */
+  .navbar a {
+    float: right;
+  }
+  
+  /* Change the color of links on hover */
+  .navbar a:hover {
+    background-color:  #0c2b66;
+    color: #fff;
+  }
+  

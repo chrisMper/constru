@@ -4,12 +4,12 @@
      
     }
 
-    // Load Homepage
+   // Load Homepage
     public function index(){
       // If logged in, redirect to posts
-      if(isset($_SESSION['user_email'])){
-        redirect('users/dashboard');
-      }
+      //if(isset($_SESSION['user_email'])){
+      //   redirect('users/dashboa');
+      // }
 
       //Set Data
       $data = [
@@ -32,7 +32,7 @@
     }
 
     public function msg(){
-      $this->view('msg/msg');
+      $this->view('eng/msg/msg');
       // path is given
     }
     public function chat(){
@@ -101,6 +101,9 @@
     public function viewportfolio(){
       $this->view('home/viewportfolio');
     }
+    public function engdash(){
+      $this->view('users/eng/dashboard');
+    }
     
     /*functions of comp starts here*/
     public function compdash(){
@@ -110,7 +113,7 @@
       $this->view('users/comp/msg/compmsg');
     }
     public function compchat(){
-      $this->view('users/comp/msg/compchat');
+      $this->view('users/comp/com/compchat');
     }
     public function compmyprojects_new(){
       $this->view('users/comp/myprojects/compmyprojects_new');
@@ -123,5 +126,9 @@
     
     public function compRegister(){
       $this->view('users/comp/compRegister');
+    }
+
+    public function dummyAddListingForComp(){
+      $this->view('users/comp/complisting/add');
     }
   }
