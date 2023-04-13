@@ -53,7 +53,7 @@ include APPROOT . '/views/inc/navbar.php';
             </div>
         </div>
 </a>
-        <a href="<?php echo URLROOT; ?>/listings/listings">
+        <a href="<?php echo URLROOT; ?>/complisting/complisting">
             <div class="grid-item">
                 <div class="card">
                     <img class="dashimg" src="<?php echo URLROOT; ?>/img/listings.png" alt="listings img">

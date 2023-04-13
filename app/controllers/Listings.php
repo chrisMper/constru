@@ -3,6 +3,8 @@
 use function PHPSTORM_META\elementType;
 
 class Listings extends Controller{
+  private $listingModel;
+  private $analyseModel;
     public function __construct(){
         if(!isset($_SESSION['user_email'])){
           redirect('users/login');

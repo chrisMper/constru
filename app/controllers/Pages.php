@@ -128,7 +128,7 @@
       $this->view('users/comp/compRegister');
     }
 
-    public function dummyAddListingForComp(){
-      $this->view('users/comp/complisting/add');
+    public function ListingForComp(){
+      $this->view('users/comp/listings/listings');
     }
   }

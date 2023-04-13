@@ -407,18 +407,6 @@ public function index(){
     }
   }
 
-  // public function dashboard()
-  // {
-  //     if ($_SESSION['user_role'] == 'engineer') {
-  //       $this->view('users/eng/dashboard');
-  //     } elseif ($_SESSION['user_role'] == 'company') {
-  //       $this->view('users/comp/compdash');
-  //     }
-  //   }
-  //   //$this->view('users/eng/dashboard');
- 
-
-
 
   public function profile()
   {
