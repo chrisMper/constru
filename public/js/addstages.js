@@ -1,30 +1,21 @@
+function addStage() {
+    var stagesContainer = document.getElementById("stages-container");
+    var newStage = document.createElement("div");
+    newStage.className = "stage";
+    var stageNumber = stagesContainer.children.length + 1;
+    newStage.innerHTML = '<span>Stage ' + stageNumber + '</span>' +
+                         '<input name="stages[]" placeholder="Enter stage here">' +
+                         '<input name="contacts[]" placeholder="Enter contact to above stage here">' +
+                         '<button type="button" class="delete-stage-btn" onclick="deleteStage(this)">Delete</button>';
+    stagesContainer.appendChild(newStage);
+}
 
-    const addStageBtn = document.getElementById('add-stage-btn');
-const stagesContainer = document.getElementById('stages-container');
-
-let stageCount = 1;
-
-addStageBtn.addEventListener('click', () => {
-    stageCount++;
-
-    const stageDiv = document.createElement('div');
-    stageDiv.classList.add('stage');
-
-    const stageInput = document.createElement('input');
-    stageInput.id = `stage${stageCount}`;
-    stageInput.name = `stage${stageCount}`;
-    stageInput.placeholder = `Enter stage ${stageCount} here`;
-    stageDiv.appendChild(stageInput);
-
-    const contactPersonLabel = document.createElement('p');
-    contactPersonLabel.innerText = 'Contact person';
-    stageDiv.appendChild(contactPersonLabel);
-
-    const contactPersonInput = document.createElement('input');
-    contactPersonInput.id = `contact_person${stageCount}`;
-    contactPersonInput.name = `contact_person${stageCount}`;
-    contactPersonInput.placeholder = '07x xxxxxxx';
-    stageDiv.appendChild(contactPersonInput);
-
-    stagesContainer.appendChild(stageDiv);
-}); 
+function deleteStage(button) {
+    var stageDiv = button.parentNode;
+    stageDiv.parentNode.removeChild(stageDiv);
+    var stagesContainer = document.getElementById("stages-container");
+    var stageNumberSpans = stagesContainer.getElementsByTagName("span");
+    for (var i = 0; i < stageNumberSpans.length; i++) {
+        stageNumberSpans[i].innerHTML = "Stage " + (i + 1);
+    }
+}
