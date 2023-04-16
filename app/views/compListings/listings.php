@@ -27,19 +27,37 @@
                 <div class='mid-col'>
                     <p class='topic'>topic</p>
                     <p class='decription'>description</p>
-                    
+                    <div class="progressbar">
+                        <div class="progress" id="progress"></div>
+                        <div class="progress-step progress-step-active" data-title="step1 - 444444"></div>
+                        <div class="progress-step" data-title="ID" ></div>
+                        <div class="progress-step" data-title="jhkhk"></div>
+                        <div class="progress-step" data-title="Password"></div>
+                        <div class="progress-step" data-title="step1"></div>
+                        <div class="progress-step" data-title="Contact"></div>
+                        <div class="progress-step" data-title="vnbn "></div>
+                        <div class="progress-step" data-title="Password"></div>
+                        </div>
+                    <div class="btns-group">
+                        <a href="#" class="btn btn-prev">Previous</a>
+                        <a href="#" class="btn btn-next">Next</a>
                     
                     </div>
-                    <!-- <p class='topic'><?php echo $listing->Title; ?>
+
+                    <!-- progress bar ends here  -->
+
+
+                </div>
+                <!-- <p class='topic'><?php echo $listing->Title; ?>
                             <p>
                             <p class='decription'><?php echo $listing->Description; ?>
                             <p> -->
 
-                
+
             </div>
 
             <div class='right-col'>
-                <button type="button" class="updatebtn">Update</button><br>
+                <button type="button" class="updatebtn">Update</button>
                 <button type="button" class="deletebtn">Delete</button>
                 <button type="button" class="addbtn">Veiw</button>
 
@@ -68,3 +86,4 @@
 
 
     </main>
+    <script src="<?php echo URLROOT; ?>/js/progressbar.js"></script>

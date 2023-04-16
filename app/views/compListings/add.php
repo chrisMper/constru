@@ -18,6 +18,7 @@
 				<div class="add">
 					<p><input id="title" name="title" placeholder="Enter Service Title hereeeeeeeeeeee"></p>
 					<p><input id="description" name="description" placeholder="Enter Description here"></p>
+					<p><input id="contactPerson" name="contactPerson" placeholder="Enter project contact number here"></p>
 					<div id="stages-container">
 						<div class="stage">
 						<span>Stage 1 </span>
@@ -29,9 +30,10 @@
 					<p><input id="inputfile" type="file" name="image"></p>
 				</div>
 				<div class="sub-discard-btn">
+				<button type="reset" class="discardbtn">Discard<br>
+						<button type="button" onclick="addStage()">Add Stage</button> 
 					<button type="submit" class="submitbtn">Submit<br>
-						<button type="reset" class="discardbtn">Discard<br>
-						<button type="button" onclick="addStage()">Add Stage</button>
+						
 				</div>
 			</form>
 

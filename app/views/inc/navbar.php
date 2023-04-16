@@ -7,10 +7,10 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <meta http-equiv="X-UA-Compatible" content="ie=edge">
      <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/comp.css">
-     <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/navbar.css">
-     <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/Statstyle.css">
-     <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/xmsg.css">
-     <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/newcomp.css">
+  <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/Statstyle.css">
+  <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/navbar.css">
+  <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/xmsg.css">
+ 
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
      <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
      <title><?php echo SITENAME; ?></title>
