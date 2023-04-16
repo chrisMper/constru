@@ -19,30 +19,18 @@ class CompListings extends Controller{
     
     
         // Load All Posts
-    public function index(){
-        //Get Post
-        $listings=$this->compListingModel->getListings();
-
-        $data = [
-            'listings'=>$listings
-        ];
-        
-        $this->view('compListings/listings', $data);
-      }
-
-      public function stats()
-      {
-    
-        $listings = $this->compListingModel->getListings();
-        $data = [
-          'listings' => $listings,
-    
-        ];
-    
-        $this->view('users/eng/statistics/analyse', $data);
-      }
-
-
+        public function index(){
+          $data = [];
+          $this->view('complistings/listings', $data);
+          //Get Post
+          $listings=$this->compListingModel->getListings();
+  
+          $data = [
+              'listings'=>$listings
+          ];
+  
+          $this->view('compListings/listings', $data);
+        }
 
 
       public function add(){

@@ -19,3 +19,4 @@ function deleteStage(button) {
         stageNumberSpans[i].innerHTML = "Stage " + (i + 1);
     }
 }
+
