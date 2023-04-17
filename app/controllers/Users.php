@@ -13,128 +13,115 @@
       if($this->isLoggedIn()){
         redirect('users/login');
       }
-
+      
       // Check if POST
       if($_SERVER['REQUEST_METHOD'] == 'POST'){
         // Sanitize POST
         $_POST  = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-
+      
         $data = [
-          'FName' => trim($_POST['FName']),
-          'LName' => trim($_POST['LName']),
+          'role' => trim($_POST['role']),  
+		      'nic' => trim($_POST['nic']),
+          'fName' => trim($_POST['fName']),
+          'lName' => trim($_POST['lName']),
           'email' => trim($_POST['email']),
           'password' => trim($_POST['password']),
-          'confirm_password' => trim($_POST['confirm_password']),
-          'adline1' => trim($_POST['adline1']),
-          'adline2' => trim($_POST['adline2']),
+          'confirmPassword' => trim($_POST['confirmPassword']),
+          'adLine1' => trim($_POST['adLine1']),
+          'adLine2' => trim($_POST['adLine2']),
+          'district' => trim($_POST['district']),
+          'country' => trim($_POST['country']),
           'city' => trim($_POST['city']),
-          'Postcode' => trim($_POST['Postcode']),
-          'District' => trim($_POST['District']),
-          'Country' => trim($_POST['Country']),
-          'Tele' => trim($_POST['Tele']),
-          'FName_err' => '',
-          'LName_err' => '',
+          'telephoneNo' => trim($_POST['telephoneNo']),
           'email_err' => '',
           'password_err' => '',
-          'confirm_password_err' => '',
-          'adline1_err' => '',
-          'adline2_err' => '',
-          'city_err' => '',
-          'Postcode_err' => '',
-          'District_err' => '',
-          'Country_err' => '',
-          'Tele_err' => ''
+          'confirmPassword_err' => '',
+          'tele_err' => '',
         ];
-
-        // Validate email
-        if(empty($data['email'])){
-            $data['email_err'] = 'Please enter an email';
-            // Validate name
-            if(empty($data['FName'])){
-              $data['FName_err'] = 'Please enter a name';
-            }
-        } else{
+     
+        
           // Check Email
-          if($this->userModel->findUserByEmail($data['email'])){
-            $data['email_err'] = 'Email is already taken.';
-          }
+        if($this->userModel->findUserByEmail($data['email'])){
+            $data['email_err'] = 'Email is already taken.';  
+        }
+
+        // Check tele
+        if(!is_numeric($data['telephoneNo'])){
+          $data['tele_err'] = 'Pleae enter valid telephone number';
         }
 
         // Validate password
-        if(empty($data['password'])){
-          $password_err = 'Please enter a password.';     
-        } elseif(strlen($data['password']) < 6){
-          $data['password_err'] = 'Password must have atleast 6 characters.';
+        if(strlen($data['password']) < 8){
+          $data['password_err'] = 'Password must have at least 8 characters';
         }
 
         // Validate confirm password
-        if(empty($data['confirm_password'])){
-          $data['confirm_password_err'] = 'Please confirm password.';     
-        } else{
-            if($data['password'] != $data['confirm_password']){
-                $data['confirm_password_err'] = 'Password do not match.';
-            }
+        if($data['password'] != $data['confirmPassword']){
+          $data['confirmPassword_err'] = 'Password does not match';
         }
+        
          
-        // Make sure errors are empty
-        if(empty($data['FName_err']) && empty($data['email_err']) && empty($data['password_err']) && empty($data['confirm_password_err'])){
-          // SUCCESS - Proceed to insert
-
+        // Make sure fields are not empty and errors are empty
+       if(!empty($data['role']) && !empty($data['nic']) && !empty($data['adLine1']) && !empty($data['adLine2']) && !empty($data['country']) && !empty($data['district']) && !empty($data['city']) && !empty($data['fName']) && !empty($data['lName']) 
+        && !empty($data['email']) && !empty($data['password']) && !empty($data['confirmPassword']) && !empty($data['telephoneNo']) && empty($data['email_err']) 
+        && empty($data['password_err']) && empty($data['confirmPassword_err']) && empty($data['tele_err'])){
+          
+          
           // Hash Password
           $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
-
+          
           //Execute
           if($this->userModel->register($data)){
-            // Redirect to login
-            redirect('users/login');
+            if ($this->userModel->updateServiceProvider($data['email'])) {
+              if ($this->userModel->updateSupplier($data['role'],$data['nic'],$data['fName'],$data['lName'],$data['email'],$data['country'],$data['district'],$data['password'],$data['adLine1'],$data['adLine2'],$data['city'],$data['telephoneNo'])) {
+                // Redirect to login
+                redirect('users/login');
+              }
+            }
           } else {
             die('Something went wrong');
           }
            
         } else {
           // Load View
-          $this->view('users/register', $data);
+          $this->view('users/sup/supregister/supregister', $data);
         }
       } else {
         // IF NOT A POST REQUEST
-
+       
         // Init data
         $data = [
-          'FName' => '',
-          'LName' => '',
+          'role' =>'',
+          'nic' => '',
+          'fName' => '',
+          'lName' => '',
           'email' => '',
           'password' => '',
-          'confirm_password' => '',
-          'adline1' => '',
-          'adline2' => '',
-          'city' => '',
-          'Postcode' => '',
-          'District' => '',
-          'Country' => '',
-          'Tele' => '',
-          'FName_err' => '',
-          'LName_err' => '',
+          'confirmPassword' => '',
+          'adLine1' =>'',
+          'adLine2' =>'',
+          'district' => '',
+          'country' => '',
+          'city'=>'',
+          'telephoneNo' => '',
           'email_err' => '',
           'password_err' => '',
-          'confirm_password_err' => '',
-          'adline1_err' => '',
-          'adline2_err' => '',
-          'city_err' => '',
-          'Postcode_err' => '',
-          'District_err' => '',
-          'Country_err' => '',
-          'Tele_err' => ''
+          'confirmPassword_err' => '',
+          'tele_err' => ''
         ];
 
         // Load View
-        $this->view('users/register', $data);
+        $this->view('users/sup/supregister/supregister', $data);
       }
     }
+
+
+
 
     public function login(){
       // Check if logged in
       if($this->isLoggedIn()){
-        redirect('users/eng/dashboard');
+        $this->view('users/sup/supplierDashboard');
       }
 
       // Check if POST
@@ -164,36 +151,38 @@
           // User Found
         } else {
           // No User
-          $data['email_err'] = 'This email is not registered.';
+          $data['email_err'] = 'Email not registered';
         }
 
         // Make sure errors are empty
         if(empty($data['email_err']) && empty($data['password_err'])){
-
+          
           // Check and set logged in user
-          $loggedInUser = $this->userModel->login($data['email'], $data['password']);
+          $loggedInUser = $this->userModel->login($data['email'],$data['password']);
 
           if($loggedInUser){
             // User Authenticated!
-            $this->createUserSession($data['email'],$data['password']);
+          
+            $this->createUserSession($data['email']);
             
-           
           } else {
             $data['password_err'] = 'Password incorrect.';
             // Load View
             $this->view('users/login', $data);
+            
           }
            
         } else {
           // Load View
           $this->view('users/login', $data);
+         
         }
 
       } else {
         // If NOT a POST
-
+       
         // Init data
-        $data = [
+       $data = [
           'email' => '',
           'password' => '',
           'email_err' => '',
@@ -202,22 +191,21 @@
 
         // Load View
         $this->view('users/login', $data);
+        
       }
     }
 
     // Create Session With User Info
-    public function createUserSession($email,$name){
+    public function createUserSession($email){
       
       $_SESSION['user_email'] = $email; 
-      $_SESSION['user_name'] = $name;
-      redirect('users/eng/dashboard');
+     $this->view('users/sup/supplierDashboard');
     }
 
     // Logout & Destroy Session
     public function logout(){
       unset($_SESSION['user_email']);
-      unset($_SESSION['user_name']);
-      session_destroy();
+      //session_destroy();
       redirect('users/login');
     }
 
@@ -229,12 +217,5 @@
         return false;
       }
     }
-
-    public function dashboard(){
-      $data=[
-        
-      ];
-      $this->view('users/eng/dashboard',$data);
-    }
-
+  
   }
