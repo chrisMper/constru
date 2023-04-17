@@ -1,13 +1,12 @@
 <html>
 <head>
-  <meta charset="ISO-8859-1">
   <title>Registration</title>
-  <link rel="stylesheet" type="text/css" href="../../../public/css/supplierRegister.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo URLROOT; ?>/css/supplierRegister.css">
 </head>
 <body>
    <div class="container">
       <div class="logo">
-        <img src="regservices.gif" align="left">
+        <img src="<?php echo URLROOT; ?>/img/product_img/regservices.gif" align="left">
       </div>
 
     <div class="registerbox">
@@ -29,38 +28,45 @@
              <td></td>
           </tr>
           <tr>
+           <td>Full name</td>
+           <td colspan="3"></td>
+          </tr>
+          <tr>
+           <td colspan="2"><input type="text" id="fName" name="fName" placeholder="First name" required></td>
+           <td colspan="2"><input type="text" id="lName" name="lName" placeholder="Last name" required></td>
+          </tr>
+          <tr>
              <td>Working address</td>
              <td colspan="3"></td>
           </tr>
           <tr>
-            <td colspan="4"><input type="text" id="wAddress" name="wAddress" required></td>
+            <td>Address Line 1</td>
+            <td>Address Line 2</td>
+            <td>City</td>
+          </tr>
+          <tr>
+            <td><input type="text" id="adLine1" name="adLine1" required></td>
+            <td><input type="text" id="adLine2" name="adLine2" required></td>
+            <td><input type="text" id="city" name="city" required></td>
           </tr>
           <tr>
            <td>Country</td>
            <td>District</td>
-           <td>Address</td>
+           <td></td>
            <td></td>
           </tr>
           <tr>
            <td><input type="text" id="country" name="country" required></td>
            <td><input type="text" id="district" name="district" required></td>
-           <td colspan="2"><input type="text" id="address" name="address" required></td>
           </tr>
-          <tr>
-           <td>Full name</td>
-           <td colspan="3"></td>
-          </tr>
-          <tr>
-           <td colspan="2"><input type="text" id="fname" name="fname" placeholder="First name" required></td>
-           <td colspan="2"><input type="text" id="lname" name="lname" placeholder="Last name" required></td>
-          </tr>
+          
           <tr>
            <td colspan="2">Email</td>
-           <td colspan="2">Username</td>
+           <td colspan="2">NIC</td>
           </tr>
           <tr>
-           <td colspan="2"><input type="text" id="email" name="email" required></td>
-           <td colspan="2"><input type="text" id="username" name="username" required></td>
+           <td colspan="2"><input type="text" id="email" name="email" required > <span class="error"><?php echo $data['email_err']; ?></span></td>
+           <td colspan="2"><input type="text" id="nic" name="nic" required> </td>
           </tr>
           <tr>
             <td>Login password</td>
@@ -69,7 +75,7 @@
             <td></td>
           </tr>
           <tr>
-            <td colspan="2"><input type="password" id="password" name="password" required>
+            <td colspan="2"><input type="password" id="password" name="password" required> <span class="error"><?php echo $data['password_err']; ?></span>
               <input type ="checkbox" onchange="SHPassword(this)";><span id="showhidepwd">Show</span>
             <script>
               function SHPassword(x){
@@ -84,34 +90,28 @@
                 }
               }
             </script></td>
-            <td colspan="2"><input type="password" id="confirmPassword" name="confirmPassword" required>
-            <input type ="checkbox" onchange="SHPassword(this)";><span id="showhidepwd">Show</span>
+            <td colspan="2"><input type="password" id="confirmPassword" name="confirmPassword" required> <span class="error"><?php echo $data['confirmPassword_err']; ?></span>
+            <input type ="checkbox" onchange="SHconfPassword(this)";><span id="showhideconfpwd">Show</span>
             <script>
-              function SHPassword(x){
-                var chkbox=x.checked;
+              function SHconfPassword(y){
+                var chkbox=y.checked;
                 if (chkbox){
-                  document.getElementById("password").type="text";
-                  document.getElementById("showhidepwd").textContent="Hide";
+                  document.getElementById("confirmPassword").type="text";
+                  document.getElementById("showhideconfpwd").textContent="Hide";
                 }
                 else{
-                  document.getElementById("password").type="password";
-                  document.getElementById("showhidepwd").textContent="Show";
+                  document.getElementById("confirmPassword").type="password";
+                  document.getElementById("showhideconfpwd").textContent="Show";
                 }
               }
-            </script></td></td>
+            </script></td>
           </tr>
           <tr>
             <td colspan="2">Tele No</td>
             <td colspan="2"></td>
           </tr>
           <tr>
-            <td colspan="4"><input type="text" id="tele" name="tele" required></td>
-          </tr>
-          <tr>
-            <td colspan="4">NIC</td>
-          </tr>
-          <tr>
-            <td colspan="4"><input type="text" id="nic" name="nic" required></td>
+            <td colspan="4"><input type="text" id="telephoneNo" name="telephoneNo" required> <span class="error"><?php echo $data['tele_err']; ?></span></td>
           </tr>
           <tr>    
             <td colspan="2"><h3><input type="checkbox" id="agreement" name="agreement" required>I agree to the Construplus.com Membership Agreement & Privacy Policy</h3></td>
