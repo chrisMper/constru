@@ -38,35 +38,36 @@ class User
     //Execute
     if ($this->db->execute()) {
       return true;
-        }else{
-          return false;
-
-        }
+    } else {
+      return false;
+    }
   }
 
 
   //update service_providers table 
-  public function updateServiceProvider($email){
+  public function updateServiceProvider($email)
+  {
     $this->db->query('INSERT INTO `service_providers` (email) 
       VALUES (:email)');
-      $this->db->bind(':email', $email);
-      if ($this->db->execute()) {
-        return true;
-      } else{
-        return false;
-      }
+    $this->db->bind(':email', $email);
+    if ($this->db->execute()) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   //update Engneer table 
-  public function updateEngneer($email){
+  public function updateEngneer($email)
+  {
     $this->db->query('INSERT INTO `engineer` (email) 
       VALUES (:email)');
-      $this->db->bind(':email', $email);
-      if ($this->db->execute()) {
-        return true;
-      } else{
-        return false;
-      }
+    $this->db->bind(':email', $email);
+    if ($this->db->execute()) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
 
@@ -77,7 +78,7 @@ class User
     $this->db->query("SELECT * FROM `users` WHERE email = :email ");
     $this->db->bind(':email', $email);
 
-   
+
 
     $row = $this->db->single();
 
@@ -113,16 +114,17 @@ class User
     }
   }
 
-  public function getUserById($email){
+  public function getUserById($email)
+  {
     $this->db->query('SELECT * FROM users where  email = :email');
-    $this->db->bind(':email',$email);
+    $this->db->bind(':email', $email);
 
-     $row= $this->db->single();
+    $row = $this->db->single();
 
     return $row;
-}
+  }
 
-// Update User
+  // Update User
   public function update($data)
   {
     // Prepare Query
@@ -152,4 +154,14 @@ class User
     }
   }
 
+
+
+  //find serviceprovider to display in gig
+  public function getServiceProviders()
+  {
+    $this->db->query('SELECT * FROM users');
+    $results = $this->db->resultSet();
+
+    return $results;
+  }
 }

@@ -21,23 +21,25 @@
 // add new listing
     public function addlisting($data, $file)
     {
-
+        $filename=$file['file_name'];
 
       // Prepare Query
-      $this->db->query('INSERT INTO engineer_listing (Title,Description,UserEmail,Photos,visiterCount	) 
-            VALUES (:title,:description,:Uemail,:PtName,0)');
+      $this->db->query('INSERT INTO engineer_listing (Title,Description,UserEmail,visiterCount,Photos	) 
+            VALUES (:title,:description,:Uemail,0,:PtName)');
 
       // Bind Values
 
       $this->db->bind(':title', $data['Title']);
       $this->db->bind(':description', $data['Discription']);
       $this->db->bind(':Uemail', $data['UserEmail']);
-      $this->db->bind(':PtName', $file['file_name']);
+      $this->db->bind(':PtName', $filename);
+
+      
 
 
 
 
-      // move_uploaded_file($file['temp_name'], $file['upload_to'] . $file['file_name']);
+      move_uploaded_file($file['temp_name'], $file['upload_to'] . $file['file_name']);
 
 
 

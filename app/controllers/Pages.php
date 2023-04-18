@@ -1,6 +1,11 @@
 <?php
   class Pages extends Controller{
+    private $listingModel;
+    private $userModel;
+    private $engProjectModel;
     public function __construct(){
+      $this->listingModel=$this->model('Listing');
+      $this->userModel=$this->model('User');
      
     }
 
@@ -40,14 +45,67 @@
 
     }
 
-    public function projects(){
-      $this->view('myprojects/myProjects_new');
+    public function myProjectsNew(){
+
+      $listings=$this->listingModel->getListings();
+      $serviceProvider = $this->userModel->getServiceProviders();
+      $engProject =$this->engProjectModel->getEngProgectPending();
+
+      $data=[
+        'listings'=>$listings,
+        'serviceProvider'=>$serviceProvider,
+        'engProjectPendig'=>$engProject
+      ];
+
+      $this->view('users/eng/myprojects/myProjects_new',$data);
     }
-    public function myProjects_completed(){
-      $this->view('myprojects/myProjects_completed');
+    public function myProjectsOnGoing(){
+
+      $listings=$this->listingModel->getListings();
+      $serviceProvider = $this->userModel->getServiceProviders();
+      $engProject =$this->engProjectModel->engineerProjectOngoing();
+
+      $data=[
+        'listings'=>$listings,
+        'serviceProvider'=>$serviceProvider,
+        'engineerProjectOngoing'=>$engProject
+      ];
+
+      $this->view('users/eng/myprojects/myProjects_ongoing',$data);
     }
-    public function myProjects_cancelled(){
-      $this->view("myprojects/myProjects_cancelled");
+
+
+    public function myProjectsCompleted(){
+
+
+      $listings=$this->listingModel->getListings();
+      $serviceProvider = $this->userModel->getServiceProviders();
+      $engProject =$this->engProjectModel->engineerProjectComplete();
+
+      $data=[
+        'listings'=>$listings,
+        'serviceProvider'=>$serviceProvider,
+        'engineerProjectComplete'=>$engProject
+      ];
+
+
+      $this->view('users/eng/myprojects/myProjects_completed',$data);
+    }
+
+
+    public function myProjectsCancelled(){
+
+      $listings=$this->listingModel->getListings();
+      $serviceProvider = $this->userModel->getServiceProviders();
+      $engProject =$this->engProjectModel->engineerProjectCancell();
+
+      $data=[
+        'listings'=>$listings,
+        'serviceProvider'=>$serviceProvider,
+        'engineerProjectCancell'=>$engProject
+      ];
+
+      $this->view("users/eng/myprojects/myProjects_cancelled",$data);
     }
 
     public function cart(){
@@ -57,15 +115,10 @@
     public function orders(){
       $this->view('users/eng/myorders/myOrders');
     }
-    // public function cancelled_roder(){
-    //   $this->view('myorders/cancelled_order');
-    // }
-    // public function cancel(){
-    //   $this->view('myorders/cancel');
-    //}
+   
 
     public function bookings(){
-      $this->view('mybookings/myBookings_ongoing');
+      $this->view('users/eng/mybookings/myBookings_ongoing');
     }
 
     public function stats(){
@@ -86,7 +139,18 @@
     }
 
     public function search(){
-      $this->view('home/search');
+      
+      $listings=$this->listingModel->getListings();
+      $serviceProvider = $this->userModel->getServiceProviders();
+
+        $data = [
+            'listings'=>$listings,
+            'serviceProvider'=>$serviceProvider
+        ]; 
+        
+        $this->view('home/search', $data);
+
+
     }
 
     public function searchgig(){
@@ -123,5 +187,9 @@
     
     public function compRegister(){
       $this->view('Pages/compRegister');
+    }
+
+    public function indexLogged(){
+      $this->view('Pages/indexLogged');
     }
   }

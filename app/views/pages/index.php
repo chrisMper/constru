@@ -111,31 +111,6 @@
 </section>
 <!--donors section ends here-->
 
-<!-- <section class="beneficiaryContainer cover1" id="beneficiarySection">
-    <div class="container">
-        <h1>Together you can <span>Help Them</span></h1>
-        <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem
-            quam voluptatum beatae, est praesentium iure illum, nesciunt ab esse
-            nihil consectetur dicta explicabo voluptas soluta eveniet eos eaque,
-            vitae cumque?
-        </p>
-        <button><a href="http://localhost/Donate/users/register">Start with a little</a></button>
-    </div>
-</section>
-<!--beneficiary section ends here-->
-<!-- <section class="beventHostersContainer cover2" id="eventHostersSection">
-    <div class="container">
-        <h1>Together you can <span>Help Them</span></h1>
-        <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem
-            quam voluptatum beatae, est praesentium iure illum, nesciunt ab esse
-            nihil consectetur dicta explicabo voluptas soluta eveniet eos eaque,
-            vitae cumque?
-        </p>
-        <button>Start with a little</button>
-    </div> -->
-</section> 
-<!-- event hosters section ends here --> 
+
 </body>
 </html>

@@ -1,8 +1,10 @@
 <?php
 
-use function PHPSTORM_META\elementType;
+
 
 class Listings extends Controller{
+  private $listingModel;
+  private $analyseModel;
     public function __construct(){
         if(!isset($_SESSION['user_email'])){
           redirect('users/login');
@@ -64,7 +66,7 @@ class Listings extends Controller{
 		        'file_type' => $_FILES['image']['type'],
 		        'file_size' => $_FILES['image']['size'],
 		        'temp_name' => $_FILES['image']['tmp_name'],
-            'upload_to' => '<?php echo URLROOT; ?>/img/uploads/'
+            'upload_to' => PUBROOT. '/public/img/uploads/'
 
           ];
 
@@ -138,6 +140,9 @@ class Listings extends Controller{
 
            // Sanitize POST
           $_POST  = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+          
+          
          
           $data = [
             'Title' => trim($_POST['title']),
@@ -148,12 +153,16 @@ class Listings extends Controller{
           ];
 
           
+          
+
+          
+
           $file=[
             'file_name' => $_FILES['image']['name'],
 		        'file_type' => $_FILES['image']['type'],
 		        'file_size' => $_FILES['image']['size'],
-		        'temp_name' => $_FILES['image']['tmp_name'],
-            'upload_to' => '<?php echo URLROOT; ?>/img/uploads/'
+		        'temp_name' => $_FILES['image']['tmp_name']
+            // 'upload_to' => 
 
           ];
 

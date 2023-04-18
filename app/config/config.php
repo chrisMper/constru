@@ -12,4 +12,5 @@
   // Site Name
   define('SITENAME', 'Constru +');
   
-  
+  //Pub Root
+  define('PUBROOT',dirname(dirname(dirname(__FILE__))));

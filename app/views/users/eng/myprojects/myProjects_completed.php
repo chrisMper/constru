@@ -64,10 +64,10 @@
     <div class="main">
     <div class="registerbox">
       <div class="topnav">
-        <a href="myProjects_new.php">New</a>
-        <a href="myProjects_ongoing.php">Ongoing</a>
-        <a class="active" href="myProjects_completed.php">Completed</a>
-        <a href="myProjects_cancelled.php">Cancelled</a>
+        <a href="<?php echo URLROOT; ?>/pages/myProjectsNew">New</a>
+        <a href="<?php echo URLROOT; ?>/pages/myProjectsOnGoing">Ongoing</a>
+        <a class="active" href="<?php echo URLROOT; ?>/pages/myProjectsCompleted">Completed</a>
+        <a href="<?php echo URLROOT; ?>/pages/myProjectsCancelled">Cancelled</a>
     </div>
 
     <div class="listing">

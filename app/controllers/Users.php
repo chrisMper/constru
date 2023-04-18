@@ -1,6 +1,7 @@
 <?php
 class Users extends Controller
 {
+  private $userModel; 
   public function __construct()
   {
     $this->userModel = $this->model('User');
@@ -254,15 +255,15 @@ class Users extends Controller
 
   public function dashboard()
   {
-    $data = [];
-    $this->view('users/eng/dashboard', $data);
+    
+    $this->view('users/eng/dashboard');
   }
 
 
 
   public function profile()
   {
-    //Get listing
+    //Get user
     $engineer = $this->userModel->getUserById($_SESSION['user_email']);
 
 
@@ -379,6 +380,10 @@ class Users extends Controller
       $this->view('users/profile', $data);
     }
   }
+
+
+
+
 }
 
 

@@ -21,13 +21,13 @@
 
          <ul class="nav-links">
              <li>
-                 <a href="#" class="active">
+                 <a href="<?php echo URLROOT; ?>/pages/indexLogged" class="active">
                      <i class='bx bx-home'></i>
                      <span class="links_name">Home</span>
                  </a>
              </li>
              <li>
-                 <a href="#">
+                 <a href="<?php echo URLROOT; ?>/users/dashboard">
                      <i class='bx bx-grid'></i>
                      <span class="links_name">Dashboard</span>
                  </a>
@@ -103,7 +103,8 @@
              </div>
              <div class="top">
                  <ul>
-                     <li>Home</li>
+                 <a href="<?php echo URLROOT; ?>/pages/indexLogged" class="active">
+                 <li>Home</li></a>
                      <li>About</li>
                      <li>Our Services </li>
 

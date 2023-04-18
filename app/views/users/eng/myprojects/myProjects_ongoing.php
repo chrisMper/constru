@@ -4,7 +4,7 @@
 <head>
 
   <title>navigation1</title>
-  <link rel="stylesheet" type="text/css" href="../../../public/css/myProjects.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo URLROOT; ?>/css/myprojects.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -64,10 +64,10 @@
     <div class="main">
      <div class="registerbox">
       <div class="topnav">
-        <a href="myProjects_new.php">New</a>
-        <a class="active" href="myProjects_ongoing.php">Ongoing</a>
-        <a href="myProjects_completed.php">Completed</a>
-        <a href="myProjects_cancelled.php">Cancelled</a>
+        <a href="<?php echo URLROOT; ?>/pages/myProjectsNew">New</a>
+        <a class="active" href="<?php echo URLROOT; ?>/pages/myProjectsOnGoing">Ongoing</a>
+        <a href="<?php echo URLROOT; ?>/pages/myProjectsCompleted">Completed</a>
+        <a href="<?php echo URLROOT; ?>/pages/myProjectsCancelled">Cancelled</a>
       </div>
     
    

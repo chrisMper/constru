@@ -109,7 +109,11 @@
             </div>
           </table>
         </form>
-        <form method="post">
+
+
+
+
+        <!-- <form method="post">
           <table>
 
             <tbody>
@@ -144,8 +148,13 @@
               </div>
             </div>
           </table>
-        </form>
+        </form> -->
         
+
+
+
+
+
         <script>
             const progress = document.querySelector("#progress");
             const circles = document.querySelectorAll(".circle");
@@ -191,6 +200,9 @@
         <button><a href="myBookings_cancelled.php">Confirm</a></button>
        </div>
 
+
+
+
        <script>
 
         var popUp = document.getElementById('cancel');
@@ -202,6 +214,8 @@
         }
        }
      </script>
+
+
 
     </div>   
     </div>

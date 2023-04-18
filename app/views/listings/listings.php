@@ -23,7 +23,7 @@
     
     <div class = "left-col">
     
-    <img src="<?php echo URLROOT; ?>/img/msg.png">
+    <img src="<?php echo URLROOT; ?>/img/uploads/<?php echo $listing->Photos; ?> ">
     </div> 
     <div class = 'mid-col'>
         <p class='topic'><?php echo $listing->Title; ?> <p>
