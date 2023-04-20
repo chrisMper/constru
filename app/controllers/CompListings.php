@@ -14,15 +14,15 @@ class CompListings extends Controller{
         $this->analyseModel=$this->model('Analyse');
 
       }
+      
         // Load All Posts
         public function index(){
-          $data = [];
-          $this->view('complistings/listings', $data);
+          
           //Get Post
-          $listings=$this->compListingModel->getListings();
+          $listing=$this->compListingModel->getListings();
   
           $data = [
-              'listings'=>$listings
+              'listings'=>$listing //get data from model to controller 'listing' is a variable
           ];
   
           $this->view('compListings/listings', $data);
@@ -41,10 +41,14 @@ class CompListings extends Controller{
             'description' => trim($_POST['description']),
             'UserEmail'=>$_SESSION['user_email'],
             'contactPerson'=>trim($_POST['contactPerson']),
+            'stage'=>trim($_POST['stage']),
+            'contact'=>trim($_POST['contact']),
             
             'title_err' => '',  
             'discription_err' => '',
-            'contactPerson_err' =>''
+            'contactPerson_err' =>'',
+            'stage_err'=>'',
+            'contact_err'=>'',
           ];
 
           
@@ -78,8 +82,10 @@ class CompListings extends Controller{
 
 
             if($this->compListingModel->addlisting($data,$file)){
+              if($this->compListingModel->updatestages($data['stage'],$data['contact'])){
               // Redirect to login
-              redirect('listings');
+              redirect('CompListings'); 
+              }
             } else {
               die('Something went wrong');
             }
@@ -94,6 +100,8 @@ class CompListings extends Controller{
   
       }
 
+   
+
 
       // uPDATE LISTING 
       public function showUpdateListing($id){
@@ -106,7 +114,7 @@ class CompListings extends Controller{
         ];
 
 
-        $postId=intval($id);
+       // $postId=intval($id);
 
 
         $this->view('compListings/updateListing',$data);

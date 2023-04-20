@@ -48,11 +48,11 @@
       }
     }
 
-    public function updateStages($postId,$stage,$contact)
+    //add to comp_listing_stages table
+    public function updateStages($stage,$contact)
     {
-      $this->db->query('INSERT INTO `comp_listing_stages` (postId, stage, contact)
-      VALUES(:postId,:stage,:contact )');
-      $this->db->bind(':postId', $postId);
+      $this->db->query('INSERT INTO `comp_listing_stages` (stage, contact)
+      VALUES(:stage,:contact )');
       $this->db->bind('stage', $stage);
       $this->db->bind('contact',$contact);
       if ($this->db->execute()) {
@@ -61,6 +61,9 @@
         return false;
       }
     }
+
+   
+ 
 
 //update listiing
     public function updatelisting($data, $file,$id)

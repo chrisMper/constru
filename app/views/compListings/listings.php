@@ -16,17 +16,19 @@
 
 
         <!-- foreach -->
-
+        <?php foreach ($data['listings'] as $listing) :  ?>
+            <?php if (($listing->UserEmail) == $_SESSION['user_email']) : ?>
+        
         <div class="list-container">
+       
 
             <div class="left-mid">
                 <div class="left-col">
-                    <img src="<?php echo URLROOT; ?>/img/uploads/img.jpg ">
-                    <!-- <img src="<?php echo URLROOT; ?>/img/uploads/<?php echo $listing->Photos; ?> "> -->
+                    <img src="<?php echo URLROOT; ?>/img/uploads/<?php echo $listing->Photos; ?> ">
                 </div>
                 <div class='mid-col'>
-                    <p class='topic'>Topic</p>
-                    <p class='description'>Description-orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                    <p class='topic'><?php echo $listing->title;?></p>
+                    <p class='description'><?php echo $listing->description;?></p>
                     <div class="progressbar">
                         <div class="progress" id="progress"></div>
                         <div class="progress-step progress-step-active" data-title="step1 - 444444"></div>
@@ -77,11 +79,10 @@
 
         </div>
 
-        <!-- <?php foreach ($data['listings'] as $listing) :  ?>
-            <?php if (($listing->UserEmail) == $_SESSION['user_email']) : ?> -->
+        
 
-        <!-- <?php endif; ?>
-        <?php endforeach; ?> -->
+         <?php endif; ?>
+        <?php endforeach; ?> 
 
 
 
