@@ -84,9 +84,9 @@ main {
   display: flex;
   flex-direction: row;
   border: 1px solid rgb(199, 195, 195);
-  padding: 10px;
+  padding: 15px;
   width: 70%;
-  max-height: 220px;
+  max-height: 720px;
   justify-content: space-between;
   margin-top: 10px;
   border-radius: 20px;
@@ -165,9 +165,10 @@ input {
   width: 650px;
 }
 
-#description {
-  height: 200px;
+.description {
+  height: auto;
   place-items: top;
+  margin-bottom: 20px;
 }
 
 .sub-discard-btn {
@@ -177,9 +178,10 @@ input {
   /* btn deka aath karanna orne */
 }
 
-#topic {
+.topic {
   font-size: 20px;
-  padding: 20px;
+  margin-bottom: 10px;
+  
 }
 
 /*-------------------------------dashboard----------------------------------------*/
@@ -429,7 +431,7 @@ li {
   width: 1%;
   background-color: #dcdcdc;
   z-index: -1;
-  left:1rem;
+  left:0.85rem;
 }
 .progressbar::before{
   /*9 wenuwata datbase eken step gaana aran daaanna - setp+1*/
@@ -462,7 +464,7 @@ li {
   content: attr(data-title);
   position: absolute;
   left: 3rem;
-  font-size: 0.5rem;
+  font-size: 1rem;
   color: #666;
 }
 /* this is the adding factor in the js */
@@ -474,7 +476,9 @@ li {
 .btns-group {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+  gap: 0rem;
+  font-weight:50;
+  color: #666;
 }
 
 .btn  {

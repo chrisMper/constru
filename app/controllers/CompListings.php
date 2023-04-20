@@ -14,10 +14,6 @@ class CompListings extends Controller{
         $this->analyseModel=$this->model('Analyse');
 
       }
-
-
-    
-    
         // Load All Posts
         public function index(){
           $data = [];
@@ -41,11 +37,14 @@ class CompListings extends Controller{
           $_POST  = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
          
           $data = [
-            'Title' => trim($_POST['title']),
-            'Discription' => trim($_POST['description']),
+            'title' => trim($_POST['title']),
+            'description' => trim($_POST['description']),
             'UserEmail'=>$_SESSION['user_email'],
-            'Title_err' => '',  
-            'Discription_err' => ''
+            'contactPerson'=>trim($_POST['contactPerson']),
+            
+            'title_err' => '',  
+            'discription_err' => '',
+            'contactPerson_err' =>''
           ];
 
           
@@ -59,21 +58,18 @@ class CompListings extends Controller{
           ];
 
         
-
-
-  
         //   // Validate Title
-          if(empty($data['Title'])){
-              $data['Title_err'] = 'Please enter an Title';
+          if(empty($data['title'])){
+              $data['title_err'] = 'Please enter an Title';
 
               // Validate discription
-              if(empty($data['Discription'])){
-                $data['Discription_err'] = 'Please enter a Discription';
+              if(empty($data['description'])){
+                $data['description_err'] = 'Please enter a Description';
               }
           } 
            
           // Make sure errors are empty
-          if(empty($data['Title_err']) && empty($data['Discription_err'])){ 
+          if(empty($data['title_err']) && empty($data['description_err'])){ 
             // SUCCESS - Proceed to insert
   
 
@@ -133,11 +129,11 @@ class CompListings extends Controller{
           
          
           $data = [
-            'Title' => trim($_POST['title']),
-            'Discription' => trim($_POST['description']),
+            'title' => trim($_POST['title']),
+            'description' => trim($_POST['description']),
             'UserEmail'=>$_SESSION['user_email'],
-            'Title_err' => '',  
-            'Discription_err' => ''
+            'title_err' => '',  
+            'description_err' => ''
           ];
 
           
@@ -159,17 +155,17 @@ class CompListings extends Controller{
 
   
         //   // Validate Title
-          if(empty($data['Title'])){
-              $data['Title_err'] = 'Please enter an Title';
+          if(empty($data['title'])){
+              $data['title_err'] = 'Please enter an Title';
 
               // Validate discription
               if(empty($data['Discription'])){
-                $data['Discription_err'] = 'Please enter a Discription';
+                $data['Discription_err'] = 'Please enter a description';
               }
           } 
            
           // Make sure errors are empty
-          if(empty($data['Title_err']) && empty($data['Discription_err'])){ 
+          if(empty($data['title_err']) && empty($data['description_err'])){ 
             // SUCCESS - Proceed to insert
   
 
