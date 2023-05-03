@@ -50,10 +50,7 @@
 
 
                 </div>
-                <!-- <p class='topic'><?php echo $listing->Title; ?>
-                            <p>
-                            <p class='decription'><?php echo $listing->Description; ?>
-                            <p> -->
+             
 
 
             </div>

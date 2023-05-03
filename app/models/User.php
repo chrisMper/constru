@@ -49,7 +49,7 @@ class User
 
     // Prepare Query
     $this->db->query('INSERT INTO `users` (fName, lName,email,`role`,`status`,`password`,adLine1,adline2,city,postalcode,district,country,telephoneNo) 
-      VALUES (:FName, "0",:email,"company","0",:password,:adline1,:adline2,:city,:Postcode,:District,:Country,:Tele)');
+      VALUES (:FName, "(company)",:email,"company","0",:password,:adline1,:adline2,:city,:Postcode,:District,:Country,:Tele)');
 
     // Bind Values
     $this->db->bind(':FName', $data['FName']);

@@ -313,9 +313,10 @@ li {
 
 .details {
   display: flex;
-  flex-direction: column;
-  background-color: rgb(98, 190, 219);
+  flex-direction: row;
+  /* background-color: rgb(98, 190, 219); */
   margin-right: 30px;
+  gap: 20px;
 }
 
 
@@ -340,7 +341,7 @@ li {
 }
 
 .loginDetails {
-  background-color: rgb(98, 190, 219);
+  background-color: rgb(98, 190, 219); 
 
 }
 

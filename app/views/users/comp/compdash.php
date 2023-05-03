@@ -4,7 +4,7 @@ include APPROOT . '/views/inc/navbar.php';
 <main>
     <div class="grid-container">
         <!-- first parameter is the controller, second parameter is the function name inside that controller  -->
-        <a href="<?php echo URLROOT; ?>/pages/compmsg">
+        <a href="<?php echo URLROOT; ?>/Messages/messages">
             <div class="grid-item">
                 <div class="card">
                     <img class="dashimg" src="<?php echo URLROOT; ?>/img/msg.png" alt="msg img" style="width:100%">

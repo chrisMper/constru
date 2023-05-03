@@ -31,15 +31,6 @@
       $this->view('pages/about', $data);
     }
 
-    public function msg(){
-      $this->view('eng/msg/msg');
-      // path is given
-    }
-    public function chat(){
-      $this->view('msg/chat');
-
-    }
-
     public function projects(){
       $this->view('myprojects/myProjects_new');
     }
@@ -109,12 +100,7 @@
     public function compdash(){
       $this->view('users/comp/compdash');
     }
-    public function compmsg(){
-      $this->view('users/comp/msg/compmsg');
-    }
-    public function compchat(){
-      $this->view('users/comp/com/compchat');
-    }
+   
     public function compmyprojects_new(){
       $this->view('users/comp/myprojects/compmyprojects_new');
     }

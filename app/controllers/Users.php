@@ -423,7 +423,6 @@ public function index(){
     $this->view('users/profile', $data);
   }
 
-  
   // Update form 
   public function updateForm()
   {
@@ -527,7 +526,11 @@ public function index(){
       $this->view('users/profile', $data);
     }
   }
+
+  // messaging
+  
 }
+
 
 
 
