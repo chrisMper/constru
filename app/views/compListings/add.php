@@ -16,7 +16,7 @@
 
 				<!--first step -->
 				<div class="add">
-					<p><input id="title" type="text" name="title" placeholder="Enter Service Title hereeeeeeeeeeee"></p>
+					<p><input id="title" type="text" name="title" placeholder="Enter Service Title here"></p>
 					<p><input id="description" type="text" name="description" placeholder="Enter Description here"></p>
 					<p><input id="contactPerson" type="number" name="contactPerson" placeholder="Enter project contact number here"></p>
 					<div id="stages-container">

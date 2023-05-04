@@ -58,7 +58,10 @@
             <div class='right-col'>
                 <button type="button" class="updatebtn">Update</button>
                 <button type="button" class="deletebtn">Delete</button>
-                <button type="button" class="addbtn">Veiw</button>
+                <!-- <button type="button" class="addbtn">Veiw</button> -->
+                <a href="<?php echo URLROOT; ?>/CompListings/viewlisting/">
+                            <button type="button" class="addbtn">Veiw</button>
+                        </a>
 
                 <!-- <a href="<?php echo URLROOT; ?>/complistings/showUpdateListing/<?php echo $listing->PostId; ?>">
                             <button type="button" class="updatebtn">Update</button><br>

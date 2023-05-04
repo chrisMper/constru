@@ -30,28 +30,22 @@ class CompListings extends Controller{
 
 
       public function add(){
-         
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
-
            // Sanitize POST
           $_POST  = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-         
           $data = [
             'title' => trim($_POST['title']),
             'description' => trim($_POST['description']),
             'UserEmail'=>$_SESSION['user_email'],
             'contactPerson'=>trim($_POST['contactPerson']),
             'stage'=>trim($_POST['stage']),
-            'contact'=>trim($_POST['contact']),
-            
+            'contact'=>trim($_POST['contact']),    
             'title_err' => '',  
             'discription_err' => '',
             'contactPerson_err' =>'',
             'stage_err'=>'',
             'contact_err'=>'',
           ];
-
-          
           $file=[
             'file_name' => $_FILES['image']['name'],
 		        'file_type' => $_FILES['image']['type'],
@@ -60,8 +54,6 @@ class CompListings extends Controller{
             'upload_to' => PUBROOT. '/public/img/uploads/'
 
           ];
-
-        
         //   // Validate Title
           if(empty($data['title'])){
               $data['title_err'] = 'Please enter an Title';
@@ -70,26 +62,19 @@ class CompListings extends Controller{
               if(empty($data['description'])){
                 $data['description_err'] = 'Please enter a Description';
               }
-          } 
-           
+          }  
           // Make sure errors are empty
           if(empty($data['title_err']) && empty($data['description_err'])){ 
             // SUCCESS - Proceed to insert
-  
-
             //Execute
-            
-
-
             if($this->compListingModel->addlisting($data,$file)){
-              if($this->compListingModel->updatestages($data['stage'],$data['contact'])){
+              // if($this->compListingModel->updatestages($data['stage'],$data['contact'])){
               // Redirect to login
-              redirect('CompListings'); 
-              }
+              // redirect('CompListings'); 
+              // }
             } else {
               die('Something went wrong');
             }
-             
           } else {
             // Load View
             $this->view('compListings/add', $data);
@@ -97,7 +82,6 @@ class CompListings extends Controller{
         } else {
           $this->view('compListings/add');
         }
-  
       }
 
    
@@ -125,17 +109,12 @@ class CompListings extends Controller{
 
 
       public function updateListing($id){
-
-        
          
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
            // Sanitize POST
           $_POST  = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
-          
-          
-         
           $data = [
             'title' => trim($_POST['title']),
             'description' => trim($_POST['description']),
@@ -144,10 +123,6 @@ class CompListings extends Controller{
             'description_err' => ''
           ];
 
-          
-          
-
-          
 
           $file=[
             'file_name' => $_FILES['image']['name'],
@@ -207,10 +182,10 @@ class CompListings extends Controller{
             } else {
               die('Something went wrong');
             }
-             
-         
-        
-  
+      }
+
+      public function viewlisting(){
+      $this->view('compListings/searchgigcomp');
       }
 
       
