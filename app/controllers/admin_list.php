@@ -13,9 +13,6 @@ class admin_list extends Controller {
       //Get Post
       $admins=$this->adminModel->getAdmins();
 
-      // $data = [
-      //     'admins'=>$admins
-      // ];
       
       // $this->view('users/admin/admins', $data);
       include 'views/admins.php';
