@@ -176,17 +176,14 @@ class CompListings extends Controller{
 
       public function deleteListing($id){
         
-            if($this->compListingModel->delelisting($id)){
+            if($this->compListingModel->deleteListing($id)){
               // Redirect to login
-              redirect('listings');
+              redirect('compListings');
             } else {
               die('Something went wrong');
             }
       }
 
-      public function viewlisting(){
-      $this->view('compListings/searchgigcomp');
-      }
 
       
 }

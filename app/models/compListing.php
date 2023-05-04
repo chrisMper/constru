@@ -96,7 +96,7 @@ class compListing
     }
   }
   //delete listiing
-  public function delelisting($id)
+  public function deleteListing($id)
   {
     // Prepare Query
     $this->db->query('DELETE FROM comp_listing WHERE PostId= :id');
