@@ -111,7 +111,7 @@ button {
 }
 
 .updatebtn {
-  border-color: #151CB9;
+  outline: 3px solid blue;
 }
 
 .addbtn {

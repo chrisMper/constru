@@ -523,6 +523,11 @@ body {
     background-color: rgba(43, 161, 55, 1);
 }
 
+.circle.intermerdiate {
+  border-color: var(--line-border-color);
+  background-color: rgb(217, 255, 0);
+}
+
 .btn:disabled {
     background-color: var(--disabled-line-border);
     border-radius: 0.5rem;

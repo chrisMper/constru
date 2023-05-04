@@ -1,7 +1,4 @@
 <?php
-
-
-
 class Listings extends Controller{
   private $listingModel;
   private $analyseModel;
@@ -14,9 +11,6 @@ class Listings extends Controller{
         $this->analyseModel=$this->model('Analyse');
 
       }
-
-
-    
     
         // Load All Posts
     public function index(){

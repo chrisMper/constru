@@ -6,6 +6,7 @@
     public function __construct(){
       $this->listingModel=$this->model('Listing');
       $this->userModel=$this->model('User');
+      $this->engProjectModel=$this->model('engProject');
      
     }
 
@@ -59,11 +60,13 @@
 
       $this->view('users/eng/myprojects/myProjects_new',$data);
     }
+
+    
     public function myProjectsOnGoing(){
 
       $listings=$this->listingModel->getListings();
       $serviceProvider = $this->userModel->getServiceProviders();
-      $engProject =$this->engProjectModel->engineerProjectOngoing();
+      $engProject =$this->engProjectModel->getEngineerProjectOngoing();
 
       $data=[
         'listings'=>$listings,
@@ -80,7 +83,7 @@
 
       $listings=$this->listingModel->getListings();
       $serviceProvider = $this->userModel->getServiceProviders();
-      $engProject =$this->engProjectModel->engineerProjectComplete();
+      $engProject =$this->engProjectModel->getEngineerProjectComplete();
 
       $data=[
         'listings'=>$listings,
@@ -97,7 +100,8 @@
 
       $listings=$this->listingModel->getListings();
       $serviceProvider = $this->userModel->getServiceProviders();
-      $engProject =$this->engProjectModel->engineerProjectCancell();
+      $engProject =$this->engProjectModel->getEngineerProjectCancell();
+      
 
       $data=[
         'listings'=>$listings,
@@ -126,7 +130,7 @@
     }
 
     public function cv(){
-      $this->view('users/eng/cv/cvdisplay');
+      $this->view('users/eng/cv/viewcv');
     }
     
 

@@ -72,11 +72,7 @@
       // $this->db->bind(':PtName', $file['file_name']);
 
 
-
-
       // move_uploaded_file($file['temp_name'], $file['upload_to'] . $file['file_name']);
-
-
 
 
 
@@ -87,6 +83,9 @@
         return false;
       }
     }
+
+
+
 
     //delete listiing
     public function delelisting($id)
@@ -108,6 +107,17 @@
         return false;
       }
     }
+
+    public function getListingById($postId)
+    {
+      $this->db->query('SELECT * FROM engineer_listing where  PostId = :postId');
+      $this->db->bind(':postId', $postId);
+  
+      $row = $this->db->single();
+  
+      return $row;
+    }
+    
 
 
 
