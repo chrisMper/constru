@@ -1,6 +1,7 @@
 <?php
   class Pages extends Controller{
     public function __construct(){
+      $this->adminModel=$this->model('adminModel');
      
     }
 
@@ -120,27 +121,52 @@
     }
     /*functions of comp ends here*/
     // functions of home start here
+
+
     
-    public function compRegister(){
-      $this->view('Pages/compRegister');
-    }
-    
-        //functions of admin here
+    //functions of admin here
     public function complaint(){
-      $this->view('users/admin/complaints/complaint');
+      $this->complaintModel = $this->model('complaintModel');
+      $complaints =  $this->complaintModel->getComplaints();
+      $data = [ 
+        'users'=>$complaints,
+        
+      ];
+
+      $this->view('users/admin/complaints/complaint',$data);
     }
 
     public function join_requests(){
-      $this->view('users/admin/joinreq/join_requests');
+      $this->requestModel = $this->model('requestModel');
+      $requests =  $this->requestModel->getRequests();
+      $data = [ 
+        'users'=>$requests,
+        
+      ];
+
+
+      $this->view('users/admin/joinreq/join_requests',$data);
+      
+    }
+
+    public function join_req_view(){
+      $this->requestModel = $this->model('requestModel');
+      $details =  $this->requestModel->getDetails();
+      $data = [ 
+        'users'=>$details,
+        
+      ];
+
+
+      $this->view('users/admin/joinreq/join_req_view',$data);
+      
     }
 
     public function stats_view(){
       $this->view('users/admin/stats/stats_view');
     }
     
-    public function customers(){
-      $this->view('users/admin/customers/customers');
-    }
+   
 
     public function comps(){
       $this->view('users/admin/serviceproviders/comps');
@@ -151,6 +177,13 @@
     }
 
     public function engs(){
+      $this->spModel = $this->model('spModel');
+      $engs =  $this->spModel->getEngineers();
+      $data = [ 
+        'users'=>$engineers,
+        
+      ];
+
       $this->view('users/admin/serviceproviders/engs');
     }
 
@@ -162,9 +195,34 @@
       $this->view('users/admin/admins/add_admin');
     }
 
-    public function admins(){
-      $this->view('users/admin/admins/admins');
+    public function customers(){
+      $this->customerModel = $this->model('customerModel');
+      $customers =  $this->customerModel->getCustomers();
+      $data = [ 
+        'users'=>$customers,
+        
+      ];
+
+      $this->view('users/admin/customers/customers',$data);
+
     }
 
-    
+    public function admins(){
+      $admins =  $this->adminModel->getAdmins();
+      $data = [ 
+        'users'=>$admins,
+        
+      ];
+
+      $this->view('users/admin/admins/admins',$data);
+
+    }
+
+    public function admin_dashboard(){
+      $this->view('users/admin/admins/admin_dashboard');
+    }
+
+
+
+
   }
