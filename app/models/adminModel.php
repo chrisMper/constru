@@ -9,13 +9,7 @@ class adminModel {
       $this->db = new Database;
     }
 
-  //   public function getAdmins(){
-  //     $this->db->query('SELECT * FROM admins');
-
-  //     $results= $this->db->resultSet();
-
-  //     return $results;
-  // }
+  
 
   public function getAdmins()
     {
