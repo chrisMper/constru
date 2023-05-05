@@ -20,19 +20,7 @@ class adminModel {
       return $admins;
 
      
-        // $query = "SELECT * FROM admins";
-        // $result = $this->db->query($query);
-        // $admins = array();
-        // while ($row = $result->fetch_assoc()) {
-        //     $user = array(
-        //         "name" => $row["name"],
-        //         "contact_number" => $row["contact_number"],
-        //         "email" => $row["email"],
-        //         "nic" => $row["nic"],
-        //         "address" => $row["address"],
-        //         "profile" => $row["profile"],
-        //     );
-            // array_push($admins, $user);
+        
         }
        
     
