@@ -60,7 +60,7 @@
      
       <div class="form-actions"> 
         <button type="submit" class="submitbtn">Submit</button>
-        <button  class="discardbtn"><a href="<?php echo URLROOT; ?>/items/items/items">Discard </a></button>
+        <button  class="discardbtn"><a href="<?php echo URLROOT; ?>/items/items">Discard </a></button>
 	    </div>
     </form>
     </div>
