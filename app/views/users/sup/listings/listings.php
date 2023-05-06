@@ -11,29 +11,31 @@
 <?php include APPROOT . '/views/inc/navbar_sup.php'; ?>
 
     <div class="main">
-      <button class="addbtn"><a href="<?php echo URLROOT; ?>/pages/addlistings">Add New</a></button>
-      <div class="listing">
-              <?php foreach($data['listings'] as $listings) : ?>
-              <div class='listing-card'>
+    <a href="<?php echo URLROOT; ?>/pages/supplier" ><i class='bx bx-arrow-back'></i>Back </a>
+      <button class="addbtn"><a href="<?php echo URLROOT; ?>/items/addItems">Add New</a></button>
+      <div class="item">
+              <?php foreach($data['items'] as $item) : ?>
+                <?php if($item->email ==$_SESSION['user_email']):?>
+              <div class='item-card'>
               <div>
-                <img src='<?php echo URLROOT; ?>/img/product_img/product_placeholder.png'> 
+                <img src='<?php echo URLROOT; ?>/img/itemImage/<?php echo $item->itemImage; ?>' alt='<?php echo URLROOT; ?>/img/itemImage/product_placeholder.png'> 
               </div>
               <div>
-                <h3><?php echo $listings->product; ?></h3>
+                <h3><?php echo $item->item; ?></h3>
                 <div>
-                  <div><label for=''>Price</label><input type='text' value='<?php echo $listings->price; ?>' readonly></div>
-                  <div><label for=''>Availability</label><input type='text' value='<?php echo $listings->availability; ?>' readonly></div>
-                  <div><label for=''>Available Quantity</label><input type='text' value='<?php echo $listings->quantity; ?>' readonly></div>
+                  <div><label for=''>Code</label><input type='text' value='<?php echo $item->code; ?>' readonly></div>
+                  <div><label for=''>Price</label><input type='text' value='<?php echo $item->price; ?>' readonly></div>
+                  <div><label for=''>Available Quantity</label><input type='text' value='<?php echo $item->quantityInStock; ?>' readonly></div>
                 </div>
               </div>
               <div>
-                 <div></div><label for=''>Delivery within(approx)</label><input type='text' value='<?php echo $listings->time; ?>' readonly>
+                 <div><label for=''>Description</label><h5><?php echo $item->description; ?></h5></div>
+                 <div><label for=''>Category</label><input type='text' value='<?php echo $item->category; ?>' readonly></div>
               </div>
               <div>
-                <?php if($data['listings']->user_id ==$_SESSION['user_id']):?>
                 
-                <div><button class="updatebtn"><a href="<?php echo URLROOT; ?>/pages/updatelistings/<?php echo $data['listings']->id;?>">UPDATE</a></button></div>
-                <div><form action="<?php echo URLROOT; ?>/listings/deletelistings/<?php echo $data['listings']->id;?>" method="POST">
+                <div><button class="updatebtn"><a href="<?php echo URLROOT; ?>/items/updateItems/<?php echo $item->supplierItemId;?>">UPDATE</a></button></div>
+                <div><form action="<?php echo URLROOT; ?>/items/deleteItems/<?php echo $item->supplierItemId;?>" method="POST" >
                      <button type="submit" class="deletebtn">DELETE</button>
                 </form></div>
 
@@ -45,16 +47,6 @@
     </div>
 
     <?php include APPROOT . '/views/inc/footer.php'; ?>
-  <!-- <div class="footer">
-      
-        <div class="footerleft">
-            <h5>Sri Lanka| English (US)</h5>
-        </div>
-        <div class=" footerright">
-            <h5>&copy; 2022 Constru+,inc.    Privacy   Terms of Use</h5>
-        </div>
-      
-    </div>  -->
 
 </body>
 
