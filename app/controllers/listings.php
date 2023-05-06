@@ -1,182 +1,160 @@
 <?php
-class listings extends Controller{
+class items extends Controller{
     public function __construct(){
-        if(!isset($_SESSION['user_id'])){
+        if(!isset($_SESSION['user_email'])){
           redirect('users/login');
         }
 
-        $this->listingModel=$this->model('listings');
-        $this->userModel=$this->model('supplier');
+        $this->itemModel=$this->model('item');
+        $this->userModel=$this->model('User');
 
-      }
-
-
+    }
+  
     
+        // Load All items
+    public function items(){
+        //Get items
+        $items=$this->itemModel->getItems();
     
-        // Load All Posts
-    public function index(){
-        //Get Post
-        $listings=$this->listingModel->getListings();
-        $supplier=$this->userModel->getUserById($listings->user_id);
-
         $data = [
-            'listings'=>$listings,
-            'supplier'=>$supplier
+            'items'=>$items,
         ];
         
-        $this->view('listings/listings', $data);
-      }
+        $this->view('users/sup/items/items', $data);
+    }
 
 
 
-  public function addlistings(){
+  public function addItems(){
    
    if ($_SERVER['REQUEST_METHOD'] == 'POST'){
    
     $_POST = filter_input_array(INPUT_POST,FILTER_SANITIZE_STRING);
    
     $data = [
-      'product' => trim($_POST['product']),
+      'item' => trim($_POST['item']),
       'description'=>trim($_POST['description']),
       'price' => trim($_POST['price']),
-      'time' => trim($_POST['time']),
-      'availability' => trim($_POST['availability']),
-      'quantity' => trim($_POST['quantity']),
-      'stockamount' => trim($_POST['stockamount']),
-      'product_img' =>trim($_POST['product_img']),
-      'user_id'=>$_SESSION['user_id'],
-      'id_err' => '',
-      'product_err' => '',
-      'description_err' => '',
-      'price_err' => '',
-      'time_err' => '',
-      'availability_err' => '',
-      'quantity_err' => '',
-      'stockamount_err' => '',
-      'product_img_err' => ''
+      'code' => trim($_POST['code']),
+      'quantityInStock' => trim($_POST['quantityInStock']),
+      'category' => trim($_POST['category']),
+      //'itemImage' =>trim($_POST['itemImage']),
+      'email'=>$_SESSION['user_email']
     ];
   
     $file = [
-      'file_name'=> $_FILES['product_img']['name'],
-      'file_type'=> $_FILES['product_img']['type'],
-      'file_size'=> $_FILES['product_img']['size'],
-      'tmp_name' => $_FILES['product_img']['tmp_name'],
-      'upload_to'=>'<?php echo URLROOT; ?>/img/product_img/'
+      'file_name'=> $_FILES['itemImage']['name'],
+      'file_type'=> $_FILES['itemImage']['type'],
+      'file_size'=> $_FILES['itemImage']['size'],
+      'tmp_name' => $_FILES['itemImage']['tmp_name'],
+      'upload_to' => PUBROOT. '/public/img/itemImage/'
+      
     ];
-
-    if(!empty($product) && !empty($description) && !empty($price) && !empty($time) && !empty($availability) && !empty($quantity) && is_numeric($quantity) && is_numeric($price))
+    
+    if(!empty($data['item']) && !empty($data['description']) && !empty($data['price']) && !empty($data['code']) && !empty($data['quantityInStock']) && !empty($data['category']) && !empty($file['file_name']) && is_numeric($data['quantityInStock']) && is_numeric($data['price']))
 		{
-      if($this->listingModel->addlistings($data,$file)){
-        redirect('listings');
+      
+      if($this->itemModel->addItems($data,$file)){
+        redirect('items/items');
+        //$this->view('users/sup/items/items');
       } else {
         die('Something went wrong');
       }
     }else{
-      $this->view('listings/addlistings',$data);
+      $this->view('users/sup/items/addItems',$data);
     }
   }else{
      $data = [	  
 		
-    'id' => '',
-		'product' => '',
+		'item' => '',
     'description' => '',
     'price' => '',
-    'time' => '',
-    'availability' => '',
-    'quantity' => '',
-    'stockamount' => '',
-    'product_img' => ''
+    'code' => '',
+    'quantityInStock' => '',
+    'category' => '',
+    'itemImage' => ''
     ];
-    $this->view('listings/addlistings',$data);
+    $this->view('users/sup/items/addItems',$data);
   }
 }
 
  
-public function updatelistings($id){
-   
+public function updateItems($supplierItemId){
+ 
   if ($_SERVER['REQUEST_METHOD'] == 'POST'){
   
    $_POST = filter_input_array(INPUT_POST,FILTER_SANITIZE_STRING);
   
    $data = [
-     'id' => $id,
-     'product' => trim($_POST['product']),
+     'supplierItemId' => $supplierItemId,
+     'item' => trim($_POST['item']),
      'description'=>trim($_POST['description']),
      'price' => trim($_POST['price']),
-     'time' => trim($_POST['time']),
-     'availability' => trim($_POST['availability']),
-     'quantity' => trim($_POST['quantity']),
-     'stockamount' => trim($_POST['stockamount']),
-     'product_img' =>trim($_POST['product_img']),
-     'user_id'=>$_SESSION['user_id'],
-     'id_err' => '',
-     'product_err' => '',
-     'description_err' => '',
-     'price_err' => '',
-     'time_err' => '',
-     'availability_err' => '',
-     'quantity_err' => '',
-     'stockamount_err' => '',
-     'product_img_err' => ''
+     'code' => trim($_POST['code']),
+     'quantityInStock' => trim($_POST['quantityInStock']),
+     'category' => trim($_POST['category']),
+     //'itemImage' =>trim($_POST['itemImage']),
+     'email'=>$_SESSION['user_email'],
    ];
  
    $file = [
-     'file_name'=> $_FILES['product_img']['name'],
-     'file_type'=> $_FILES['product_img']['type'],
-     'file_size'=> $_FILES['product_img']['size'],
-     'tmp_name' => $_FILES['product_img']['tmp_name'],
-     'upload_to'=>'<?php echo URLROOT; ?>/img/product_img/'
+     'file_name'=> $_FILES['itemImage']['name'],
+     'file_type'=> $_FILES['itemImage']['type'],
+     'file_size'=> $_FILES['itemImage']['size'],
+     'tmp_name' => $_FILES['itemImage']['tmp_name'],
+     'upload_to'=>PUBROOT. '/public/img/itemImage/'
    ];
 
-   if(!empty($product) && !empty($description) && !empty($price) && !empty($time) && !empty($availability) && !empty($quantity) && is_numeric($quantity) && is_numeric($price))
+   if(!empty($data['item']) && !empty($data['description']) && !empty($data['price']) && !empty($data['code']) && !empty($data['quantityInStock']) && !empty($data['category']) && !empty($file['file_name']) && is_numeric($data['quantityInStock']) && is_numeric($data['price']))
    {
-     if($this->listingModel->updatelistings($data,$file)){
-       redirect('listings');
+     if($this->itemModel->updateItems($data,$file)){
+      redirect('items/items');
+      //$this->view('users/sup/items/items');
      } else {
        die('Something went wrong');
      }
    }else{
-     $this->view('listings/updatelistings',$data);
+     $this->view('users/sup/items/updateItems',$data);
    }
  }else{
 
-    $listings=$this->listingModel->getListingById($id);
+    $item=$this->itemModel->getItemById($supplierItemId);
  
-    if($listings->user_id !=$_SESSION['user_id']){
-      redirect('listings');
-    }
+  /*  if($item->email !=$_SESSION['user_email']){
+      $this->view('users/sup/items/items');
+    }*/
     $data = [	  
    
-   'id' => $id,
-   'product' => $listings->product,
-   'description' => $listings->description,
-   'price' => $listings->price,
-   'time' =>$listings->time,
-   'availability' => $listings->availability,
-   'quantity' => $listings->quantity,
-   'stockamount' =>$listings->stockamount,
-   'product_img' => $listings->product_img
+   'supplierItemId' => $supplierItemId,
+   'item' => $item->item,
+   'description' => $item->description,
+   'price' => $item->price,
+   'code' =>$item->code,
+   'quantityInStock' => $item->quantityInStock,
+   'category' =>$item->category,
+   'itemImage' => $item->itemImage
    ];
-   $this->view('listings/updatelistings',$data);
+   $this->view('users/sup/items/updateItems',$data);
  }
 }
 
-public function deletelistings($id){
+public function deleteItems($supplierItemId){
    if ($_SERVER['REQUEST_METHOD']== 'POST'){
 
-    $listings=$this->listingModel->getListingById($id);
+    $item=$this->itemModel->getItemById($supplierItemId);
  
-    if($listings->user_id !=$_SESSION['user_id']){
-      redirect('listings');
-    }
-     if($this->listingModel->deletelistings($id)){
-      redirect('listings');
+   /* if($item->email !=$_SESSION['user_email']){
+      redirect('users/sup/items/items');
+    }*/
+     if($this->itemModel->deleteItems($supplierItemId)){
+      redirect('items/items');
+      //$this->view('users/sup/items/items');
      }
      else{
       die('Something went wrong');
      }
    }else{
-    redirect('listings');
+    $this->view('users/sup/items/items');
    }
   
 }
