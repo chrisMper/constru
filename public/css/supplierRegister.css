@@ -20,7 +20,7 @@ body{
 .registerbox{
 
     left:40%;
-    background: #2C2E57;
+    background: linear-gradient(to left, #faeded, #e9e6e6);
     width:760px;
     height:650px;
     position:absolute;
@@ -70,7 +70,7 @@ tr{
 }
 
 td{
-    color:#fff;
+    color: #000;
     padding-right: 20px;
 }
 td input[type="text"]{
