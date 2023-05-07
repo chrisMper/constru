@@ -135,31 +135,48 @@
                           </div>
 
 
+                          <?php foreach ($data['cancellNotes'] as $cancellNotes) {
+                            if ($cancellNotes->projectId == $engineerProjectOngoing->projectId) {
+                              $Reason = $cancellNotes->cancellNote;
+                            }
+                          }
+
+                          ?>
+
+
+
+
+
+
+
                         </div>
                           </div>
 
-                          <?php if ($engineerProjectOngoing->cancellComfomation==-1){ ?>
-                          <div>
-                          <?php if ($engineerProjectOngoing->stageComfomation==-1){ ?>
-                            <button type="button" onclick="completeFunction(<?php echo $engineerProjectOngoing->projectId ?>).style.display='block'; ">Completed</button>
-                            <?php }else {?>
-                              <h5 style="color: blue;"> Waiting for the customer to approve the stage </h5>
-                              <?php }?>
-                            <button type="button" onclick="cancelFunction(<?php echo $engineerProjectOngoing->projectId ?>).style.display='block'; ">Cancel</button>
-                          </div>
+                          <?php if ($engineerProjectOngoing->cancellComfomation == -1) { ?>
+                            <div>
+                              <?php if ($engineerProjectOngoing->stageComfomation == -1) { ?>
+                                <button type="button" onclick="completeFunction(<?php echo $engineerProjectOngoing->projectId ?>).style.display='block'; ">Completed</button>
+                              <?php } else { ?>
+                                <h5 style="color: blue;"> Waiting for the customer to approve the stage </h5>
+                              <?php } ?>
+                              <button type="button" onclick="cancelFunction(<?php echo $engineerProjectOngoing->projectId ?>).style.display='block'; ">Cancel</button>
+                            </div>
 
-                          <?php } else{ ?>
-
+                          <?php } elseif ($engineerProjectOngoing->cancellComfomation == 0) { ?>
                             <h5 style="color: red;"> A cancellation note has been sent to the customer. </h5>
+                          <?php } else { ?>
+                            <h5 style="color: red;"> A cancel note has been sent by the customer </h5>
 
+                            <button type="button" onclick="cancelConfirmFunction(<?php echo $engineerProjectOngoing->projectId ?>,'<?php echo $Reason; ?>').style.display='block'; ">Confirm Cancelation</button>
 
-                            <?php } ?>
+                          <?php } ?>
                     </div>
                 </table>
 
               </form>
           <?php endif;
           endforeach; ?>
+
 
 
 
@@ -202,25 +219,26 @@
               document.getElementById('projectId').value = projectId;
 
             }
-            
           </script>
+
+
 
           <div id="cancel" class="popUp">
             <span onclick="document.getElementById('cancel').style.display='none'" class="close" title="Close Modal">&times;</span>
-            <form class="acceptContent" action="<?php echo URLROOT; ?>/engBookings/engProjectCancellConformation" method="POST">
+            <form class="acceptContent" action="<?php echo URLROOT; ?>/engBookings/ProjectCancellConformation" method="POST">
               <table class="acceptTable">
                 <tr>
                   <td><label for="reason">Mention the reasons to cancel</label></td>
-                  <td><textarea id="reason" name="reason" rows="4" cols="50" required ></textarea></td>
+                  <td><textarea id="reason" name="reason" rows="4" cols="50" required></textarea></td>
                 </tr>
               </table>
-           
-            <input type="text" id="Id" name="projectId" hidden>
-            <p>
-            <h5>A message will be sent to the client on the cancellation. Until the acceptence of the client, the cancellation will not be valid.</h5>
-            </p>
-            <button type="submit">Confirm </button> 
-          </form>
+
+              <input type="text" id="Id" name="projectId" hidden>
+              <p>
+              <h5>A message will be sent to the client on the cancellation. Until the acceptence of the client, the cancellation will not be valid.</h5>
+              </p>
+              <button type="submit">Confirm </button>
+            </form>
           </div>
 
           <script>
@@ -235,12 +253,9 @@
 
             const cancellFun = document.getElementById('cancel')
 
-            function cancelFunction(Id){
+            function cancelFunction(Id) {
               cancellFun.style.display = 'block';
               document.getElementById('Id').value = Id;
-            
-  
-            
             }
           </script>
 

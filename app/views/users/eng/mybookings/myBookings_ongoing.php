@@ -138,6 +138,11 @@
                           </div>
 
                           <div>
+
+                          <?php if($engineerProjectOngoing->cancellComfomation == 1) { ?>
+                              <h5 style="color: red;"> A cancellation note has been sent to the service provider. </h5>
+
+                              <?php }else{ ?>
                           <?php if ($engineerProjectOngoing->cancellComfomation != 0 ) { 
                              if ($engineerProjectOngoing->stageComfomation == 0 && $engineerProjectOngoing->currentStage != $engineerProjectOngoing->stages - 1) { ?>
                               <button type="button" onclick="completeFunction(<?php echo $engineerProjectOngoing->projectId ?>).style.display='block';">Confirm stage completion</button>
@@ -152,9 +157,9 @@
                             <?php } ?>
 
 
-                            <?php if ($engineerProjectOngoing->cancellComfomation != 0 ) { ?>
+                            <?php if ($engineerProjectOngoing->cancellComfomation == -1 ) { ?>
                               <button type="button" onclick="cancelFunction(<?php echo $engineerProjectOngoing->projectId ?>).style.display='block';">Cancel</button>
-                            <?php } ?>
+                            <?php } }?>
                             
                           </div>
                     </div>
@@ -256,9 +261,12 @@
             }
           </script>
 
+
+
+
           <div id="cancel" class="popUp">
             <span onclick="document.getElementById('cancel').style.display='none'" class="close" title="Close Modal">&times;</span>
-            <form class="acceptContent" action="<?php echo URLROOT; ?>/engBookings/engProjectCancellConformation" method="POST">
+            <form class="acceptContent" action="<?php echo URLROOT; ?>/engBookings/cusProjectCancellConformation" method="POST">
               <table class="acceptTable">
                 <tr>
                   <td><label for="reason">Mention the reasons to cancel</label></td>

@@ -284,6 +284,16 @@ class engProject
 
   }
 
+  public function getcancellNotes()
+  {
+    $this->db->query('SELECT * FROM `engneerordercancellnote` ' );
+    
+    $row = $this->db->resultSet();
+
+    return $row;
+
+  }
+
 
 
   // STAGE conformation ongoing projects
@@ -320,6 +330,21 @@ class engProject
   public function cancellConform($data)
   {
     $this->db->query('UPDATE `engineer_project_ongoing` SET cancellComfomation=0 WHERE projectId=:projectId');
+    $this->db->bind(':projectId', $data['projectId']);
+    $this->db->execute();
+
+
+    if ($this->CancellConformUpdateUpdateTable($data)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+
+  public function cusCancellConform($data)
+  {
+    $this->db->query('UPDATE `engineer_project_ongoing` SET cancellComfomation=1 WHERE projectId=:projectId');
     $this->db->bind(':projectId', $data['projectId']);
     $this->db->execute();
 

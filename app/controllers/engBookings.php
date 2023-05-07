@@ -283,4 +283,37 @@ class engBookings extends Controller
       }
     }
   }
+
+
+
+
+  public function cusProjectCancellConformation()
+  {
+    // Check if POST
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+
+      // Sanitize POST
+      $_POST  = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+
+      $data = [
+        'projectId' => trim($_POST['projectId']),
+        'reason' => trim($_POST['reason']),
+        'userEmail' => $_SESSION['user_email']
+      ];
+
+      // check previous submissions
+      if ($this->engProjectModel->cheakCancellComfomation($_POST['projectId'])) {
+        // right function for customer side
+        $this->controller('pages')->customerBookingOnGoing();
+      } else {
+        if ($this->engProjectModel->cusCancellConform($data)) {
+          $this->controller('pages')->customerBookingOnGoing();
+        }
+      }
+    }
+  }
+
+
 }

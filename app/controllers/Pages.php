@@ -77,11 +77,13 @@ class Pages extends Controller
     $listings = $this->listingModel->getListings();
     $serviceProvider = $this->userModel->getServiceProviders();
     $engProject = $this->engProjectModel->getEngineerProjectOngoing();
+    $cancellNotes = $this->engProjectModel->getcancellNotes();
 
     $data = [
       'listings' => $listings,
       'serviceProvider' => $serviceProvider,
-      'engineerProjectOngoing' => $engProject
+      'engineerProjectOngoing' => $engProject,
+      'cancellNotes'=>$cancellNotes
     ];
 
     $this->view('users/eng/myprojects/myProjects_ongoing', $data);
