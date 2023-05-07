@@ -1,0 +1,29 @@
+.main{
+    width: calc(100% - 300px) !important;
+    height: calc(100% - 100px);
+    overflow-y: auto;
+    position: absolute;
+    left: 300px;
+    top: 100px;
+    overflow-y: hidden;
+  }
+
+.statistics {
+    border-color: #000;
+    /* position: absolute; */
+    width: 925px;
+    height: 230px;
+    /* left: 335px; */
+    /* top: 192px; */
+  }
+  
+.theader{
+  margin:20px;
+}
+
+.theader th{
+   width:18.3%;
+   height: 20%;
+   padding:10px;
+}
+  

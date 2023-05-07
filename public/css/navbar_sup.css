@@ -1,0 +1,193 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    align-items: center;
+    background: #fff;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-height: 100vh;
+    overflow-y: hidden;
+  }
+  
+  .container {
+    padding-left: 40px;
+    padding-top: 70px;
+    background: #fff;
+  }
+  
+  .navlogo img {
+    width: 80px;
+    height: 70px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: -4px;
+    float: left;
+    display: inline-flex;
+    border-radius: 15px;
+  }
+  .navright i {
+    float: right;
+    color: #fff;
+    height: 40px;
+    min-width: 50px;
+    font-size: 28px;
+    padding-top: 10px;
+  }
+  .navbar {
+    height: 64px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1100;
+    background: #3b408d;
+    /*background-image: url(/img/product_img/backimg.jpg);*/
+  }
+  
+  .navcenter {
+    text-align: center;
+    display: inline-flex;
+    float: right;
+    margin-top: -1px;
+  }
+  .navcenter ul {
+    display: inline-flex;
+    color: rgb(255, 255, 255);
+    list-style: none;
+  }
+  
+  .navcenter ul li {
+    margin-top: 8px;
+    width: 150px;
+    padding: 8px;
+    font-size: 21px;
+  }
+  .navcenter ul li:hover {
+    background: #adadeb;
+    border-radius: 4px;
+  }
+  
+  .navcenter ul li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+  }
+  
+  .Servicemenu {
+    background: #3b408d;
+    display: none;
+    text-align: left;
+    align-items: right;
+    padding-left: 3rem;
+  }
+  .navcenter ul li:hover .servicemenu {
+    display: block;
+    position: absolute;
+    margin-left: -20px;
+    margin-top: 8px;
+  }
+  .navcenter ul li:hover .servicemenu ul {
+    display: block;
+    margin-top: 3px;
+    margin-right: 3px;
+    margin-bottom: 3px;
+    margin-left: -32px;
+  }
+  .navcenter ul li:hover .servicemenu ul li{
+    font-size: 16px;
+  }
+
+.table-container {
+  width: 80px;
+  height: 100%;
+  top: 64px;
+  left:0px;
+  margin-top: 0px;
+  background: #4873d0;
+  position: fixed;
+}
+.table-container.open{
+  width:250px;
+}
+.table-container .menu{
+  height: 60px;
+  display: flex;
+  top: 30px;
+  margin: 10px;
+  position: relative;
+}
+.table-container .menu #btn{
+  position: absolute;
+  transform: translateY(-50%);
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.table-container.open .menu #btn{
+  text-align: right;
+}
+.sidebar{
+  top: 150px;
+}
+
+.sidebar ul li {
+  list-style: none;
+  padding: 0px;
+  margin: 10px;
+}
+.sidebar ul li.active{
+  background: #fff;
+}
+.sidebar ul li a {
+  display: flex;
+  font-size: 14px;
+  text-decoration: none;
+  background: #000;
+  padding: 5px;
+  width: 100%;
+  border-radius: 15px;
+  align-items: center;
+  transition: all 0.4s ease;
+}
+.sidebar ul li.active a {
+  color:#000;
+}
+.sidebar ul li a:hover {
+  background: #adadeb;
+  border-radius: 15px;
+}
+.sidebar li a .name{
+  color: #fff;
+  font-size: 15px;
+  font-weight: 400;
+  /*white-space: nowrap;*/
+  pointer-events: none;
+  margin-left: 40px;
+  /*transition: 0.4s;*/
+}
+.sidebar.open li a .name{
+  opacity: 1;
+  pointer-events: auto;
+}
+.sidebar li a i{
+  color: #fff;
+  height: 40px;
+  min-width: 50px;
+  font-size: 28px;
+  padding-top: 3px;
+  text-align: center;
+}
+.sidebar li a:hover i{
+  transition: all 0.5s ease;
+  color: #000;
+}
+.sidebar li.active {
+  background-color:cadetblue;
+}
+

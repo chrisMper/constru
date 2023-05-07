@@ -1,11 +1,10 @@
 supplier dashboard has,
 Customer Dashboard has,
 1. Messages
-2. My Projects
+2. orders
 3. My cart
-4. My orders
-5. My Bookings
+4. My orders wena supplier kenekgen order krpu
+5. My Bookings - wena service providers la book
 6. Listings
 7. Statistics
 8. Profile
-9. Portfolio

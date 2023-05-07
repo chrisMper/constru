@@ -100,7 +100,7 @@
 
         </div>
     </div>
-    <!-- popup -->
+    <!-- popup
     <div class="center">
         <button id="open-popup">Open Popup</button>
     </div>
@@ -115,7 +115,7 @@
                 <button class="submit-btn">Submit</button>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
     <div class="total_reviews">

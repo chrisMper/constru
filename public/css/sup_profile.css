@@ -1,0 +1,124 @@
+.main{
+    width: calc(100% - 250px) !important;
+    height: calc(100% - 75px);
+    overflow-y: scroll;
+    position: absolute;
+    left: 270px;
+    top: 75px;
+}
+.main i{
+    color:#000;
+    min-width: 50px;
+}
+a{
+    text-decoration: none;
+}
+.user img{
+    width: 100px; 
+    height: 100px;
+    border-radius: 50%;
+    margin: 30px;
+    float: left;
+}
+
+.user .profileName{
+    padding-top: 25px;
+}
+.user .profileimg{
+    float:left;
+    margin:40px;
+}
+.profile{
+    height:auto;
+    width:800px;
+    left:20px;
+    top:50px;
+    padding-bottom: 50px;
+    position: absolute;
+    border-radius: 30px;
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+.details{
+    margin-top: 30px;
+}
+.details .userdetails{
+    float: left;
+    width:50%;
+}
+.registerbox form{
+    height:auto;
+    width:800px;
+    left:20px;
+    top:50px;
+    padding: 30px;
+    position: absolute;
+    border-radius: 30px;
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+.form-actions {
+    align-items: right;
+    gap: 1rem;
+    margin-left: 520px;
+    margin-bottom: 10px;
+  }
+  
+  .submitbtn {
+    border-radius: 20px;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    border-color: darkgreen;
+  }
+  .submitbtn:hover {
+    background-color: darkgreen;
+    color: #fff;
+  }
+  .discardbtn {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    text-align: center;
+    border-color: #ff0000;
+    background-color: rgba(255,255, 255, 0.4);
+  }
+  
+  .discardbtn a{
+    text-decoration: none;
+    color: #000;
+  }
+  .discardbtn:hover {
+    background-color: #ff0000;
+  }
+  .discardbtn:hover a{
+    color: #fff;
+  }
+
+tr{
+    height:30px;
+}
+
+td{
+    color:#000;
+    padding-right: 20px;
+}
+td input[type="text"]{
+    width:100%; 
+}
+.updatebtn {
+    padding: 5px;
+    width: 130px;
+    height: 30px;
+    border-radius: 20px;
+    margin-top: 1%;
+    margin-left: 7%;
+    text-align: center;
+    border-color: darkgreen;
+  }
+  .updatebtn a{
+    text-decoration: none;
+    color: #000;
+  }
+  .updatebtn:hover {
+    background-color: darkgreen;
+  }
+  .updatebtn:hover a{
+    color: #fff;
+  }
