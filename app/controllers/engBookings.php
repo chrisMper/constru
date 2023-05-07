@@ -63,21 +63,20 @@ class engBookings extends Controller
         'noOfStages' => trim($_POST['noOfStages']),
         'completionDate' => trim($_POST['completionDate']),
         'startDate' => trim($_POST['startDate']),
-        'projectId'=>trim($_POST['projectId'])
+        'projectId' => trim($_POST['projectId'])
       ];
 
       // add datas to relavent tables 
-      if($this->engProjectModel->findOngoingProjectById($_POST['projectId'])){
-      if ($this->engProjectModel->engProjectOngoing($data)) {
-        if ($this->engProjectModel->deleleEngProgectPending($_POST['projectId'])) {
-          $this->controller('pages')->myProjectsOnGoing();
+      if ($this->engProjectModel->findOngoingProjectById($_POST['projectId'])) {
+        $this->controller('pages')->myProjectsOnGoing();
+      } else {
+
+        if ($this->engProjectModel->engProjectOngoing($data)) {
+          if ($this->engProjectModel->deleleEngProgectPending($_POST['projectId'])) {
+            $this->controller('pages')->myProjectsOnGoing();
+          }
         }
       }
-    } else{
-      $this->controller('pages')->myProjectsOnGoing();
-    }
-
-
     }
   }
 
@@ -86,13 +85,9 @@ class engBookings extends Controller
   //Projects Pending to Ongoing
   public function projectsPendingToOngoing()
   {
-
-
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       // Sanitize POST
       $_POST  = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-
-
 
       $projectId = $_POST['projectId'];
       $customerEmail = $_POST['customerEmail'];
@@ -109,7 +104,6 @@ class engBookings extends Controller
         'projectId' => $projectId
 
       ];
-
 
 
       $this->view('users/eng/myProjects/ProjectsNewToOnGoing', $data);
@@ -165,21 +159,20 @@ class engBookings extends Controller
         'postId' => trim($_POST['postId']),
         'reason' => trim($_POST['reason']),
         'cancelldate' => trim($_POST['cancelldate']),
-        'projectId'=>trim($_POST['projectId'])
+        'projectId' => trim($_POST['projectId'])
 
       ];
 
       // Validate email
-      if($this->engProjectModel->findCancellProjectById($_POST['projectId'])){
-      if ($this->engProjectModel->engProjectCancell($data)) {
-        if ($this->engProjectModel->deleleEngProgectPending($_POST['projectId'])) {
-          $this->controller('pages')->myProjectsCancelled();
+      if ($this->engProjectModel->findCancellProjectById($_POST['projectId'])) {
+        if ($this->engProjectModel->engProjectCancell($data)) {
+          if ($this->engProjectModel->deleleEngProgectPending($_POST['projectId'])) {
+            $this->controller('pages')->myProjectsCancelled();
+          }
         }
+      } else {
+        $this->controller('pages')->myProjectsCancelled();
       }
-    }
-    else{
-      $this->controller('pages')->myProjectsCancelled();
-    }
     }
   }
 
@@ -189,41 +182,18 @@ class engBookings extends Controller
     // Check if POST
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-      
+
       // Sanitize POST
       $_POST  = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
       $projectId = trim($_POST['projectId']);
-      $userEmail = $_SESSION['user_email'];  
+      $userEmail = $_SESSION['user_email'];
 
 
+      if ($this->engProjectModel->stageConform($userEmail, $projectId)) {
 
-      $this->engProjectModel->stageConform($userEmail,$projectId);
-       
-      
-
-      }
-    }
-
-
-
-    // confirm cancellation 
-  public function engProjectCancellConformation()
-  {
-    // Check if POST
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-      
-      // Sanitize POST
-      $_POST  = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-      $projectId = trim($_POST['projectId']);
-      $userEmail = $_SESSION['user_email'];  
-
-
-
-      $this->engProjectModel->cancellConform($userEmail,$projectId);
-       
-      
-
+        $this->controller('pages')->myProjectsNew();
+      } else {
+        $this->view('users/eng/dashboard');
       }
     }
   }
@@ -231,3 +201,86 @@ class engBookings extends Controller
 
 
 
+
+  public function cusProjectStagConformation()
+  {
+    // Check if POST
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+
+      // Sanitize POST
+      $_POST  = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+      $projectId = trim($_POST['projectId']);
+      $userEmail = $_SESSION['user_email'];
+
+
+
+
+
+      if ($this->engProjectModel->stageConform($userEmail, $projectId)) {
+
+        $this->view('users/eng/dashboard');
+      }
+    }
+  }
+
+
+  public function cusProjectConformation()
+  {
+    // Check if POST
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+
+      // Sanitize POST
+      $_POST  = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+      $projectId = trim($_POST['projectId']);
+      $userEmail = $_SESSION['user_email'];
+
+      $row = $this->engProjectModel->getProject();
+
+    
+
+      $data = [
+        'projectId'=>$projectId,
+        'row' => $row
+      ];
+
+
+      if ($this->engProjectModel->engProjectComplete($data)) {
+
+        $this->view('users/eng/dashboard');
+      }
+    }
+  }
+
+
+
+  // confirm cancellation 
+  public function engProjectCancellConformation()
+  {
+    // Check if POST
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+
+      // Sanitize POST
+      $_POST  = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+
+      $data = [
+        'projectId' => trim($_POST['projectId']),
+        'reason' => trim($_POST['reason']),
+        'userEmail' => $_SESSION['user_email']
+      ];
+
+      // check previous submissions
+      if ($this->engProjectModel->cheakCancellComfomation($_POST['projectId'])) {
+        // right function for customer side
+        $this->controller('pages')->myProjectsOnGoing();
+      } else {
+        if ($this->engProjectModel->cancellConform($data)) {
+          $this->controller('pages')->myProjectsOnGoing();
+        }
+      }
+    }
+  }
+}

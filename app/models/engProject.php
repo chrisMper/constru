@@ -1,9 +1,8 @@
 <?php
-class engProject
+class engProject 
 {
   private $db;
-
-
+  
   public function __construct()
   {
     $this->db = new Database;
@@ -133,10 +132,7 @@ class engProject
     $this->db->query("SELECT * FROM `engineer_project_ongoing` WHERE projectId = :projectId ");
     $this->db->bind(':projectId', $projectId);
 
-
-
     $row = $this->db->single();
-
 
     //Check Rows
 
@@ -154,14 +150,8 @@ class engProject
   {
     $this->db->query("SELECT * FROM `engneer_project_cancell` WHERE projectId = :projectId ");
     $this->db->bind(':projectId', $projectId);
-
-
-
     $row = $this->db->single();
-
-
     //Check Rows
-
     if ($this->db->rowCount() > 0) {
       return true;
     } else {
@@ -173,26 +163,37 @@ class engProject
 
   // add data to complete Table
 
-  public function engProjectComplete($row)
+  public function engProjectComplete($data)
   {
+    
+    foreach ($data['row'] as $row):
+      if($row->projectId=$data['projectId']):
 
     // Prepare Query
-    $this->db->query("INSERT INTO `engneer_project_complete` (customerEmail, serviceProviderEmail,PostId,startDate,finishDate,projectId) VALUES (:customerEmail, :serviceProviderEmail,:PostId,:startDate,:finishDate.:projectId)");
+    $this->db->query("INSERT INTO `engneer_project_complete` (customerEmail, serviceProviderEmail,PostId,startDate,finishDate,projectId) VALUES (:customerEmail, :serviceProviderEmail,:PostId,:startDate,:finishDate,:projectId)");
 
     // Bind Values
     $this->db->bind(':customerEmail', $row->customerEmail);
     $this->db->bind(':serviceProviderEmail',  $row->engeneerEmail);
-    $this->db->bind(':PostId',  $row->$row->customerEmail);
+    $this->db->bind(':PostId',  $row->postId);
     $this->db->bind(':startDate',  $row->startDate);
     $this->db->bind(':finishDate', date('Y-m-d'));
     $this->db->bind(':projectId', $row->projectId);
 
     //Execute
     if ($this->db->execute()) {
+      $this->deleleEngProgectOngoing($row->projectId);
       return true;
     } else {
       return false;
     }
+
+    
+  endif;
+  endforeach;
+
+
+
   }
 
 
@@ -211,20 +212,34 @@ class engProject
     }
   }
 
+  //delete data from enginer project pending
+  public function deleleEngProgectOngoing($id)
+  {
+    // Prepare Query
+    $this->db->query('DELETE FROM engineer_project_ongoing WHERE projectId= :id');
+    // Bind Values
+    $this->db->bind(':id', $id);
+    //Execute
+    $this->db->execute();
+  }
+
 
 
 
   // STAGE conformation ongoing projects (Update Stage in table)
-  public function stageConformUpdateUpdateStage($row)
+  public function stageConformUpdateStage($row)
   {
-    if ($row->stages != $row->currentStage) {
+    
       $this->db->query('UPDATE `engineer_project_ongoing` SET currentStage = currentStage+1 WHERE  projectId=:projectId;');
       $this->db->bind(':projectId', $row->projectId);
-      $this->db->execute();
-    } else {
-      //delete function eka ona
-      $this->engProjectComplete($row);
-    }
+
+      if($this->db->execute()){
+        return true;
+      }
+      else{
+        return false;
+      }
+
   }
 
 
@@ -239,17 +254,35 @@ class engProject
         $this->db->query('UPDATE `engineer_project_ongoing` SET stageComfomation= 0 WHERE projectId=:projectId');
 
         $this->db->bind(':projectId', $rows->projectId);
+        if($this->db->execute()){
+          
+          return true;
+        }
+        else{
+          return false;
+        }
 
-        $this->db->execute();
+        
       } elseif ($rows->customerEmail == $email) {
-        $this->db->query('UPDATE `engineer_project_ongoing` SET stageComfomation= 1  WHERE projectId=:projectId');
+        $this->db->query('UPDATE `engineer_project_ongoing` SET stageComfomation= -1  WHERE projectId=:projectId');
         $this->db->bind(':projectId', $rows->projectId);
         $this->db->execute();
-        $this->stageConformUpdateUpdateStage($rows);
+        return $this->stageConformUpdateStage($rows);
       }
     }
   }
 
+
+
+  public function getProject()
+  {
+    $this->db->query('SELECT * FROM `engineer_project_ongoing` ' );
+    
+    $row = $this->db->resultSet();
+
+    return $row;
+
+  }
 
 
 
@@ -257,48 +290,63 @@ class engProject
   public function stageConform($email, $projectId)
   {
     $this->db->query('SELECT * FROM `engineer_project_ongoing` WHERE projectId = :projectId');
-
     $this->db->bind(':projectId', $projectId);
-
     $row = $this->db->resultset();
 
-
-
-    $this->stageConformUpdateUpdateTable($row, $email);
+    return $this->stageConformUpdateUpdateTable($row, $email);
   }
 
+  
 
 
-  public function CancellConformUpdateUpdateTable($row, $email) //email = sesscion email
+  public function CancellConformUpdateUpdateTable($data)
   {
-    foreach ($row as $rows) {
-      if ($rows->engeneerEmail == $email) {
 
-        $this->db->query('UPDATE `engineer_project_ongoing` SET stageComfomation= 0 WHERE projectId=:projectId');
 
-        $this->db->bind(':projectId', $rows->projectId);
+    $this->db->query('INSERT INTO `engneerordercancellnote` (projectId,cancellNote,cancelledEmail) VALUES (:projectId,:cancellNote,:cancelledEmail) ');
+    $this->db->bind(':projectId', $data['projectId']);
+    $this->db->bind(':cancellNote', $data['reason']);
+    $this->db->bind(':cancelledEmail', $data['userEmail']);
 
-        $this->db->execute();
-      } elseif ($rows->customerEmail == $email) {
-        $this->db->query('UPDATE `engineer_project_ongoing` SET stageComfomation= 1  WHERE projectId=:projectId');
-        $this->db->bind(':projectId', $rows->projectId);
-        $this->db->execute();
-        $this->stageConformUpdateUpdateStage($rows);
-      }
+
+    if ($this->db->execute()) {
+      return true;
+    } else {
+      return false;
     }
   }
 
 
-  public function cancellConform($email, $projectId)
+  public function cancellConform($data)
   {
-    $this->db->query('SELECT * FROM `engineer_project_ongoing` WHERE projectId = :projectId');
-
-    $this->db->bind(':projectId', $projectId);
-
-    $row = $this->db->resultset();
+    $this->db->query('UPDATE `engineer_project_ongoing` SET cancellComfomation=0 WHERE projectId=:projectId');
+    $this->db->bind(':projectId', $data['projectId']);
+    $this->db->execute();
 
 
-
-    $this->CancellConformUpdateUpdateTable($row, $email);
+    if ($this->CancellConformUpdateUpdateTable($data)) {
+      return true;
+    } else {
+      return false;
+    }
   }
+
+
+  public function cheakCancellComfomation($projectId){
+
+    $this->db->query("SELECT * FROM `engneerordercancellnote` WHERE projectId = :projectId ");
+    $this->db->bind(':projectId', $projectId);
+    $row = $this->db->single();
+    //Check Rows
+    if ($this->db->rowCount() > 0) {
+      return true;
+    } else {
+      return false;
+    }
+
+  }
+
+
+
+
 }

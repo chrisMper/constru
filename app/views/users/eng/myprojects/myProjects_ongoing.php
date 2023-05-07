@@ -9,6 +9,8 @@
 
 <body>
 
+
+
   <div class="navbar">
     <div class="navlogo">
       <img src="../../../public/img/product_img/logo.png">
@@ -113,21 +115,6 @@
 
                             <div class="progress" id="progress"></div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                             <?php for ($i = 1; $i <= $engineerProjectOngoing->stages; $i++) { ?>
                               <?php if ($i <= $engineerProjectOngoing->currentStage) { ?>
 
@@ -151,41 +138,22 @@
                         </div>
                           </div>
 
-
-                          <!-- <script>
-                        const progress = document.querySelector("#progress");
-                        const circles = document.querySelectorAll(".circle");
-                        const popup = document.querySelector("#popup");
-                        const confirmButton = document.querySelector("#confirm");
-                        let currActive = 1;
-
-                        const update = () => {
-                          circles.forEach((circle, i) => {
-                            if (i === currActive - 1) {
-                              circle.classList.add("active");
-                            } else {
-                              circle.classList.remove("active");
-                            }
-                          });
-
-                          const width = ((currActive - 1) / (circles.length - 1)) * 100;
-                          progress.style.width = `${width}%`;
-
-
-                        };
-
-
-                        confirmButton.addEventListener("click", () => {
-                          currActive < circles.length && currActive++;
-                          update();
-                        });
-                      </script> -->
-
+                          <?php if ($engineerProjectOngoing->cancellComfomation==-1){ ?>
                           <div>
+                          <?php if ($engineerProjectOngoing->stageComfomation==-1){ ?>
                             <button type="button" onclick="completeFunction(<?php echo $engineerProjectOngoing->projectId ?>).style.display='block'; ">Completed</button>
-                            <!-- <button type="button" onclick="document.getElementById('complete').style.display='block'">Completed</button> -->
-                            <button onclick="document.getElementById('cancel').style.display='block'; return false;">Cancel</button>
+                            <?php }else {?>
+                              <h5 style="color: blue;"> Waiting for the customer to approve the stage </h5>
+                              <?php }?>
+                            <button type="button" onclick="cancelFunction(<?php echo $engineerProjectOngoing->projectId ?>).style.display='block'; ">Cancel</button>
                           </div>
+
+                          <?php } else{ ?>
+
+                            <h5 style="color: red;"> A cancellation note has been sent to the customer. </h5>
+
+
+                            <?php } ?>
                     </div>
                 </table>
 
@@ -234,33 +202,24 @@
               document.getElementById('projectId').value = projectId;
 
             }
-
-            const cancellFun = document.getElementById('cancel')
-
-            function cancelFunction(projectId){
-              cancellFun.style.display = 'block';
-              document.getElementById('projectId').value = projectId;
             
-            
-            
-            }
           </script>
 
           <div id="cancel" class="popUp">
             <span onclick="document.getElementById('cancel').style.display='none'" class="close" title="Close Modal">&times;</span>
-            <form class="acceptContent" action="#">
+            <form class="acceptContent" action="<?php echo URLROOT; ?>/engBookings/engProjectCancellConformation" method="POST">
               <table class="acceptTable">
                 <tr>
                   <td><label for="reason">Mention the reasons to cancel</label></td>
-                  <td><textarea id="reason" name="reason" rows="4" cols="50"></textarea></td>
+                  <td><textarea id="reason" name="reason" rows="4" cols="50" required ></textarea></td>
                 </tr>
               </table>
            
-            <input type="text" id="projectId" name="projectId" hidden>
+            <input type="text" id="Id" name="projectId" hidden>
             <p>
             <h5>A message will be sent to the client on the cancellation. Until the acceptence of the client, the cancellation will not be valid.</h5>
             </p>
-            <a href="#"><button type="submit">Confirm </button> </a>
+            <button type="submit">Confirm </button> 
           </form>
           </div>
 
@@ -272,6 +231,16 @@
               if (event.target == popUp) {
                 popUp.style.display = "none";
               }
+            }
+
+            const cancellFun = document.getElementById('cancel')
+
+            function cancelFunction(Id){
+              cancellFun.style.display = 'block';
+              document.getElementById('Id').value = Id;
+            
+  
+            
             }
           </script>
 

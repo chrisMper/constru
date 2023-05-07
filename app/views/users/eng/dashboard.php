@@ -43,7 +43,7 @@ include APPROOT . '/views/inc/navbar.php';
                 </div>
             </div>
         </div>
-</a>    <a href="<?php echo URLROOT; ?>/pages/bookings">
+</a>    <a href="<?php echo URLROOT; ?>/pages/customerBookingOnGoing">
         <div class="grid-item">
             <div class="card">
                 <img class="dashimg" src="<?php echo URLROOT; ?>/img/mybookings.png" alt="my bookings img">

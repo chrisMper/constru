@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../../../public/css/maducomp=.css">
-    <link rel="stylesheet" href="../../../public/css/madunavbar.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo URLROOT; ?>/css/maducomp.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo URLROOT; ?>/css/madunavbar.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <title>My Orders</title>
 </head>

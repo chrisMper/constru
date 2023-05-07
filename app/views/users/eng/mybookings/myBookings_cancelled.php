@@ -3,7 +3,7 @@
 <head>
 
   <title>navigation1</title>
-  <link rel="stylesheet" type="text/css" href="../../../public/css/myBookings.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo URLROOT; ?>/css/myBookings.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -64,9 +64,9 @@
 
       <div class="topnav">
         <!--<a href="myBookings_new.php">New</a>-->
-        <a href="myBookings_ongoing.php">Ongoing</a>
-        <a href="myBookings_completed.php">Completed</a>
-        <a class="active" href="myBookings_cancelled.php">Cancelled</a>
+        <a href="<?php echo URLROOT; ?>/pages/customerBookingOnGoing">Ongoing</a>
+        <a href="<?php echo URLROOT; ?>/pages/customerBookingComplete">Completed</a>
+        <a class="active" href="<?php echo URLROOT; ?>/pages/customerBookingOnCancell">Cancelled</a>
     </div>
 
     <div class="listing">
