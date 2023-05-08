@@ -6,7 +6,7 @@
 <body>
    <div class="container">
       <div class="logo">
-        <img src="<?php echo URLROOT; ?>/img/product_img/regservices.gif" align="left">
+        <img src="<?php echo URLROOT; ?>/img/itemImage/regservices.gif" align="left">
       </div>
 
     <div class="registerbox">

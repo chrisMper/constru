@@ -50,7 +50,7 @@
           <li><a href="<?php echo URLROOT; ?>/pages/landingpage"><i class='bx bxs-home'></i><span class="name">Home</span></a></li>
           <li><a href="<?php echo URLROOT; ?>/pages/supplier"><i class='bx bxs-dashboard'></i><span class="name">Dashboard</span></a></li>
           <li><a href="<?php echo URLROOT; ?>/pages/messages"><i class='bx bxs-message'></i><span class="name">Messages</span></a></li>
-          <li><a href="<?php echo URLROOT; ?>/pages/orders"><i class='bx bxs-notepad'></i><span class="name">Orders</span></a></li>
+          <li><a href="<?php echo URLROOT; ?>/sup_orders/sup_orders"><i class='bx bxs-notepad'></i><span class="name">Orders</span></a></li>
           <li><a href="<?php echo URLROOT; ?>/items/items"><i class='bx bx-list-ul'></i><span class="name">Items</span></a></li>
           <li><a href="<?php echo URLROOT; ?>/pages/cart"><i class='bx bxs-cart'></i><span class="name">My cart</span></a></li>
           <li><a href="<?php echo URLROOT; ?>/pages/myOrders"><i class='bx bx-detail'></i><span class="name">My orders</span></a></li>

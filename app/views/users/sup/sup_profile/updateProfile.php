@@ -16,10 +16,10 @@
 
     <div class="registerbox">
 
-<form align="right" method = "post" action="<?php echo URLROOT; ?>/sup_profile/updateProfile/<?php echo $_SESSION['user_email']= $user_email; ?>" enctype="multipart/form-data" >
+<form align="right" method = "post" action="<?php echo URLROOT; ?>/sup_profile/updateProfile" enctype="multipart/form-data" >
 
     <div class="user">
-       <img src="<?php echo $file['uploads'] ?>" alt="<?php echo URLROOT; ?>/img/uploads/profile.jpg">
+       <img src="<?php echo URLROOT; ?>/img/uploads/<?php echo $data['uploads']; ?>" alt="<?php echo URLROOT; ?>/img/uploads/profile.jpg">
       <div class="profileimg"> 
        <input type="file" id="uploads" name="uploads"></br></br>
        <div class="profileName"><b><?php echo $data['fName'] ?> <?php echo $data['lName'] ?> </b></div>

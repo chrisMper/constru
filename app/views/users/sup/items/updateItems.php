@@ -53,7 +53,7 @@
              <td colspan="4">Upload pictures</td>
           </tr>
           <tr>
-            <td><input type="file" id="itemImage" name="itemImage"></td>
+            <td><input type="file" id="itemImage" name="itemImage" required></td>
           </tr>
         
         </table>

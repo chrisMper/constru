@@ -15,7 +15,7 @@
         <table>
           <tr>
             <td><a href="<?php echo URLROOT; ?>/pages/messages"><img src="<?php echo URLROOT; ?>/img/itemImage/design2.jpg"><br /><h4>Messages</h4></a></td>
-            <td><a href="<?php echo URLROOT; ?>/pages/orders"><img src="<?php echo URLROOT; ?>/img/itemImage/design3.jpg"><br /><h4>Orders</h4></a></td>
+            <td><a href="<?php echo URLROOT; ?>/sup_orders/sup_orders"><img src="<?php echo URLROOT; ?>/img/itemImage/design3.jpg"><br /><h4>Orders</h4></a></td>
             <td><a href="<?php echo URLROOT; ?>/items/items"><img src="<?php echo URLROOT; ?>/img/itemImage/design5.jpg"><br /><h4>Items</h4></a></td>
           </tr>
           <tr>

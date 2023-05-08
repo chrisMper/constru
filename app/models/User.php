@@ -46,8 +46,8 @@
   
     
     public function updateSupplier($role,$nic,$fName,$lName,$email,$country,$district,$password,$adLine1,$adLine2,$city,$telephoneNo){
-      $this->db->query('INSERT INTO `supplier` (role,nic,fName,lName,email,country,district,password,adLine1,adLine2,city,telephoneNo) 
-        VALUES (:role,:nic,:fName, :lName, :email,:country,:district,:password,:adLine1,:adLine2,:city,:telephoneNo)');
+      $this->db->query('INSERT INTO `supplier` (role,nic,fName,lName,email,country,district,password,adLine1,adLine2,city,telephoneNo,uploads) 
+        VALUES (:role,:nic,:fName, :lName, :email,:country,:district,:password,:adLine1,:adLine2,:city,:telephoneNo,"profile.jpg")');
         
         $this->db->bind(':role', $role);
         $this->db->bind(':nic',$nic);
@@ -61,6 +61,8 @@
         $this->db->bind(':adLine2', $adLine2);
         $this->db->bind(':city', $city);
         $this->db->bind(':telephoneNo', $telephoneNo);
+
+        move_uploaded_file($_FILES['uploads']['tmp_name'],PUBROOT. '/public/img/uploads/'.$_FILES['uploads']['name']);
 
         if ($this->db->execute()) {
           return true;

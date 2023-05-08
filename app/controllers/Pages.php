@@ -44,16 +44,6 @@
 
     }
 
-    public function projects(){
-      $this->view('myprojects/myProjects_new');
-    }
-    public function myProjects_completed(){
-      $this->view('myprojects/myProjects_completed');
-    }
-    public function myProjects_cancelled(){
-      $this->view("myprojects/myProjects_cancelled");
-    }
-
     public function cart(){
       $this->view('mycart/cart');
     }

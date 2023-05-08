@@ -5,7 +5,7 @@ class sup_profile extends Controller{
           redirect('users/login');
         }
 
-        $this->profileModel=$this->model('profileModel');
+        $this->profileModel=$this->model('sup_profileModel');
         $this->userModel=$this->model('User');
 
     }
@@ -24,7 +24,7 @@ class sup_profile extends Controller{
         $this->view('users/sup/sup_profile/profile', $data);
     }
 
-    public function updateProfile($user_email){
+    public function updateProfile(){
  
         if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         
@@ -42,6 +42,8 @@ class sup_profile extends Controller{
            'country' =>trim($_POST['country']),
            'email'=>trim($_POST['email']),
            'user_email' =>$_SESSION['user_email'],
+           'email_err' =>'',
+            'tele_err' =>''
          ];
       
          $file = [
@@ -70,10 +72,10 @@ class sup_profile extends Controller{
       
          $profile=$this->profileModel->getProfile();
           foreach($profile as $profiles){
-           if($profiles -> email ==$user_email){
+           if($profiles -> email ==$_SESSION['user_email']){
            $data = [	  
          
-            'user_email'=>$user_email,
+            'user_email'=>$_SESSION['user_email'],
             'email' => $profiles->email,
             'fName' => $profiles->fName,
             'lName' => $profiles->lName,
