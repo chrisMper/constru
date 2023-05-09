@@ -152,6 +152,8 @@ class engBookings extends Controller
       // Sanitize POST
       $_POST  = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
+      $presentage = $this->engProjectModel->calculatePresentage($_POST['projectId']);
+
       $data = [
         'engineerEmail' => trim($_POST['engEmail']),
         'customerEmail' => trim($_POST['customerEmail']),
@@ -160,7 +162,9 @@ class engBookings extends Controller
         'cancelldate' => trim($_POST['cancelldate']),
         'projectId' => trim($_POST['projectId']),
         'customerReason'=>trim($_POST['customerReason']),
-        'startDate'=>trim($_POST['startDate'])
+        'startDate'=>trim($_POST['startDate']),
+        'completionWhenCancell'=> trim($presentage)
+
 
       ];
 
@@ -205,7 +209,8 @@ class engBookings extends Controller
         'cancelldate' => trim($_POST['cancelldate']),
         'projectId' => trim($_POST['projectId']),
         'customerReason'=> null,
-        'startDate'=>null
+        'startDate'=>null,
+        'completionWhenCancell'=>0
 
       ];
 

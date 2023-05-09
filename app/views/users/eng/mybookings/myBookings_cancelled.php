@@ -100,7 +100,6 @@
                         </div>
 
                       </div>
-                      <h5><b>Cancelled by you</b></h5>
                     </div>
                     <div class="completion">
                       <h5>Total completion</h5>

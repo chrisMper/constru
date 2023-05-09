@@ -1,8 +1,8 @@
 <?php
-class engProject 
+class engProject
 {
   private $db;
-  
+
   public function __construct()
   {
     $this->db = new Database;
@@ -104,11 +104,13 @@ class engProject
   {
 
     // Prepare Query
-    $this->db->query("INSERT INTO `engneer_project_cancell` (postId, engReason,cancellDate,engineerEmail,customerEmail,projectId,customerReason,startDate) VALUES (:postId, :engineerReason,:cancellDate,:engineerEmail,:customerEmail,:projectId,:customerReason,:startDate)");
+    $this->db->query("INSERT INTO `engneer_project_cancell` (postId, engReason,cancellDate,engineerEmail,customerEmail,projectId,customerReason,startDate,completionWhenCancell) VALUES (:postId, :engineerReason,:cancellDate,:engineerEmail,:customerEmail,:projectId,:customerReason,:startDate,:completionWhenCancell)");
 
 
 
     $postID = intval($data['postId']);
+
+   
 
     // Bind Values
     $this->db->bind(':engineerReason', $data['engineerReason']);
@@ -117,7 +119,7 @@ class engProject
     $this->db->bind(':customerEmail', $data['customerEmail']);
     $this->db->bind(':cancellDate', $data['cancelldate']);
     $this->db->bind(':projectId', $data['projectId']);
-
+    $this->db->bind(':completionWhenCancell', $data['completionWhenCancell']);
     $this->db->bind(':customerReason', $data['customerReason']);
     $this->db->bind(':startDate', $data['startDate']);
 
@@ -146,6 +148,35 @@ class engProject
     }
   }
 
+  // find project from ongoing table and get data
+  public function findOngoingProjectDataById()
+  {
+    $this->db->query("SELECT * FROM `engineer_project_ongoing`");
+
+
+    $row = $this->db->resultSet();
+
+    return $row;
+  }
+
+
+  //calculate presentage 
+  public function calculatePresentage($projectId)
+  {
+
+    $project = $this->findOngoingProjectDataById();
+    
+    foreach ($project as $projects) :
+      if ($projects->projectId == $projectId) :
+        $presentage = round(($projects->currentStage / $projects->stages) * 100, 2);
+        
+        return $presentage;
+        
+      endif;
+      
+    endforeach;
+  }
+
 
 
   // find project from cancell table 
@@ -168,36 +199,33 @@ class engProject
 
   public function engProjectComplete($data)
   {
-    
-    foreach ($data['row'] as $row):
-      if($row->projectId=$data['projectId']):
 
-    // Prepare Query
-    $this->db->query("INSERT INTO `engneer_project_complete` (customerEmail, serviceProviderEmail,PostId,startDate,finishDate,projectId,stages) VALUES (:customerEmail, :serviceProviderEmail,:PostId,:startDate,:finishDate,:projectId,:stages)");
+    foreach ($data['row'] as $row) :
+      if ($row->projectId = $data['projectId']) :
 
-    // Bind Values
-    $this->db->bind(':customerEmail', $row->customerEmail);
-    $this->db->bind(':serviceProviderEmail',  $row->engeneerEmail);
-    $this->db->bind(':PostId',  $row->postId);
-    $this->db->bind(':startDate',  $row->startDate);
-    $this->db->bind(':finishDate', date('Y-m-d'));
-    $this->db->bind(':projectId', $row->projectId);
-    $this->db->bind(':stages',$row->stages);
+        // Prepare Query
+        $this->db->query("INSERT INTO `engneer_project_complete` (customerEmail, serviceProviderEmail,PostId,startDate,finishDate,projectId,stages) VALUES (:customerEmail, :serviceProviderEmail,:PostId,:startDate,:finishDate,:projectId,:stages)");
 
-    //Execute
-    if ($this->db->execute()) {
-      $this->deleleEngProgectOngoing($row->projectId);
-      return true;
-    } else {
-      return false;
-    }
+        // Bind Values
+        $this->db->bind(':customerEmail', $row->customerEmail);
+        $this->db->bind(':serviceProviderEmail',  $row->engeneerEmail);
+        $this->db->bind(':PostId',  $row->postId);
+        $this->db->bind(':startDate',  $row->startDate);
+        $this->db->bind(':finishDate', date('Y-m-d'));
+        $this->db->bind(':projectId', $row->projectId);
+        $this->db->bind(':stages', $row->stages);
 
-    
-  endif;
-  endforeach;
+        //Execute
+        if ($this->db->execute()) {
+          $this->deleleEngProgectOngoing($row->projectId);
+          return true;
+        } else {
+          return false;
+        }
 
 
-
+      endif;
+    endforeach;
   }
 
 
@@ -216,7 +244,7 @@ class engProject
     }
   }
 
-  
+
 
   //delete data from enginer project pending
   public function deleleEngProgectOngoing($id)
@@ -226,12 +254,11 @@ class engProject
     // Bind Values
     $this->db->bind(':id', $id);
     //Execute
-    if($this->db->execute()){
+    if ($this->db->execute()) {
       return true;
-    }else{
+    } else {
       return false;
     }
-    
   }
 
 
@@ -239,18 +266,17 @@ class engProject
   public function deleteFromEngneerordercancellnote($id)
   {
 
-   
+
     // Prepare Query
-    $this->db->query('DELETE FROM engneerordercancellnote WHERE projectId= :id'); 
+    $this->db->query('DELETE FROM engneerordercancellnote WHERE projectId= :id');
     // Bind Values
     $this->db->bind(':id', $id);
     //Execute
-    if($this->db->execute()){
+    if ($this->db->execute()) {
       return true;
-    }else{
+    } else {
       return false;
     }
-    
   }
 
 
@@ -259,17 +285,15 @@ class engProject
   // STAGE conformation ongoing projects (Update Stage in table)
   public function stageConformUpdateStage($row)
   {
-    
-      $this->db->query('UPDATE `engineer_project_ongoing` SET currentStage = currentStage+1 WHERE  projectId=:projectId;');
-      $this->db->bind(':projectId', $row->projectId);
 
-      if($this->db->execute()){
-        return true;
-      }
-      else{
-        return false;
-      }
+    $this->db->query('UPDATE `engineer_project_ongoing` SET currentStage = currentStage+1 WHERE  projectId=:projectId;');
+    $this->db->bind(':projectId', $row->projectId);
 
+    if ($this->db->execute()) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
 
@@ -284,15 +308,12 @@ class engProject
         $this->db->query('UPDATE `engineer_project_ongoing` SET stageComfomation= 0 WHERE projectId=:projectId');
 
         $this->db->bind(':projectId', $rows->projectId);
-        if($this->db->execute()){
-          
+        if ($this->db->execute()) {
+
           return true;
-        }
-        else{
+        } else {
           return false;
         }
-
-        
       } elseif ($rows->customerEmail == $email) {
         $this->db->query('UPDATE `engineer_project_ongoing` SET stageComfomation= -1  WHERE projectId=:projectId');
         $this->db->bind(':projectId', $rows->projectId);
@@ -306,22 +327,20 @@ class engProject
 
   public function getProject()
   {
-    $this->db->query('SELECT * FROM `engineer_project_ongoing` ' );
-    
+    $this->db->query('SELECT * FROM `engineer_project_ongoing` ');
+
     $row = $this->db->resultSet();
 
     return $row;
-
   }
 
   public function getcancellNotes()
   {
-    $this->db->query('SELECT * FROM `engneerordercancellnote` ' );
-    
+    $this->db->query('SELECT * FROM `engneerordercancellnote` ');
+
     $row = $this->db->resultSet();
 
     return $row;
-
   }
 
 
@@ -336,7 +355,7 @@ class engProject
     return $this->stageConformUpdateUpdateTable($row, $email);
   }
 
-  
+
 
 
   public function CancellConformUpdateUpdateTable($data)
@@ -387,7 +406,8 @@ class engProject
   }
 
 
-  public function cheakCancellComfomation($projectId){
+  public function cheakCancellComfomation($projectId)
+  {
 
     $this->db->query("SELECT * FROM `engneerordercancellnote` WHERE projectId = :projectId ");
     $this->db->bind(':projectId', $projectId);
@@ -398,10 +418,5 @@ class engProject
     } else {
       return false;
     }
-
   }
-
-
-
-
 }
