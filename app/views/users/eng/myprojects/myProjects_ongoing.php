@@ -167,7 +167,7 @@
                           <?php } else { ?>
                             <h5 style="color: red;"> A cancel note has been sent by the customer </h5>
 
-                            <button type="button" onclick="cancelConfirmFunction(<?php echo $engineerProjectOngoing->projectId ?>,'<?php echo $Reason; ?>').style.display='block'; ">Confirm Cancelation</button>
+                            <a href="<?php echo URLROOT; ?>/Pages/cancelConfirm/<?php echo $engineerProjectOngoing->projectId ?>" ><button type="button" >Confirm Cancelation</button>
 
                           <?php } ?>
                     </div>
@@ -176,9 +176,6 @@
               </form>
           <?php endif;
           endforeach; ?>
-
-
-
 
 
           <div id="complete" class="popUp">
@@ -225,7 +222,7 @@
 
           <div id="cancel" class="popUp">
             <span onclick="document.getElementById('cancel').style.display='none'" class="close" title="Close Modal">&times;</span>
-            <form class="acceptContent" action="<?php echo URLROOT; ?>/engBookings/ProjectCancellConformation" method="POST">
+            <form class="acceptContent" action="<?php echo URLROOT; ?>/engBookings/engProjectCancellConformation" method="POST">
               <table class="acceptTable">
                 <tr>
                   <td><label for="reason">Mention the reasons to cancel</label></td>

@@ -3,7 +3,6 @@ class engBookings extends Controller
 {
 
   private $engBookingModel;
-  private $engController;
   private $engProjectModel;
   private $userModel;
   private $listingModel;
@@ -144,6 +143,51 @@ class engBookings extends Controller
 
 
 
+  public function cancellConfirm()
+  {
+
+
+    // Check if POST
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+      // Sanitize POST
+      $_POST  = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+      $data = [
+        'engineerEmail' => trim($_POST['engEmail']),
+        'customerEmail' => trim($_POST['customerEmail']),
+        'postId' => trim($_POST['postId']),
+        'engineerReason' => trim($_POST['engineerReason']),
+        'cancelldate' => trim($_POST['cancelldate']),
+        'projectId' => trim($_POST['projectId']),
+        'customerReason'=>trim($_POST['customerReason']),
+        'startDate'=>trim($_POST['startDate'])
+
+      ];
+
+      // Validate email
+      if ($this->engProjectModel->findCancellProjectById($_POST['projectId'])) {
+
+        $this->controller('pages')->myProjectsCancelled();
+      } else {
+        if ($this->engProjectModel->engProjectCancell($data)) {
+          if ($this->engProjectModel->deleleEngProgectOngoing($_POST['projectId'])) {
+            if($this->engProjectModel->deleteFromEngneerordercancellnote($_POST['projectId'])){
+              if($data['engineerEmail']== $_SESSION['user_email']){
+
+            $this->controller('pages')->myProjectsCancelled();
+          }else{
+            $this->controller('pages')->customerBookingOnCancell();
+
+          }
+          }
+          }
+        }
+      }
+    }
+  }
+
+
+
 
   // add to direct to cancell 
   public function engProjectCancell()
@@ -157,21 +201,24 @@ class engBookings extends Controller
         'engineerEmail' => trim($_POST['engEmail']),
         'customerEmail' => trim($_POST['customerEmail']),
         'postId' => trim($_POST['postId']),
-        'reason' => trim($_POST['reason']),
+        'engineerReason' => trim($_POST['engineerReason']),
         'cancelldate' => trim($_POST['cancelldate']),
-        'projectId' => trim($_POST['projectId'])
+        'projectId' => trim($_POST['projectId']),
+        'customerReason'=> null,
+        'startDate'=>null
 
       ];
 
       // Validate email
       if ($this->engProjectModel->findCancellProjectById($_POST['projectId'])) {
+
+        $this->controller('pages')->myProjectsCancelled();
+      } else {
         if ($this->engProjectModel->engProjectCancell($data)) {
           if ($this->engProjectModel->deleleEngProgectPending($_POST['projectId'])) {
             $this->controller('pages')->myProjectsCancelled();
           }
         }
-      } else {
-        $this->controller('pages')->myProjectsCancelled();
       }
     }
   }
@@ -238,10 +285,10 @@ class engBookings extends Controller
 
       $row = $this->engProjectModel->getProject();
 
-    
+
 
       $data = [
-        'projectId'=>$projectId,
+        'projectId' => $projectId,
         'row' => $row
       ];
 
@@ -278,6 +325,7 @@ class engBookings extends Controller
         $this->controller('pages')->myProjectsOnGoing();
       } else {
         if ($this->engProjectModel->cancellConform($data)) {
+          //deleteFromengneerordercancellnote
           $this->controller('pages')->myProjectsOnGoing();
         }
       }
@@ -314,6 +362,4 @@ class engBookings extends Controller
       }
     }
   }
-
-
 }

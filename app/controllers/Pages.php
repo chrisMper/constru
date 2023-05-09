@@ -89,8 +89,28 @@ class Pages extends Controller
     $this->view('users/eng/myprojects/myProjects_ongoing', $data);
   }
 
+  public function cancelConfirm($projectId)
+  {
 
+    $listings = $this->listingModel->getListings();
+    $serviceProvider = $this->userModel->getServiceProviders();
+    $engProject = $this->engProjectModel->getEngineerProjectOngoing();
+    $cancellNotes = $this->engProjectModel->getcancellNotes();
+    $projectId = $projectId;
 
+    
+
+    $data = [
+      'listings' => $listings,
+      'serviceProvider' => $serviceProvider,
+      'engineerProjectOngoing' => $engProject,
+      'cancellNotes'=>$cancellNotes,
+      'projectId'=>$projectId
+    ];
+
+    $this->view('users/eng/myprojects/cancelconfirm', $data);
+
+  }
 
 
   public function customerBookingOnGoing()

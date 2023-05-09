@@ -153,7 +153,7 @@
                             <?php } }?>
 
                             <?php if ($engineerProjectOngoing->cancellComfomation == 0 ) { ?>
-                              <button type="button" >Confirm Cancelation</button>
+                              <a href="<?php echo URLROOT; ?>/Pages/cancelConfirm/<?php echo $engineerProjectOngoing->projectId ?>" ><button type="button" >Confirm Cancelation</button>
                             <?php } ?>
 
 

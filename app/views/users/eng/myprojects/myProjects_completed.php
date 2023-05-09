@@ -78,11 +78,13 @@
           <table>
             <tbody>
             <div class='listing-card' style="background: #ddd">
-              <div>
-                <img src='../../../public/img/product_img/product_placeholder.png'> 
-              </div>
-              <?php foreach($data['listings'] as $listings): 
+            <?php foreach($data['listings'] as $listings): 
                 if($engineerProjectComplete->PostId == $listings->PostId): ?>
+              <div>
+    
+                <img src='<?php echo URLROOT; ?>/img/uploads/<?php echo $listings->Photos; ?>'> 
+              </div>
+              
               <div>
                 <h3><?php echo $listings->Title ?></h3></br>
 

@@ -104,19 +104,22 @@ class engProject
   {
 
     // Prepare Query
-    $this->db->query("INSERT INTO `engneer_project_cancell` (postId, reason,cancellDate,engineerEmail,customerEmail,projectId) VALUES (:postId, :reason,:cancellDate,:engineerEmail,:customerEmail,:projectId)");
+    $this->db->query("INSERT INTO `engneer_project_cancell` (postId, engReason,cancellDate,engineerEmail,customerEmail,projectId,customerReason,startDate) VALUES (:postId, :engineerReason,:cancellDate,:engineerEmail,:customerEmail,:projectId,:customerReason,:startDate)");
 
 
 
     $postID = intval($data['postId']);
 
     // Bind Values
-    $this->db->bind(':reason', $data['reason']);
+    $this->db->bind(':engineerReason', $data['engineerReason']);
     $this->db->bind(':engineerEmail', $data['engineerEmail']);
     $this->db->bind(':postId', $postID);
     $this->db->bind(':customerEmail', $data['customerEmail']);
     $this->db->bind(':cancellDate', $data['cancelldate']);
     $this->db->bind(':projectId', $data['projectId']);
+
+    $this->db->bind(':customerReason', $data['customerReason']);
+    $this->db->bind(':startDate', $data['startDate']);
 
     //Execute
     if ($this->db->execute()) {
@@ -170,7 +173,7 @@ class engProject
       if($row->projectId=$data['projectId']):
 
     // Prepare Query
-    $this->db->query("INSERT INTO `engneer_project_complete` (customerEmail, serviceProviderEmail,PostId,startDate,finishDate,projectId) VALUES (:customerEmail, :serviceProviderEmail,:PostId,:startDate,:finishDate,:projectId)");
+    $this->db->query("INSERT INTO `engneer_project_complete` (customerEmail, serviceProviderEmail,PostId,startDate,finishDate,projectId,stages) VALUES (:customerEmail, :serviceProviderEmail,:PostId,:startDate,:finishDate,:projectId,:stages)");
 
     // Bind Values
     $this->db->bind(':customerEmail', $row->customerEmail);
@@ -179,6 +182,7 @@ class engProject
     $this->db->bind(':startDate',  $row->startDate);
     $this->db->bind(':finishDate', date('Y-m-d'));
     $this->db->bind(':projectId', $row->projectId);
+    $this->db->bind(':stages',$row->stages);
 
     //Execute
     if ($this->db->execute()) {
@@ -212,6 +216,8 @@ class engProject
     }
   }
 
+  
+
   //delete data from enginer project pending
   public function deleleEngProgectOngoing($id)
   {
@@ -220,7 +226,31 @@ class engProject
     // Bind Values
     $this->db->bind(':id', $id);
     //Execute
-    $this->db->execute();
+    if($this->db->execute()){
+      return true;
+    }else{
+      return false;
+    }
+    
+  }
+
+
+  //delete data from enginer project pending
+  public function deleteFromEngneerordercancellnote($id)
+  {
+
+   
+    // Prepare Query
+    $this->db->query('DELETE FROM engneerordercancellnote WHERE projectId= :id'); 
+    // Bind Values
+    $this->db->bind(':id', $id);
+    //Execute
+    if($this->db->execute()){
+      return true;
+    }else{
+      return false;
+    }
+    
   }
 
 

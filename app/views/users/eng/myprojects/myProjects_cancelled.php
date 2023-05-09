@@ -119,7 +119,7 @@
                 <?php endif; 
               endforeach; ?>
 
-                <p><?php echo $engineerProjectCancell->reason  ?></p>
+                <p><?php echo $engineerProjectCancell->engReason  ?></p>
                 <p><?php echo $engineerProjectCancell->cancellDate  ?></p>
               </div>
             </div>

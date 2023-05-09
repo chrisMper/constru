@@ -30,8 +30,8 @@
 					<p><input type="text" name="customerEmail" value="<?php echo $data['customerEmail'] ?>" hidden></p>
 					<p><input type="number" name="projectId" value="<?php echo $data['projectId'] ?>" hidden></p>
 					<p><input type="date" id="date" name="cancelldate" value="<?php echo date('Y-m-d'); ?>" hidden></p>
-					<p><label for="reason">Mention the reason to reject</label></p>
-					<p><textarea id="reason" name="reason" rows="6" cols="50"></textarea></p>
+					<p><label for="engineerReason">Mention the reason to reject</label></p>
+					<p><textarea id="engineerReason" name="engineerReason" rows="6" cols="50"></textarea></p>
        
 				
 				<!-- <p><input id="title" name="title" placeholder="Enter Service Title here"></p>
