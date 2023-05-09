@@ -13,13 +13,13 @@
 			<span id="topic">Update Listing</span>
 			<!--first step -->
 			<div class="add">
-					<p><input id="title" name="title" placeholder="Enter Service Title hereeeeeeeeeeee"></p>
-					<p><input id="description" name="description" placeholder="Enter Description here"></p>
+					<p><input id="title" name="title" placeholder="Enter Service Title here" value="<?php echo $data['listing']->Title ?>"></p>
+					<p><input id="description" name="description" placeholder="Enter Description here" value="<?php echo $data['listing']->Description ?>></p>
 					<div id="stages-container">
 						<div class="stage">
 						<span>Stage 1 </span>
-							<input name="stages[]" placeholder="Enter stage 1 here">
-							<input name="contact[]" placeholder="Enter contact person to above stage 1 here">
+							<input name="stages[]" placeholder="Enter stage 1 here" value="<?php echo $data['listing']->stage ?>>
+							<input name="contact[]" placeholder="Enter contact person to above stage 1 here" value="<?php echo $data['listing']->contact ?>>
 							<button type="button" class="delete-stage-btn" onclick="deleteStage(this)">Delete</button>
 					</div>
 					</div>

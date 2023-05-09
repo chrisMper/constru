@@ -56,8 +56,10 @@
             </div>
 
             <div class='right-col'>
-                <button type="button" class="updatebtn">Update</button>
-                
+                <a href="<?php echo URLROOT; ?>/complistings/showUpdateListing/<?php echo $listing->postId; ?>">
+                        <button type="button" class="updatebtn">Update</button><br>
+                    </a>
+
                 <a href="<?php echo URLROOT; ?>/complistings/deleteListing/<?php echo $listing->postId; ?>">
                             <button type="button" class="deletebtn">Delete</button>
     
@@ -65,14 +67,9 @@
                             <button type="button" class="addbtn">Veiw</button>
                         </a>
 
-                <!-- <a href="<?php echo URLROOT; ?>/complistings/showUpdateListing/<?php echo $listing->PostId; ?>">
-                            <button type="button" class="updatebtn">Update</button><br>
-                        </a>
-                       
-                        </a>
-                        <a href="<?php echo URLROOT; ?>/analysis/displayAdd/<?php echo $listing->PostId; ?>">
+                        <!-- <a href="<?php echo URLROOT; ?>/analysis/displayAdd/<?php echo $listing->PostId; ?>">
                             <button type="button" class="addbtn">Veiw</button>
-                        </a> -->
+                        </a> --> -->
 
 
 

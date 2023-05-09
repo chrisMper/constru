@@ -91,15 +91,12 @@ class CompListings extends Controller{
       public function showUpdateListing($id){
         $listing = $this->analyseModel->getListingById($id);
 
-
         $data=[
           'listing'=>$listing
           
         ];
 
-
        // $postId=intval($id);
-
 
         $this->view('compListings/updateListing',$data);
 
