@@ -1,7 +1,0 @@
-admin dashboard has
-1. Join requests
-2. Complaints
-3. Service Providers
-4. Statistics
-5. Profile
-6. Admin
