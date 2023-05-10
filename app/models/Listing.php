@@ -34,11 +34,6 @@
       $this->db->bind(':Uemail', $data['UserEmail']);
       $this->db->bind(':PtName', $filename);
 
-      
-
-
-
-
       move_uploaded_file($file['temp_name'], $file['upload_to'] . $file['file_name']);
 
 
@@ -83,9 +78,6 @@
         return false;
       }
     }
-
-
-
 
     //delete listiing
     public function delelisting($id)

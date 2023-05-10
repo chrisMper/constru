@@ -1,3 +1,4 @@
+<<<<<<<< HEAD:app/views/inc/engRegHeader.php
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,3 +13,5 @@
 
 
   <div class="container">
+========
+>>>>>>>> chris2:app/views/inc/compregheader.php

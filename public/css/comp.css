@@ -84,8 +84,9 @@ main {
   display: flex;
   flex-direction: row;
   border: 1px solid rgb(199, 195, 195);
-  padding: 10px;
+  padding: 15px;
   width: 70%;
+  max-height: 720px;
   justify-content: space-between;
   margin-top: 10px;
   border-radius: 20px;
@@ -99,6 +100,14 @@ main {
   gap: 30px;
   align-items: top;
 }
+.mid-col{
+  width:100%;
+}
+.right-col{
+  display:flex;
+  flex-direction: column;
+ align-items: right;
+}
 
 button {
   background-color: #ffffff;
@@ -106,7 +115,7 @@ button {
   width: 130px;
   border-radius: 20px;
   padding: 0px;
-  margin-top: 10px;
+  margin: 10px;
   border-width: 1px;
 }
 
@@ -147,14 +156,19 @@ button {
   gap: 5px;
   align-items: center;
 }
+.stage{
+  margin:10px;
+  padding: 10px;
+}
 
 input {
   width: 650px;
 }
 
-#description {
-  height: 200px;
+.description {
+  height: auto;
   place-items: top;
+  margin-bottom: 20px;
 }
 
 .sub-discard-btn {
@@ -164,9 +178,10 @@ input {
   /* btn deka aath karanna orne */
 }
 
-#topic {
+.topic {
   font-size: 20px;
-  font-weight: 20px;
+  margin-bottom: 10px;
+  
 }
 
 /*-------------------------------dashboard----------------------------------------*/
@@ -219,7 +234,7 @@ a {
 
 a:visited {
   color: #000;
-  background-color: transparent;
+  /* background-color: transparent; */
   text-decoration: none;
 }
 
@@ -298,9 +313,10 @@ li {
 
 .details {
   display: flex;
-  flex-direction: column;
-  background-color: rgb(98, 190, 219);
+  flex-direction: row;
+  /* background-color: rgb(98, 190, 219); */
   margin-right: 30px;
+  gap: 20px;
 }
 
 
@@ -325,7 +341,7 @@ li {
 }
 
 .loginDetails {
-  background-color: rgb(98, 190, 219);
+  background-color: rgb(98, 190, 219); 
 
 }
 
@@ -390,3 +406,125 @@ li {
 .buttonLink:link {
   text-decoration: none;
 }
+
+
+/* Progressbar starts here*/
+
+.progressbar { 
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  counter-reset: step;
+  margin: 1rem;
+  overflow-y: scroll;
+  max-height: 100px;
+ /* try to put a border later */
+}
+
+.progressbar::before,
+/* the progress line is here */
+.progress {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); 
+  width: 1%;
+  background-color: #dcdcdc;
+  z-index: -1;
+  left:0.85rem;
+}
+.progressbar::before{
+  /*9 wenuwata datbase eken step gaana aran daaanna - setp+1*/
+  height:calc(4rem*9); 
+}
+.progress {
+  background-color: #2BA137;
+  width: 1%;
+  transition: 0.3s;
+}
+/* these are the circles */
+.progress-step {
+  width: 2rem;
+  min-height: 2rem;
+  background-color: #dcdcdc;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+/* step numbers are here */
+.progress-step::before { 
+  counter-increment: step;
+  content: counter(step);
+  font-size: x-small;
+}
+
+.progress-step::after {
+  content: attr(data-title);
+  position: absolute;
+  left: 3rem;
+  font-size: 1rem;
+  color: #666;
+}
+/* this is the adding factor in the js */
+.progress-step-active {
+  background-color: #2BA137;
+  color:#f3f3f3;
+}
+
+.btns-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0rem;
+  font-weight:50;
+  color: #666;
+}
+
+.btn  {
+  padding: 0.2rem;
+  margin: 2px;
+  display: block;
+  text-decoration: none;
+  background-color: #2BA137;
+  color: #a22222;
+  text-align: center;
+  border-radius: 0.80rem;
+  cursor: pointer;
+  transition: 0.3s;
+  width:100px;
+  font-size: 1rem;
+}
+.btn:hover {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 3px #2BA137;
+}
+.btn:link {
+  border: 1px solid #000;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: black; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b30000; 
+}
+
+/* Progressbar ends here*/
+
+

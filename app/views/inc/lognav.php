@@ -11,8 +11,8 @@
 <body>
 <!-- Navigation bar -->
 <div class="navbar">
-  <a href="#">Home</a>
-  <a href="#">About</a>
-  <a href="#">Contact</a>
+  <a href="<?php echo URLROOT; ?>/pages/index">Home</a>
+  <a href="<?php echo URLROOT; ?>/pages/index/aboutSection">About</a>
+  <a href="<?php echo URLROOT; ?>/pages/index/#">Contact</a>
 </div>
     <!--header ends here-->

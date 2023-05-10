@@ -91,7 +91,7 @@
             </div>
             <div class="button-box">
                 <a href="<?php echo URLROOT; ?>/pages/viewportfolio"><button type="submit" class="viewDetailsBtn btn-1">VIEW PORTFOLIO</a>
-                <a href="<?php echo URLROOT; ?>/pages/chat"><button type="submit" class="viewDetailsBtn btn-2" >Contact</a>
+                <a href="<?php echo URLROOT; ?>/pages/dummyAddListingForComp"><button type="submit" class="viewDetailsBtn btn-2" >Contact</a>
                 <a href="#"><button type="submit" class="viewDetailsBtn add-btn">Book Service</a>
             </div>
             <div class="note-box">
