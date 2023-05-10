@@ -1,0 +1,73 @@
+.myprojects {
+    margin-top: 50px;
+    width: 70%;
+}
+
+/*project box starts here*/
+.project_box {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid rgb(199, 195, 195);
+    padding: 10px;
+    width: 100%;
+    justify-content: space-between;
+    border-radius: 0px;
+    border-width: 2px;
+    margin: 20px auto;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+
+.projectimg_box img {
+    height: 150px;
+    width: 150px;
+    border-radius: 20px;
+}
+
+.projectimg_box {
+    display: flex;
+    padding: 10px;
+}
+
+.projecTitle_box {
+    width: 80%;
+    gap: 30px;
+    align-items: top;
+    padding: 10px;
+}
+
+.btn_box {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.contactbtn {
+    border-color: #0A13FF;
+}
+
+.acceptbtn {
+    border-color: #2BA137;
+}
+
+.rejectbtn {
+    border-color: #F02222;
+}
+
+/* project box ends here */
+
+/*nav projects start here*/
+.projectsnav {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.navbtn {
+    border-radius: 0;
+    margin-right: 50px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    /* border: 1px solid #0A13FF; */
+}
