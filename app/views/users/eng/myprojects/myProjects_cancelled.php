@@ -64,14 +64,73 @@
     <div class="main">
     <div class="registerbox">
       <div class="topnav">
-        <a href="myProjects_new.php">New</a>
-        <a href="myProjects_ongoing.php">Ongoing</a>
-        <a href="<?php echo URLROOT; ?>/Pages/myProjects_completed">Completed</a>
-        <a class="active" href="<?php echo URLROOT; ?>/Pages/myProjects_cancelled">Cancelled</a>
+        <a href="<?php echo URLROOT; ?>/pages/myProjectsNew">New</a>
+        <a href="<?php echo URLROOT; ?>/pages/myProjectsOnGoing">Ongoing</a>
+        <a href="<?php echo URLROOT; ?>/pages/myProjectsCompleted">Completed</a>
+        <a class="active" href="<?php echo URLROOT; ?>/pages/myProjectsCancelled">Cancelled</a>
     </div>
 
     <div class="listing">
+
+    <?php foreach ($data['engineerProjectCancell'] as $engineerProjectCancell) : 
+            if ($engineerProjectCancell->engineerEmail == $_SESSION['user_email']) : ?>
+
         <form method="post">
+          <table>
+
+            <tbody>
+            <div class='listing-card' style="background: #ddd">
+
+
+            <?php foreach ($data['listings'] as $listing) :
+                        if ($listing->PostId == $engineerProjectCancell->PostId) : ?>
+              <div>
+                <img src='<?php echo URLROOT; ?>/img/uploads/<?php echo $listing->Photos; ?>'> 
+              </div>
+              <div>
+                <h3><?php echo $listing->Title ?></h3></br>
+
+             
+                <h5><hr></h5></br>
+                <h5>Name of client</h5></br>
+                <h5>Reason to cancel</h5></br>
+                <h5>Date of cancellation</h5></br>
+
+              </div>
+              <?php endif;
+               endforeach; ?>
+
+              <div>
+                <?php if (empty($engineerProjectCancell->startDate)){?>
+
+                  <h4 style="color: red;" >rejected</h4>
+
+                  <?php } else { ?> 
+                <button onclick="document.getElementById('review').style.display='block'; return false;" >Customer review</button>
+                </br>
+
+                <?php } ?>
+
+                <?php foreach ($data['serviceProvider'] as $cliant) :
+                        if ($engineerProjectCancell->customerEmail == $cliant->email) : ?>
+
+                <p><?php echo $cliant->fName; echo ' '; echo $cliant->lName ?></p>
+
+                <?php endif; 
+              endforeach; ?>
+
+                <p><?php echo $engineerProjectCancell->engReason  ?></p>
+                <p><?php echo $engineerProjectCancell->cancellDate  ?></p>
+              </div>
+            </div>
+          </table>
+        </form>
+<?php endif;
+endforeach; ?>
+
+
+
+        <!-- <form method="post">
           <table>
 
             <tbody>
@@ -85,7 +144,6 @@
                 <h5>Cancellation by</h5></br>
                 <h5>Reason to cancel</h5></br>
                 <h5>Date of cancellation</h5></br>
-
               </div>
               <div>
                 <button onclick="document.getElementById('review').style.display='block'; return false;" >Customer review</button>
@@ -97,33 +155,7 @@
               </div>
             </div>
           </table>
-        </form>
-        <form method="post">
-          <table>
-
-            <tbody>
-            <div class='listing-card' style="background: #ddd">
-              <div>
-                <img src='../../../public/img/product_img/product_placeholder.png'> 
-              </div>
-              <div>
-                <h3>Structured Analysis and Design</h3></br>
-                <h5>Name of client</h5></br>
-                <h5>Cancellation by</h5></br>
-                <h5>Reason to cancel</h5></br>
-                <h5>Date of cancellation</h5></br>
-              </div>
-              <div>
-                <button onclick="document.getElementById('review').style.display='block'; return false;" >Customer review</button>
-                </br>
-                <p>R.A.Perera</p>
-                <p>Client</p>
-                <p>bk,g k,bjgbhugytcd vytf hvfytfytf hgvf6f</p>
-                <p>09.02.2023</p>
-              </div>
-            </div>
-          </table>
-        </form>
+        </form>-->
 
         <div id="review" class="popUp" >
             <span onclick="document.getElementById('review').style.display='none'" class="close" title="Close Modal">&times;</span>

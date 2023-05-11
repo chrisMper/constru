@@ -148,7 +148,6 @@ class User
  
    }
 
-
   // Login user
   public function login($email, $password)
   {

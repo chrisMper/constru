@@ -22,10 +22,6 @@
     public function addlisting($data, $file)
     {
         $filename=$file['file_name'];
-      
-
-      
-
 
       // Prepare Query
       $this->db->query('INSERT INTO engineer_listing (Title,Description,UserEmail,visiterCount,Photos	) 
@@ -37,11 +33,6 @@
       $this->db->bind(':description', $data['Discription']);
       $this->db->bind(':Uemail', $data['UserEmail']);
       $this->db->bind(':PtName', $filename);
-
-      
-
-
-
 
       move_uploaded_file($file['temp_name'], $file['upload_to'] . $file['file_name']);
 
@@ -76,11 +67,7 @@
       // $this->db->bind(':PtName', $file['file_name']);
 
 
-
-
       // move_uploaded_file($file['temp_name'], $file['upload_to'] . $file['file_name']);
-
-
 
 
 
@@ -112,6 +99,17 @@
         return false;
       }
     }
+
+    public function getListingById($postId)
+    {
+      $this->db->query('SELECT * FROM engineer_listing where  PostId = :postId');
+      $this->db->bind(':postId', $postId);
+  
+      $row = $this->db->single();
+  
+      return $row;
+    }
+    
 
 
 

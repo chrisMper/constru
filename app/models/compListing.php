@@ -19,7 +19,7 @@ class compListing
 
 
   // add new listing
-  public function addlisting($data, $file)
+  public function addlisting($data, $file,)
   {
 
     $filename = $file['file_name'];
@@ -36,28 +36,40 @@ class compListing
     $this->db->bind(':contactPerson', $data['contactPerson']);
 
     move_uploaded_file($file['temp_name'], $file['upload_to'] . $file['file_name']);
+    // $postId = $this->db->lastInsertId(); //inbuilt method;
 
     if ($this->db->execute()) {
 
       // Get the postId of the inserted record
       $postId = $this->db->lastInsertId(); //inbuilt method
+
       // Insert into comp_listing_stages table
+      return $postId;
+      
+
+      
+    }
+  }
+
+  public function add_comp_stages($stages,$contacts, $postId){
+    
       $this->db->query('INSERT INTO comp_listing_stages (postId, stage, contact) 
       VALUES (:postId, :stage, :contact)');
 
       // Bind values to parameters
       $this->db->bind(':postId', $postId);
-      $this->db->bind(':stage', $data['stage']);
-      $this->db->bind(':contact', $data['contact']);
-
+      $this->db->bind(':stage', $stages);
+      $this->db->bind(':contact', $contacts);
       if ($this->db->execute()) {
         return true;
         //Execute    
       } else {
         return false;
       }
-    }
+      
+    
   }
+  
 
   //add to comp_listing_stages table
   public function updateStages($stage, $contact)

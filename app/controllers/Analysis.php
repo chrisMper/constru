@@ -2,9 +2,11 @@
  class Analysis extends Controller {
 
   private $analyseModel;
+  private $userModel;
     public function __construct()
     {
         $this->analyseModel = $this->model('Analyse');
+        $this->userModel = $this->model('User');
     }
 
     public function index (){
@@ -50,17 +52,19 @@
 
     public function displayAdd($id){
         $listing = $this->analyseModel->getListingById($id);
-
+        $serviceProvider = $this->userModel->getServiceProviders();
 
         $data=[
-          'listing'=>$listing
+          'listing'=>$listing,
+          'serviceProvider'=>$serviceProvider,
+          'UserEmail'=>$_SESSION['user_email']
         ];
 
 
         $postId=intval($id);
 
 
-        $this->view('listings/display',$data);
+        $this->view('home/searchgig',$data);
 
         $this->statis($postId);
 

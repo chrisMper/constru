@@ -408,6 +408,8 @@ public function index(){
   }
 
 
+
+
   public function profile()
   {
     //Get user
@@ -530,7 +532,6 @@ public function index(){
   // messaging
   
 }
-
 
 
 

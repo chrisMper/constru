@@ -89,5 +89,5 @@ class RegistrationModel {
         if ($password != $confirmPassword) {
             return false;
         }
-        
+    }}
         // check if OTP is valid (e.g. match with a previous sent

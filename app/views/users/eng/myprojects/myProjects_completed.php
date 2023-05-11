@@ -64,57 +64,53 @@
     <div class="main">
     <div class="registerbox">
       <div class="topnav">
-        <a href="myProjects_new.php">New</a>
-        <a href="myProjects_ongoing.php">Ongoing</a>
-        <a class="active" href="myProjects_completed.php">Completed</a>
-        <a href="myProjects_cancelled.php">Cancelled</a>
+        <a href="<?php echo URLROOT; ?>/pages/myProjectsNew">New</a>
+        <a href="<?php echo URLROOT; ?>/pages/myProjectsOnGoing">Ongoing</a>
+        <a class="active" href="<?php echo URLROOT; ?>/pages/myProjectsCompleted">Completed</a>
+        <a href="<?php echo URLROOT; ?>/pages/myProjectsCancelled">Cancelled</a>
     </div>
 
     <div class="listing">
+
+    <?php foreach ($data['engineerProjectComplete'] as $engineerProjectComplete) :
+            if ($engineerProjectComplete->serviceProviderEmail == $_SESSION['user_email']) : ?>
         <form method="post">
           <table>
-
             <tbody>
             <div class='listing-card' style="background: #ddd">
+            <?php foreach($data['listings'] as $listings): 
+                if($engineerProjectComplete->PostId == $listings->PostId): ?>
               <div>
-                <img src='../../../public/img/product_img/product_placeholder.png'> 
+    
+                <img src='<?php echo URLROOT; ?>/img/uploads/<?php echo $listings->Photos; ?>'> 
               </div>
+              
               <div>
-                <h3>Structured Analysis and Design</h3></br>
+                <h3><?php echo $listings->Title ?></h3></br>
+
+                <?php endif; 
+                endforeach; ?>
+                
                 <h5>Name of client</h5></br>
+                
                 <h5>Date of completion</h5>
               </div>
               <div>
                 <button onclick="document.getElementById('view').style.display='block'; return false;" >View customer review</button>
                 </br>
-                <p>R.A.Ranasinghe</p>
-                <p>10.02.2023</p>
+                <?php foreach($data['serviceProvider'] as $serviceProvider): 
+                if($serviceProvider->email  == $engineerProjectComplete->customerEmail): ?>
+                <p><?php echo $serviceProvider->fName . ' '. $serviceProvider->lName ?></p>
+                <?php endif; 
+                endforeach; ?>
+                <p><?php echo $engineerProjectComplete->finishDate ?></p>
               </div>
             </div>
           </table>
         </form>
-        <form method="post">
-          <table>
+        <?php endif;
+        endforeach; ?>
 
-            <tbody>
-            <div class='listing-card' style="background: #ddd">
-              <div>
-                <img src='../../../public/img/product_img/product_placeholder.png'> 
-              </div>
-              <div>
-                <h3>Structured Analysis and Design</h3></br>
-                <h5>Name of client</h5></br>
-                <h5>Date of completion</h5>
-              </div>
-              <div>
-                <button onclick="document.getElementById('view').style.display='block'; return false;" >View customer review</button>
-                </br>
-                <p>R.A.Perera</p>
-                <p>09.02.2023</p>
-              </div>
-            </div>
-          </table>
-        </form>
 
         <div id="view" class="popUp_review" >
             <span onclick="document.getElementById('view').style.display='none'" class="close" title="Close Modal">&times;</span>
@@ -160,6 +156,17 @@
             popUp_review.style.display = "none";
          }
          }
+
+         const viewFun = document.getElementById('view')
+
+            function viewFunction(clientName,completionDate,review) {
+
+              viewFun.style.display = 'block';
+              document.getElementById('clientName').value = clientName;
+              document.getElementById('completionDate').value = completionDate;
+              document.getElementById('review').value = review;
+            }
+
         </script>
 
     </div>

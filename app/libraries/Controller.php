@@ -10,6 +10,15 @@
       require_once '../app/models/' . $model . '.php';
       // Instantiate model
       return new $model();
+
+      
+    }
+
+    public function controller($controller){
+      // Require model file
+      require_once '../app/controllers/' . $controller . '.php';
+      // Instantiate model
+      return new $controller();
     }
 
     // Lets us load view from controllers

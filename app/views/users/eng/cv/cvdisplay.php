@@ -1,18 +1,10 @@
-<!-- sessions set karanna orne -->
+<!-- css of searchgig is on search.css -->
 
-<link rel="stylesheet" href="<?php echo URLROOT; ?>/css/cv.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
-<body>
 <!------------------------------ navbar ------------------------------------>
-<div class='navbar' >
-<?php include APPROOT . '/views/inc/navbar.php'; ?>
-</div>
-
+<?php include APPROOT . '/views/inc/SearchNavSide.php'; ?>
 <!-- -----------------------------list-container------------------------------- -->
-<main>
 <body>
-
-<div class="resume_wrapper">
+<div class="resume_wrapper" style="background-color: #e8e8e8; margin-top:100px;">
 	<div class="resume_left">
 		<div class="resume_image">
 			<img src="<?php echo URLROOT; ?>/img/msg.png" alt="Resume_image">
@@ -191,6 +183,6 @@
 		</div>
 	</div>
 </div>
-
 </body>
-</html>
+
+
