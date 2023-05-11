@@ -82,36 +82,33 @@
               <table>
                 <tbody>
                   <div class='listing-card'>
+                    
 
-                    <?php foreach ($data['listings'] as $listings) :
-                      if ($listings->PostId == $engineerProjectCancell->PostId) : ?>
-                        <div>
-                          <img src='<?php echo URLROOT; ?>/img/uploads/<?php echo $listings->Photos; ?>'>
+                    <div>
+                      <img src='./product_img/product_placeholder.png'>
+                    </div>
+                    <div>
+                      <h3>Structured Analysis and Design</h3>
+                      <div class="content">
+                    
+                      <div class="progress-container">
+                          <div class="progress" id="progress"></div>
+                          <div class="circle active">1</div>
+                          <div class="circle">2</div>
+                          <div class="circle">3</div>
+                          <div class="circle">4</div>
                         </div>
-                        <div>
-                          <h3><?php echo $listings->Title  ?></h3>
-                      <?php endif;
-                    endforeach; ?>
-                      
-                        </div>
-                        <div class="completion">
-                          <?php foreach ($data['serviceProvider'] as $cliant) :
-                            if ($cliant->email == $engineerProjectCancell->customerEmail) : ?>
-                              <div class="popup-data" data-cliant="<?php echo $cliant->fName;
-                                                                    echo ' ';
-                                                                    echo $cliant->lName ?>" data-start="<?php echo $engineerProjectCancell->startDate ?>" data-cancelDate="<?php echo $engineerProjectCancell->cancellDate ?>" data-progress="<?php echo $engineerProjectCancell->completionWhenCancell ?>" data-review="<?php echo $engineerProjectCancell->customerReason ?>" data-service="<?php echo $engineerProjectCancell->engineerEmail ?>"></div>
 
-                          <?php endif;
-                          endforeach; ?>
+                      </div>
+                    </div>
+                    <div class="completion">
+                      <h5>Total completion</h5>
+                      <div class="completion_amount">
+                        <h4>10%</h4>
+                      </div>
 
-                          <h5>Total completion</h5>
-                          <div class="completion_amount">
-                            <h4><?php echo $engineerProjectCancell->completionWhenCancell ?>%</h4>
-                          </div>
-                          <button class='review-btn'>View reason</button>
-
-
-                        </div>
+                      <button onclick="document.getElementById('review').style.display='block'; return false;">View reason</button>
+                    </div>
                   </div>
               </table>
             </form>
@@ -119,42 +116,36 @@
         <?php endif;
         endforeach; ?>
 
-
-
-
-
-
         <div id="review" class="popUp">
           <span onclick="document.getElementById('review').style.display='none'" class="close" title="Close Modal">&times;</span>
           <form class="acceptContent">
             <table class="acceptTable">
               <tr>
-                <td>Client Name </td>
-                <td id="cliant-popup"></td>
+                <td>Client 10 </td>
               </tr>
               <tr>
                 <td>
-                  <h5>Cancellation date</h5>
+                  <h5>Completion date</h5>
                 </td>
-                <td id="cancelDate-popup"></td>
+                <td>10.02.2023</td>
               </tr>
               <tr>
                 <td>
                   <h5>Progress when service ended</h5>
                 </td>
-                <td id="progress-popup"></td>
+                <td>10%</td>
               </tr>
               <tr>
                 <td>
                   <h5>Your statement</h5>
                 </td>
-                <td id="review-popup"></td>
+                <td>nark gnqkgne rnbedreo kfjgorgj mlvnvv vkee ns sdvw dvwseve</td>
               </tr>
               <tr>
                 <td>
                   <h5>Service provider's statement</h5>
                 </td>
-                <td id="service-popup"></td>
+                <td>nark gnqkgne rnbedreo kfjgorgj mlvnvv vkee ns sdvw dvwseve</td>
               </tr>
 
 
@@ -163,40 +154,16 @@
           <button onclick="location.reload();">Back</button>
         </div>
 
-
-
         <script>
-          const reviewButtons = document.querySelectorAll(".review-btn");
-          reviewButtons.forEach((button) => {
-            button.addEventListener('click', (e) => {
-              e.preventDefault();
-              const popUp = document.getElementById('review');
-              const parentDiv = button.parentElement;
+          var popUp = document.getElementById('review');
 
-              const dataDiv = parentDiv.querySelector(".popup-data");
-              const popupClientName = document.querySelector("#cliant-popup");
-              // const popupStart = document.querySelector("#start-popup");
-              const popUpCancel = document.querySelector("#cancelDate-popup");
-              const popupProgress = document.querySelector("#progress-popup");
-              const popupReview = document.querySelector("#review-popup");
-              const serviceReview = document.querySelector("#service-popup");
-
-
-              popupClientName.innerHTML = dataDiv.dataset.cliant;
-              // popupStart.innerHTML = dataDiv.dataset.start;
-              popUpCancel.innerHTML = dataDiv.dataset.canceldate;
-              popupProgress.innerHTML = dataDiv.dataset.progress + '%';
-              popupReview.innerHTML = dataDiv.dataset.review;
-              serviceReview.innerHTML = dataDiv.dataset.service;
-
-
-              popUp.style.display = "block";
-
-
-            })
-          })
+          // When the user clicks anywhere outside of the modal, close it
+          window.onclick = function(event) {
+            if (event.target == popUp) {
+              popUp.style.display = "none";
+            }
+          }
         </script>
-
 
       </div>
     </div>

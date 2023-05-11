@@ -53,6 +53,7 @@ function updateFormSteps() {
 }
 
 function updateProgressbar() {
+  // idx is a utility function for traversing properties on objects and arrays.
   progressSteps.forEach((progressStep, idx) => {
     if (idx < formStepsNum + 1) {
       progressStep.classList.add("progress-step-active");

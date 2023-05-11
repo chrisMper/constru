@@ -78,24 +78,35 @@
 
         <div class="listing">
 
+          <table>
+            <!-- 
+            <tbody>
+            <div class='listing-card' style="background: #ddd">
+              <div>
+                <img src='../../../public/img/product_img/product_placeholder.png'> 
+              </div>
+              <div>
+                <h3>Structured Analysis and Design</h3>
+              </div>
+              <div> -->
+            <!--<button>Contact</button>-->
+            <!-- <button onclick="document.getElementById('accept').style.display='block'; return false;" >Accept</button>
+                <button onclick="document.getElementById('reject').style.display='block'; return false;">Reject</button>
+              </div>
+            </div>
+
+          </table> -->
             <?php foreach ($data['engProjectPendig'] as $projectPendig) :
               if ($projectPendig->engineerEmail == $_SESSION['user_email']) : ?>
-              <?php foreach($data['listings'] as $listings):
-                if($listings->PostId== $projectPendig->PostId): ?>
                 <table>
                   <tbody>
                     <form method="POST">
                       <div class='listing-card' style="background: #ddd">
                         <div>
-                          <img src='<?php echo URLROOT; ?>/img/uploads/<?php echo $listings->Photos; ?>'>
+                          <img src='../../../public/img/product_img/product_placeholder.png'>
                         </div>
                         <div>
-                          <h3><?php echo $listings->Title ?> </h3>
-                          <?php foreach($data['serviceProvider'] as $serviceProvider):
-                            if($serviceProvider->email==$projectPendig->customerEmail): ?>
-                          <h5><?php echo $serviceProvider->fName .' ' . $serviceProvider->lName ?> </h5>
-                        <?php endif;
-                      endforeach; ?>
+                          <h3>Structured Analysis and Design</h3>
                         </div>
                         <div>
                           <input type="text" name="engEmail" value="<?php echo $projectPendig->engineerEmail ?>" id="engEmail" hidden>
@@ -112,8 +123,6 @@
                     </form>
                 </table>
             <?php endif;
-            endforeach;
-            endif;
             endforeach; ?>
 
 
@@ -190,12 +199,7 @@
      </div>
     </div>
    </div> 
-  </div> -->
-          </table>
-        </div>
-      </div>
-    </div>
   </div>
+ 
 </body>
-
 </html>

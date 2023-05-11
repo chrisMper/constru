@@ -6,6 +6,7 @@ class engBookings extends Controller
   private $engProjectModel;
   private $userModel;
   private $listingModel;
+  private $analyzeModel;
 
   public function __construct()
   {
@@ -13,6 +14,7 @@ class engBookings extends Controller
     $this->engProjectModel = $this->model('engProject');
     $this->userModel = $this->model('User');
     $this->listingModel = $this->model('Listing');
+    $this->analyzeModel = $this->model('Analyse');
   }
 
   public function index()
@@ -40,7 +42,9 @@ class engBookings extends Controller
         die('cant place order');
       } else {
         if ($this->engProjectModel->engProjectPending($data)) {
-          $this->controller('pages')->search();
+          if ($this->analyzeModel->getBookingCount($_POST['postId'])) {
+            $this->controller('pages')->search();
+          }
         }
       }
     }
@@ -161,9 +165,9 @@ class engBookings extends Controller
         'engineerReason' => trim($_POST['engineerReason']),
         'cancelldate' => trim($_POST['cancelldate']),
         'projectId' => trim($_POST['projectId']),
-        'customerReason'=>trim($_POST['customerReason']),
-        'startDate'=>trim($_POST['startDate']),
-        'completionWhenCancell'=> trim($presentage)
+        'customerReason' => trim($_POST['customerReason']),
+        'startDate' => trim($_POST['startDate']),
+        'completionWhenCancell' => trim($presentage)
 
 
       ];
@@ -175,15 +179,14 @@ class engBookings extends Controller
       } else {
         if ($this->engProjectModel->engProjectCancell($data)) {
           if ($this->engProjectModel->deleleEngProgectOngoing($_POST['projectId'])) {
-            if($this->engProjectModel->deleteFromEngneerordercancellnote($_POST['projectId'])){
-              if($data['engineerEmail']== $_SESSION['user_email']){
+            if ($this->engProjectModel->deleteFromEngneerordercancellnote($_POST['projectId'])) {
+              if ($data['engineerEmail'] == $_SESSION['user_email']) {
 
-            $this->controller('pages')->myProjectsCancelled();
-          }else{
-            $this->controller('pages')->customerBookingOnCancell();
-
-          }
-          }
+                $this->controller('pages')->myProjectsCancelled();
+              } else {
+                $this->controller('pages')->customerBookingOnCancell();
+              }
+            }
           }
         }
       }
@@ -208,9 +211,9 @@ class engBookings extends Controller
         'engineerReason' => trim($_POST['engineerReason']),
         'cancelldate' => trim($_POST['cancelldate']),
         'projectId' => trim($_POST['projectId']),
-        'customerReason'=> null,
-        'startDate'=>null,
-        'completionWhenCancell'=>0
+        'customerReason' => null,
+        'startDate' => null,
+        'completionWhenCancell' => 0
 
       ];
 

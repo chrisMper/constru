@@ -38,6 +38,8 @@
         return $row;
     }
 
+
+
     public function getVisitcount($postId){
       
         $this->db->query('UPDATE engineer_listing
@@ -50,6 +52,23 @@
          $this->db->execute();
 
         }
+
+        public function getBookingCount($postId){
+      
+          $this->db->query('UPDATE engineer_listing
+              Set  noOfBookings = noOfBookings + 1
+              Where PostId = :postId');
+              $this->db->bind(':postId',$postId);
+          
+  
+           
+          if($this->db->execute()){
+            return true;
+          } else{
+            return false;
+          }
+  
+          }
     
 
 

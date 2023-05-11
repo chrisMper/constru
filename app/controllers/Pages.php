@@ -68,9 +68,6 @@ class Pages extends Controller
     $this->view('users/eng/myprojects/myProjects_new', $data);
   }
 
-
-
-
   public function myProjectsOnGoing()
   {
 
@@ -166,12 +163,6 @@ class Pages extends Controller
     $this->view("users/eng/mybookings/myBookings_cancelled", $data);
   }
 
-
-
-
-
-
-
   
   public function bookings()
   {
@@ -226,9 +217,7 @@ class Pages extends Controller
     $this->view('users/eng/myorders/cancel');
   }
 
-
   
-
   public function stats()
   {
     $this->view('stats/stats');

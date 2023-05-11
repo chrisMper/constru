@@ -246,5 +246,57 @@
             </form>
         </div>
     </div>
+    <div class="review_section">
+        <div class="person_review">
+            <img class="review_img" src="<?php echo URLROOT; ?>/img/mycart.png">
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <span class="months">|7 months ago</span>
+        </div>
+        <div class="person_review_text">
+            <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </span>
+        </div>
+    </div>
+    <div class="review_section">
+        <div class="person_review">
+            <img class="review_img" src="<?php echo URLROOT; ?>/img/mycart.png">
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <span class="months">|10 months ago</span>
+        </div>
+        <div class="person_review_text">
+            <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </span>
+        </div>
+    </div>
+
+    <!-- popup starts here -->
+    <div class="blur_bg" id="blur_bg"></div>
+    <div class="add-form" id="add-form">
+        <span>
+            <label>Confirm booking </label>
+            <label class="close">x</label>
+        </span>
+        <span class="description">Before booking please contact service provider and share your project details. (Eg- Requirements, timeline, budget etc..</span>
+
+        <form action="" method="POST" class="add" id="add">
+            <span>
+                <input type="submit" value="Confirm Booking" class="add-btn submit-form">
+                <input type="hidden" value="customer" name="role" class="role">
+            </span>
+        </form>
+    </div>
+</div>
     <!-- popup ends here  -->
     <script src="<?php echo URLROOT; ?>/js/popup.js"></script>

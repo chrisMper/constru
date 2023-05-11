@@ -1,4 +1,7 @@
 <?php
+
+use function PHPSTORM_META\elementType;
+
 class Listings extends Controller{
   private $listingModel;
   private $analyseModel;
@@ -11,6 +14,9 @@ class Listings extends Controller{
         $this->analyseModel=$this->model('Analyse');
 
       }
+
+
+    
     
         // Load All Posts
     public function index(){
@@ -24,7 +30,7 @@ class Listings extends Controller{
         $this->view('listings/listings', $data);
       }
 
-      public function stats()
+   public function stats()
       {
     
         $listings = $this->listingModel->getListings();
@@ -34,6 +40,19 @@ class Listings extends Controller{
         ];
     
         $this->view('users/eng/statistics/analyse', $data);
+      }
+
+
+      public function StatsChart()
+      {
+    
+        $listings = $this->listingModel->getListings();
+        $data = [
+          'listings' => $listings,
+    
+        ];
+    
+        $this->view('users/eng/statistics/StatsChart', $data);
       }
 
 
@@ -60,8 +79,6 @@ class Listings extends Controller{
 		        'file_type' => $_FILES['image']['type'],
 		        'file_size' => $_FILES['image']['size'],
 		        'temp_name' => $_FILES['image']['tmp_name'],
-
-            
             'upload_to' => PUBROOT. '/public/img/uploads/'
 
           ];
@@ -219,5 +236,3 @@ class Listings extends Controller{
 
       
 }
-
-?>

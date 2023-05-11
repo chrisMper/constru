@@ -1,6 +1,5 @@
 <!------------------------------ navbar ------------------------------------>
 <?php include APPROOT . '/views/inc/SearchNavSide.php'; ?>
-
 <!-- -----------------------------list-container------------------------------- -->
 <div class="searchbody">
   <div class="searchContainer">

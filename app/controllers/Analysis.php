@@ -3,11 +3,14 @@
 
   private $analyseModel;
   private $userModel;
+  private $listingModel;
     public function __construct()
     {
         $this->analyseModel = $this->model('Analyse');
         $this->userModel = $this->model('User');
+        $this->listingModel = $this->model('Listing');
     }
+
 
     public function index (){
         redirect('welcome');
@@ -59,12 +62,25 @@
           'serviceProvider'=>$serviceProvider,
           'UserEmail'=>$_SESSION['user_email']
         ];
-
-
         $postId=intval($id);
-
-
         $this->view('home/searchgig',$data);
+
+        $this->statis($postId);
+
+      }
+
+
+      public function StatMore($id){
+        $listing = $this->analyseModel->getListingById($id);
+        $serviceProvider = $this->userModel->getServiceProviders();
+
+        $data=[
+          'listing'=>$listing,
+          'serviceProvider'=>$serviceProvider,
+          'UserEmail'=>$_SESSION['user_email']
+        ];
+        $postId=intval($id);
+        $this->view('users/eng/statistics/StatsMore',$data);
 
         $this->statis($postId);
 
@@ -80,4 +96,8 @@
 
 
  }
+
+ 
+
+
  ?>

@@ -4,7 +4,7 @@ include APPROOT . '/views/inc/navbar.php';
 <main>
     <div class="grid-container">
         <!-- first parameter is the controller, second parameter is the function name inside that controller  -->
-        <a href="<?php echo URLROOT; ?>/pages/compmsg">
+        <a href="<?php echo URLROOT; ?>/Messages/messages">
             <div class="grid-item">
                 <div class="card">
                     <img class="dashimg" src="<?php echo URLROOT; ?>/img/msg.png" alt="msg img" style="width:100%">
@@ -53,7 +53,7 @@ include APPROOT . '/views/inc/navbar.php';
             </div>
         </div>
 </a>
-        <a href="<?php echo URLROOT; ?>/listings/listings">
+        <a href="<?php echo URLROOT; ?>/CompListings/listing">
             <div class="grid-item">
                 <div class="card">
                     <img class="dashimg" src="<?php echo URLROOT; ?>/img/listings.png" alt="listings img">
@@ -72,7 +72,7 @@ include APPROOT . '/views/inc/navbar.php';
                 </div>
             </div>
         </div>
-        <a href="<?php echo URLROOT; ?>/pages/cv">
+        <!-- <a href="<?php echo URLROOT; ?>/pages/cv">
             <div class="grid-item">
                 <div class="card">
                     <img class="dashimg" src="<?php echo URLROOT; ?>/img/Profile.png" alt="msgimg">
@@ -81,7 +81,7 @@ include APPROOT . '/views/inc/navbar.php';
                     </div>
                 </div>
             </div>
-        </a>
+        </a> -->
         <a href="<?php echo URLROOT; ?>/pages/profile">
         <div class="grid-item">
             <div class="card">

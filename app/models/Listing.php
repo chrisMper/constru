@@ -24,8 +24,8 @@
         $filename=$file['file_name'];
 
       // Prepare Query
-      $this->db->query('INSERT INTO engineer_listing (Title,Description,UserEmail,visiterCount,Photos	) 
-            VALUES (:title,:description,:Uemail,0,:PtName)');
+      $this->db->query('INSERT INTO engineer_listing (Title,Description,UserEmail,visiterCount,Photos,created_at,updated_at	) 
+            VALUES (:title,:description,:Uemail,0,:PtName,:createdAt,:updatedAt)');
 
       // Bind Values
 
@@ -33,11 +33,8 @@
       $this->db->bind(':description', $data['Discription']);
       $this->db->bind(':Uemail', $data['UserEmail']);
       $this->db->bind(':PtName', $filename);
-
-      
-
-
-
+      $this->db->bind(':createdAt',date('Y-m-d H:i:s'));
+      $this->db->bind(':updatedAt',date('Y-m-d H:i:s'));
 
       move_uploaded_file($file['temp_name'], $file['upload_to'] . $file['file_name']);
 
@@ -60,7 +57,7 @@
 
       // Prepare Query
 
-      $this->db->query('UPDATE engineer_listing SET Title = :title, Description = :description, UserEmail = :Uemail WHERE PostId= :id' );
+      $this->db->query('UPDATE engineer_listing SET Title = :title, Description = :description, UserEmail = :Uemail, updated_at = :updatedAt  WHERE PostId= :id' );
 
 
       // Bind Values
@@ -69,6 +66,7 @@
       $this->db->bind(':description', $data['Discription']);
       $this->db->bind(':Uemail', $data['UserEmail']);
       $this->db->bind(':id', $id);
+      $this->db->bind(':updatedAt',date('Y-m-d H:i:s'));
       // $this->db->bind(':PtName', $file['file_name']);
 
 
@@ -83,9 +81,6 @@
         return false;
       }
     }
-
-
-
 
     //delete listiing
     public function delelisting($id)

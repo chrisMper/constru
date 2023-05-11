@@ -396,7 +396,7 @@ button a{
     width: auto;
     height: auto;
     overflow: auto;
-    position: absolute;
+    position: relative;
     border-radius: 20px;
     display: none;
     z-index: 1;
@@ -521,11 +521,6 @@ body {
 .circle.active {
     border-color: var(--line-border-color);
     background-color: rgba(43, 161, 55, 1);
-}
-
-.circle.intermerdiate {
-  border-color: var(--line-border-color);
-  background-color: rgb(217, 255, 0);
 }
 
 .btn:disabled {
