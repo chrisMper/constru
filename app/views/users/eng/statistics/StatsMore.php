@@ -1,6 +1,6 @@
 <!-- css of searchgig is on search.css -->
 <!------------------------------ navbar ------------------------------------>
-<?php include APPROOT . '/views/inc/navbar.php'; ?>
+<?php include APPROOT . '/views/inc/navbarStatDetails.php'; ?>
 <!-- -----------------------------list-container------------------------------- -->
 <div class="searchbody">
 
@@ -9,24 +9,17 @@
             <div class="list-container">
                 <div class="left-mid">
                     <div class="left-col">
-                        <img src="<?php echo URLROOT; ?>/img/uploads/<?php echo $data['listing']->Photos; ?>">
-                        <div class="level">
-                            <span>Level 1</span>
-                        </div>
-                    </div>
+                       
+                       </div>
                     <div class='mid-col'>
-                        <p class='topic'><?php echo $data['listing']->Title;   ?></p>
+                      <h2><?php echo $data['listing']->Title;   ?></h2>  
                         <p class='decription'></p>
                         <div class="serviceProvider">
-                            <img src="<?php echo URLROOT; ?>/img/mycart.png">
-                            <?php foreach ($data['serviceProvider'] as $serviceProvider) :
-                                if ($serviceProvider->email == $data['listing']->UserEmail) : ?>
-                                    <span><?php echo $serviceProvider->fName;
-                                            echo " "; ?><?php echo $serviceProvider->lName; ?></span>
-                            <?php endif;
-                            endforeach; ?>
+                         
+                                    <span><?php echo $data['listing']->Description; ?></span>
+                            
                         </div>
-                       
+                     
                     </div>
                 </div>
                 <div class='right-col'>
@@ -74,17 +67,27 @@
                 <div class="display-images-1">
                     <img src="<?php echo URLROOT; ?>/img/uploads/<?php echo $data['listing']->Photos; ?>">
                 </div>
+                <!-- <div class="display-images">
+                    <div class="display-images-2">
+                        <img src="<?php echo URLROOT; ?>/img/mycart.png">
+                    </div>
+                    <div class="display-images-2">
+                        <img src="<?php echo URLROOT; ?>/img/mycart.png">
+                    </div>
+                    <div class="display-images-2">
+                        <img src="<?php echo URLROOT; ?>/img/mycart.png">
+                    </div>
+                    <div class="display-images-2">
+                        <img src="<?php echo URLROOT; ?>/img/mycart.png">
+                    </div>
+                </div> -->
             </div>
             <div class="description-column">
                 <div class="text-box">
                     <span><?php echo $data['listing']->Description;   ?></span>
                 </div>
-               
-
             </div>
         </div>
-
-
 
         <div class="total_reviews">
             <span>47,376 Reviews</span>
@@ -223,11 +226,6 @@
             </form>
         </div>
     </div>
-   
-
-
-    <!-- popup starts here -->
-    
-</div> 
+  
     <!-- popup ends here  -->
     <script src="<?php echo URLROOT; ?>/js/popup.js"></script>

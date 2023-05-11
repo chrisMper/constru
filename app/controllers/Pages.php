@@ -225,7 +225,7 @@ class Pages extends Controller
 
   public function cv()
   {
-    $this->view('users/eng/cv/viewcv');
+    $this->view('users/eng/cv/cv');
   }
 
 

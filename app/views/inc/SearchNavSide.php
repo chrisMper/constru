@@ -84,42 +84,6 @@
                     <span class="links_name">Hardware Supplies</span>
                 </a>
             </li>
-            <!-- <li>
-                <a href="#">
-                    <i class='bx bx-coin-stack'></i>
-                    <span class="links_name">Add Orders</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bx-book-alt'></i>
-                    <span class="links_name">Ongoin Orders</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bx-user'></i>
-                    <span class="links_name">Completed orders</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bx-message'></i>
-                    <span class="links_name">Employee</span>
-                </a>
-            </li> -->
-            <!--<li>
-                <a href="#">
-                    <i class='bx bx-heart'></i>
-                    <span class="links_name">Favrorites</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bx-cog'></i>
-                    <span class="links_name">Setting</span>
-                </a>
-            </li>-->
             <li class="log_out">
                 <a href="#">
                     <i class='bx bx-log-out'></i>

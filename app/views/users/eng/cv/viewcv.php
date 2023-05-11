@@ -1,9 +1,14 @@
-<!-- css of searchgig is on search.css -->
-
-<!------------------------------ navbar ------------------------------------>
-<?php include APPROOT . '/views/inc/SearchNavSide.php'; ?>
-<!-- -----------------------------list-container------------------------------- -->
+<link rel="stylesheet" href="<?php echo URLROOT; ?>/css/kusSearchNavSide.css" />
+<link rel="stylesheet" href="<?php echo URLROOT; ?>/css/search.css">
+<link rel="stylesheet" href="<?php echo URLROOT; ?>/css/cv.css">
+<link rel="stylesheet" href="<?php echo URLROOT; ?>/css/portfolio.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+<link rel="stylesheet" href="C:\xampp\htdocs\constru\fontawesome-free-6.3.0-web/css/font-awesome.min.css">
 <body>
+
+
+
 <div class="resume_wrapper" style="background-color: #e8e8e8; margin-top:100px;">
 	<div class="resume_left">
 		<div class="resume_image">
@@ -16,7 +21,7 @@
 			</div>
 			<div class="resume_item resume_profile">
 				<div class="resume_title">Profile</div>
-				<div class="resume_info">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				<div class="resume_info"> how how how  etur adipisicing elit, sed do eiusmod
 				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
@@ -183,6 +188,8 @@
 		</div>
 	</div>
 </div>
+
+
 </body>
 
 

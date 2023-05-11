@@ -7,8 +7,26 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <meta http-equiv="X-UA-Compatible" content="ie=edge">
      <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/comp.css">
-  <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/navbar.css">
+     <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/navbar.css">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+     <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/kusSearchNavSide.css" />
+<link rel="stylesheet" href="<?php echo URLROOT; ?>/css/search.css">
+<link rel="stylesheet" href="<?php echo URLROOT; ?>/css/cv.css">
+<link rel="stylesheet" href="<?php echo URLROOT; ?>/css/portfolio.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+<link rel="stylesheet" href="C:\xampp\htdocs\constru\fontawesome-free-6.3.0-web/css/font-awesome.min.css">
+
+<meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <!-- <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/comp.css"> -->
+     <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/search.css">
+     <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/cv.css">
+     <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/portfolio.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
      <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
      <title><?php echo SITENAME; ?></title>
  </head>
@@ -86,35 +104,4 @@
              </li>
          </ul>
      </div>
-     <section class="home-section">
-         <nav style="
-    width: 100%;
-    left: 0;
-">
-             <div class="sidebar-button">
-                 <div class="logo-details">
-                     <img id="logoimg" src="<?php echo URLROOT; ?>/img/logo.png">
-                     <!-- <span class="logo_name">Constru Plus</span> -->
-                 </div>
-
-             </div>
-             <div class="top">
-                 <ul>
-                 <a href="<?php echo URLROOT; ?>/pages/indexLogged" class="active">
-                 <li>Home</li></a>
-                     <li>About</li>
-                     <li>Our Services </li>
-
-                 </ul>
-             </div>
-             <div class="profile-details">
-
-                 <span class="admin_name"></span>
-                 <i class='bx bx-bell'></i>
-                 <span class="admin_name"></span>
-                 <i class='bx bx-cart'></i>
-                 <span class="admin_name"></span>
-                 <i class='bx bx-user'></i>
-             </div>
-         </nav>
-     </section>
+     

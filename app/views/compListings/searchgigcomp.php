@@ -91,14 +91,6 @@
             <div class="text-box">
                 <span>Description of the service is added here. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </span>
             </div>
-            <!-- <div class="button-box">
-                <a href="<?php echo URLROOT; ?>/pages/viewportfolio"><button type="submit" class="viewDetailsBtn btn-1">VIEW PORTFOLIO</a>
-                <a href="<?php echo URLROOT; ?>/pages/dummyAddListingForComp"><button type="submit" class="viewDetailsBtn btn-2" >Contact</a>
-                <a href="#"><button type="submit" class="viewDetailsBtn add-btn">Book Service</a>
-            </div> 
-            <div class="note-box">
-                <span>Before booking please contact service provider and share your projevt details. (Eg: Requirements, Timeline, Budget)</span>
-            </div>-->
 
         </div>
     </div>
