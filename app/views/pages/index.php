@@ -23,7 +23,9 @@
                     <li>
                         <a href="#aboutSection">Join Us</a>
                     </li>
-                    
+                    <!-- <li>
+                        <a href="<?php echo URLROOT; ?>/users/register">Register</a>
+                    </li> -->
                     <li>
                         <a href="<?php echo URLROOT; ?>/users/login">Login</a>
                     </li>
@@ -37,9 +39,8 @@
     <div class="container">
         <h1>Constru Plus<span><a href="<?php echo URLROOT; ?>/pages/search">Shop with Us</a></span></h1>
         <p>
-        Welcome to our e-commerce website, your one-stop shop for all your construction needs. 
-        We offer a vast selection of products and services, making it easy and convenient for builders and 
-        contractors to find everything they need in one place.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
+            molestias commodi dolor necessitatibus nisi nesciunt velit.
         </p>
         <button><a href="">Signup</a></button>
     </div>
@@ -56,37 +57,41 @@
             sed. Dignissimos, enim.
         </p>
         <div class="cards">
-            <div class="signupBox">
+            <div class="donationBox">
                 <div class="title">Register as a Engineer</div>
                 <p>
-                Are you a professional engineer looking to expand your reach and connect with new clients? 
-                Our website offers a platform for service providers like you to register and showcase your expertise to potential customers.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Temporibus, vitae quidem. Laudantium, animi cum saepe hic id in?
+                    Quisquam corrupti odit commodi dolor ipsam architecto vitae iusto
+                    amet explicabo illo.
                 </p>
                 <button><a href="<?php echo URLROOT; ?>/Users/engRegister">Register Now</a></button>
             </div>
-            <!--signup box ends here-->
+            <!--donation box ends here-->
 
             <div class="beneficiaryBox">
                 <div class="title">Register As a Construction Company</div>
                 <p>
-                Are you a construction company looking to grow your business and connect with new clients? 
-                Our website provides a platform for service providers like you to register and showcase your company's 
-                expertise to potential customers.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis
+                    officiis nemo quod sed mollitia maxime aliquam dolore voluptas.
+                    Dolor commodi voluptates aliquid, earum minima accusantium eos
+                    aspernatur ullam aperiam tempora.
                 </p>
                 <button><a href="<?php echo URLROOT; ?>/Pages/compRegister">Register Now</a></button>
             </div>
-            <!--signup box ends here-->
+            <!--donation box ends here-->
 
             <div class="eventHosterBox">
                 <div class="title">Register as a Supplier</div>
                 <p>
-                Are you a construction material supplier looking to expand your reach and connect with new customers? 
-                Our website provides a platform for service providers like you to register and showcase your products 
-                and services to potential clients.
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga
+                    neque expedita itaque alias aliquid cum qui voluptatem tenetur?
+                    Expedita enim fuga deserunt molestiae, tenetur molestias eveniet
+                    fugit non commodi pariatur!
                 </p>
                 <button><a href="<?php echo URLROOT; ?>/users/register">Register Now</a></button>
             </div>
-            <!--signup box ends here-->
+            <!--donation box ends here-->
         </div>
     </div>
 </section>

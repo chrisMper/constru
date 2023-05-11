@@ -22,8 +22,8 @@
 					<div id="stages-container">
 						<div class="stage">
 						<span>Stage 1 </span>
-							<input id="stage" type="text" name="stages[]" placeholder="Enter stage 1 here">
-							<input id="contact" type="number" name="contacts[]" placeholder="Enter contact person to above stage 1 here">
+							<input id="stage" type="text" name="stage" placeholder="Enter stage 1 here">
+							<input id="contact" type="number" name="contact" placeholder="Enter contact person to above stage 1 here">
 							<button type="button" class="delete-stage-btn" onclick="deleteStage(this)">Delete</button>
 					</div>
 					</div>

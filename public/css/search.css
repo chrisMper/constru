@@ -1,0 +1,441 @@
+body{
+    background: #fff;
+    
+}
+.searchbody{
+  margin-left: 15%;
+}
+.searchContainer{
+    margin-top: 100px;
+}
+
+.searchBar1 input[type="text"] {
+    width: 700px;
+    height: 50px;
+}
+
+form.searchBar1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.top li{
+    list-style: none;
+    display: inline-block;
+    padding: 10px;
+    justify-content: center;
+    position: relative;
+}
+
+.profile-details
+.drop {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+/* filter */
+.filter{
+    margin-top: 25px;
+    padding-left: 10px;
+}
+.filter label{
+    font-size: 14px;
+    padding: 0 10px;
+}
+.filterItem{
+    display: inline-flex;
+}
+/* search bar */
+.searchBar1 input{
+    border-radius: 50px 0 0 50px;
+    border: 3px solid #F05E22;
+}
+.searchbutton{
+    border-radius: 0 50px 50px 0;
+    width: 150px;
+    height: 50px;
+    color:  #ffffff;
+    background-color: #F05E22;
+    border: 3px solid #F05E22;
+}
+.searchContainer{
+    margin-bottom: 50px;
+}
+/*middle part*/
+.listbox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+  }
+  main{
+    position: absolute; 
+    left: 240px;
+    /* top:80px;
+    width:86%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+  .left-col img{
+    height: 150px;
+    width: 150px;
+    border-radius: 20px;
+  }
+  .addbtn-container{
+    width:70%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 80px;
+  }
+  
+  .list-container{
+    display:flex;
+    flex-direction: row;
+    border: 1px solid rgb(199, 195, 195);
+    padding: 10px;
+    width:70%;
+    justify-content: space-between;
+    border-radius: 0px;
+    border-width: 2px;
+    margin: 20px auto;
+    /*box border shadow*/
+    border-radius: 20px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+
+  }
+  img{
+    padding: 10px;
+  }
+  .left-mid{
+    padding: 10px;
+    display:flex;
+    flex-direction: row;
+    width: 80%;
+    gap: 30px;
+    align-items: top;
+  }
+  
+  /*views and stars*/
+  .total_reviews{
+    margin-top: 100px;
+  }
+  .rating span{
+    font-size: 10px;
+  }
+  .rating i, .total_reviews i, .stars i {
+    font-size: smaller;
+    color: #ffc233;
+  }
+  .row{
+    width: 260px;
+    
+  }
+  .column {
+    float: left;
+    width: 50%;
+    font-size: 10px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .viewDetailsBtn{
+    font-size: 12px;
+    padding: 5px;
+    width: 200px;
+    margin-top: 20px;
+    background-color: rgba(21, 28, 185, 0.81);
+    border: 0px;
+    color: #fff;
+    border-radius: 40px;
+    height: 50px;
+    overflow: hidden;
+  }
+  .note-box{
+    margin: 10px;
+    height: 100px;
+  }
+.level{
+    border: 1px solid #F05E22;
+    border-radius: 10px;
+    color: #F05E22;
+    text-align: center;
+}
+/* css for middle column in the list-container */
+.topic{
+    font-size: 16px;
+    font-weight: 500;
+}
+.description{
+    font-size: 14px;
+}
+.discount span{
+    color: #2BA137;
+}
+.serviceProvider{
+display:inline-flex;
+align-items:center;
+}
+.serviceProvider img{
+    border-radius:40px;
+    width: 40px;
+    height: 40px;
+}
+a{
+    text-decoration: none;
+}
+a:visited {
+    color: #fff;
+    background-color: transparent;
+    text-decoration: none;
+  }
+a:link {
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+  /*searchgig css*/
+  .searchgig-list-container{
+    margin-top: 100px;
+    width: 80%;
+  }
+  .display-images-1 img{
+    width: 300px;
+    height: 300px;
+  }
+  .display-images-1{
+    width: 100%;
+    padding:10px;
+    justify-content: center;
+    display: flex;
+    
+  }
+  .display-images-2{
+    display: flex;
+    padding: 10px;
+    justify-content: space-around;
+  }
+  .display-images-2 img{
+    width: 80px;
+    height: 80px;
+  }
+  .display-images{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .main-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+  .columns{
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+  }
+  .image-column{
+    flex-basis: 50% ;
+    height: 400px;
+    overflow: hidden;
+  }
+  .description-column{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+    width: 100%;
+  }
+  .text-box{
+    display:flex;
+    height: 60%;
+    padding: 10px;
+    text-align:left;
+  }
+  .button-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .note-box{
+    padding:5px;
+    align-items: center;
+  }
+  .note-box span{
+    font-size: 12px;
+  }
+  .button-box .btn-1, .btn-2{
+    border: 1px solid rgba(21, 28, 185, 0.81);
+    background-color: #fff;
+    color: #000;
+  }
+  .button-box a:nth-child(1){
+    color: #000;
+  }
+  .button-box a:nth-child(2){
+    color: #000;
+    background-color: #fff;
+  }
+  .total_reviews span{
+    color: #F05E22;
+  }
+.star_bars{
+    width: 28%;
+    padding:20px;
+}
+  .star_bars .outerbox{
+    width:200px;
+    height:7px;
+    background-color: #817d7d;
+  }
+  .star_bars .innerbox{
+    width:180px;
+    height:7px;
+    background-color: #F8F041;
+    border-radius: 0  5px 5px 0;
+  }
+  .star_bar_row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 500;
+    color: #0A13FF;
+  }
+  .star_bar_row span{
+    width:60px;
+    text-align: center;
+  }
+  .star_bar_row span:last-child{
+    width:80px;
+    text-align: right;
+  }
+  .person_review img {
+    /* border: 1px solid black; */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+.person_review{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid #000;
+    width: 700px;
+    padding: 10px;
+    border-radius: 50px;
+    margin-bottom: 20px;
+}
+.review_section{
+    border-bottom:1px solid #000;
+    width:70%;
+    padding: 10px;
+}
+.person_review_text{
+    font-size: x-small;
+    margin-bottom: 20px;
+}
+
+/* css of popup - Add Form */
+
+.add-form {
+    width: 700px;
+    padding: 2%;
+    z-index: -1;
+    margin: 175px;
+    position:absolute;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    border: 3px solid #F05E22;
+    opacity: 0;
+    transition:all 0.5s ease-in-out;
+    width: 700px;
+    height: 400px;
+    text-align: center;
+}
+.add-form span:nth-child(1){
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    justify-content: space-between;
+}
+.add-form label {
+    font-size: 20px;
+    font-weight: 600;
+}
+.add-form i{
+    font-size: 25px;
+}
+.add-form form .info-box{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2%;
+}
+
+.add-form .info-box .box{
+    display: flex;
+    flex-direction: row;
+    padding: 2%;
+}
+
+    
+.add-form .info-box .box span{
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 10px;
+    
+}
+.add-form .info-box .box input{
+    padding: 0.5rem;
+    width: 70%;
+    border-radius: 5px;
+    border: 1px solid var(--mainColor);
+
+    
+}
+.add-form .add-btn{
+    padding: 2%;
+    margin-top: 100px;
+    font-size: 16px;
+    padding: 5px;
+    width: 400px;
+    height: 50px;
+    margin-top: 200px;
+    background-color: rgba(21, 28, 185, 0.81);
+    border: 0px;
+    color: #fff;
+    border-radius: 40px;
+}
+.blur_bg{
+    position:absolute;
+    margin-top:75px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0, 0.4);
+    z-index: -1;
+    backdrop-filter: blur(2px);
+    opacity: 0;
+    transition:all 0.5s ease-in-out;
+}
+/*css of popup add form ends here*/
+
+/*css for viewportfolio*/
+

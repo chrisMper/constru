@@ -1,0 +1,100 @@
+.portfolioMain {
+    margin-top: 100px;
+    border: 1px solid black;
+    width: 800px;
+    margin: 100px auto;
+    background: #fff;
+    padding: 10px;
+    /*box border shadow*/
+    border-radius: 20px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.portfolioMain .bottomBox{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+.portfolioMain .topBox {
+    border: 1px solid black;
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    border-radius: 20px;
+}
+.portfolioMain .topBox img{
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+}
+.portfolioMain .topBox span{
+    font-size: 16px;
+    padding: 10px;
+}
+
+.portfolioMain .leftbox {
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+    height: 100%;
+    width: 30%;
+    border-radius: 20px;
+}
+
+.portfolioMain .compDescription, .contactDetails{
+    padding: 5px;
+    padding-top: 20px; 
+    text-align: justify;
+    
+}
+
+.portfolioMain .rightbox {
+    padding: 10px; 
+    width: 70%;
+}
+
+.portfolioMain .pastProject {
+    margin-top: 10px;
+    border: 1px solid black;
+    /*box border shadow*/
+    border-radius: 10px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    height: 200px;
+}
+
+.portfolioMain .description {
+    border: 1px solid black;
+    width: 55%;
+    display: inline-flex;
+    position: relative;
+    
+}
+
+.portfolioMain .imageSection {
+    border: 1px solid black;
+    width: 35%;
+    
+}
+.portfolioMain img{
+ height: 100%;
+ width: 100%;
+} 
+.portfolioMain .gridContainer{
+    display: grid;
+    grid-template-columns:auto auto auto;
+  }
+.portfolioMain .grid-item {
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 1px;
+    text-align: center;
+    height: 75px;
+    width: 75px;
+  }
