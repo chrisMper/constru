@@ -1,0 +1,104 @@
+
+.compa{
+    width: 350px;
+    height: 350px;
+   margin-left: -10%;
+}
+.supp{
+    width: 350px;
+    height: 350px;
+     margin-left: 8%;
+}
+
+.engi{
+    width: 350px;
+    height: 350px;
+    z-index: 2;
+    margin-top: -6%;
+    margin-left: 25%;
+}
+.divcomp{
+   
+    margin-top: 5%;
+     
+   margin-right: 13%;
+    z-index: 1;
+}
+.divsup{
+     
+    margin-top: 5%;
+   margin-right: 43%;
+     
+   
+}
+.diveng{
+    
+    margin-top: 25%;
+    margin-left: -55%;
+    z-index: 1;
+}
+
+.typetbl{
+    margin-right: 19%;
+    z-index: 1;
+    
+}
+.bot{
+    align-items: center;
+}
+.empty{
+    width: 40px;
+}
+
+.card{
+    margin-top: 8%;
+    margin-left:-80%;
+    z-index: 1;
+    border: #ffffff;
+    
+  }
+
+.card table td {
+padding: 10px;
+}
+
+.card table td img{
+    height:200px;
+    aspect-ratio: 1.2;
+    object-fit: cover;
+    border-radius: 40px;
+}  
+
+.card table td a{
+    margin-bottom:40px;
+    color: black;
+    text-decoration: none;
+}
+.card table td:hover{
+    background-color:  #e0b3f9;
+    border-radius: 40px;
+}
+
+tr{
+
+    height:30px;
+}
+
+td{
+    color:#fff;
+    padding-right: 20px;
+}
+td input[type="text"]{
+    width:100%;
+    
+}
+h3{
+    font-size: 11px;
+    font-weight: 6;
+}
+
+.mainimg img{
+
+    width:100%;
+    height:90%;
+}

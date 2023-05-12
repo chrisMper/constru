@@ -9,15 +9,12 @@ class CompListings extends Controller{
         if(!isset($_SESSION['user_email'])){
           redirect('users/login');
         }
-
         $this->compListingModel=$this->model('compListing');
         $this->analyseModel=$this->model('Analyse');
-
       }
       
         // Load All Posts
         public function index(){
-          
           //Get Post and stages
           $listing=$this->compListingModel->getListings();
           $listing_stages=$this->compListingModel->getCompStages();
@@ -153,6 +150,13 @@ class CompListings extends Controller{
       } 
 
      //view lisitngs
+     public function viewListings($id){
+      $listing = $this->compListingModel->getListingById($id);
+      $data=[
+        'listing'=>$listing  
+      ];
+      $this->view('compListings/viewCompListing',$data);
+     }
     
 
      

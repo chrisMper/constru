@@ -89,5 +89,43 @@ class RegistrationModel {
         if ($password != $confirmPassword) {
             return false;
         }
-    }}
+    }
+
+    public function verify()
+    {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $data = [
+                'otp' => trim($_POST['otp']),
+                'error' => '',
+                'status' => ''
+            ];
+
+            $verified = $this->verificationModel->verifyOTP($data['otp']);
+
+            if (is_numeric($data['otp']) && $verified) {
+                if ($this->verificationModel->verify($verified->id)) {
+                    // set verification successful flash message
+                    // setFlash("verify","Your account has been verified",Flash::FLASH_SUCCESS);
+                    // redirect to the login of patient
+                    redirect('users/login');
+                } else {
+                    // set verification failed flash message
+                    // setFlash("verify","Account verification failed!",Flash::FLASH_DANGER);
+                    // redirect to the signup of patient
+                    redirect('users/register');
+                }
+            } else {
+                $data['error'] = "Invalid OTP";
+            }
+        } else {
+            $data = [
+                'otp' => '',
+                'error' => '',
+                'status' => ''
+            ];
+        }
+        $this->view('users/signupVerification', $data);
+    }
+
+}
         // check if OTP is valid (e.g. match with a previous sent

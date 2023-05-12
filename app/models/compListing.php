@@ -47,7 +47,7 @@ class compListing
       return $postId;
       
 
-      
+        
     }
   }
 
@@ -124,4 +124,12 @@ class compListing
       return false;
     }
   }
+
+  //get company listing
+  public function getListingById($id){
+    $this->db->query('SELECT * FROM comp_listing where  PostId = :id');
+    $this->db->bind(':id',$id);
+     $row= $this->db->single();
+    return $row;
+}
 }

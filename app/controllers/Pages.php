@@ -4,13 +4,20 @@ class Pages extends Controller
   private $listingModel;
   private $userModel;
   private $engProjectModel;
-
+  private $adminModel;
+  private $requestModel;
+  private $complaintModel;
+  private $spModel;
+  private $customerModel;
 
   public function __construct()
   {
     $this->listingModel = $this->model('Listing');
     $this->userModel = $this->model('User');
     $this->engProjectModel = $this->model('engProject');
+    $this->adminModel=$this->model('adminModel');
+    $this->requestModel = $this->model('requestModel');
+    $this->complaintModel = $this->model('complaintModel');
   }
 
   // Load Homepage
@@ -314,4 +321,135 @@ class Pages extends Controller
   {
     $this->view('Pages/indexLogged');
   }
+
+  //functions of admin here
+  public function complaint(){
+    $this->complaintModel = $this->model('complaintModel');
+    $complaints =  $this->complaintModel->getComplaints();
+    $data = [ 
+      'users'=>$complaints,
+      
+    ];
+
+    $this->view('users/admin/complaints/complaint',$data);
+  }
+
+  // public function complaint_view(){
+    
+  //   $complaint =  $this->complaintModel->getDescription($email);
+  //   $data = [ 
+  //     'users'=>$complaint,
+  //     'email'=>$email,
+      
+  //   ];
+
+  //   $this->view('users/admin/complaints/complaints_view',$data);
+  // }
+
+  public function join_requests(){
+    $this->requestModel = $this->model('requestModel');
+    $requests =  $this->requestModel->getRequests();
+    $data = [ 
+      'users'=>$requests,
+      
+    ];
+
+
+    $this->view('users/admin/joinreq/join_requests',$data);
+    
+  }
+
+  public function join_req_view($email){
+    
+    $details =  $this->requestModel->getDetails($email);
+    $data = [ 
+      'users'=>$details,
+      'spEmail'=>$email
+      
+    ];
+
+    $this->view('users/admin/joinreq/join_req_view',$data);
+    
+  }
+
+  public function stats_view(){
+    $this->view('users/admin/stats/stats_view');
+  }
+  
+ 
+
+  public function comps(){
+    
+    $this->spModel = $this->model('spModel');
+    $comps =  $this->spModel->getComps();
+    $data = [ 
+      'users'=>$comps,
+      
+    ];
+
+    $this->view('users/admin/serviceproviders/comps',$data);
+  }
+
+  public function sptype(){
+    $this->view('users/admin/serviceproviders/sptype');
+  }
+
+  public function engs(){
+    $this->spModel = $this->model('spModel');
+    $engs =  $this->spModel->getEngs();
+    $data = [ 
+      'users'=>$engs,
+      
+    ];
+
+    $this->view('users/admin/serviceproviders/engs',$data);
+  }
+
+  public function sups(){
+    
+
+    $this->spModel = $this->model('spModel');
+    $sups =  $this->spModel->getSups();
+    $data = [ 
+      'users'=>$sups,
+      
+    ];
+
+    $this->view('users/admin/serviceproviders/sups',$data);
+    
+  }
+
+  public function add_admin(){
+    $this->view('users/admin/admins/add_admin');
+  }
+
+  public function customers(){
+    $this->customerModel = $this->model('customerModel');
+    $customers =  $this->customerModel->getCustomers();
+    $data = [ 
+      'users'=>$customers,
+      
+    ];
+
+    $this->view('users/admin/customers/customers',$data);
+
+  }
+
+  public function admins(){
+    $admins =  $this->adminModel->getAdmins();
+    $data = [ 
+      'users'=>$admins,
+      
+    ];
+
+    $this->view('users/admin/admins/admins',$data);
+
+  }
+
+  public function admin_dashboard(){
+    $this->view('users/admin/admins/admin_dashboard');
+  }
+
+
 }
+

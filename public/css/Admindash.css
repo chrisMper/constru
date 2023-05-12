@@ -1,0 +1,165 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+ 
+    align-items: center;
+    background:#fff;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-height: 100vh;
+}
+
+.container{
+
+    padding-left:40px;
+    padding-top: 70px;
+    background: #fff;
+}
+
+
+
+/* .card{
+    display: flex;
+    position:relative;
+    width:120%;
+    height:50%;
+    margin-left: 160px;
+    margin-top: 50px;
+} */
+
+.card{
+    margin-top: 8%;
+    margin-left:-80%;
+    z-index: 1;
+    border: #ffffff;
+    
+  }
+
+.card table td {
+padding: 10px;
+}
+
+.card table td img{
+    height:200px;
+    aspect-ratio: 1.2;
+    object-fit: cover;
+    border-radius: 40px;
+}  
+
+.card table td a{
+    margin-bottom:40px;
+    color: black;
+    text-decoration: none;
+}
+.card table td:hover{
+    background-color:  #e0b3f9;
+    border-radius: 40px;
+}
+
+
+h1 {
+    padding: 10px 0;
+}
+
+h2{
+    padding: 10px 0;
+    font-size: 16px;
+}
+h4{
+    padding: 10px 0;
+    font-size: 30px;
+    text-align: center;
+}
+h5{
+    font-size: 12px;
+    color: #000;
+}
+
+.logo{
+
+    width:150px;
+    height:60px;
+    border-radius: 20px;
+}
+.service{
+
+    width:800px;
+    height:600px;
+}
+.registerbox{
+
+    left:30%;
+    background: #2C2E57;
+    width:760px;
+    height:600px;
+    position:absolute;
+    padding-left: 50px;
+    
+}
+
+.registerbox input[type="submit"]{
+	border: none;
+	outline: none;
+	height: 40px;
+    width:100px;
+	background: #fff;
+	font-size: 14px;
+	color: #000;
+	border-radius: 10px;
+    margin-left: 30px;
+}
+
+.registerbox input[type="submit"]:hover{
+	cursor: pointer;
+	background: #669999;
+	color: #000;
+}
+
+.registerbox input[type="reset"]{
+	border: none;
+	outline: none;
+	height: 40px;
+    width:100px;
+	background: #fff;
+	font-size: 14px;
+	color: #000;
+	border-radius: 10px;
+    margin-left: 70px;
+}
+
+.registerbox input[type="reset"]:hover{
+	cursor: pointer;
+	background: #669999;
+	color: #000;
+}
+
+tr{
+
+    height:30px;
+}
+
+td{
+    color:#fff;
+    padding-right: 20px;
+}
+td input[type="text"]{
+    width:100%;
+    
+}
+h3{
+    font-size: 11px;
+    font-weight: 6;
+}
+
+.mainimg img{
+
+    width:100%;
+    height:90%;
+}
+
