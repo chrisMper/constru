@@ -18,11 +18,13 @@ class CompListings extends Controller{
         // Load All Posts
         public function index(){
           
-          //Get Post
+          //Get Post and stages
           $listing=$this->compListingModel->getListings();
+          $listing_stages=$this->compListingModel->getCompStages();
   
           $data = [
-              'listings'=>$listing //get data from model to controller 'listing' is a variable
+              'listings'=>$listing, //get data from model to controller 'listing' is a variable
+              'listing_stages'=> $listing_stages
           ];
   
           $this->view('compListings/listings', $data);
@@ -67,11 +69,12 @@ class CompListings extends Controller{
           if(empty($data['title_err']) && empty($data['description_err'])){ 
             // SUCCESS - Proceed to insert
             //Execute
-            if($this->compListingModel->addlisting($data,$file)){
-              // if($this->compListingModel->updatestages($data['stage'],$data['contact'])){
-              // Redirect to login
-              // redirect('CompListings'); 
-              // }
+            $postId =  $this->compListingModel->addlisting($data,$file);
+            if(!empty($postId) ){
+              for($i=0; $i< count($stages); $i++){
+                $this->compListingModel->add_comp_stages($stages[$i],$contacts[$i],$postId);
+              }
+              redirect('compListings');
             } else {
               die('Something went wrong');
             }

@@ -56,8 +56,14 @@ class compListing
       } else {
         return false;
       }
-    }
   }
+}
+  
+  public function getCompStages(){
+    $this->db->query('SELECT * FROM `comp_listing_stages`');
+    $results = $this->db->resultSet();
+    return $results;
+}
 
   //add to comp_listing_stages table
   public function updateStages($stage, $contact)
