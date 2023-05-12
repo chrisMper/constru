@@ -14,6 +14,7 @@ body{
         font-family: 'Readex Pro', sans-serif;
 }
 
+
 * {
         margin:0 ;
         padding: 0;
@@ -255,7 +256,7 @@ header nav ul li a:hover {
 .cover {
         min-height: 100vh;
         width: 100%;  
-        background-image: url("../img/aboutus.jpg");
+        background-image: url("../img/aboutus.png");
         background-size: cover;
         background-attachment: fixed;  
     }
@@ -263,7 +264,7 @@ header nav ul li a:hover {
     .cover h1 {
             margin-top: 230px;
             display: inline-block;
-            font-size: 3.5rem;
+            font-size: 4rem;
             color: white;
             text-shadow: 0 0 1px black;
             width: 50%;
@@ -287,6 +288,7 @@ header nav ul li a:hover {
             width: 50%;
             text-shadow: 0 0 2px black;
             margin-top: 10px;
+            font-size: 1.2rem;
     }
     
     
@@ -303,10 +305,6 @@ header nav ul li a:hover {
     
     }
 
-    /* donors section end */
-
-     /* beneficiary section start */
-
     .beneficiaryContainer {
         width: 100%;
 }
@@ -314,7 +312,7 @@ header nav ul li a:hover {
 .cover1 {
         min-height: 100vh;
         width: 100%;  
-        background-image: url("../img/land4.png");
+        background-image: url("../img/aboutus.jpg");
         background-size: cover;
         background-attachment: fixed;  
     }
@@ -361,11 +359,6 @@ header nav ul li a:hover {
             font-weight: 600;
     
     }
-    /* beneficiary section end */
-
-
-    /* event hoster section start */
-/* beneficiary section start */
 
     .eventHostersContainer {
         width: 100%;
