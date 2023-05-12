@@ -42,6 +42,15 @@ class compListing
       // Get the postId of the inserted record
       $postId = $this->db->lastInsertId(); //inbuilt method
       // Insert into comp_listing_stages table
+      return $postId;
+      
+
+        
+    }
+  }
+
+  public function add_comp_stages($stages,$contacts, $postId){
+    
       $this->db->query('INSERT INTO comp_listing_stages (postId, stage, contact) 
       VALUES (:postId, :stage, :contact)');
 
@@ -57,7 +66,7 @@ class compListing
         return false;
       }
   }
-}
+
   
   public function getCompStages(){
     $this->db->query('SELECT * FROM `comp_listing_stages`');
@@ -115,4 +124,12 @@ class compListing
       return false;
     }
   }
+
+  //get company listing
+  public function getListingById($id){
+    $this->db->query('SELECT * FROM comp_listing where  PostId = :id');
+    $this->db->bind(':id',$id);
+     $row= $this->db->single();
+    return $row;
+}
 }
