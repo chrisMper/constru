@@ -14,10 +14,10 @@ class sup_myOrders extends Controller{
     }
   
     
-        // Load All items
-    public function sup_orders(){
-        //Get items
-        $orders=$this->myOrderModel->getOrders();
+        // Load All my orders
+    public function sup_myOrders(){
+       
+        $orders=$this->myOrderModel->getMyOrders();
         $items=$this->itemModel->getItems();
         $Users=$this->userModel->findAllUsers();
     
@@ -27,33 +27,13 @@ class sup_myOrders extends Controller{
             'Users' =>$Users,
         ];
         
-        $this->view('users/sup/sup_orders/orders_new', $data);
+        $this->view('users/sup/sup_myOrders/myOrders_new', $data);
     }
 
-    public function addOrders_new($supplierOrderId){
-     
-   
-        if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-        
-         $_POST = filter_input_array(INPUT_POST,FILTER_SANITIZE_STRING);
-        
-         $data = [
-           'supplierOrderId' => $supplierOrderId,
-           'dueDate'=>trim($_POST['dueDate']),
-           'email'=>$_SESSION['user_email']
-         ];
-       
-           
-           if($this->myOrderModel->addOrders($data)){
-             redirect('sup_orders/orders_ongoing');
-           }
-        
-       }
-    }
+    //load all ongoing my orders
+    public function myOrders_ongoing(){
 
-    public function orders_ongoing(){
-
-      $orders=$this->myOrderModel->getOrders_ongoing();
+      $orders=$this->myOrderModel->getMyOrders_ongoing();
       $items=$this->itemModel->getItems();
       $Users=$this->userModel->findAllUsers();
   
@@ -63,25 +43,13 @@ class sup_myOrders extends Controller{
           'Users' =>$Users,
       ];
       
-      $this->view('users/sup/sup_orders/orders_ongoing',$data);
+      $this->view('users/sup/sup_myOrders/myOrders_ongoing',$data);
     }
 
-    public function addOrders_ongoing($supplierOrderId){
-      
-       $data = [
-         'supplierOrderId' => $supplierOrderId,
-         'email'=>$_SESSION['user_email']
-       ];
-     
-         
-         if($this->myOrderModel->addOrders_ongoing($data)){
-          redirect('sup_orders/orders_ongoing');
-         }
-    }
+    //load all completed my orders
+    public function myOrders_completed(){
 
-    public function orders_completed(){
-
-      $orders=$this->myOrderModel->getOrders_completed();
+      $orders=$this->myOrderModel->getMyOrders_completed();
       $items=$this->itemModel->getItems();
       $Users=$this->userModel->findAllUsers();
   
@@ -91,32 +59,13 @@ class sup_myOrders extends Controller{
           'Users' =>$Users,
       ];
       
-       $this->view('users/sup/sup_orders/orders_completed',$data);
+       $this->view('users/sup/sup_myOrders/myOrders_completed',$data);
     }
 
-    public function addToOrders_cancelled($supplierOrderId){
-     
-   
-      if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-      
-       $_POST = filter_input_array(INPUT_POST,FILTER_SANITIZE_STRING);
-      
-       $data = [
-         'supplierOrderId' => $supplierOrderId,
-         'reason'=>trim($_POST['reason']),
-         'email'=>$_SESSION['user_email']
-       ];
-     
-         
-         if($this->myOrderModel->addToOrders_cancelled($data)){
-           redirect('sup_orders/orders_cancelled');
-         }
-     }
-    }
 
-    public function orders_cancelled(){
+    public function myOrders_cancelled(){
 
-      $orders=$this->myOrderModel->getOrders_cancelled();
+      $orders=$this->myOrderModel->getMyOrders_cancelled();
       $items=$this->itemModel->getItems();
       $Users=$this->userModel->findAllUsers();
   
@@ -126,7 +75,7 @@ class sup_myOrders extends Controller{
           'Users' =>$Users,
       ];
       
-      $this->view("users/sup/sup_orders/orders_cancelled",$data);
+      $this->view("users/sup/sup_myOrders/myOrders_cancelled",$data);
     }
 }
 ?>

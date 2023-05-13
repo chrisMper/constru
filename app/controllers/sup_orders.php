@@ -14,9 +14,9 @@ class sup_orders extends Controller{
     }
   
     
-        // Load All items
+        // Load All orders_new
     public function sup_orders(){
-        //Get items
+    
         $orders=$this->orderModel->getOrders();
         $items=$this->itemModel->getItems();
         $Users=$this->userModel->findAllUsers();
@@ -30,6 +30,7 @@ class sup_orders extends Controller{
         $this->view('users/sup/sup_orders/orders_new', $data);
     }
 
+    //add orders_new data to database
     public function addOrders_new($supplierOrderId){
      
    
@@ -51,6 +52,7 @@ class sup_orders extends Controller{
        }
     }
 
+    //load all ongoing orders
     public function orders_ongoing(){
 
       $orders=$this->orderModel->getOrders_ongoing();
@@ -66,6 +68,7 @@ class sup_orders extends Controller{
       $this->view('users/sup/sup_orders/orders_ongoing',$data);
     }
 
+    //add orders_ongoing to database
     public function addOrders_ongoing($supplierOrderId){
       
        $data = [
@@ -75,10 +78,11 @@ class sup_orders extends Controller{
      
          
          if($this->orderModel->addOrders_ongoing($data)){
-          redirect('sup_orders/orders_ongoing');
+          redirect('sup_orders/orders_completed');
          }
     }
 
+    //load all completed orders
     public function orders_completed(){
 
       $orders=$this->orderModel->getOrders_completed();
@@ -94,6 +98,7 @@ class sup_orders extends Controller{
        $this->view('users/sup/sup_orders/orders_completed',$data);
     }
 
+    //add cancelled orders
     public function addToOrders_cancelled($supplierOrderId){
      
    
@@ -114,6 +119,7 @@ class sup_orders extends Controller{
      }
     }
 
+    //load cancelled orders
     public function orders_cancelled(){
 
       $orders=$this->orderModel->getOrders_cancelled();
