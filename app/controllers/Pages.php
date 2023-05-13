@@ -450,6 +450,11 @@ class Pages extends Controller
     $this->view('users/admin/admins/admin_dashboard');
   }
 
+  //delete this later
+  public function rate(){
+    $this->view('home/rate');
+  }
+
 
 }
 

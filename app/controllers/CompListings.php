@@ -1,30 +1,64 @@
 <?php
 
-use function PHPSTORM_META\elementType;
-
 class CompListings extends Controller{
   private $compListingModel;
   private $analyseModel;
+  private $ratingModel;
     public function __construct(){
         if(!isset($_SESSION['user_email'])){
           redirect('users/login');
         }
         $this->compListingModel=$this->model('compListing');
-        $this->analyseModel=$this->model('Analyse');
+            $this->ratingModel=$this->model('rating');
+            $this->analyseModel=$this->model('Analyse');
+
       }
-      
+
+      public function ratecompany(){
+         // Get the ratings from the model   
+        $starRatings=$this->ratingModel->getStarRatings();
+        $friendliness=$this->ratingModel->getFriendliness();
+        $punctuality=$this->ratingModel->getPunctuality();
+        $ordersCompleted=$this->ratingModel->getOrdersCompleted();
+        $activeDays=$this->ratingModel->getActiveDays();
+        $cancellations=$this->ratingModel->getCancellations();
+        // Calculate the award level based on the ratings
+        
+        if ($starRatings >= 4.7 && $friendliness >= 4.7 && $cancellations <= 3 && $punctuality >= 4.7 ) {
+          
+              //highest award level 
+                    if ($ordersCompleted >= 100 && $activeDays >= 180) {
+                      $awardLevel = 03;
+                    } elseif  ($ordersCompleted >= 50  && $activeDays >= 120){    
+              //award level 2      
+                      $awardLevel = 02;
+                    } elseif ($ordersCompleted >= 10  && $activeDays >= 60) {
+              //lowest award level        
+                      $awardLevel = 01;
+                    }
+                      else {
+                        $awardLevel = 0;
+                    } 
+        }else{
+          $awardLevel = 9;
+        }
+          return $awardLevel;
+      } 
+
         // Load All Posts
         public function index(){
           //Get Post and stages
           $listing=$this->compListingModel->getListings();
           $listing_stages=$this->compListingModel->getCompStages();
+          $ratings=$this->ratecompany();
   
           $data = [
               'listings'=>$listing, //get data from model to controller 'listing' is a variable
-              'listing_stages'=> $listing_stages
+              'listing_stages'=> $listing_stages,
+              'awardLevel' => $ratings
           ];
   
-          $this->view('compListings/listings', $data);
+          $this->view('compListings/listings', $data); //data passes to listing page from here
         }
 
       public function add(){

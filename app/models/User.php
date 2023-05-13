@@ -208,4 +208,12 @@ class User
       return false;
     }
   }
+  //find serviceprovider to display in gig
+  public function getServiceProviders()
+  {
+    $this->db->query('SELECT * FROM users');
+    $results = $this->db->resultSet();
+
+    return $results; 
+  }
 }

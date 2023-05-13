@@ -18,6 +18,9 @@
                         <div class="left-mid">
                             <div class="left-col">
                                 <img src="<?php echo URLROOT; ?>/img/uploads/<?php echo $listing->Photos; ?> ">
+                                <div class = 'award' >
+                                    <span><?php echo $data['awardLevel']; ?></span>
+                                </div>
                             </div>
                             <div class='mid-col'>
                                 <p class='topic'><?php echo $listing->title; ?></p>

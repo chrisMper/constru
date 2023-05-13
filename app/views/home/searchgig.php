@@ -97,7 +97,7 @@
                 </div>
                 <div class="button-box">
                     <a href="<?php echo URLROOT; ?>/pages/viewcv"><button type="submit" class="viewDetailsBtn btn-1">View Cv</a>
-                    <a href="<?php echo URLROOT; ?>/pages/chat"><button type="submit" class="viewDetailsBtn btn-2">Contact</a>
+                    <a href="<?php echo URLROOT; ?>/pages/rate"><button type="submit" class="viewDetailsBtn btn-2">methanin rate walata yanne</a>
                     <a href="#"><button type="submit" class="viewDetailsBtn add-btn">Book Service</a>
                 </div>
                 <div class="note-box">
