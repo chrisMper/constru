@@ -5,30 +5,62 @@
   left: 300px;
   top: 100px;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 .card {
-  display: flex;
-  position: relative;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 70%;
+}
+
+.card img {
+  border-radius: 20px 20px 0 0;
+  height: 125px;
   width: 100%;
 }
 
-.card table td {
-  padding: 12px;
-}
-
-.card table td img {
-  height: 170px;
-  width: 320px;
-  object-fit: cover;
-}
-
-.card table td a {
-  margin-bottom: 30px;
-  color: black;
+.grid-container a {
+  color: #000;
   text-decoration: none;
 }
-.card table td:hover {
- box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2);
+.grid-container a:visited {
+  color: #000;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.grid-container a:link {
+  color: #000;
+  background-color: transparent;
+  text-decoration: none;
+}
+.card:hover {
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2);
+}
+.name-container {
+  padding: 2px 16px;
+}
+.grid-container {
+  margin-top: 10px;
+  display: grid;
+  row-gap: 50px;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+  padding-left: 0px;
+}
+
+.grid-item {
+  font-size: 30px;
+  height: 175px;
+  width: 400px;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+}
+
+.grid-item:hover {
+  transform: scale(1.1);
 }
 
 h1 {
@@ -48,26 +80,7 @@ h5 {
   font-size: 12px;
   color: #000;
 }
-.footer {
-  width: 1523px;
-  background: #b8b894;
-  padding: 5px 10px;
-  position: absolute;
-  left: 0px;
-  top: 800px;
-  margin-bottom: 0px;
-  margin-right: 0px;
-  height: 50px;
-}
-.footerleft {
-  margin-left: 0px;
-  margin-top: 20px;
-}
-.footerright {
-  text-align: right;
-  width: 100%;
-  margin-top: -15px;
-}
+
 .logo {
   width: 150px;
   height: 60px;
@@ -187,10 +200,13 @@ a{
   position: absolute;
   width: 800px;
   height: auto;
-  top: 110px;
-  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+  top: 100px;
+ /* box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);*/
   border: 1px solid #746d6d;
   border-radius: 30px;
+}
+.addform form:hover {
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
 }
 .addform form table {
   margin: 20px;
@@ -254,12 +270,12 @@ a{
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(4, 1fr);
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
-  background: linear-gradient(to left, #faeded, #e9e6e6);
+ /* box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to left, #faeded, #e9e6e6);*/
   margin-bottom: 1rem;
   padding: 1rem;
   border-radius: 0.5rem;
-  border: 2px solid rgba(0, 0, 0, 0.3);
+  border: 1px solid rgb(199, 195, 195);
 }
 .item-card:hover{
   box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
@@ -295,6 +311,11 @@ a{
   gap: 1rem;
   font-size: 0.8rem;
 }
+.item-card div:nth-child(3) {
+  width: 300px;
+  gap: 1rem;
+  font-size: 0.8rem;
+}
 
 .item-card > div:last-child {
   width:25%;
@@ -305,7 +326,7 @@ a{
 
 .label {
   padding: 10px;
-  font-size: 20px;
+  font-size: 0.8 rem;
   position: absolute; 
   width: 200px;
   height: 40px;

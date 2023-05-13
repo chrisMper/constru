@@ -23,13 +23,13 @@
               <div>
                 <h3><?php echo $item->item; ?></h3>
                 <div>
-                  <div><label for=''>Price</label><input type='text' value='<?php echo $item->price; ?>' readonly></div>
-                  <div><label for=''>Available Quantity</label><input type='text' value='<?php echo $item->quantityInStock; ?>' readonly></div>
+                  <div><h5><label for=''>Price : </label></h5><input type='text' value='<?php echo $item->price; ?>' readonly></div>
+                  <div><h5><label for=''>Available Quantity : </label></h5><input type='text' value='<?php echo $item->quantityInStock; ?>' readonly></div>
                 </div>
               </div>
               <div>
-                 <div><label for=''>Description</label><h5><?php echo $item->description; ?></h5></div>
-                 <div><label for=''>Category</label><input type='text' value='<?php echo $item->category; ?>' readonly></div>
+                 <div><h5><label for=''>Description : </label></h5><?php echo $item->description; ?></div></br>
+                 <div><h5><label for=''>Category : </label></h5><?php echo $item->category; ?></div>
               </div>
               <div>
                 

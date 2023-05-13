@@ -42,8 +42,6 @@
               </div>
               <div class="clientDetails">
                 <h3><?php echo $item ->item; ?></h3>
-                </br>
-                <br>
                 <br>
                 <h5>Name of client : </h5><?php echo $users ->fName; ?> <?php echo $users ->lName; ?>
                 </br>
@@ -55,7 +53,7 @@
                 <br>
                 <br>
                 <h5>Client review : </h5><?php echo $order ->review; ?>
-              </div>
+             
             </div>
           </table>
        

@@ -49,7 +49,7 @@
                 <h5>Client : </h5><?php echo $users ->fName; ?> <?php echo $users ->lName; ?>
                 <br>
                 <br>
-                <h5>Cancellation by : </h5><p>Client</p>
+                <h5>Cancellation by : </h5>Client
                 <br>
                 <br>
                 <h5>Reason to cancel : </h5><?php echo $order ->reason; ?>
