@@ -23,7 +23,6 @@
               <div>
                 <h3><?php echo $item->item; ?></h3>
                 <div>
-                  <div><label for=''>Code</label><input type='text' value='<?php echo $item->code; ?>' readonly></div>
                   <div><label for=''>Price</label><input type='text' value='<?php echo $item->price; ?>' readonly></div>
                   <div><label for=''>Available Quantity</label><input type='text' value='<?php echo $item->quantityInStock; ?>' readonly></div>
                 </div>

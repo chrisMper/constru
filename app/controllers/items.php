@@ -39,7 +39,6 @@ class items extends Controller{
       'item' => trim($_POST['item']),
       'description'=>trim($_POST['description']),
       'price' => trim($_POST['price']),
-      'code' => trim($_POST['code']),
       'quantityInStock' => trim($_POST['quantityInStock']),
       'category' => trim($_POST['category']),
       //'itemImage' =>trim($_POST['itemImage']),
@@ -55,7 +54,7 @@ class items extends Controller{
       
     ];
     
-    if(!empty($data['item']) && !empty($data['description']) && !empty($data['price']) && !empty($data['code']) && !empty($data['quantityInStock']) && !empty($data['category']) && !empty($file['file_name']) && is_numeric($data['quantityInStock']) && is_numeric($data['price']))
+    if(!empty($data['item']) && !empty($data['description']) && !empty($data['price']) && !empty($data['quantityInStock']) && !empty($data['category']) && !empty($file['file_name']) && is_numeric($data['quantityInStock']) && is_numeric($data['price']))
 		{
       
       if($this->itemModel->addItems($data,$file)){
@@ -73,7 +72,6 @@ class items extends Controller{
 		'item' => '',
     'description' => '',
     'price' => '',
-    'code' => '',
     'quantityInStock' => '',
     'category' => '',
     'itemImage' => ''
@@ -94,7 +92,6 @@ public function updateItems($supplierItemId){
      'item' => trim($_POST['item']),
      'description'=>trim($_POST['description']),
      'price' => trim($_POST['price']),
-     'code' => trim($_POST['code']),
      'quantityInStock' => trim($_POST['quantityInStock']),
      'category' => trim($_POST['category']),
      //'itemImage' =>trim($_POST['itemImage']),
@@ -109,7 +106,7 @@ public function updateItems($supplierItemId){
      'upload_to'=>PUBROOT. '/public/img/itemImage/'
    ];
 
-   if(!empty($data['item']) && !empty($data['description']) && !empty($data['price']) && !empty($data['code']) && !empty($data['quantityInStock']) && !empty($data['category']) && !empty($file['file_name']) && is_numeric($data['quantityInStock']) && is_numeric($data['price']))
+   if(!empty($data['item']) && !empty($data['description']) && !empty($data['price']) && !empty($data['quantityInStock']) && !empty($data['category']) && !empty($file['file_name']) && is_numeric($data['quantityInStock']) && is_numeric($data['price']))
    {
      if($this->itemModel->updateItems($data,$file)){
       redirect('items/items');
@@ -133,7 +130,6 @@ public function updateItems($supplierItemId){
    'item' => $item->item,
    'description' => $item->description,
    'price' => $item->price,
-   'code' =>$item->code,
    'quantityInStock' => $item->quantityInStock,
    'category' =>$item->category,
    'itemImage' => $item->itemImage

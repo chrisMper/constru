@@ -41,62 +41,28 @@
                 <img src='<?php echo URLROOT; ?>/img/itemImage/<?php echo $item ->itemImage; ?>' alt='<?php echo URLROOT; ?>/img/itemImage/product_placeholder.png'> 
               </div>
               <div>
-                <h3><?php echo $item ->item; ?></h3></br>
-                <h5>Name of client</h5></br>
-                <h5>Cancellation by</h5></br>
-                <h5>Reason to cancel</h5></br>
-                <h5>Date of cancellation</h5></br>
-
-              </div>
-              <div>
-                <button onclick="document.getElementById('review').style.display='block'; return false;" >Customer review</button>
-                </br>
-                <p><?php echo $users ->fName; ?><?php echo $users ->lName; ?></p>
-                <p>Client</p>
-                <p><?php echo $order ->reason; ?></p>
-                <p><?php echo $order ->endedDate; ?></p>
+              <div class="clientDetails">
+                <h3><?php echo $item ->item; ?></h3>
+                <br>
+                <br>
+                <br>
+                <h5>Client : </h5><?php echo $users ->fName; ?> <?php echo $users ->lName; ?>
+                <br>
+                <br>
+                <h5>Cancellation by : </h5><p>Client</p>
+                <br>
+                <br>
+                <h5>Reason to cancel : </h5><?php echo $order ->reason; ?>
+                <br>
+                <br>
+                <h5>Date of cancellation : </h5><?php echo $order ->endedDate; ?>
+                <br>
+                <br>
+                <h5>Client review : </h5><?php echo $order ->review; ?>
               </div>
             </div>
           </table>
         </form>
-        
-        <div id="review" class="popUp" >
-            <span onclick="document.getElementById('review').style.display='none'" class="close" title="Close Modal">&times;</span>
-            
-              <table class="acceptTable">
-                <tr>
-                  <td><h2><?php echo $users ->fName; ?><?php echo $users ->lName; ?></h2></td>
-                </tr>
-                <tr>
-                  <td><h5>Cancelled date</h5></td>
-                  <td><?php echo $order ->endedDate; ?></td>
-                </tr>
-                <tr>
-                  <td><h5>Reason to cancel</h5></td>
-                  <td><?php echo $order ->reason; ?></td>
-                </tr>
-                <tr>
-                  <td><h5>Client review</h5></td>
-                  <td>nark gnqkgne rnbedreo kfjgorgj mlvnvv vkee ns sdvw dvwseve</td>
-                </tr>
-               
-
-              </table>
-          
-           <button onclick="location.reload();">Back</button>
-         </div>
- 
-       <script>
-      
-         var popUp = document.getElementById('review');
-
-       // When the user clicks anywhere outside of the modal, close it
-         window.onclick = function(event) {
-          if (event.target == popUp) {
-            popUp.style.display = "none";
-         }
-         }
-        </script>
 
         </div>
         <?php endif;?>

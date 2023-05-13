@@ -62,7 +62,47 @@ class sup_myOrders extends Controller{
        $this->view('users/sup/sup_myOrders/myOrders_completed',$data);
     }
 
+     //add review
+     public function addReview($supplierOrderId){
+     
+   
+      if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+      
+       $_POST = filter_input_array(INPUT_POST,FILTER_SANITIZE_STRING);
+      
+       $data = [
+         'supplierOrderId' => $supplierOrderId,
+         'review'=>trim($_POST['review']),
+         'email'=>$_SESSION['user_email']
+       ];
+     
+         
+        $this->myOrderModel->addReview($data);
+      }
+    }
 
+      //add cancelled my orders
+      public function addToOrders_cancelled($supplierOrderId){
+     
+   
+        if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+        
+         $_POST = filter_input_array(INPUT_POST,FILTER_SANITIZE_STRING);
+        
+         $data = [
+           'supplierOrderId' => $supplierOrderId,
+           'reason'=>trim($_POST['reason']),
+           'email'=>$_SESSION['user_email']
+         ];
+       
+           
+           if($this->myOrderModel->addToOrders_cancelled($data)){
+             redirect('sup_myOrders/myOrders_cancelled');
+           }
+       }
+      }
+  
+//load cancelled my orders
     public function myOrders_cancelled(){
 
       $orders=$this->myOrderModel->getMyOrders_cancelled();

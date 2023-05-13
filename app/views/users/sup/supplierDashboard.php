@@ -20,7 +20,7 @@
           </tr>
           <tr>
             <td><a href="<?php echo URLROOT; ?>/pages/cart"><img src="<?php echo URLROOT; ?>/img/itemImage/design7c.jpg"><br /><h4>My cart</h4></a></td>
-            <td><a href="<?php echo URLROOT; ?>/pages/myOrders"><img src="<?php echo URLROOT; ?>/img/itemImage/design6.jpg"><br /><h4>My orders</h4></a></td>
+            <td><a href="<?php echo URLROOT; ?>/sup_myOrders/sup_myOrders"><img src="<?php echo URLROOT; ?>/img/itemImage/design6.jpg"><br /><h4>My orders</h4></a></td>
             <td><a href="<?php echo URLROOT; ?>/pages/bookings"><img src="<?php echo URLROOT; ?>/img/itemImage/design8.jpg"><br /><h4>My bookings</h4></a></td>
           </tr>
           <tr>

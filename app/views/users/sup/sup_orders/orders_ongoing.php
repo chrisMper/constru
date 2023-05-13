@@ -36,22 +36,32 @@
           <table>
 
             <tbody>
-            <div class='listing-card'>
-              <div>
-                <img src='<?php echo URLROOT; ?>/img/itemImage/<?php echo $item ->itemImage; ?>' alt='<?php echo URLROOT; ?>/img/itemImage/product_placeholder.png'> 
-              </div>
-              <div>
-                <h3><?php echo $item ->item; ?></h3><?php echo $item ->code; ?>
-                <h5>Completion Date : </h5><?php echo $order ->dueDate; ?>
-                <h5>Client : </h5><?php echo $users ->fName; ?><?php echo $users ->lName; ?>
-                <h5>Ordered quantity : </h5><?php echo $order ->quantity; ?>
+              <div class='listing-card'>
                 <div>
+                  <img src='<?php echo URLROOT; ?>/img/itemImage/<?php echo $item ->itemImage; ?>' alt='<?php echo URLROOT; ?>/img/itemImage/product_placeholder.png'> 
+                </div>
+                <div class="clientDetails">
+                  <h3><?php echo $item ->item; ?></h3>
+                  <br>
+                  <br>
+                  <br>
+                  <h5>Completion Date : </h5><?php echo $order ->dueDate; ?>
+                  <br>
+                  <br>
+                  <h5>Client : </h5><?php echo $users ->fName; ?><?php echo $users ->lName; ?>
+                  <br>
+                  <br>
+                  <h5>Ordered quantity : </h5><?php echo $order ->quantity; ?>
+                  <br>
+                  <br>
+                  <h5>Delivary Address : </h5><?php echo $order ->delivaryAddress; ?>
+                </div>
+                <div class="listButton">
                   <button><a href="<?php echo URLROOT; ?>/sup_orders/addOrders_ongoing/<?php echo $order->supplierOrderId;?>">Completed</a></button>
                   <button onclick="document.getElementById('cancel').style.display='block'; return false;">Cancel</button>
                 </div>
               </div>
-              
-            </div>
+            </tbody>
           </table>
       
                    

@@ -29,8 +29,6 @@
              <td colspan="4"><textarea name="description" class="textarea" value="<?php echo $data['description'] ?>" required></textarea></td>
           </tr>
           <tr>
-            <td>Code</td>
-            <td><input type="number" id="code" name="code" value="<?php echo $data['code'] ?>" required></td>
             <td>Price</td>
             <td><input type="number" id="price" name="price" value="<?php echo $data['price'] ?>"required></td>
           </tr>

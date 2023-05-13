@@ -38,14 +38,20 @@
               <div>
                 <img src='<?php echo URLROOT; ?>/img/itemImage/<?php echo $item ->itemImage; ?>' alt='<?php echo URLROOT; ?>/img/itemImage/product_placeholder.png'> 
               </div>
-              <div>
-                <h3><?php echo $item ->item; ?></h3><?php echo $item ->code; ?>
-                <h5>Client : </h5><?php echo $users ->fName; ?><?php echo $users ->lName; ?>
-              </div>
-              <div>
+              <div class="clientDetails">
+                <h3><?php echo $item ->item; ?></h3>
+                <br>
+                <br>
+                <br>
+                <h5>Client : </h5><?php echo $users ->fName; ?> <?php echo $users ->lName; ?>
+                <br>
+                <br>
                 <h5>Ordered quantity : </h5><?php echo $order ->quantity; ?>
+                <br>
+                <br>
+                <h5>Delivary Address : </h5><?php echo $order ->delivaryAddress; ?>
               </div>
-              <div>
+              <div class="listButton">
                 <button><a href="<?php echo URLROOT; ?>/sup_messages/sup_messages/<?php echo $order->customerEmail;?>">Contact</a></button>
                 <button onclick="document.getElementById('accept').style.display='block'; return false;" >Accept</button>
                 <button onclick="document.getElementById('reject').style.display='block'; return false;">Reject</button>

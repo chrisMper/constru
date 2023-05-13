@@ -62,17 +62,43 @@
     padding: 1rem;
     border-radius: 0.5rem;
     border: 2px solid rgba(0, 0, 0, 0.3);
+    width: 1000px;
   }
   
   .listing-card img {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
+    position: relative;
+    left: 20px;
+    top: 0px;
+  }
+
+  .listing-card .clientDetails{
+    position: relative;
+    left: 100px;
+    top: 0px;
   }
   
   .listing-card h3 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
     font-weight: bold;
+    display: inline;
+  }
+
+  .listing-card h5 {
+    display: inline;
+    font-size: 0.8rem;
+  }
+
+  .listing-card .listButton{
+    position: relative;
+    left: 200px;
+  }
+
+  .listing-card .listButton a{
+    text-decoration: none;
+    color: black;
   }
   
   .listing-card div:nth-child(2) > div > div {
@@ -99,6 +125,7 @@
   .listing-card > div:last-child {
     /*display: flex;
     width:25%;*/
+    display: flex;
     flex-direction: column;
     gap: 1rem;
     font-size: 0.8rem;
@@ -109,6 +136,7 @@
     padding: 0.5rem 1rem;
     border: 2px solid green;
     border-radius: 100px;
+    width: 100px;
   }
   
   .listing-card button:last-child {

@@ -14,14 +14,13 @@ class item{
     }
 
     public function addItems($data,$file){
-        $this->db->query('INSERT INTO supplier_item (item, description, price, code, quantityInStock, category, itemImage,email) VALUES (:item, :description, :price, :code, :quantityInStock, :category, :itemImage,:email)');
+        $this->db->query('INSERT INTO supplier_item (item, description, price, quantityInStock, category, itemImage,email) VALUES (:item, :description, :price, :quantityInStock, :category, :itemImage,:email)');
        
 
         $this->db->bind(':email',$data['email']);
         $this->db->bind(':item',$data['item']);
         $this->db->bind(':description',$data['description']);
         $this->db->bind(':price',$data['price']);
-        $this->db->bind(':code',$data['code']);
         $this->db->bind(':quantityInStock',$data['quantityInStock']);
         $this->db->bind(':category',$data['category']);
         $this->db->bind(':itemImage',$file['file_name']);
@@ -37,13 +36,12 @@ class item{
 
     public function updateItems($data,$file){
         
-        $this->db->query('UPDATE supplier_item SET item=:item, description=:description, price= :price, code= :code, quantityInStock= :quantityInStock, category= :category, itemImage= :itemImage, email= :email WHERE supplierItemId=:supplierItemId');
+        $this->db->query('UPDATE supplier_item SET item=:item, description=:description, price= :price, quantityInStock= :quantityInStock, category= :category, itemImage= :itemImage, email= :email WHERE supplierItemId=:supplierItemId');
        
         $this->db->bind(':supplierItemId',$data['supplierItemId']);
         $this->db->bind(':item',$data['item']);
         $this->db->bind(':description',$data['description']);
         $this->db->bind(':price',$data['price']);
-        $this->db->bind(':code',$data['code']);
         $this->db->bind(':quantityInStock',$data['quantityInStock']);
         $this->db->bind(':category',$data['category']);
         $this->db->bind(':itemImage',$file['file_name']);

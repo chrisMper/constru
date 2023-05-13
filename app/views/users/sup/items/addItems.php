@@ -29,8 +29,6 @@
              <td colspan="4"><textarea name="description" class="textarea" required></textarea></td>
           </tr>
           <tr>          
-            <td>Code</td>
-            <td><input type="number" id="code" name="code" required></td>
             <td>Price (Rs.)</td>
             <td><input type="number" id="price" name="price" required></td>
           </tr>
