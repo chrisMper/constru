@@ -14,21 +14,27 @@
 
     <div class="main">
     <a href="<?php echo URLROOT; ?>/pages/supplier" ><i class='bx bx-arrow-back'></i>Back </a>
-    <div class="registerbox">
+    
       <div class="topnav">
-        <a href="myOrders_new.php">New</a>
-        <a href="myOrders_ongoing.php">Ongoing</a>
-        <a href="myOrders_completed.php">Completed</a>
-        <a class="active" href="myOrders_cancelled.php">Cancelled</a>
-    </div>
+        <a href="<?php echo URLROOT; ?>/sup_orders/sup_myOrders/">New</a>
+        <a href="<?php echo URLROOT; ?>/sup_orders/myOrders_ongoing/">Ongoing</a>
+        <a href="<?php echo URLROOT; ?>/sup_orders/myOrders_completed/">Completed</a>
+        <a class="active">Cancelled</a>
+      </div>
+
+    <?php foreach($data['orders'] as $order) : ?>
+         <?php if($order->email ==$_SESSION['user_email']):?>
+          <?php foreach($data['items'] as $item) : ?>
+          <?php if($order->supplierItemId ==$item->supplierItemId):?>
+            <?php foreach($data['Users'] as $users) : ?>
+            <?php if($order->customerEmail ==$users->email):?>
 
     <div class="listing">
-        <form method="post">
+        
           <table>
 
             <tbody>
-            <?php foreach($data['listings'] as $listings) : ?>
-            <div class="listing-card">
+           
               <div>
                 <img src='<?php echo URLROOT; ?>/img/product_img/product_placeholder.png'> 
               </div>
@@ -50,7 +56,7 @@
               </div>
             </div>
           </table>
-        </form>
+       
         
         <div id="review" class="popUp" >
             <span onclick="document.getElementById('review').style.display='none'" class="close" title="Close Modal">&times;</span>
@@ -71,14 +77,6 @@
                   <td><h5>Client review</h5></td>
                   <td>nark gnqkgne rnbedreo kfjgorgj mlvnvv vkee ns sdvw dvwseve</td>
                 </tr>
-                <!--<tr>
-                  <td><h5>Rate service provider</h5></td>
-                </tr>
-                <tr>
-                  <td><div><h5>Punctuality</h5></div></td>
-                  <td><div><h5>Service completion</h5></div></td>
-                  <td><div><h5>Friendliness</h5></div></td>
-                </tr>-->
 
               </table>
            </form>
@@ -96,10 +94,14 @@
          }
          }
         </script>
-
-        </div>
+        <?php endif;?>
+       <?php endforeach; ?>
+     <?php endif;?>
+     <?php endforeach; ?>
+    <?php endif;?>
+    <?php endforeach; ?>
+        
     </div> 
-  </div>
  
 </body>
 </html>

@@ -1,5 +1,9 @@
 <?php
 class items extends Controller{
+
+  private $itemModel;
+  private $userModel;
+  
     public function __construct(){
         if(!isset($_SESSION['user_email'])){
           redirect('users/login');

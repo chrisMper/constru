@@ -106,6 +106,16 @@
         }
       }
       
+
+      // Find USer All users in user table
+      public function findAllUsers(){
+        $this->db->query("SELECT * FROM `users` ");
+       
+        
+        $row = $this->db->resultSet();
+      
+        return $row;
+      }
       
   }
    

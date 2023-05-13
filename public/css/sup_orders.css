@@ -6,43 +6,6 @@
     top: 64px;
     overflow-y: hidden;
   }
-
-  .registerbox{
-    left: 50px;
-    top: 0px;
-    width:90%;
-    height: 100%;
-    position:absolute;
-    padding-left: 50px;
-    z-index: 1;
-    overflow-y: auto;
-    padding-bottom: 100px;
-}
-
-  .card {
-    display: flex;
-    position: relative;
-    width: 100%;
-  }
-  
-  .card table td {
-    padding: 10px;
-  }
-  
-  .card table td img {
-    height: 200px;
-    width: 350px;
-    object-fit: cover;
-  }
-  
-  .card table td a {
-    margin-bottom: 40px;
-    color: black;
-    text-decoration: none;
-  }
-  .card table td:hover {
-    background-color: #adadeb;
-  }
   
   h1 {
     padding: 10px 0;
@@ -61,26 +24,7 @@
     font-size: 12px;
     color: #000;
   }
-  .footer {
-    width: 1523px;
-    background: #b8b894;
-    padding: 5px 10px;
-    position: absolute;
-    left: 0px;
-    top: 800px;
-    margin-bottom: 0px;
-    margin-right: 0px;
-    height: 50px;
-  }
-  .footerleft {
-    margin-left: 0px;
-    margin-top: 20px;
-  }
-  .footerright {
-    text-align: right;
-    width: 100%;
-    margin-top: -15px;
-  }
+  
   .logo {
     width: 150px;
     height: 60px;
@@ -111,8 +55,9 @@
 .listing-card {
     display: grid;
     gap: 1rem;
-    grid-template-columns: repeat(3, 1fr);
-    width: 80%;
+    grid-template-columns: repeat(4, 1fr);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to left, #faeded, #e9e6e6);
     margin-bottom: 1rem;
     padding: 1rem;
     border-radius: 0.5rem;
@@ -137,20 +82,23 @@
     font-size: 0.8rem;
   }
   
-  .listing-card div:nth-child(2) > div > div > label {
-    width: 50%;
+ /* .listing-card div:nth-child(2) > div > div > label {
+    width: 25%;
   }
   
   .listing-card div:nth-child(2) > div > div > input {
-    width: 50%;
-  }
-  /*
-  .listing-card div:nth-child(2) {
-    width: 300px;
+    width: 25%;
   }
   */
+  .listing-card div:nth-child(2) {
+   /* width: auto;*/
+    gap: 1rem;
+    font-size: 0.8rem;
+  }
+  
   .listing-card > div:last-child {
-    display: flex;
+    /*display: flex;
+    width:25%;*/
     flex-direction: column;
     gap: 1rem;
     font-size: 0.8rem;

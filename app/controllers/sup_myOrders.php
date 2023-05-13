@@ -1,6 +1,6 @@
 <?php
-class sup_orders extends Controller{
-  private $orderModel;
+class sup_myOrders extends Controller{
+  private $myOrderModel;
   private $itemModel;
   private $userModel;
     public function __construct(){
@@ -8,7 +8,7 @@ class sup_orders extends Controller{
           redirect('users/login');
         }
 
-        $this->orderModel=$this->model('sup_orderModel');
+        $this->myOrderModel=$this->model('sup_myOrderModel');
         $this->itemModel=$this->model('item');
         $this->userModel=$this->model('User');
     }
@@ -17,7 +17,7 @@ class sup_orders extends Controller{
         // Load All items
     public function sup_orders(){
         //Get items
-        $orders=$this->orderModel->getOrders();
+        $orders=$this->myOrderModel->getOrders();
         $items=$this->itemModel->getItems();
         $Users=$this->userModel->findAllUsers();
     
@@ -44,7 +44,7 @@ class sup_orders extends Controller{
          ];
        
            
-           if($this->orderModel->addOrders($data)){
+           if($this->myOrderModel->addOrders($data)){
              redirect('sup_orders/orders_ongoing');
            }
         
@@ -53,7 +53,7 @@ class sup_orders extends Controller{
 
     public function orders_ongoing(){
 
-      $orders=$this->orderModel->getOrders_ongoing();
+      $orders=$this->myOrderModel->getOrders_ongoing();
       $items=$this->itemModel->getItems();
       $Users=$this->userModel->findAllUsers();
   
@@ -74,14 +74,14 @@ class sup_orders extends Controller{
        ];
      
          
-         if($this->orderModel->addOrders_ongoing($data)){
+         if($this->myOrderModel->addOrders_ongoing($data)){
           redirect('sup_orders/orders_ongoing');
          }
     }
 
     public function orders_completed(){
 
-      $orders=$this->orderModel->getOrders_completed();
+      $orders=$this->myOrderModel->getOrders_completed();
       $items=$this->itemModel->getItems();
       $Users=$this->userModel->findAllUsers();
   
@@ -108,7 +108,7 @@ class sup_orders extends Controller{
        ];
      
          
-         if($this->orderModel->addToOrders_cancelled($data)){
+         if($this->myOrderModel->addToOrders_cancelled($data)){
            redirect('sup_orders/orders_cancelled');
          }
      }
@@ -116,7 +116,7 @@ class sup_orders extends Controller{
 
     public function orders_cancelled(){
 
-      $orders=$this->orderModel->getOrders_cancelled();
+      $orders=$this->myOrderModel->getOrders_cancelled();
       $items=$this->itemModel->getItems();
       $Users=$this->userModel->findAllUsers();
   

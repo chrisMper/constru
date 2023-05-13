@@ -3,8 +3,8 @@
 
 <head>
 
-  <title>navigation1</title>
-  <link rel="stylesheet" type="text/css" href="<?php echo URLROOT; ?>/css/myprojects.css">
+  <title>Orders</title>
+  <link rel="stylesheet" type="text/css" href="<?php echo URLROOT; ?>/css/sup_orders.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -14,25 +14,34 @@
  
 
     <div class="main">
-    <div class="registerbox">
+
+    <a href="<?php echo URLROOT; ?>/sup_orders/orders_completed" ><i class='bx bx-arrow-back'></i>Back </a>
+
       <div class="topnav">
-        <a href="myProjects_new.php">New</a>
-        <a href="myProjects_ongoing.php">Ongoing</a>
-        <a href="myProjects_completed.php">Completed</a>
-        <a class="active" href="myProjects_cancelled.php">Cancelled</a>
-    </div>
+        <a href="<?php echo URLROOT; ?>/sup_orders/sup_orders/">New</a>
+        <a href="<?php echo URLROOT; ?>/sup_orders/orders_ongoing/">Ongoing</a>
+        <a href="<?php echo URLROOT; ?>/sup_orders/orders_completed/">Completed</a>
+        <a class="active">Cancelled</a>
+      </div>
+
+      <?php foreach($data['orders'] as $order) : ?>
+         <?php if($order->email ==$_SESSION['user_email']):?>
+          <?php foreach($data['items'] as $item) : ?>
+          <?php if($order->supplierItemId ==$item->supplierItemId):?>
+            <?php foreach($data['Users'] as $users) : ?>
+            <?php if($order->customerEmail ==$users->email):?>
 
     <div class="listing">
         <form method="post">
           <table>
 
             <tbody>
-            <div class='listing-card' style="background: #ddd">
+            <div class='listing-card'>
               <div>
-                <img src='../../../public/img/product_img/product_placeholder.png'> 
+                <img src='<?php echo URLROOT; ?>/img/itemImage/<?php echo $item ->itemImage; ?>' alt='<?php echo URLROOT; ?>/img/itemImage/product_placeholder.png'> 
               </div>
               <div>
-                <h3>Structured Analysis and Design</h3></br>
+                <h3><?php echo $item ->item; ?></h3></br>
                 <h5>Name of client</h5></br>
                 <h5>Cancellation by</h5></br>
                 <h5>Reason to cancel</h5></br>
@@ -42,71 +51,38 @@
               <div>
                 <button onclick="document.getElementById('review').style.display='block'; return false;" >Customer review</button>
                 </br>
-                <p>R.A.Perera</p>
+                <p><?php echo $users ->fName; ?><?php echo $users ->lName; ?></p>
                 <p>Client</p>
-                <p>bk,g k,bjgbhugytcd vytf hvfytfytf hgvf6f</p>
-                <p>09.02.2023</p>
+                <p><?php echo $order ->reason; ?></p>
+                <p><?php echo $order ->endedDate; ?></p>
               </div>
             </div>
           </table>
         </form>
-        <form method="post">
-          <table>
-
-            <tbody>
-            <div class='listing-card' style="background: #ddd">
-              <div>
-                <img src='../../../public/img/product_img/product_placeholder.png'> 
-              </div>
-              <div>
-                <h3>Structured Analysis and Design</h3></br>
-                <h5>Name of client</h5></br>
-                <h5>Cancellation by</h5></br>
-                <h5>Reason to cancel</h5></br>
-                <h5>Date of cancellation</h5></br>
-              </div>
-              <div>
-                <button onclick="document.getElementById('review').style.display='block'; return false;" >Customer review</button>
-                </br>
-                <p>R.A.Perera</p>
-                <p>Client</p>
-                <p>bk,g k,bjgbhugytcd vytf hvfytfytf hgvf6f</p>
-                <p>09.02.2023</p>
-              </div>
-            </div>
-          </table>
-        </form>
-
+        
         <div id="review" class="popUp" >
             <span onclick="document.getElementById('review').style.display='none'" class="close" title="Close Modal">&times;</span>
-            <form class="acceptContent">
+            
               <table class="acceptTable">
                 <tr>
-                  <td>Client 10 </td>
+                  <td><h2><?php echo $users ->fName; ?><?php echo $users ->lName; ?></h2></td>
                 </tr>
                 <tr>
-                  <td><h5>Completion date</h5></td>
-                  <td>10.02.2023</td>
+                  <td><h5>Cancelled date</h5></td>
+                  <td><?php echo $order ->endedDate; ?></td>
                 </tr>
                 <tr>
-                  <td><h5>Progress when service ended</h5></td>
-                  <td>10%</td>
+                  <td><h5>Reason to cancel</h5></td>
+                  <td><?php echo $order ->reason; ?></td>
                 </tr>
                 <tr>
                   <td><h5>Client review</h5></td>
                   <td>nark gnqkgne rnbedreo kfjgorgj mlvnvv vkee ns sdvw dvwseve</td>
                 </tr>
-                <!--<tr>
-                  <td><h5>Rate service provider</h5></td>
-                </tr>
-                <tr>
-                  <td><div><h5>Punctuality</h5></div></td>
-                  <td><div><h5>Service completion</h5></div></td>
-                  <td><div><h5>Friendliness</h5></div></td>
-                </tr>-->
+               
 
               </table>
-           </form>
+          
            <button onclick="location.reload();">Back</button>
          </div>
  
@@ -123,7 +99,13 @@
         </script>
 
         </div>
-    </div> 
+        <?php endif;?>
+       <?php endforeach; ?>
+     <?php endif;?>
+     <?php endforeach; ?>
+    <?php endif;?>
+    <?php endforeach; ?>
+  
   </div>
  
 </body>

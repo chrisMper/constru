@@ -51,13 +51,7 @@
     public function myOrders(){
       $this->view('myorders/myOrders');
     }
-    // public function cancelled_roder(){
-    //   $this->view('myorders/cancelled_order');
-    // }
-    // public function cancel(){
-    //   $this->view('myorders/cancel');
-    //}
-
+   
     public function bookings(){
       $this->view('users/sup/myBookings/myBookings_new');
     }
@@ -73,14 +67,6 @@
     public function cv(){
       $this->view('users/eng/cvdisplay');
     }
-
-    /*public function profile(){
-      $this->view('users/sup/profile/profile');
-    }*/
-
-  /*  public function updateprofile(){
-      $this->view('users/sup/profile/updateprofile');
-    }*/
 
     public function search(){
       $this->view('home/search');

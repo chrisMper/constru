@@ -3,7 +3,7 @@
 
 <head>
 
-  <title>my orders- Constru+</title>
+  <title>My orders</title>
   <link rel="stylesheet" type="text/css" href="<?php echo URLROOT; ?>/css/myorders.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -14,21 +14,26 @@
  
 
     <div class="main">
-    <div class="registerbox">
+  
       <div class="topnav">
-        <a href="myOrders_new.php">New</a>
-        <a href="myOrders_ongoing.php">Ongoing</a>
-        <a class="active" href="myOrders_completed.php">Completed</a>
-        <a href="myOrders_cancelled.php">Cancelled</a>
-    </div>
+        <a href="<?php echo URLROOT; ?>/sup_orders/sup_myOrders/">New</a>
+        <a href="<?php echo URLROOT; ?>/sup_orders/myOrders_ongoing/">Ongoing</a>
+        <a class="active">Completed</a>
+        <a href="<?php echo URLROOT; ?>/sup_orders/myOrders_cancelled/">Cancelled</a>
+      </div>
+
+      <?php foreach($data['orders'] as $order) : ?>
+         <?php if($order->email ==$_SESSION['user_email']):?>
+          <?php foreach($data['items'] as $item) : ?>
+          <?php if($order->supplierItemId ==$item->supplierItemId):?>
+            <?php foreach($data['Users'] as $users) : ?>
+            <?php if($order->customerEmail ==$users->email):?>
 
     <div class="listing">
         <form method="post">
           <table>
 
             <tbody>
-            <?php foreach($data['listings'] as $listings) : ?>
-            <div class="listing-card">
               <div>
                 <img src='<?php echo URLROOT; ?>/img/product_img/product_placeholder.png'> 
               </div>
@@ -67,15 +72,7 @@
                   <td><h5>Client review</h5></td>
                   <td><?php echo $listings->client_review; ?></td>
                 </tr>
-               <!-- <tr>
-                  <td><h5>Rate service provider</h5></td>
-                </tr>
-                <tr>
-                  <td><div><h5>Punctuality</h5></div></td>
-                  <td><div><h5>Service completion</h5></div></td>
-                  <td><div><h5>Friendliness</h5></div></td>
-                </tr>-->
-
+              
               </table>
            </form>
            <button onclick="location.reload();">Back</button>
@@ -94,9 +91,14 @@
          }
         </script>
 
+       <?php endif;?>
+       <?php endforeach; ?>
+     <?php endif;?>
+     <?php endforeach; ?>
+    <?php endif;?>
+    <?php endforeach; ?>
+
     </div>
-    </div> 
-  </div>
  
 </body>
 </html>
