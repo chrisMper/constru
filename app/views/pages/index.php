@@ -42,7 +42,7 @@
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
             molestias commodi dolor necessitatibus nisi nesciunt velit.
         </p>
-        <button><a href="">Signup</a></button>
+        <button><a href="<?php echo URLROOT; ?>/users/customerRegister">Signup</a></button>
     </div>
 </div>
 <!--homeSection ends here -->

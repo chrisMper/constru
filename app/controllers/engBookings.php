@@ -22,28 +22,45 @@ class engBookings extends Controller
     redirect('welcome');
   }
 
+  public function isLoggedIn()
+  {
+    if (!isset($_SESSION['user_email'])) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+
 
   //add to pending
   public function engBookingPending()
+
   {
-    // Check if POST
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-      // Sanitize POST
-      $_POST  = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
-      $data = [
-        'engineerEmail' => trim($_POST['engineerEmail']),
-        'customerEmail' => trim($_POST['customerEmail']),
-        'postId' => trim($_POST['postId']),
-      ];
+    if ($this->isLoggedIn()) {
+      redirect('users/login');
+    } else {
 
-      // Validate email
-      if (($data['engineerEmail']) == ($data['customerEmail'])) {
-        die('cant place order');
-      } else {
-        if ($this->engProjectModel->engProjectPending($data)) {
-          if ($this->analyzeModel->getBookingCount($_POST['postId'])) {
-            $this->controller('pages')->search();
+      // Check if POST
+      if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        // Sanitize POST
+        $_POST  = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+        $data = [
+          'engineerEmail' => trim($_POST['engineerEmail']),
+          'customerEmail' => trim($_POST['customerEmail']),
+          'postId' => trim($_POST['postId']),
+        ];
+
+        // Validate email
+        if (($data['engineerEmail']) == ($data['customerEmail'])) {
+          die('cant place order');
+        } else {
+          if ($this->engProjectModel->engProjectPending($data)) {
+            if ($this->analyzeModel->getBookingCount($_POST['postId'])) {
+              $this->controller('pages')->search();
+            }
           }
         }
       }
@@ -54,6 +71,12 @@ class engBookings extends Controller
   // add to ongoing
   public function engBookingOnGoing()
   {
+
+    if ($this->isLoggedIn()) {
+      redirect('users/login');
+    }
+
+
     // Check if POST
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       // Sanitize POST
@@ -88,6 +111,12 @@ class engBookings extends Controller
   //Projects Pending to Ongoing
   public function projectsPendingToOngoing()
   {
+
+    if ($this->isLoggedIn()) {
+      redirect('users/login');
+    }
+
+
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       // Sanitize POST
       $_POST  = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
@@ -117,6 +146,9 @@ class engBookings extends Controller
   public function projectsPendingToCancell()
   {
 
+    if ($this->isLoggedIn()) {
+      redirect('users/login');
+    }
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       // Sanitize POST
@@ -150,6 +182,9 @@ class engBookings extends Controller
   public function cancellConfirm()
   {
 
+    if ($this->isLoggedIn()) {
+      redirect('users/login');
+    }
 
     // Check if POST
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {

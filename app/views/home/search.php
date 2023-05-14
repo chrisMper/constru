@@ -8,7 +8,7 @@
       <button class=searchbutton type="submit">Search</button>
     </form>
   </div>
-  <?php foreach ($data['listings'] as $listing) :  ?>
+  <?php foreach ($data['listings'] as $listing) : ?>
     <div class="list-container">
       <div class="left-mid">
         <div class="left-col">

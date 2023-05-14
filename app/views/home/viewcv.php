@@ -11,7 +11,7 @@
 		</div>
 		<div class="resume_bottom">
 			<div class="resume_item resume_namerole">
-				<div class="name">Rosie Jackson</div>
+				<div class="name">Rosie Jackson s</div>
 				<div class="role">UI Designer</div>
 			</div>
 			<div class="resume_item resume_profile">

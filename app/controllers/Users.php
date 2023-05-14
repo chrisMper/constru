@@ -2,9 +2,11 @@
 class Users extends Controller
 {
   private $userModel;
+  private $cvModel;
   public function __construct()
   {
     $this->userModel = $this->model('User');
+    $this->cvModel = $this->model('cvv');
   }
 
   //---------------------------engineer registration starts here------------------------------------------
@@ -47,8 +49,6 @@ class Users extends Controller
         'Country_err' => '',
         'Tele_err' => ''
       ];
-
-
 
 
       // Validate email
@@ -147,7 +147,7 @@ class Users extends Controller
     }
   }
 
-  //---------------------------engineer registration starts here------------------------------------------
+  //---------------------------engineer registration end here------------------------------------------
 
 
   //---------------------------company registration starts here------------------------------------------
@@ -298,12 +298,7 @@ class Users extends Controller
 
   public function login()
   {
-    // Check if logged in
-    // if ($this->isLoggedIn()) {
-
-    //     redirect('users/comp/compdash');
-    //   }
-
+  
     // Check if POST
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       // Sanitize POST
@@ -382,6 +377,9 @@ class Users extends Controller
       case "company":
         redirect('pages/compdash');
         break;
+      case "customer":
+        redirect('pages/cusSearch');
+        break;
       default:
         redirect('users/login');
         break;
@@ -418,11 +416,13 @@ class Users extends Controller
   {
     //Get user
     $engineer = $this->userModel->getUserById($_SESSION['user_email']);
+    $propic = $this->cvModel->getCvDetails($_SESSION['user_email']);
 
 
 
     $data = [
-      'engineer' => $engineer
+      'engineer' => $engineer,
+      'propic' => $propic
     ];
 
 
@@ -542,7 +542,138 @@ class Users extends Controller
   }
 
 
-  // messaging
+//---------------------------customer registration starts here------------------------------------------
+
+public function customerRegister()
+{
+  // Check if logged in
+  if ($this->isLoggedIn()) {
+    redirect('users/login');
+  }
+
+  // Check if POST
+  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Sanitize POST
+    $_POST  = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+    $data = [
+      'FName' => trim($_POST['FName']),
+      'LName' => trim($_POST['LName']),
+      'email' => trim($_POST['email']),
+      'password' => trim($_POST['password']),
+      'confirm_password' => trim($_POST['confirm_password']),
+      'adline1' => trim($_POST['adline1']),
+      'adline2' => trim($_POST['adline2']),
+      'District' => trim($_POST['District']),
+      'Tele' => trim($_POST['Tele']),
+      'FName_err' => '',
+      'LName_err' => '',
+      'email_err' => '',
+      'password_err' => '',
+      'confirm_password_err' => '',
+      'adline1_err' => '',
+      'adline2_err' => '',
+      'District_err' => '',
+      'Tele_err' => ''
+    ];
+
+
+
+
+    // Validate email
+    if (empty($data['email'])) {
+      $data['email_err'] = 'Please enter an email';
+
+      die('Please enter an email');
+      // Validate name
+      if (empty($data['FName'])) {
+        $data['FName_err'] = 'Please enter a name';
+        die('Please enter a email');
+      }
+    } else {
+      // Check Email
+      if ($this->userModel->findUserByEmail($data['email'])) {
+        $data['email_err'] = 'Email is already taken.';
+        die('email taken');
+      }
+    }
+
+    // Validate password
+    if (empty($data['password'])) {
+      $data['password_err'] = 'Please enter a password.';
+      die('enter password');
+    } elseif (strlen($data['password']) < 6) {
+      $data['password_err'] = 'Password must have atleast 6 characters.';
+      die('password must atleast 6 ');
+    }
+
+    // Validate confirm password
+    if (empty($data['confirm_password'])) {
+      $data['confirm_password_err'] = 'Please confirm password.';
+      die('confirm password');
+    } else {
+      if ($data['password'] != $data['confirm_password']) {
+        $data['confirm_password_err'] = 'Password do not match.';
+        die('password do not match');
+      }
+    }
+
+    // Make sure errors are empty
+    if (empty($data['FName_err']) && empty($data['email_err']) && empty($data['password_err']) && empty($data['confirm_password_err'])) {
+      // SUCCESS - Proceed to insert
+
+      // Hash Password
+      $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
+
+      //Execute
+      if ($this->userModel->cusRegister($data)) {
+        
+            redirect('users/login');
+        }
+       else {
+        die('Something went wrong');
+      }
+    } else {
+      // Load View
+      $this->view('users/customer/loginAndRegistration/register', $data);
+    }
+  } else {
+    // IF NOT A POST REQUEST
+
+    // Init data
+    $data = [
+      'FName' => '',
+      'LName' => '',
+      'email' => '',
+      'password' => '',
+      'confirm_password' => '',
+      'adline1' => '',
+      'adline2' => '',
+      'city' => '',
+      'Postcode' => '',
+      'District' => '',
+      'Country' => '',
+      'Tele' => '',
+      'FName_err' => '',
+      'LName_err' => '',
+      'email_err' => '',
+      'password_err' => '',
+      'confirm_password_err' => '',
+      'adline1_err' => '',
+      'adline2_err' => '',
+      'city_err' => '',
+      'Postcode_err' => '',
+      'District_err' => '',
+      'Country_err' => '',
+      'Tele_err' => ''
+    ];
+
+    // Load View
+    $this->view('users/customer/loginAndRegistration/register', $data);
+  }
+}
+
+//---------------------------customer registration end here------------------------------------------
 
 
 

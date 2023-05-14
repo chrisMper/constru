@@ -217,4 +217,50 @@ class User
 
     return $results;
   }
+
+  //customer registration 
+  public function cusRegister($data)
+  {
+
+    // Prepare Query
+    $this->db->query('INSERT INTO `users` (fName, lName,email,`role`,`status`,`password`,adLine1,adline2,district,telephoneNo) 
+      VALUES (:FName, :LName,:email,"customer","0",:password,:adline1,:adline2,:District,:Tele)');
+
+
+
+    // Bind Values
+    $this->db->bind(':FName', $data['FName']);
+    $this->db->bind(':LName', $data['LName']);
+    $this->db->bind(':District', $data['District']);
+    $this->db->bind(':adline1', $data['adline1']);
+    $this->db->bind(':adline2', $data['adline2']);
+    $this->db->bind(':email', $data['email']);
+    $this->db->bind(':password', $data['password']);
+    $this->db->bind(':Tele', $data['Tele']);
+
+
+
+
+
+    //Execute
+    if ($this->db->execute()) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  //update customer table 
+   public function updateCustomer($email)
+   {
+     $this->db->query('INSERT INTO `service_providers` (email) 
+       VALUES (:email)');
+     $this->db->bind(':email', $email);
+     if ($this->db->execute()) {
+       return true;
+     } else {
+       return false;
+     }
+   }
+
 }

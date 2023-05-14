@@ -1,10 +1,12 @@
 
-<!------------------------------ navbar ------------------------------------>
-<?php include APPROOT . '/views/inc/SearchNavSide.php'; ?>
-
-<!-- -----------------------------list-container------------------------------- -->
-<body>
-
+<link rel="stylesheet" href="<?php echo URLROOT; ?>/css/kusSearchNavSide.css" />
+<link rel="stylesheet" href="<?php echo URLROOT; ?>/css/search.css">
+<link rel="stylesheet" href="<?php echo URLROOT; ?>/css/cv.css">
+<link rel="stylesheet" href="<?php echo URLROOT; ?>/css/portfolio.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+<link rel="stylesheet" href="C:\xampp\htdocs\constru\fontawesome-free-6.3.0-web/css/font-awesome.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 
 <?php foreach($data['cvDetails'] as $cvDetails): 
 	if($cvDetails->email== $_SESSION['user_email'] ): ?>
@@ -105,7 +107,7 @@
 			</div>
 		</div>
 		<div class="resume_item resmue_interests">
-		<a href="<?php echo URLROOT; ?>/pages/downloadcv"><button class="button-9" role="button">Generate CV</button></a>
+		
 		</div>
 	</div>
 </div>

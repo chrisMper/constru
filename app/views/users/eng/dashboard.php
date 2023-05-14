@@ -4,16 +4,7 @@ include APPROOT . '/views/inc/navbar.php';
 <main>
     <div class="grid-container">
         <!-- first parameter is the controller, second parameter is the function name inside that controller  -->
-        <a href="<?php echo URLROOT; ?>/pages/msg">
-            <div class="grid-item">
-                <div class="card">
-                    <img class="dashimg" src="<?php echo URLROOT; ?>/img/msg.png" alt="msg img" style="width:100%">
-                    <div class="container">
-                        <h4><b>Messages</b></h4>
-                    </div>
-                </div>
-            </div>
-        </a>
+        
         <a href="<?php echo URLROOT; ?>/pages/myProjectsNew">
             <div class="grid-item">
                 <div class="card">
@@ -72,7 +63,7 @@ include APPROOT . '/views/inc/navbar.php';
                 </div>
             </div>
         </div>
-        <a href="<?php echo URLROOT; ?>/pages/cv">
+        <a href="<?php echo URLROOT; ?>/pages/addCv">
             <div class="grid-item">
                 <div class="card">
                     <img class="dashimg" src="<?php echo URLROOT; ?>/img/Profile.png" alt="msgimg">

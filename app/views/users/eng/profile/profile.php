@@ -6,8 +6,12 @@
 <div class="profileDisplay">
     <div class="image">
         <div class="imageEdit">
-            <img src="<?php echo URLROOT; ?>/img/msg.png" alt="">
+            <?php foreach ($data['propic'] as $propic):
+                if($propic->email== $_SESSION['user_email']):  ?>
+            <img src="<?php echo URLROOT; ?>/img/uloads/" alt="">
             <button>Edit</button>
+            <?php endif;
+        endforeach;?>
         </div>
 
 

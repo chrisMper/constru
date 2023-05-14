@@ -54,6 +54,25 @@
 
 
     public function displayAdd($id){
+
+      if(empty($_SESSION['user_email'])){
+
+        $listing = $this->analyseModel->getListingById($id);
+        $serviceProvider = $this->userModel->getServiceProviders();
+
+        $data=[
+          'listing'=>$listing,
+          'serviceProvider'=>$serviceProvider,
+          'UserEmail'=>null
+        ];
+        $postId=intval($id);
+        $this->view('home/searchgig',$data);
+
+        $this->statis($postId);
+
+
+
+      }else{
         $listing = $this->analyseModel->getListingById($id);
         $serviceProvider = $this->userModel->getServiceProviders();
 
@@ -66,7 +85,7 @@
         $this->view('home/searchgig',$data);
 
         $this->statis($postId);
-
+      }
       }
 
 

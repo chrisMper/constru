@@ -1,9 +1,4 @@
 
-<!------------------------------ navbar ------------------------------------>
-<?php include APPROOT . '/views/inc/SearchNavSide.php'; ?>
-
-<!-- -----------------------------list-container------------------------------- -->
-<body>
 
 
 <?php foreach($data['cvDetails'] as $cvDetails): 
@@ -105,7 +100,7 @@
 			</div>
 		</div>
 		<div class="resume_item resmue_interests">
-		<a href="<?php echo URLROOT; ?>/pages/downloadcv"><button class="button-9" role="button">Generate CV</button></a>
+		<button class="button-9" role="button">Download CV</button>
 		</div>
 	</div>
 </div>

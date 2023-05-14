@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/regLogNav.css" />
     <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/login.css" />
     <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/compreg.css" />
+    <script type="text/javascript" src="<?php echo URLROOT; ?>/js/validation.js" defer></script>
+    <!-- <script type="text/javascript" src="<?php echo URLROOT; ?>/js/regisration.js" defer></script> -->
 </head>
 
 <body>

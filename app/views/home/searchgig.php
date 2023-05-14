@@ -233,15 +233,17 @@
                 <label>Confirm booking </label>
                 <label class="close">x</label>
             </span>
-            <span class="description">Before booking please contact service provider and share your project details. (Eg- Requirements, timeline, budget etc..</span>
+            <span class="description">Before booking please contact service provider and share your project details. (Eg- Requirements, timeline, budget etc..)</span>
 
             <form action="<?php echo URLROOT; ?>/engbookings/engBookingPending" method="POST" class="add" id="add">
                 <span>
+                    
                     <input type="text" value="<?php echo $data['listing']->UserEmail ?>" name="engineerEmail" hidden >
                     <input type="text" value="<?php echo $data['UserEmail'] ?>" name="customerEmail" hidden>
                     <input type="number" value="<?php echo $data['listing']->PostId ?>" name="postId" hidden>
                     <input type="submit" value="Confirm Booking" class="add-btn submit-form">
                     <input type="hidden" value="customer" name="role" class="role">
+                    
                 </span>
             </form>
         </div>

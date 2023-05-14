@@ -4,6 +4,7 @@ class Pages extends Controller
   private $listingModel;
   private $userModel;
   private $engProjectModel;
+  private $engCvModel;
 
 
   public function __construct()
@@ -11,6 +12,7 @@ class Pages extends Controller
     $this->listingModel = $this->model('Listing');
     $this->userModel = $this->model('User');
     $this->engProjectModel = $this->model('engProject');
+    $this->engCvModel = $this->model('cvv');
   }
 
   // Load Homepage
@@ -123,7 +125,7 @@ class Pages extends Controller
       'engineerProjectOngoing' => $engProject
     ];
 
-    $this->view('users/eng/mybookings/myBookings_ongoing', $data);
+    $this->view('users/customer/booking/myBookings_ongoing', $data);
   }
 
 
@@ -162,13 +164,6 @@ class Pages extends Controller
 
     $this->view("users/eng/mybookings/myBookings_cancelled", $data);
   }
-
-  
-  public function bookings()
-  {
-    $this->view('users/eng/mybookings/myBookings_ongoing');
-  }
-
 
 
   public function myProjectsCompleted()
@@ -223,16 +218,50 @@ class Pages extends Controller
     $this->view('stats/stats');
   }
 
-  public function cv()
+  public function addCv()
   {
+    if($this->engCvModel->checkUser($_SESSION['user_email'])){
+    $this->cv();
+  }else{
     $this->view('users/eng/cv/cv');
   }
+}
 
-
-  public function profile()
+  public function cv()
   {
-    $this->view('profile/profile');
+    $data=[
+      'cvDetails' => $this->engCvModel->getCvDetails(),
+      'Skills'=>$this->engCvModel->getCvSkills(),
+      'Experience'=>$this->engCvModel->getCvExperience(),
+      'Education'=>$this->engCvModel->getCvEducation(),
+    ];
+    $this->view('users/eng/cv/viewcv',$data);
   }
+
+
+
+  public function downloadCv()
+  {
+    $data=[
+      'cvDetails' => $this->engCvModel->getCvDetails(),
+      'Skills'=>$this->engCvModel->getCvSkills(),
+      'Experience'=>$this->engCvModel->getCvExperience(),
+      'Education'=>$this->engCvModel->getCvEducation(),
+    ];
+    $this->view('users/eng/cv/cvdisplay',$data);
+  }
+
+  public function downloadCCv()
+  {
+    $data=[
+      'cvDetails' => $this->engCvModel->getCvDetails(),
+      'Skills'=>$this->engCvModel->getCvSkills(),
+      'Experience'=>$this->engCvModel->getCvExperience(),
+      'Education'=>$this->engCvModel->getCvEducation(),
+    ];
+    $this->view('users/eng/cv/hi',$data);
+  }
+
 
   public function cusdash()
   {
@@ -251,6 +280,25 @@ class Pages extends Controller
     ];
 
     $this->view('home/search', $data);
+  }
+
+  public function cusSearch()
+  {
+
+    $listings = $this->listingModel->getListings();
+    $serviceProvider = $this->userModel->getServiceProviders();
+
+    $data = [
+      'listings' => $listings,
+      'serviceProvider' => $serviceProvider
+    ];
+
+    $this->view('home/cusSearch', $data);
+  }
+
+  public function cusDashboard()
+  {
+    $this->view('users/customer/cusdash');
   }
 
   public function searchgig()

@@ -10,7 +10,6 @@
 	<main>
 		<div class="container">
 
-
 		<form method="POST" action="<?php echo URLROOT; ?>/engBookings/engBookingOnGoing" class="acceptContent">
 			<center> <span id="topic"><?php echo $data['postDetails']->Title?></span></center>
 

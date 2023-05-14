@@ -37,12 +37,6 @@
 <?php endif; ?> 
 <?php endforeach; ?>
 
-<!-- listing View End -->
-
-<!-- listing Table starts -->
-
-
-<!-- listing Table End -->
 
 
 </main>
