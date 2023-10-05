@@ -2,9 +2,7 @@
 
 class admin_list extends Controller {
     public function __construct() {
-      // if(!isset($_SESSION['user_email'])){
-      //   redirect('users/login');
-      // }
+      
       $this->adminModel = $this->model('adminModel');
     }
 
